@@ -167,6 +167,59 @@ exports.Prisma.CompetitionScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.SeasonScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.CampaignScalarFieldEnum = {
+  id: 'id',
+  competitionId: 'competitionId',
+  seasonId: 'seasonId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.LeagueCampaignScalarFieldEnum = {
+  campaignId: 'campaignId',
+  played: 'played',
+  points: 'points',
+  pointsScoredFor: 'pointsScoredFor',
+  pointsScoredAgainst: 'pointsScoredAgainst',
+  framesPlayed: 'framesPlayed'
+};
+
+exports.Prisma.TeamScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.TeamCampaignScalarFieldEnum = {
+  campaignId: 'campaignId',
+  teamId: 'teamId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.TeamCampaignPlayerScalarFieldEnum = {
+  campaignPlayerId: 'campaignPlayerId',
+  isTeamCaptain: 'isTeamCaptain',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.CampaignPlayerScalarFieldEnum = {
+  id: 'id',
+  campaignId: 'campaignId',
+  userId: 'userId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -188,7 +241,14 @@ exports.Prisma.ModelName = {
   Account: 'Account',
   Session: 'Session',
   VerificationToken: 'VerificationToken',
-  Competition: 'Competition'
+  Competition: 'Competition',
+  Season: 'Season',
+  Campaign: 'Campaign',
+  LeagueCampaign: 'LeagueCampaign',
+  Team: 'Team',
+  TeamCampaign: 'TeamCampaign',
+  TeamCampaignPlayer: 'TeamCampaignPlayer',
+  CampaignPlayer: 'CampaignPlayer'
 };
 
 /**

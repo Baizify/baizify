@@ -7,7 +7,7 @@ import db from "./providers/prisma";
 export const authOptions: NextAuthConfig = {
   adapter: PrismaAdapter(db),
   session: { strategy: "jwt" },
-  secret: "YoNO0fuPwdSfuQonft2uXeEnzcod5uG/07h5XboQE1U=",
+  secret: "cmVndWxhcmF0b21odXJ0cGxhbnRpbnN0cnVtZW50c2VwYXJhdGVmbG9hdGluZ2NsaW0=",
   providers: [
     GoogleProvider({
       clientId: "176018053432-hm50eogols03oh3gl48knv42ilmco11s.apps.googleusercontent.com",

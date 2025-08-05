@@ -13,6 +13,19 @@ const CompetitionPage = async ({
           where: { 
                id: params.id 
           },
+          include: {
+               campaigns: {
+                    include: {
+                         season: true,
+                         teamCampaign: {
+                              include: {
+                                   team: true
+                              }
+                         },
+                         leagueCampaign: true
+                    }
+               }
+          }
      });
      
      prisma.$disconnect();

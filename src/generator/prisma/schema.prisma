@@ -9,15 +9,14 @@ generator client {
 }
 
 model User {
-  id            String          @id @default(cuid())
+  id            String           @id @default(cuid())
   name          String?
-  email         String          @unique
+  email         String           @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
   sessions      Session[]
-  // Optional for WebAuthn support
-  Authenticator Authenticator[]
+  campaigns     CampaignPlayer[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -62,18 +61,96 @@ model VerificationToken {
   @@id([identifier, token])
 }
 
-// Optional for WebAuthn support
-model Authenticator {
-  credentialID         String  @unique
-  userId               String
-  providerAccountId    String
-  credentialPublicKey  String
-  counter              Int
-  credentialDeviceType String
-  credentialBackedUp   Boolean
-  transports           String?
+model Competition {
+  id   String @id @default(cuid())
+  name String
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  campaigns Campaign[]
 
-  @@id([userId, credentialID])
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+}
+
+model Season {
+  id   String @id @default(cuid())
+  name String
+
+  campaigns Campaign[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+}
+
+model Campaign {
+  id            String @id @default(cuid())
+  competitionId String
+  seasonId      String
+
+  teamCampaign   TeamCampaign?
+  leagueCampaign LeagueCampaign?
+  players        CampaignPlayer[]
+
+  competition Competition @relation(fields: [competitionId], references: [id])
+  season      Season      @relation(fields: [seasonId], references: [id])
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+}
+
+model LeagueCampaign {
+  campaignId          String
+  played              Int    @default(0)
+  points              Float  @default(0)
+  pointsScoredFor     Int    @default(0)
+  pointsScoredAgainst Int    @default(0)
+  framesPlayed        Int    @default(0)
+
+  campaign Campaign @relation(fields: [campaignId], references: [id])
+
+  @@id([campaignId])
+}
+
+model Team {
+  id   String @id @default(cuid())
+  name String
+
+  campaigns TeamCampaign[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+}
+
+model TeamCampaign {
+  campaignId String
+  teamId     String
+
+  team     Team     @relation(fields: [teamId], references: [id])
+  campaign Campaign @relation(fields: [campaignId], references: [id])
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+
+  @@id([campaignId])
+}
+
+model TeamCampaignPlayer {
+  campaignPlayerId String
+  isTeamCaptain    Boolean
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+
+  @@id([campaignPlayerId])
+}
+
+model CampaignPlayer {
+  id         String @id @default(cuid())
+  campaignId String
+  userId     String
+
+  user     User     @relation(fields: [userId], references: [id])
+  campaign Campaign @relation(fields: [campaignId], references: [id])
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
 }
