@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx prisma generate:*)",
+      "Bash(npm i)",
+      "Bash(npm i:*)",
+      "Bash(npx prisma migrate dev:*)",
+      "WebFetch(domain:www.ossettsnooker.uk)",
+      "Bash(npm run build:*)",
+      "Bash(find:*)"
+    ],
+    "deny": []
+  }
+}

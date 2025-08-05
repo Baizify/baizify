@@ -38,6 +38,61 @@ export type VerificationToken = $Result.DefaultSelection<Prisma.$VerificationTok
  * 
  */
 export type Competition = $Result.DefaultSelection<Prisma.$CompetitionPayload>
+/**
+ * Model Season
+ * 
+ */
+export type Season = $Result.DefaultSelection<Prisma.$SeasonPayload>
+/**
+ * Model Campaign
+ * 
+ */
+export type Campaign = $Result.DefaultSelection<Prisma.$CampaignPayload>
+/**
+ * Model LeagueCampaign
+ * 
+ */
+export type LeagueCampaign = $Result.DefaultSelection<Prisma.$LeagueCampaignPayload>
+/**
+ * Model Team
+ * 
+ */
+export type Team = $Result.DefaultSelection<Prisma.$TeamPayload>
+/**
+ * Model TeamCampaign
+ * 
+ */
+export type TeamCampaign = $Result.DefaultSelection<Prisma.$TeamCampaignPayload>
+/**
+ * Model LeagueTableSnapshot
+ * 
+ */
+export type LeagueTableSnapshot = $Result.DefaultSelection<Prisma.$LeagueTableSnapshotPayload>
+/**
+ * Model TeamCampaignPlayer
+ * 
+ */
+export type TeamCampaignPlayer = $Result.DefaultSelection<Prisma.$TeamCampaignPlayerPayload>
+/**
+ * Model CampaignPlayer
+ * 
+ */
+export type CampaignPlayer = $Result.DefaultSelection<Prisma.$CampaignPlayerPayload>
+/**
+ * Model Handicap
+ * 
+ */
+export type Handicap = $Result.DefaultSelection<Prisma.$HandicapPayload>
+/**
+ * Model Fixture
+ * 
+ */
+export type Fixture = $Result.DefaultSelection<Prisma.$FixturePayload>
+/**
+ * Model Frame
+ * 
+ */
+export type Frame = $Result.DefaultSelection<Prisma.$FramePayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -213,6 +268,116 @@ export class PrismaClient<
     * ```
     */
   get competition(): Prisma.CompetitionDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.season`: Exposes CRUD operations for the **Season** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Seasons
+    * const seasons = await prisma.season.findMany()
+    * ```
+    */
+  get season(): Prisma.SeasonDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.campaign`: Exposes CRUD operations for the **Campaign** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Campaigns
+    * const campaigns = await prisma.campaign.findMany()
+    * ```
+    */
+  get campaign(): Prisma.CampaignDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.leagueCampaign`: Exposes CRUD operations for the **LeagueCampaign** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more LeagueCampaigns
+    * const leagueCampaigns = await prisma.leagueCampaign.findMany()
+    * ```
+    */
+  get leagueCampaign(): Prisma.LeagueCampaignDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.team`: Exposes CRUD operations for the **Team** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Teams
+    * const teams = await prisma.team.findMany()
+    * ```
+    */
+  get team(): Prisma.TeamDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.teamCampaign`: Exposes CRUD operations for the **TeamCampaign** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more TeamCampaigns
+    * const teamCampaigns = await prisma.teamCampaign.findMany()
+    * ```
+    */
+  get teamCampaign(): Prisma.TeamCampaignDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.leagueTableSnapshot`: Exposes CRUD operations for the **LeagueTableSnapshot** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more LeagueTableSnapshots
+    * const leagueTableSnapshots = await prisma.leagueTableSnapshot.findMany()
+    * ```
+    */
+  get leagueTableSnapshot(): Prisma.LeagueTableSnapshotDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.teamCampaignPlayer`: Exposes CRUD operations for the **TeamCampaignPlayer** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more TeamCampaignPlayers
+    * const teamCampaignPlayers = await prisma.teamCampaignPlayer.findMany()
+    * ```
+    */
+  get teamCampaignPlayer(): Prisma.TeamCampaignPlayerDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.campaignPlayer`: Exposes CRUD operations for the **CampaignPlayer** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more CampaignPlayers
+    * const campaignPlayers = await prisma.campaignPlayer.findMany()
+    * ```
+    */
+  get campaignPlayer(): Prisma.CampaignPlayerDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.handicap`: Exposes CRUD operations for the **Handicap** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Handicaps
+    * const handicaps = await prisma.handicap.findMany()
+    * ```
+    */
+  get handicap(): Prisma.HandicapDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.fixture`: Exposes CRUD operations for the **Fixture** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Fixtures
+    * const fixtures = await prisma.fixture.findMany()
+    * ```
+    */
+  get fixture(): Prisma.FixtureDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.frame`: Exposes CRUD operations for the **Frame** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Frames
+    * const frames = await prisma.frame.findMany()
+    * ```
+    */
+  get frame(): Prisma.FrameDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -657,7 +822,18 @@ export namespace Prisma {
     Account: 'Account',
     Session: 'Session',
     VerificationToken: 'VerificationToken',
-    Competition: 'Competition'
+    Competition: 'Competition',
+    Season: 'Season',
+    Campaign: 'Campaign',
+    LeagueCampaign: 'LeagueCampaign',
+    Team: 'Team',
+    TeamCampaign: 'TeamCampaign',
+    LeagueTableSnapshot: 'LeagueTableSnapshot',
+    TeamCampaignPlayer: 'TeamCampaignPlayer',
+    CampaignPlayer: 'CampaignPlayer',
+    Handicap: 'Handicap',
+    Fixture: 'Fixture',
+    Frame: 'Frame'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -676,7 +852,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "account" | "session" | "verificationToken" | "competition"
+      modelProps: "user" | "account" | "session" | "verificationToken" | "competition" | "season" | "campaign" | "leagueCampaign" | "team" | "teamCampaign" | "leagueTableSnapshot" | "teamCampaignPlayer" | "campaignPlayer" | "handicap" | "fixture" | "frame"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1050,6 +1226,820 @@ export namespace Prisma {
           }
         }
       }
+      Season: {
+        payload: Prisma.$SeasonPayload<ExtArgs>
+        fields: Prisma.SeasonFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.SeasonFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SeasonPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.SeasonFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SeasonPayload>
+          }
+          findFirst: {
+            args: Prisma.SeasonFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SeasonPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.SeasonFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SeasonPayload>
+          }
+          findMany: {
+            args: Prisma.SeasonFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SeasonPayload>[]
+          }
+          create: {
+            args: Prisma.SeasonCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SeasonPayload>
+          }
+          createMany: {
+            args: Prisma.SeasonCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.SeasonCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SeasonPayload>[]
+          }
+          delete: {
+            args: Prisma.SeasonDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SeasonPayload>
+          }
+          update: {
+            args: Prisma.SeasonUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SeasonPayload>
+          }
+          deleteMany: {
+            args: Prisma.SeasonDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.SeasonUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.SeasonUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SeasonPayload>[]
+          }
+          upsert: {
+            args: Prisma.SeasonUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SeasonPayload>
+          }
+          aggregate: {
+            args: Prisma.SeasonAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateSeason>
+          }
+          groupBy: {
+            args: Prisma.SeasonGroupByArgs<ExtArgs>
+            result: $Utils.Optional<SeasonGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.SeasonCountArgs<ExtArgs>
+            result: $Utils.Optional<SeasonCountAggregateOutputType> | number
+          }
+        }
+      }
+      Campaign: {
+        payload: Prisma.$CampaignPayload<ExtArgs>
+        fields: Prisma.CampaignFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.CampaignFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.CampaignFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPayload>
+          }
+          findFirst: {
+            args: Prisma.CampaignFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.CampaignFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPayload>
+          }
+          findMany: {
+            args: Prisma.CampaignFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPayload>[]
+          }
+          create: {
+            args: Prisma.CampaignCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPayload>
+          }
+          createMany: {
+            args: Prisma.CampaignCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.CampaignCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPayload>[]
+          }
+          delete: {
+            args: Prisma.CampaignDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPayload>
+          }
+          update: {
+            args: Prisma.CampaignUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPayload>
+          }
+          deleteMany: {
+            args: Prisma.CampaignDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.CampaignUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.CampaignUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPayload>[]
+          }
+          upsert: {
+            args: Prisma.CampaignUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPayload>
+          }
+          aggregate: {
+            args: Prisma.CampaignAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCampaign>
+          }
+          groupBy: {
+            args: Prisma.CampaignGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CampaignGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.CampaignCountArgs<ExtArgs>
+            result: $Utils.Optional<CampaignCountAggregateOutputType> | number
+          }
+        }
+      }
+      LeagueCampaign: {
+        payload: Prisma.$LeagueCampaignPayload<ExtArgs>
+        fields: Prisma.LeagueCampaignFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.LeagueCampaignFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueCampaignPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.LeagueCampaignFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueCampaignPayload>
+          }
+          findFirst: {
+            args: Prisma.LeagueCampaignFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueCampaignPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.LeagueCampaignFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueCampaignPayload>
+          }
+          findMany: {
+            args: Prisma.LeagueCampaignFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueCampaignPayload>[]
+          }
+          create: {
+            args: Prisma.LeagueCampaignCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueCampaignPayload>
+          }
+          createMany: {
+            args: Prisma.LeagueCampaignCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.LeagueCampaignCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueCampaignPayload>[]
+          }
+          delete: {
+            args: Prisma.LeagueCampaignDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueCampaignPayload>
+          }
+          update: {
+            args: Prisma.LeagueCampaignUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueCampaignPayload>
+          }
+          deleteMany: {
+            args: Prisma.LeagueCampaignDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.LeagueCampaignUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.LeagueCampaignUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueCampaignPayload>[]
+          }
+          upsert: {
+            args: Prisma.LeagueCampaignUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueCampaignPayload>
+          }
+          aggregate: {
+            args: Prisma.LeagueCampaignAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateLeagueCampaign>
+          }
+          groupBy: {
+            args: Prisma.LeagueCampaignGroupByArgs<ExtArgs>
+            result: $Utils.Optional<LeagueCampaignGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.LeagueCampaignCountArgs<ExtArgs>
+            result: $Utils.Optional<LeagueCampaignCountAggregateOutputType> | number
+          }
+        }
+      }
+      Team: {
+        payload: Prisma.$TeamPayload<ExtArgs>
+        fields: Prisma.TeamFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.TeamFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.TeamFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>
+          }
+          findFirst: {
+            args: Prisma.TeamFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.TeamFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>
+          }
+          findMany: {
+            args: Prisma.TeamFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>[]
+          }
+          create: {
+            args: Prisma.TeamCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>
+          }
+          createMany: {
+            args: Prisma.TeamCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.TeamCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>[]
+          }
+          delete: {
+            args: Prisma.TeamDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>
+          }
+          update: {
+            args: Prisma.TeamUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>
+          }
+          deleteMany: {
+            args: Prisma.TeamDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.TeamUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.TeamUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>[]
+          }
+          upsert: {
+            args: Prisma.TeamUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>
+          }
+          aggregate: {
+            args: Prisma.TeamAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTeam>
+          }
+          groupBy: {
+            args: Prisma.TeamGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TeamGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.TeamCountArgs<ExtArgs>
+            result: $Utils.Optional<TeamCountAggregateOutputType> | number
+          }
+        }
+      }
+      TeamCampaign: {
+        payload: Prisma.$TeamCampaignPayload<ExtArgs>
+        fields: Prisma.TeamCampaignFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.TeamCampaignFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.TeamCampaignFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPayload>
+          }
+          findFirst: {
+            args: Prisma.TeamCampaignFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.TeamCampaignFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPayload>
+          }
+          findMany: {
+            args: Prisma.TeamCampaignFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPayload>[]
+          }
+          create: {
+            args: Prisma.TeamCampaignCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPayload>
+          }
+          createMany: {
+            args: Prisma.TeamCampaignCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.TeamCampaignCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPayload>[]
+          }
+          delete: {
+            args: Prisma.TeamCampaignDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPayload>
+          }
+          update: {
+            args: Prisma.TeamCampaignUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPayload>
+          }
+          deleteMany: {
+            args: Prisma.TeamCampaignDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.TeamCampaignUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.TeamCampaignUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPayload>[]
+          }
+          upsert: {
+            args: Prisma.TeamCampaignUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPayload>
+          }
+          aggregate: {
+            args: Prisma.TeamCampaignAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTeamCampaign>
+          }
+          groupBy: {
+            args: Prisma.TeamCampaignGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TeamCampaignGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.TeamCampaignCountArgs<ExtArgs>
+            result: $Utils.Optional<TeamCampaignCountAggregateOutputType> | number
+          }
+        }
+      }
+      LeagueTableSnapshot: {
+        payload: Prisma.$LeagueTableSnapshotPayload<ExtArgs>
+        fields: Prisma.LeagueTableSnapshotFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.LeagueTableSnapshotFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueTableSnapshotPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.LeagueTableSnapshotFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueTableSnapshotPayload>
+          }
+          findFirst: {
+            args: Prisma.LeagueTableSnapshotFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueTableSnapshotPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.LeagueTableSnapshotFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueTableSnapshotPayload>
+          }
+          findMany: {
+            args: Prisma.LeagueTableSnapshotFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueTableSnapshotPayload>[]
+          }
+          create: {
+            args: Prisma.LeagueTableSnapshotCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueTableSnapshotPayload>
+          }
+          createMany: {
+            args: Prisma.LeagueTableSnapshotCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.LeagueTableSnapshotCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueTableSnapshotPayload>[]
+          }
+          delete: {
+            args: Prisma.LeagueTableSnapshotDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueTableSnapshotPayload>
+          }
+          update: {
+            args: Prisma.LeagueTableSnapshotUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueTableSnapshotPayload>
+          }
+          deleteMany: {
+            args: Prisma.LeagueTableSnapshotDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.LeagueTableSnapshotUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.LeagueTableSnapshotUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueTableSnapshotPayload>[]
+          }
+          upsert: {
+            args: Prisma.LeagueTableSnapshotUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LeagueTableSnapshotPayload>
+          }
+          aggregate: {
+            args: Prisma.LeagueTableSnapshotAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateLeagueTableSnapshot>
+          }
+          groupBy: {
+            args: Prisma.LeagueTableSnapshotGroupByArgs<ExtArgs>
+            result: $Utils.Optional<LeagueTableSnapshotGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.LeagueTableSnapshotCountArgs<ExtArgs>
+            result: $Utils.Optional<LeagueTableSnapshotCountAggregateOutputType> | number
+          }
+        }
+      }
+      TeamCampaignPlayer: {
+        payload: Prisma.$TeamCampaignPlayerPayload<ExtArgs>
+        fields: Prisma.TeamCampaignPlayerFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.TeamCampaignPlayerFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPlayerPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.TeamCampaignPlayerFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPlayerPayload>
+          }
+          findFirst: {
+            args: Prisma.TeamCampaignPlayerFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPlayerPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.TeamCampaignPlayerFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPlayerPayload>
+          }
+          findMany: {
+            args: Prisma.TeamCampaignPlayerFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPlayerPayload>[]
+          }
+          create: {
+            args: Prisma.TeamCampaignPlayerCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPlayerPayload>
+          }
+          createMany: {
+            args: Prisma.TeamCampaignPlayerCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.TeamCampaignPlayerCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPlayerPayload>[]
+          }
+          delete: {
+            args: Prisma.TeamCampaignPlayerDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPlayerPayload>
+          }
+          update: {
+            args: Prisma.TeamCampaignPlayerUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPlayerPayload>
+          }
+          deleteMany: {
+            args: Prisma.TeamCampaignPlayerDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.TeamCampaignPlayerUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.TeamCampaignPlayerUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPlayerPayload>[]
+          }
+          upsert: {
+            args: Prisma.TeamCampaignPlayerUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamCampaignPlayerPayload>
+          }
+          aggregate: {
+            args: Prisma.TeamCampaignPlayerAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTeamCampaignPlayer>
+          }
+          groupBy: {
+            args: Prisma.TeamCampaignPlayerGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TeamCampaignPlayerGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.TeamCampaignPlayerCountArgs<ExtArgs>
+            result: $Utils.Optional<TeamCampaignPlayerCountAggregateOutputType> | number
+          }
+        }
+      }
+      CampaignPlayer: {
+        payload: Prisma.$CampaignPlayerPayload<ExtArgs>
+        fields: Prisma.CampaignPlayerFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.CampaignPlayerFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPlayerPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.CampaignPlayerFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPlayerPayload>
+          }
+          findFirst: {
+            args: Prisma.CampaignPlayerFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPlayerPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.CampaignPlayerFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPlayerPayload>
+          }
+          findMany: {
+            args: Prisma.CampaignPlayerFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPlayerPayload>[]
+          }
+          create: {
+            args: Prisma.CampaignPlayerCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPlayerPayload>
+          }
+          createMany: {
+            args: Prisma.CampaignPlayerCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.CampaignPlayerCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPlayerPayload>[]
+          }
+          delete: {
+            args: Prisma.CampaignPlayerDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPlayerPayload>
+          }
+          update: {
+            args: Prisma.CampaignPlayerUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPlayerPayload>
+          }
+          deleteMany: {
+            args: Prisma.CampaignPlayerDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.CampaignPlayerUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.CampaignPlayerUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPlayerPayload>[]
+          }
+          upsert: {
+            args: Prisma.CampaignPlayerUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampaignPlayerPayload>
+          }
+          aggregate: {
+            args: Prisma.CampaignPlayerAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCampaignPlayer>
+          }
+          groupBy: {
+            args: Prisma.CampaignPlayerGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CampaignPlayerGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.CampaignPlayerCountArgs<ExtArgs>
+            result: $Utils.Optional<CampaignPlayerCountAggregateOutputType> | number
+          }
+        }
+      }
+      Handicap: {
+        payload: Prisma.$HandicapPayload<ExtArgs>
+        fields: Prisma.HandicapFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.HandicapFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.HandicapFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>
+          }
+          findFirst: {
+            args: Prisma.HandicapFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.HandicapFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>
+          }
+          findMany: {
+            args: Prisma.HandicapFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>[]
+          }
+          create: {
+            args: Prisma.HandicapCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>
+          }
+          createMany: {
+            args: Prisma.HandicapCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.HandicapCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>[]
+          }
+          delete: {
+            args: Prisma.HandicapDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>
+          }
+          update: {
+            args: Prisma.HandicapUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>
+          }
+          deleteMany: {
+            args: Prisma.HandicapDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.HandicapUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.HandicapUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>[]
+          }
+          upsert: {
+            args: Prisma.HandicapUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>
+          }
+          aggregate: {
+            args: Prisma.HandicapAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHandicap>
+          }
+          groupBy: {
+            args: Prisma.HandicapGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HandicapGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.HandicapCountArgs<ExtArgs>
+            result: $Utils.Optional<HandicapCountAggregateOutputType> | number
+          }
+        }
+      }
+      Fixture: {
+        payload: Prisma.$FixturePayload<ExtArgs>
+        fields: Prisma.FixtureFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FixtureFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FixturePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FixtureFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FixturePayload>
+          }
+          findFirst: {
+            args: Prisma.FixtureFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FixturePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FixtureFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FixturePayload>
+          }
+          findMany: {
+            args: Prisma.FixtureFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FixturePayload>[]
+          }
+          create: {
+            args: Prisma.FixtureCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FixturePayload>
+          }
+          createMany: {
+            args: Prisma.FixtureCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FixtureCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FixturePayload>[]
+          }
+          delete: {
+            args: Prisma.FixtureDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FixturePayload>
+          }
+          update: {
+            args: Prisma.FixtureUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FixturePayload>
+          }
+          deleteMany: {
+            args: Prisma.FixtureDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FixtureUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.FixtureUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FixturePayload>[]
+          }
+          upsert: {
+            args: Prisma.FixtureUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FixturePayload>
+          }
+          aggregate: {
+            args: Prisma.FixtureAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFixture>
+          }
+          groupBy: {
+            args: Prisma.FixtureGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FixtureGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FixtureCountArgs<ExtArgs>
+            result: $Utils.Optional<FixtureCountAggregateOutputType> | number
+          }
+        }
+      }
+      Frame: {
+        payload: Prisma.$FramePayload<ExtArgs>
+        fields: Prisma.FrameFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FrameFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FramePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FrameFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FramePayload>
+          }
+          findFirst: {
+            args: Prisma.FrameFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FramePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FrameFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FramePayload>
+          }
+          findMany: {
+            args: Prisma.FrameFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FramePayload>[]
+          }
+          create: {
+            args: Prisma.FrameCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FramePayload>
+          }
+          createMany: {
+            args: Prisma.FrameCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FrameCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FramePayload>[]
+          }
+          delete: {
+            args: Prisma.FrameDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FramePayload>
+          }
+          update: {
+            args: Prisma.FrameUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FramePayload>
+          }
+          deleteMany: {
+            args: Prisma.FrameDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FrameUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.FrameUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FramePayload>[]
+          }
+          upsert: {
+            args: Prisma.FrameUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FramePayload>
+          }
+          aggregate: {
+            args: Prisma.FrameAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFrame>
+          }
+          groupBy: {
+            args: Prisma.FrameGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FrameGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FrameCountArgs<ExtArgs>
+            result: $Utils.Optional<FrameCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1139,6 +2129,17 @@ export namespace Prisma {
     session?: SessionOmit
     verificationToken?: VerificationTokenOmit
     competition?: CompetitionOmit
+    season?: SeasonOmit
+    campaign?: CampaignOmit
+    leagueCampaign?: LeagueCampaignOmit
+    team?: TeamOmit
+    teamCampaign?: TeamCampaignOmit
+    leagueTableSnapshot?: LeagueTableSnapshotOmit
+    teamCampaignPlayer?: TeamCampaignPlayerOmit
+    campaignPlayer?: CampaignPlayerOmit
+    handicap?: HandicapOmit
+    fixture?: FixtureOmit
+    frame?: FrameOmit
   }
 
   /* Types for Logging */
@@ -1235,11 +2236,13 @@ export namespace Prisma {
   export type UserCountOutputType = {
     accounts: number
     sessions: number
+    campaigns: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     accounts?: boolean | UserCountOutputTypeCountAccountsArgs
     sessions?: boolean | UserCountOutputTypeCountSessionsArgs
+    campaigns?: boolean | UserCountOutputTypeCountCampaignsArgs
   }
 
   // Custom InputTypes
@@ -1267,6 +2270,329 @@ export namespace Prisma {
     where?: SessionWhereInput
   }
 
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountCampaignsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CampaignPlayerWhereInput
+  }
+
+
+  /**
+   * Count Type CompetitionCountOutputType
+   */
+
+  export type CompetitionCountOutputType = {
+    campaigns: number
+    fixtures: number
+    leagueSnapshots: number
+  }
+
+  export type CompetitionCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    campaigns?: boolean | CompetitionCountOutputTypeCountCampaignsArgs
+    fixtures?: boolean | CompetitionCountOutputTypeCountFixturesArgs
+    leagueSnapshots?: boolean | CompetitionCountOutputTypeCountLeagueSnapshotsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * CompetitionCountOutputType without action
+   */
+  export type CompetitionCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CompetitionCountOutputType
+     */
+    select?: CompetitionCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * CompetitionCountOutputType without action
+   */
+  export type CompetitionCountOutputTypeCountCampaignsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CampaignWhereInput
+  }
+
+  /**
+   * CompetitionCountOutputType without action
+   */
+  export type CompetitionCountOutputTypeCountFixturesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FixtureWhereInput
+  }
+
+  /**
+   * CompetitionCountOutputType without action
+   */
+  export type CompetitionCountOutputTypeCountLeagueSnapshotsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: LeagueTableSnapshotWhereInput
+  }
+
+
+  /**
+   * Count Type SeasonCountOutputType
+   */
+
+  export type SeasonCountOutputType = {
+    campaigns: number
+    fixtures: number
+    leagueSnapshots: number
+  }
+
+  export type SeasonCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    campaigns?: boolean | SeasonCountOutputTypeCountCampaignsArgs
+    fixtures?: boolean | SeasonCountOutputTypeCountFixturesArgs
+    leagueSnapshots?: boolean | SeasonCountOutputTypeCountLeagueSnapshotsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * SeasonCountOutputType without action
+   */
+  export type SeasonCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SeasonCountOutputType
+     */
+    select?: SeasonCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * SeasonCountOutputType without action
+   */
+  export type SeasonCountOutputTypeCountCampaignsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CampaignWhereInput
+  }
+
+  /**
+   * SeasonCountOutputType without action
+   */
+  export type SeasonCountOutputTypeCountFixturesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FixtureWhereInput
+  }
+
+  /**
+   * SeasonCountOutputType without action
+   */
+  export type SeasonCountOutputTypeCountLeagueSnapshotsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: LeagueTableSnapshotWhereInput
+  }
+
+
+  /**
+   * Count Type CampaignCountOutputType
+   */
+
+  export type CampaignCountOutputType = {
+    players: number
+    homeFixtures: number
+    awayFixtures: number
+  }
+
+  export type CampaignCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    players?: boolean | CampaignCountOutputTypeCountPlayersArgs
+    homeFixtures?: boolean | CampaignCountOutputTypeCountHomeFixturesArgs
+    awayFixtures?: boolean | CampaignCountOutputTypeCountAwayFixturesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * CampaignCountOutputType without action
+   */
+  export type CampaignCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignCountOutputType
+     */
+    select?: CampaignCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * CampaignCountOutputType without action
+   */
+  export type CampaignCountOutputTypeCountPlayersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CampaignPlayerWhereInput
+  }
+
+  /**
+   * CampaignCountOutputType without action
+   */
+  export type CampaignCountOutputTypeCountHomeFixturesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FixtureWhereInput
+  }
+
+  /**
+   * CampaignCountOutputType without action
+   */
+  export type CampaignCountOutputTypeCountAwayFixturesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FixtureWhereInput
+  }
+
+
+  /**
+   * Count Type TeamCountOutputType
+   */
+
+  export type TeamCountOutputType = {
+    campaigns: number
+    leagueSnapshots: number
+  }
+
+  export type TeamCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    campaigns?: boolean | TeamCountOutputTypeCountCampaignsArgs
+    leagueSnapshots?: boolean | TeamCountOutputTypeCountLeagueSnapshotsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * TeamCountOutputType without action
+   */
+  export type TeamCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCountOutputType
+     */
+    select?: TeamCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * TeamCountOutputType without action
+   */
+  export type TeamCountOutputTypeCountCampaignsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TeamCampaignWhereInput
+  }
+
+  /**
+   * TeamCountOutputType without action
+   */
+  export type TeamCountOutputTypeCountLeagueSnapshotsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: LeagueTableSnapshotWhereInput
+  }
+
+
+  /**
+   * Count Type CampaignPlayerCountOutputType
+   */
+
+  export type CampaignPlayerCountOutputType = {
+    homeFrames: number
+    awayFrames: number
+    wonFrames: number
+    handicaps: number
+  }
+
+  export type CampaignPlayerCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    homeFrames?: boolean | CampaignPlayerCountOutputTypeCountHomeFramesArgs
+    awayFrames?: boolean | CampaignPlayerCountOutputTypeCountAwayFramesArgs
+    wonFrames?: boolean | CampaignPlayerCountOutputTypeCountWonFramesArgs
+    handicaps?: boolean | CampaignPlayerCountOutputTypeCountHandicapsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * CampaignPlayerCountOutputType without action
+   */
+  export type CampaignPlayerCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayerCountOutputType
+     */
+    select?: CampaignPlayerCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * CampaignPlayerCountOutputType without action
+   */
+  export type CampaignPlayerCountOutputTypeCountHomeFramesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FrameWhereInput
+  }
+
+  /**
+   * CampaignPlayerCountOutputType without action
+   */
+  export type CampaignPlayerCountOutputTypeCountAwayFramesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FrameWhereInput
+  }
+
+  /**
+   * CampaignPlayerCountOutputType without action
+   */
+  export type CampaignPlayerCountOutputTypeCountWonFramesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FrameWhereInput
+  }
+
+  /**
+   * CampaignPlayerCountOutputType without action
+   */
+  export type CampaignPlayerCountOutputTypeCountHandicapsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HandicapWhereInput
+  }
+
+
+  /**
+   * Count Type HandicapCountOutputType
+   */
+
+  export type HandicapCountOutputType = {
+    homeFrames: number
+    awayFrames: number
+  }
+
+  export type HandicapCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    homeFrames?: boolean | HandicapCountOutputTypeCountHomeFramesArgs
+    awayFrames?: boolean | HandicapCountOutputTypeCountAwayFramesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * HandicapCountOutputType without action
+   */
+  export type HandicapCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HandicapCountOutputType
+     */
+    select?: HandicapCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * HandicapCountOutputType without action
+   */
+  export type HandicapCountOutputTypeCountHomeFramesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FrameWhereInput
+  }
+
+  /**
+   * HandicapCountOutputType without action
+   */
+  export type HandicapCountOutputTypeCountAwayFramesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FrameWhereInput
+  }
+
+
+  /**
+   * Count Type FixtureCountOutputType
+   */
+
+  export type FixtureCountOutputType = {
+    frames: number
+  }
+
+  export type FixtureCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    frames?: boolean | FixtureCountOutputTypeCountFramesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * FixtureCountOutputType without action
+   */
+  export type FixtureCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FixtureCountOutputType
+     */
+    select?: FixtureCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * FixtureCountOutputType without action
+   */
+  export type FixtureCountOutputTypeCountFramesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FrameWhereInput
+  }
+
 
   /**
    * Models
@@ -1288,6 +2614,7 @@ export namespace Prisma {
     email: string | null
     emailVerified: Date | null
     image: string | null
+    isAdmin: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -1298,6 +2625,7 @@ export namespace Prisma {
     email: string | null
     emailVerified: Date | null
     image: string | null
+    isAdmin: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -1308,6 +2636,7 @@ export namespace Prisma {
     email: number
     emailVerified: number
     image: number
+    isAdmin: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -1320,6 +2649,7 @@ export namespace Prisma {
     email?: true
     emailVerified?: true
     image?: true
+    isAdmin?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -1330,6 +2660,7 @@ export namespace Prisma {
     email?: true
     emailVerified?: true
     image?: true
+    isAdmin?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -1340,6 +2671,7 @@ export namespace Prisma {
     email?: true
     emailVerified?: true
     image?: true
+    isAdmin?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -1423,6 +2755,7 @@ export namespace Prisma {
     email: string
     emailVerified: Date | null
     image: string | null
+    isAdmin: boolean
     createdAt: Date
     updatedAt: Date
     _count: UserCountAggregateOutputType | null
@@ -1450,10 +2783,12 @@ export namespace Prisma {
     email?: boolean
     emailVerified?: boolean
     image?: boolean
+    isAdmin?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     accounts?: boolean | User$accountsArgs<ExtArgs>
     sessions?: boolean | User$sessionsArgs<ExtArgs>
+    campaigns?: boolean | User$campaignsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -1463,6 +2798,7 @@ export namespace Prisma {
     email?: boolean
     emailVerified?: boolean
     image?: boolean
+    isAdmin?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["user"]>
@@ -1473,6 +2809,7 @@ export namespace Prisma {
     email?: boolean
     emailVerified?: boolean
     image?: boolean
+    isAdmin?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["user"]>
@@ -1483,14 +2820,16 @@ export namespace Prisma {
     email?: boolean
     emailVerified?: boolean
     image?: boolean
+    isAdmin?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "emailVerified" | "image" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "emailVerified" | "image" | "isAdmin" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     accounts?: boolean | User$accountsArgs<ExtArgs>
     sessions?: boolean | User$sessionsArgs<ExtArgs>
+    campaigns?: boolean | User$campaignsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1501,6 +2840,7 @@ export namespace Prisma {
     objects: {
       accounts: Prisma.$AccountPayload<ExtArgs>[]
       sessions: Prisma.$SessionPayload<ExtArgs>[]
+      campaigns: Prisma.$CampaignPlayerPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -1508,6 +2848,7 @@ export namespace Prisma {
       email: string
       emailVerified: Date | null
       image: string | null
+      isAdmin: boolean
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["user"]>
@@ -1906,6 +3247,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     accounts<T extends User$accountsArgs<ExtArgs> = {}>(args?: Subset<T, User$accountsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AccountPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     sessions<T extends User$sessionsArgs<ExtArgs> = {}>(args?: Subset<T, User$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    campaigns<T extends User$campaignsArgs<ExtArgs> = {}>(args?: Subset<T, User$campaignsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1940,6 +3282,7 @@ export namespace Prisma {
     readonly email: FieldRef<"User", 'String'>
     readonly emailVerified: FieldRef<"User", 'DateTime'>
     readonly image: FieldRef<"User", 'String'>
+    readonly isAdmin: FieldRef<"User", 'Boolean'>
     readonly createdAt: FieldRef<"User", 'DateTime'>
     readonly updatedAt: FieldRef<"User", 'DateTime'>
   }
@@ -2375,6 +3718,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: SessionScalarFieldEnum | SessionScalarFieldEnum[]
+  }
+
+  /**
+   * User.campaigns
+   */
+  export type User$campaignsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerInclude<ExtArgs> | null
+    where?: CampaignPlayerWhereInput
+    orderBy?: CampaignPlayerOrderByWithRelationInput | CampaignPlayerOrderByWithRelationInput[]
+    cursor?: CampaignPlayerWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CampaignPlayerScalarFieldEnum | CampaignPlayerScalarFieldEnum[]
   }
 
   /**
@@ -5625,13 +6992,25 @@ export namespace Prisma {
 
   export type AggregateCompetition = {
     _count: CompetitionCountAggregateOutputType | null
+    _avg: CompetitionAvgAggregateOutputType | null
+    _sum: CompetitionSumAggregateOutputType | null
     _min: CompetitionMinAggregateOutputType | null
     _max: CompetitionMaxAggregateOutputType | null
+  }
+
+  export type CompetitionAvgAggregateOutputType = {
+    sortOrder: number | null
+  }
+
+  export type CompetitionSumAggregateOutputType = {
+    sortOrder: number | null
   }
 
   export type CompetitionMinAggregateOutputType = {
     id: string | null
     name: string | null
+    sortOrder: number | null
+    collection: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -5639,6 +7018,8 @@ export namespace Prisma {
   export type CompetitionMaxAggregateOutputType = {
     id: string | null
     name: string | null
+    sortOrder: number | null
+    collection: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -5646,15 +7027,27 @@ export namespace Prisma {
   export type CompetitionCountAggregateOutputType = {
     id: number
     name: number
+    sortOrder: number
+    collection: number
     createdAt: number
     updatedAt: number
     _all: number
   }
 
 
+  export type CompetitionAvgAggregateInputType = {
+    sortOrder?: true
+  }
+
+  export type CompetitionSumAggregateInputType = {
+    sortOrder?: true
+  }
+
   export type CompetitionMinAggregateInputType = {
     id?: true
     name?: true
+    sortOrder?: true
+    collection?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -5662,6 +7055,8 @@ export namespace Prisma {
   export type CompetitionMaxAggregateInputType = {
     id?: true
     name?: true
+    sortOrder?: true
+    collection?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -5669,6 +7064,8 @@ export namespace Prisma {
   export type CompetitionCountAggregateInputType = {
     id?: true
     name?: true
+    sortOrder?: true
+    collection?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -5712,6 +7109,18 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+     * Select which fields to average
+    **/
+    _avg?: CompetitionAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: CompetitionSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
      * Select which fields to find the minimum value
     **/
     _min?: CompetitionMinAggregateInputType
@@ -5742,6 +7151,8 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: CompetitionCountAggregateInputType | true
+    _avg?: CompetitionAvgAggregateInputType
+    _sum?: CompetitionSumAggregateInputType
     _min?: CompetitionMinAggregateInputType
     _max?: CompetitionMaxAggregateInputType
   }
@@ -5749,9 +7160,13 @@ export namespace Prisma {
   export type CompetitionGroupByOutputType = {
     id: string
     name: string
+    sortOrder: number
+    collection: string
     createdAt: Date
     updatedAt: Date | null
     _count: CompetitionCountAggregateOutputType | null
+    _avg: CompetitionAvgAggregateOutputType | null
+    _sum: CompetitionSumAggregateOutputType | null
     _min: CompetitionMinAggregateOutputType | null
     _max: CompetitionMaxAggregateOutputType | null
   }
@@ -5773,13 +7188,21 @@ export namespace Prisma {
   export type CompetitionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    sortOrder?: boolean
+    collection?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    campaigns?: boolean | Competition$campaignsArgs<ExtArgs>
+    fixtures?: boolean | Competition$fixturesArgs<ExtArgs>
+    leagueSnapshots?: boolean | Competition$leagueSnapshotsArgs<ExtArgs>
+    _count?: boolean | CompetitionCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["competition"]>
 
   export type CompetitionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    sortOrder?: boolean
+    collection?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["competition"]>
@@ -5787,6 +7210,8 @@ export namespace Prisma {
   export type CompetitionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    sortOrder?: boolean
+    collection?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["competition"]>
@@ -5794,18 +7219,34 @@ export namespace Prisma {
   export type CompetitionSelectScalar = {
     id?: boolean
     name?: boolean
+    sortOrder?: boolean
+    collection?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type CompetitionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "createdAt" | "updatedAt", ExtArgs["result"]["competition"]>
+  export type CompetitionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "sortOrder" | "collection" | "createdAt" | "updatedAt", ExtArgs["result"]["competition"]>
+  export type CompetitionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    campaigns?: boolean | Competition$campaignsArgs<ExtArgs>
+    fixtures?: boolean | Competition$fixturesArgs<ExtArgs>
+    leagueSnapshots?: boolean | Competition$leagueSnapshotsArgs<ExtArgs>
+    _count?: boolean | CompetitionCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type CompetitionIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type CompetitionIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
   export type $CompetitionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Competition"
-    objects: {}
+    objects: {
+      campaigns: Prisma.$CampaignPayload<ExtArgs>[]
+      fixtures: Prisma.$FixturePayload<ExtArgs>[]
+      leagueSnapshots: Prisma.$LeagueTableSnapshotPayload<ExtArgs>[]
+    }
     scalars: $Extensions.GetPayloadResult<{
       id: string
       name: string
+      sortOrder: number
+      collection: string
       createdAt: Date
       updatedAt: Date | null
     }, ExtArgs["result"]["competition"]>
@@ -6202,6 +7643,9 @@ export namespace Prisma {
    */
   export interface Prisma__CompetitionClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    campaigns<T extends Competition$campaignsArgs<ExtArgs> = {}>(args?: Subset<T, Competition$campaignsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    fixtures<T extends Competition$fixturesArgs<ExtArgs> = {}>(args?: Subset<T, Competition$fixturesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    leagueSnapshots<T extends Competition$leagueSnapshotsArgs<ExtArgs> = {}>(args?: Subset<T, Competition$leagueSnapshotsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LeagueTableSnapshotPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -6233,6 +7677,8 @@ export namespace Prisma {
   interface CompetitionFieldRefs {
     readonly id: FieldRef<"Competition", 'String'>
     readonly name: FieldRef<"Competition", 'String'>
+    readonly sortOrder: FieldRef<"Competition", 'Int'>
+    readonly collection: FieldRef<"Competition", 'String'>
     readonly createdAt: FieldRef<"Competition", 'DateTime'>
     readonly updatedAt: FieldRef<"Competition", 'DateTime'>
   }
@@ -6252,6 +7698,10 @@ export namespace Prisma {
      */
     omit?: CompetitionOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompetitionInclude<ExtArgs> | null
+    /**
      * Filter, which Competition to fetch.
      */
     where: CompetitionWhereUniqueInput
@@ -6270,6 +7720,10 @@ export namespace Prisma {
      */
     omit?: CompetitionOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompetitionInclude<ExtArgs> | null
+    /**
      * Filter, which Competition to fetch.
      */
     where: CompetitionWhereUniqueInput
@@ -6287,6 +7741,10 @@ export namespace Prisma {
      * Omit specific fields from the Competition
      */
     omit?: CompetitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompetitionInclude<ExtArgs> | null
     /**
      * Filter, which Competition to fetch.
      */
@@ -6336,6 +7794,10 @@ export namespace Prisma {
      */
     omit?: CompetitionOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompetitionInclude<ExtArgs> | null
+    /**
      * Filter, which Competition to fetch.
      */
     where?: CompetitionWhereInput
@@ -6384,6 +7846,10 @@ export namespace Prisma {
      */
     omit?: CompetitionOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompetitionInclude<ExtArgs> | null
+    /**
      * Filter, which Competitions to fetch.
      */
     where?: CompetitionWhereInput
@@ -6426,6 +7892,10 @@ export namespace Prisma {
      * Omit specific fields from the Competition
      */
     omit?: CompetitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompetitionInclude<ExtArgs> | null
     /**
      * The data needed to create a Competition.
      */
@@ -6474,6 +7944,10 @@ export namespace Prisma {
      * Omit specific fields from the Competition
      */
     omit?: CompetitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompetitionInclude<ExtArgs> | null
     /**
      * The data needed to update a Competition.
      */
@@ -6541,6 +8015,10 @@ export namespace Prisma {
      */
     omit?: CompetitionOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompetitionInclude<ExtArgs> | null
+    /**
      * The filter to search for the Competition to update in case it exists.
      */
     where: CompetitionWhereUniqueInput
@@ -6567,6 +8045,10 @@ export namespace Prisma {
      */
     omit?: CompetitionOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompetitionInclude<ExtArgs> | null
+    /**
      * Filter which Competition to delete.
      */
     where: CompetitionWhereUniqueInput
@@ -6587,6 +8069,78 @@ export namespace Prisma {
   }
 
   /**
+   * Competition.campaigns
+   */
+  export type Competition$campaignsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campaign
+     */
+    select?: CampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campaign
+     */
+    omit?: CampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignInclude<ExtArgs> | null
+    where?: CampaignWhereInput
+    orderBy?: CampaignOrderByWithRelationInput | CampaignOrderByWithRelationInput[]
+    cursor?: CampaignWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CampaignScalarFieldEnum | CampaignScalarFieldEnum[]
+  }
+
+  /**
+   * Competition.fixtures
+   */
+  export type Competition$fixturesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Fixture
+     */
+    select?: FixtureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Fixture
+     */
+    omit?: FixtureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FixtureInclude<ExtArgs> | null
+    where?: FixtureWhereInput
+    orderBy?: FixtureOrderByWithRelationInput | FixtureOrderByWithRelationInput[]
+    cursor?: FixtureWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FixtureScalarFieldEnum | FixtureScalarFieldEnum[]
+  }
+
+  /**
+   * Competition.leagueSnapshots
+   */
+  export type Competition$leagueSnapshotsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueTableSnapshot
+     */
+    select?: LeagueTableSnapshotSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueTableSnapshot
+     */
+    omit?: LeagueTableSnapshotOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueTableSnapshotInclude<ExtArgs> | null
+    where?: LeagueTableSnapshotWhereInput
+    orderBy?: LeagueTableSnapshotOrderByWithRelationInput | LeagueTableSnapshotOrderByWithRelationInput[]
+    cursor?: LeagueTableSnapshotWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: LeagueTableSnapshotScalarFieldEnum | LeagueTableSnapshotScalarFieldEnum[]
+  }
+
+  /**
    * Competition without action
    */
   export type CompetitionDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -6598,6 +8152,12863 @@ export namespace Prisma {
      * Omit specific fields from the Competition
      */
     omit?: CompetitionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompetitionInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Season
+   */
+
+  export type AggregateSeason = {
+    _count: SeasonCountAggregateOutputType | null
+    _min: SeasonMinAggregateOutputType | null
+    _max: SeasonMaxAggregateOutputType | null
+  }
+
+  export type SeasonMinAggregateOutputType = {
+    id: string | null
+    name: string | null
+    startDate: Date | null
+    endDate: Date | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type SeasonMaxAggregateOutputType = {
+    id: string | null
+    name: string | null
+    startDate: Date | null
+    endDate: Date | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type SeasonCountAggregateOutputType = {
+    id: number
+    name: number
+    startDate: number
+    endDate: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type SeasonMinAggregateInputType = {
+    id?: true
+    name?: true
+    startDate?: true
+    endDate?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type SeasonMaxAggregateInputType = {
+    id?: true
+    name?: true
+    startDate?: true
+    endDate?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type SeasonCountAggregateInputType = {
+    id?: true
+    name?: true
+    startDate?: true
+    endDate?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type SeasonAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Season to aggregate.
+     */
+    where?: SeasonWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Seasons to fetch.
+     */
+    orderBy?: SeasonOrderByWithRelationInput | SeasonOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: SeasonWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Seasons from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Seasons.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Seasons
+    **/
+    _count?: true | SeasonCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: SeasonMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: SeasonMaxAggregateInputType
+  }
+
+  export type GetSeasonAggregateType<T extends SeasonAggregateArgs> = {
+        [P in keyof T & keyof AggregateSeason]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateSeason[P]>
+      : GetScalarType<T[P], AggregateSeason[P]>
+  }
+
+
+
+
+  export type SeasonGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SeasonWhereInput
+    orderBy?: SeasonOrderByWithAggregationInput | SeasonOrderByWithAggregationInput[]
+    by: SeasonScalarFieldEnum[] | SeasonScalarFieldEnum
+    having?: SeasonScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: SeasonCountAggregateInputType | true
+    _min?: SeasonMinAggregateInputType
+    _max?: SeasonMaxAggregateInputType
+  }
+
+  export type SeasonGroupByOutputType = {
+    id: string
+    name: string
+    startDate: Date | null
+    endDate: Date | null
+    createdAt: Date
+    updatedAt: Date | null
+    _count: SeasonCountAggregateOutputType | null
+    _min: SeasonMinAggregateOutputType | null
+    _max: SeasonMaxAggregateOutputType | null
+  }
+
+  type GetSeasonGroupByPayload<T extends SeasonGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<SeasonGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof SeasonGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], SeasonGroupByOutputType[P]>
+            : GetScalarType<T[P], SeasonGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type SeasonSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    startDate?: boolean
+    endDate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    campaigns?: boolean | Season$campaignsArgs<ExtArgs>
+    fixtures?: boolean | Season$fixturesArgs<ExtArgs>
+    leagueSnapshots?: boolean | Season$leagueSnapshotsArgs<ExtArgs>
+    _count?: boolean | SeasonCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["season"]>
+
+  export type SeasonSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    startDate?: boolean
+    endDate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["season"]>
+
+  export type SeasonSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    startDate?: boolean
+    endDate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["season"]>
+
+  export type SeasonSelectScalar = {
+    id?: boolean
+    name?: boolean
+    startDate?: boolean
+    endDate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type SeasonOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "startDate" | "endDate" | "createdAt" | "updatedAt", ExtArgs["result"]["season"]>
+  export type SeasonInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    campaigns?: boolean | Season$campaignsArgs<ExtArgs>
+    fixtures?: boolean | Season$fixturesArgs<ExtArgs>
+    leagueSnapshots?: boolean | Season$leagueSnapshotsArgs<ExtArgs>
+    _count?: boolean | SeasonCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type SeasonIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type SeasonIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $SeasonPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Season"
+    objects: {
+      campaigns: Prisma.$CampaignPayload<ExtArgs>[]
+      fixtures: Prisma.$FixturePayload<ExtArgs>[]
+      leagueSnapshots: Prisma.$LeagueTableSnapshotPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      name: string
+      startDate: Date | null
+      endDate: Date | null
+      createdAt: Date
+      updatedAt: Date | null
+    }, ExtArgs["result"]["season"]>
+    composites: {}
+  }
+
+  type SeasonGetPayload<S extends boolean | null | undefined | SeasonDefaultArgs> = $Result.GetResult<Prisma.$SeasonPayload, S>
+
+  type SeasonCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<SeasonFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: SeasonCountAggregateInputType | true
+    }
+
+  export interface SeasonDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Season'], meta: { name: 'Season' } }
+    /**
+     * Find zero or one Season that matches the filter.
+     * @param {SeasonFindUniqueArgs} args - Arguments to find a Season
+     * @example
+     * // Get one Season
+     * const season = await prisma.season.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends SeasonFindUniqueArgs>(args: SelectSubset<T, SeasonFindUniqueArgs<ExtArgs>>): Prisma__SeasonClient<$Result.GetResult<Prisma.$SeasonPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Season that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {SeasonFindUniqueOrThrowArgs} args - Arguments to find a Season
+     * @example
+     * // Get one Season
+     * const season = await prisma.season.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends SeasonFindUniqueOrThrowArgs>(args: SelectSubset<T, SeasonFindUniqueOrThrowArgs<ExtArgs>>): Prisma__SeasonClient<$Result.GetResult<Prisma.$SeasonPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Season that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SeasonFindFirstArgs} args - Arguments to find a Season
+     * @example
+     * // Get one Season
+     * const season = await prisma.season.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends SeasonFindFirstArgs>(args?: SelectSubset<T, SeasonFindFirstArgs<ExtArgs>>): Prisma__SeasonClient<$Result.GetResult<Prisma.$SeasonPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Season that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SeasonFindFirstOrThrowArgs} args - Arguments to find a Season
+     * @example
+     * // Get one Season
+     * const season = await prisma.season.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends SeasonFindFirstOrThrowArgs>(args?: SelectSubset<T, SeasonFindFirstOrThrowArgs<ExtArgs>>): Prisma__SeasonClient<$Result.GetResult<Prisma.$SeasonPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Seasons that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SeasonFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Seasons
+     * const seasons = await prisma.season.findMany()
+     * 
+     * // Get first 10 Seasons
+     * const seasons = await prisma.season.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const seasonWithIdOnly = await prisma.season.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends SeasonFindManyArgs>(args?: SelectSubset<T, SeasonFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SeasonPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Season.
+     * @param {SeasonCreateArgs} args - Arguments to create a Season.
+     * @example
+     * // Create one Season
+     * const Season = await prisma.season.create({
+     *   data: {
+     *     // ... data to create a Season
+     *   }
+     * })
+     * 
+     */
+    create<T extends SeasonCreateArgs>(args: SelectSubset<T, SeasonCreateArgs<ExtArgs>>): Prisma__SeasonClient<$Result.GetResult<Prisma.$SeasonPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Seasons.
+     * @param {SeasonCreateManyArgs} args - Arguments to create many Seasons.
+     * @example
+     * // Create many Seasons
+     * const season = await prisma.season.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends SeasonCreateManyArgs>(args?: SelectSubset<T, SeasonCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Seasons and returns the data saved in the database.
+     * @param {SeasonCreateManyAndReturnArgs} args - Arguments to create many Seasons.
+     * @example
+     * // Create many Seasons
+     * const season = await prisma.season.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Seasons and only return the `id`
+     * const seasonWithIdOnly = await prisma.season.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends SeasonCreateManyAndReturnArgs>(args?: SelectSubset<T, SeasonCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SeasonPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Season.
+     * @param {SeasonDeleteArgs} args - Arguments to delete one Season.
+     * @example
+     * // Delete one Season
+     * const Season = await prisma.season.delete({
+     *   where: {
+     *     // ... filter to delete one Season
+     *   }
+     * })
+     * 
+     */
+    delete<T extends SeasonDeleteArgs>(args: SelectSubset<T, SeasonDeleteArgs<ExtArgs>>): Prisma__SeasonClient<$Result.GetResult<Prisma.$SeasonPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Season.
+     * @param {SeasonUpdateArgs} args - Arguments to update one Season.
+     * @example
+     * // Update one Season
+     * const season = await prisma.season.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends SeasonUpdateArgs>(args: SelectSubset<T, SeasonUpdateArgs<ExtArgs>>): Prisma__SeasonClient<$Result.GetResult<Prisma.$SeasonPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Seasons.
+     * @param {SeasonDeleteManyArgs} args - Arguments to filter Seasons to delete.
+     * @example
+     * // Delete a few Seasons
+     * const { count } = await prisma.season.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends SeasonDeleteManyArgs>(args?: SelectSubset<T, SeasonDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Seasons.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SeasonUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Seasons
+     * const season = await prisma.season.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends SeasonUpdateManyArgs>(args: SelectSubset<T, SeasonUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Seasons and returns the data updated in the database.
+     * @param {SeasonUpdateManyAndReturnArgs} args - Arguments to update many Seasons.
+     * @example
+     * // Update many Seasons
+     * const season = await prisma.season.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Seasons and only return the `id`
+     * const seasonWithIdOnly = await prisma.season.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends SeasonUpdateManyAndReturnArgs>(args: SelectSubset<T, SeasonUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SeasonPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Season.
+     * @param {SeasonUpsertArgs} args - Arguments to update or create a Season.
+     * @example
+     * // Update or create a Season
+     * const season = await prisma.season.upsert({
+     *   create: {
+     *     // ... data to create a Season
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Season we want to update
+     *   }
+     * })
+     */
+    upsert<T extends SeasonUpsertArgs>(args: SelectSubset<T, SeasonUpsertArgs<ExtArgs>>): Prisma__SeasonClient<$Result.GetResult<Prisma.$SeasonPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Seasons.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SeasonCountArgs} args - Arguments to filter Seasons to count.
+     * @example
+     * // Count the number of Seasons
+     * const count = await prisma.season.count({
+     *   where: {
+     *     // ... the filter for the Seasons we want to count
+     *   }
+     * })
+    **/
+    count<T extends SeasonCountArgs>(
+      args?: Subset<T, SeasonCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], SeasonCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Season.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SeasonAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends SeasonAggregateArgs>(args: Subset<T, SeasonAggregateArgs>): Prisma.PrismaPromise<GetSeasonAggregateType<T>>
+
+    /**
+     * Group by Season.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SeasonGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends SeasonGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: SeasonGroupByArgs['orderBy'] }
+        : { orderBy?: SeasonGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, SeasonGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSeasonGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Season model
+   */
+  readonly fields: SeasonFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Season.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__SeasonClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    campaigns<T extends Season$campaignsArgs<ExtArgs> = {}>(args?: Subset<T, Season$campaignsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    fixtures<T extends Season$fixturesArgs<ExtArgs> = {}>(args?: Subset<T, Season$fixturesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    leagueSnapshots<T extends Season$leagueSnapshotsArgs<ExtArgs> = {}>(args?: Subset<T, Season$leagueSnapshotsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LeagueTableSnapshotPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Season model
+   */
+  interface SeasonFieldRefs {
+    readonly id: FieldRef<"Season", 'String'>
+    readonly name: FieldRef<"Season", 'String'>
+    readonly startDate: FieldRef<"Season", 'DateTime'>
+    readonly endDate: FieldRef<"Season", 'DateTime'>
+    readonly createdAt: FieldRef<"Season", 'DateTime'>
+    readonly updatedAt: FieldRef<"Season", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Season findUnique
+   */
+  export type SeasonFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Season
+     */
+    select?: SeasonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Season
+     */
+    omit?: SeasonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SeasonInclude<ExtArgs> | null
+    /**
+     * Filter, which Season to fetch.
+     */
+    where: SeasonWhereUniqueInput
+  }
+
+  /**
+   * Season findUniqueOrThrow
+   */
+  export type SeasonFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Season
+     */
+    select?: SeasonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Season
+     */
+    omit?: SeasonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SeasonInclude<ExtArgs> | null
+    /**
+     * Filter, which Season to fetch.
+     */
+    where: SeasonWhereUniqueInput
+  }
+
+  /**
+   * Season findFirst
+   */
+  export type SeasonFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Season
+     */
+    select?: SeasonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Season
+     */
+    omit?: SeasonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SeasonInclude<ExtArgs> | null
+    /**
+     * Filter, which Season to fetch.
+     */
+    where?: SeasonWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Seasons to fetch.
+     */
+    orderBy?: SeasonOrderByWithRelationInput | SeasonOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Seasons.
+     */
+    cursor?: SeasonWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Seasons from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Seasons.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Seasons.
+     */
+    distinct?: SeasonScalarFieldEnum | SeasonScalarFieldEnum[]
+  }
+
+  /**
+   * Season findFirstOrThrow
+   */
+  export type SeasonFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Season
+     */
+    select?: SeasonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Season
+     */
+    omit?: SeasonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SeasonInclude<ExtArgs> | null
+    /**
+     * Filter, which Season to fetch.
+     */
+    where?: SeasonWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Seasons to fetch.
+     */
+    orderBy?: SeasonOrderByWithRelationInput | SeasonOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Seasons.
+     */
+    cursor?: SeasonWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Seasons from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Seasons.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Seasons.
+     */
+    distinct?: SeasonScalarFieldEnum | SeasonScalarFieldEnum[]
+  }
+
+  /**
+   * Season findMany
+   */
+  export type SeasonFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Season
+     */
+    select?: SeasonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Season
+     */
+    omit?: SeasonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SeasonInclude<ExtArgs> | null
+    /**
+     * Filter, which Seasons to fetch.
+     */
+    where?: SeasonWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Seasons to fetch.
+     */
+    orderBy?: SeasonOrderByWithRelationInput | SeasonOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Seasons.
+     */
+    cursor?: SeasonWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Seasons from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Seasons.
+     */
+    skip?: number
+    distinct?: SeasonScalarFieldEnum | SeasonScalarFieldEnum[]
+  }
+
+  /**
+   * Season create
+   */
+  export type SeasonCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Season
+     */
+    select?: SeasonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Season
+     */
+    omit?: SeasonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SeasonInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Season.
+     */
+    data: XOR<SeasonCreateInput, SeasonUncheckedCreateInput>
+  }
+
+  /**
+   * Season createMany
+   */
+  export type SeasonCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Seasons.
+     */
+    data: SeasonCreateManyInput | SeasonCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Season createManyAndReturn
+   */
+  export type SeasonCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Season
+     */
+    select?: SeasonSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Season
+     */
+    omit?: SeasonOmit<ExtArgs> | null
+    /**
+     * The data used to create many Seasons.
+     */
+    data: SeasonCreateManyInput | SeasonCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Season update
+   */
+  export type SeasonUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Season
+     */
+    select?: SeasonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Season
+     */
+    omit?: SeasonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SeasonInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Season.
+     */
+    data: XOR<SeasonUpdateInput, SeasonUncheckedUpdateInput>
+    /**
+     * Choose, which Season to update.
+     */
+    where: SeasonWhereUniqueInput
+  }
+
+  /**
+   * Season updateMany
+   */
+  export type SeasonUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Seasons.
+     */
+    data: XOR<SeasonUpdateManyMutationInput, SeasonUncheckedUpdateManyInput>
+    /**
+     * Filter which Seasons to update
+     */
+    where?: SeasonWhereInput
+    /**
+     * Limit how many Seasons to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Season updateManyAndReturn
+   */
+  export type SeasonUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Season
+     */
+    select?: SeasonSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Season
+     */
+    omit?: SeasonOmit<ExtArgs> | null
+    /**
+     * The data used to update Seasons.
+     */
+    data: XOR<SeasonUpdateManyMutationInput, SeasonUncheckedUpdateManyInput>
+    /**
+     * Filter which Seasons to update
+     */
+    where?: SeasonWhereInput
+    /**
+     * Limit how many Seasons to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Season upsert
+   */
+  export type SeasonUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Season
+     */
+    select?: SeasonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Season
+     */
+    omit?: SeasonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SeasonInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Season to update in case it exists.
+     */
+    where: SeasonWhereUniqueInput
+    /**
+     * In case the Season found by the `where` argument doesn't exist, create a new Season with this data.
+     */
+    create: XOR<SeasonCreateInput, SeasonUncheckedCreateInput>
+    /**
+     * In case the Season was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<SeasonUpdateInput, SeasonUncheckedUpdateInput>
+  }
+
+  /**
+   * Season delete
+   */
+  export type SeasonDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Season
+     */
+    select?: SeasonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Season
+     */
+    omit?: SeasonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SeasonInclude<ExtArgs> | null
+    /**
+     * Filter which Season to delete.
+     */
+    where: SeasonWhereUniqueInput
+  }
+
+  /**
+   * Season deleteMany
+   */
+  export type SeasonDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Seasons to delete
+     */
+    where?: SeasonWhereInput
+    /**
+     * Limit how many Seasons to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Season.campaigns
+   */
+  export type Season$campaignsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campaign
+     */
+    select?: CampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campaign
+     */
+    omit?: CampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignInclude<ExtArgs> | null
+    where?: CampaignWhereInput
+    orderBy?: CampaignOrderByWithRelationInput | CampaignOrderByWithRelationInput[]
+    cursor?: CampaignWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CampaignScalarFieldEnum | CampaignScalarFieldEnum[]
+  }
+
+  /**
+   * Season.fixtures
+   */
+  export type Season$fixturesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Fixture
+     */
+    select?: FixtureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Fixture
+     */
+    omit?: FixtureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FixtureInclude<ExtArgs> | null
+    where?: FixtureWhereInput
+    orderBy?: FixtureOrderByWithRelationInput | FixtureOrderByWithRelationInput[]
+    cursor?: FixtureWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FixtureScalarFieldEnum | FixtureScalarFieldEnum[]
+  }
+
+  /**
+   * Season.leagueSnapshots
+   */
+  export type Season$leagueSnapshotsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueTableSnapshot
+     */
+    select?: LeagueTableSnapshotSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueTableSnapshot
+     */
+    omit?: LeagueTableSnapshotOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueTableSnapshotInclude<ExtArgs> | null
+    where?: LeagueTableSnapshotWhereInput
+    orderBy?: LeagueTableSnapshotOrderByWithRelationInput | LeagueTableSnapshotOrderByWithRelationInput[]
+    cursor?: LeagueTableSnapshotWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: LeagueTableSnapshotScalarFieldEnum | LeagueTableSnapshotScalarFieldEnum[]
+  }
+
+  /**
+   * Season without action
+   */
+  export type SeasonDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Season
+     */
+    select?: SeasonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Season
+     */
+    omit?: SeasonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SeasonInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Campaign
+   */
+
+  export type AggregateCampaign = {
+    _count: CampaignCountAggregateOutputType | null
+    _min: CampaignMinAggregateOutputType | null
+    _max: CampaignMaxAggregateOutputType | null
+  }
+
+  export type CampaignMinAggregateOutputType = {
+    id: string | null
+    competitionId: string | null
+    seasonId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type CampaignMaxAggregateOutputType = {
+    id: string | null
+    competitionId: string | null
+    seasonId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type CampaignCountAggregateOutputType = {
+    id: number
+    competitionId: number
+    seasonId: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type CampaignMinAggregateInputType = {
+    id?: true
+    competitionId?: true
+    seasonId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type CampaignMaxAggregateInputType = {
+    id?: true
+    competitionId?: true
+    seasonId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type CampaignCountAggregateInputType = {
+    id?: true
+    competitionId?: true
+    seasonId?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type CampaignAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Campaign to aggregate.
+     */
+    where?: CampaignWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Campaigns to fetch.
+     */
+    orderBy?: CampaignOrderByWithRelationInput | CampaignOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: CampaignWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Campaigns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Campaigns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Campaigns
+    **/
+    _count?: true | CampaignCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: CampaignMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: CampaignMaxAggregateInputType
+  }
+
+  export type GetCampaignAggregateType<T extends CampaignAggregateArgs> = {
+        [P in keyof T & keyof AggregateCampaign]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateCampaign[P]>
+      : GetScalarType<T[P], AggregateCampaign[P]>
+  }
+
+
+
+
+  export type CampaignGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CampaignWhereInput
+    orderBy?: CampaignOrderByWithAggregationInput | CampaignOrderByWithAggregationInput[]
+    by: CampaignScalarFieldEnum[] | CampaignScalarFieldEnum
+    having?: CampaignScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: CampaignCountAggregateInputType | true
+    _min?: CampaignMinAggregateInputType
+    _max?: CampaignMaxAggregateInputType
+  }
+
+  export type CampaignGroupByOutputType = {
+    id: string
+    competitionId: string
+    seasonId: string
+    createdAt: Date
+    updatedAt: Date | null
+    _count: CampaignCountAggregateOutputType | null
+    _min: CampaignMinAggregateOutputType | null
+    _max: CampaignMaxAggregateOutputType | null
+  }
+
+  type GetCampaignGroupByPayload<T extends CampaignGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<CampaignGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof CampaignGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], CampaignGroupByOutputType[P]>
+            : GetScalarType<T[P], CampaignGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type CampaignSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    competitionId?: boolean
+    seasonId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    teamCampaign?: boolean | Campaign$teamCampaignArgs<ExtArgs>
+    leagueCampaign?: boolean | Campaign$leagueCampaignArgs<ExtArgs>
+    players?: boolean | Campaign$playersArgs<ExtArgs>
+    homeFixtures?: boolean | Campaign$homeFixturesArgs<ExtArgs>
+    awayFixtures?: boolean | Campaign$awayFixturesArgs<ExtArgs>
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+    _count?: boolean | CampaignCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["campaign"]>
+
+  export type CampaignSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    competitionId?: boolean
+    seasonId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["campaign"]>
+
+  export type CampaignSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    competitionId?: boolean
+    seasonId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["campaign"]>
+
+  export type CampaignSelectScalar = {
+    id?: boolean
+    competitionId?: boolean
+    seasonId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type CampaignOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "competitionId" | "seasonId" | "createdAt" | "updatedAt", ExtArgs["result"]["campaign"]>
+  export type CampaignInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    teamCampaign?: boolean | Campaign$teamCampaignArgs<ExtArgs>
+    leagueCampaign?: boolean | Campaign$leagueCampaignArgs<ExtArgs>
+    players?: boolean | Campaign$playersArgs<ExtArgs>
+    homeFixtures?: boolean | Campaign$homeFixturesArgs<ExtArgs>
+    awayFixtures?: boolean | Campaign$awayFixturesArgs<ExtArgs>
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+    _count?: boolean | CampaignCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type CampaignIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+  }
+  export type CampaignIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+  }
+
+  export type $CampaignPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Campaign"
+    objects: {
+      teamCampaign: Prisma.$TeamCampaignPayload<ExtArgs> | null
+      leagueCampaign: Prisma.$LeagueCampaignPayload<ExtArgs> | null
+      players: Prisma.$CampaignPlayerPayload<ExtArgs>[]
+      homeFixtures: Prisma.$FixturePayload<ExtArgs>[]
+      awayFixtures: Prisma.$FixturePayload<ExtArgs>[]
+      competition: Prisma.$CompetitionPayload<ExtArgs>
+      season: Prisma.$SeasonPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      competitionId: string
+      seasonId: string
+      createdAt: Date
+      updatedAt: Date | null
+    }, ExtArgs["result"]["campaign"]>
+    composites: {}
+  }
+
+  type CampaignGetPayload<S extends boolean | null | undefined | CampaignDefaultArgs> = $Result.GetResult<Prisma.$CampaignPayload, S>
+
+  type CampaignCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CampaignFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CampaignCountAggregateInputType | true
+    }
+
+  export interface CampaignDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Campaign'], meta: { name: 'Campaign' } }
+    /**
+     * Find zero or one Campaign that matches the filter.
+     * @param {CampaignFindUniqueArgs} args - Arguments to find a Campaign
+     * @example
+     * // Get one Campaign
+     * const campaign = await prisma.campaign.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends CampaignFindUniqueArgs>(args: SelectSubset<T, CampaignFindUniqueArgs<ExtArgs>>): Prisma__CampaignClient<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Campaign that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {CampaignFindUniqueOrThrowArgs} args - Arguments to find a Campaign
+     * @example
+     * // Get one Campaign
+     * const campaign = await prisma.campaign.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends CampaignFindUniqueOrThrowArgs>(args: SelectSubset<T, CampaignFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CampaignClient<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Campaign that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampaignFindFirstArgs} args - Arguments to find a Campaign
+     * @example
+     * // Get one Campaign
+     * const campaign = await prisma.campaign.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends CampaignFindFirstArgs>(args?: SelectSubset<T, CampaignFindFirstArgs<ExtArgs>>): Prisma__CampaignClient<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Campaign that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampaignFindFirstOrThrowArgs} args - Arguments to find a Campaign
+     * @example
+     * // Get one Campaign
+     * const campaign = await prisma.campaign.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends CampaignFindFirstOrThrowArgs>(args?: SelectSubset<T, CampaignFindFirstOrThrowArgs<ExtArgs>>): Prisma__CampaignClient<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Campaigns that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampaignFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Campaigns
+     * const campaigns = await prisma.campaign.findMany()
+     * 
+     * // Get first 10 Campaigns
+     * const campaigns = await prisma.campaign.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const campaignWithIdOnly = await prisma.campaign.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends CampaignFindManyArgs>(args?: SelectSubset<T, CampaignFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Campaign.
+     * @param {CampaignCreateArgs} args - Arguments to create a Campaign.
+     * @example
+     * // Create one Campaign
+     * const Campaign = await prisma.campaign.create({
+     *   data: {
+     *     // ... data to create a Campaign
+     *   }
+     * })
+     * 
+     */
+    create<T extends CampaignCreateArgs>(args: SelectSubset<T, CampaignCreateArgs<ExtArgs>>): Prisma__CampaignClient<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Campaigns.
+     * @param {CampaignCreateManyArgs} args - Arguments to create many Campaigns.
+     * @example
+     * // Create many Campaigns
+     * const campaign = await prisma.campaign.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends CampaignCreateManyArgs>(args?: SelectSubset<T, CampaignCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Campaigns and returns the data saved in the database.
+     * @param {CampaignCreateManyAndReturnArgs} args - Arguments to create many Campaigns.
+     * @example
+     * // Create many Campaigns
+     * const campaign = await prisma.campaign.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Campaigns and only return the `id`
+     * const campaignWithIdOnly = await prisma.campaign.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends CampaignCreateManyAndReturnArgs>(args?: SelectSubset<T, CampaignCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Campaign.
+     * @param {CampaignDeleteArgs} args - Arguments to delete one Campaign.
+     * @example
+     * // Delete one Campaign
+     * const Campaign = await prisma.campaign.delete({
+     *   where: {
+     *     // ... filter to delete one Campaign
+     *   }
+     * })
+     * 
+     */
+    delete<T extends CampaignDeleteArgs>(args: SelectSubset<T, CampaignDeleteArgs<ExtArgs>>): Prisma__CampaignClient<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Campaign.
+     * @param {CampaignUpdateArgs} args - Arguments to update one Campaign.
+     * @example
+     * // Update one Campaign
+     * const campaign = await prisma.campaign.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends CampaignUpdateArgs>(args: SelectSubset<T, CampaignUpdateArgs<ExtArgs>>): Prisma__CampaignClient<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Campaigns.
+     * @param {CampaignDeleteManyArgs} args - Arguments to filter Campaigns to delete.
+     * @example
+     * // Delete a few Campaigns
+     * const { count } = await prisma.campaign.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends CampaignDeleteManyArgs>(args?: SelectSubset<T, CampaignDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Campaigns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampaignUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Campaigns
+     * const campaign = await prisma.campaign.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends CampaignUpdateManyArgs>(args: SelectSubset<T, CampaignUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Campaigns and returns the data updated in the database.
+     * @param {CampaignUpdateManyAndReturnArgs} args - Arguments to update many Campaigns.
+     * @example
+     * // Update many Campaigns
+     * const campaign = await prisma.campaign.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Campaigns and only return the `id`
+     * const campaignWithIdOnly = await prisma.campaign.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends CampaignUpdateManyAndReturnArgs>(args: SelectSubset<T, CampaignUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Campaign.
+     * @param {CampaignUpsertArgs} args - Arguments to update or create a Campaign.
+     * @example
+     * // Update or create a Campaign
+     * const campaign = await prisma.campaign.upsert({
+     *   create: {
+     *     // ... data to create a Campaign
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Campaign we want to update
+     *   }
+     * })
+     */
+    upsert<T extends CampaignUpsertArgs>(args: SelectSubset<T, CampaignUpsertArgs<ExtArgs>>): Prisma__CampaignClient<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Campaigns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampaignCountArgs} args - Arguments to filter Campaigns to count.
+     * @example
+     * // Count the number of Campaigns
+     * const count = await prisma.campaign.count({
+     *   where: {
+     *     // ... the filter for the Campaigns we want to count
+     *   }
+     * })
+    **/
+    count<T extends CampaignCountArgs>(
+      args?: Subset<T, CampaignCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], CampaignCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Campaign.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampaignAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends CampaignAggregateArgs>(args: Subset<T, CampaignAggregateArgs>): Prisma.PrismaPromise<GetCampaignAggregateType<T>>
+
+    /**
+     * Group by Campaign.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampaignGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends CampaignGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: CampaignGroupByArgs['orderBy'] }
+        : { orderBy?: CampaignGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, CampaignGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCampaignGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Campaign model
+   */
+  readonly fields: CampaignFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Campaign.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__CampaignClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    teamCampaign<T extends Campaign$teamCampaignArgs<ExtArgs> = {}>(args?: Subset<T, Campaign$teamCampaignArgs<ExtArgs>>): Prisma__TeamCampaignClient<$Result.GetResult<Prisma.$TeamCampaignPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    leagueCampaign<T extends Campaign$leagueCampaignArgs<ExtArgs> = {}>(args?: Subset<T, Campaign$leagueCampaignArgs<ExtArgs>>): Prisma__LeagueCampaignClient<$Result.GetResult<Prisma.$LeagueCampaignPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    players<T extends Campaign$playersArgs<ExtArgs> = {}>(args?: Subset<T, Campaign$playersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    homeFixtures<T extends Campaign$homeFixturesArgs<ExtArgs> = {}>(args?: Subset<T, Campaign$homeFixturesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    awayFixtures<T extends Campaign$awayFixturesArgs<ExtArgs> = {}>(args?: Subset<T, Campaign$awayFixturesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    competition<T extends CompetitionDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CompetitionDefaultArgs<ExtArgs>>): Prisma__CompetitionClient<$Result.GetResult<Prisma.$CompetitionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    season<T extends SeasonDefaultArgs<ExtArgs> = {}>(args?: Subset<T, SeasonDefaultArgs<ExtArgs>>): Prisma__SeasonClient<$Result.GetResult<Prisma.$SeasonPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Campaign model
+   */
+  interface CampaignFieldRefs {
+    readonly id: FieldRef<"Campaign", 'String'>
+    readonly competitionId: FieldRef<"Campaign", 'String'>
+    readonly seasonId: FieldRef<"Campaign", 'String'>
+    readonly createdAt: FieldRef<"Campaign", 'DateTime'>
+    readonly updatedAt: FieldRef<"Campaign", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Campaign findUnique
+   */
+  export type CampaignFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campaign
+     */
+    select?: CampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campaign
+     */
+    omit?: CampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignInclude<ExtArgs> | null
+    /**
+     * Filter, which Campaign to fetch.
+     */
+    where: CampaignWhereUniqueInput
+  }
+
+  /**
+   * Campaign findUniqueOrThrow
+   */
+  export type CampaignFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campaign
+     */
+    select?: CampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campaign
+     */
+    omit?: CampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignInclude<ExtArgs> | null
+    /**
+     * Filter, which Campaign to fetch.
+     */
+    where: CampaignWhereUniqueInput
+  }
+
+  /**
+   * Campaign findFirst
+   */
+  export type CampaignFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campaign
+     */
+    select?: CampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campaign
+     */
+    omit?: CampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignInclude<ExtArgs> | null
+    /**
+     * Filter, which Campaign to fetch.
+     */
+    where?: CampaignWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Campaigns to fetch.
+     */
+    orderBy?: CampaignOrderByWithRelationInput | CampaignOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Campaigns.
+     */
+    cursor?: CampaignWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Campaigns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Campaigns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Campaigns.
+     */
+    distinct?: CampaignScalarFieldEnum | CampaignScalarFieldEnum[]
+  }
+
+  /**
+   * Campaign findFirstOrThrow
+   */
+  export type CampaignFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campaign
+     */
+    select?: CampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campaign
+     */
+    omit?: CampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignInclude<ExtArgs> | null
+    /**
+     * Filter, which Campaign to fetch.
+     */
+    where?: CampaignWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Campaigns to fetch.
+     */
+    orderBy?: CampaignOrderByWithRelationInput | CampaignOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Campaigns.
+     */
+    cursor?: CampaignWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Campaigns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Campaigns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Campaigns.
+     */
+    distinct?: CampaignScalarFieldEnum | CampaignScalarFieldEnum[]
+  }
+
+  /**
+   * Campaign findMany
+   */
+  export type CampaignFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campaign
+     */
+    select?: CampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campaign
+     */
+    omit?: CampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignInclude<ExtArgs> | null
+    /**
+     * Filter, which Campaigns to fetch.
+     */
+    where?: CampaignWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Campaigns to fetch.
+     */
+    orderBy?: CampaignOrderByWithRelationInput | CampaignOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Campaigns.
+     */
+    cursor?: CampaignWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Campaigns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Campaigns.
+     */
+    skip?: number
+    distinct?: CampaignScalarFieldEnum | CampaignScalarFieldEnum[]
+  }
+
+  /**
+   * Campaign create
+   */
+  export type CampaignCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campaign
+     */
+    select?: CampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campaign
+     */
+    omit?: CampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Campaign.
+     */
+    data: XOR<CampaignCreateInput, CampaignUncheckedCreateInput>
+  }
+
+  /**
+   * Campaign createMany
+   */
+  export type CampaignCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Campaigns.
+     */
+    data: CampaignCreateManyInput | CampaignCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Campaign createManyAndReturn
+   */
+  export type CampaignCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campaign
+     */
+    select?: CampaignSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campaign
+     */
+    omit?: CampaignOmit<ExtArgs> | null
+    /**
+     * The data used to create many Campaigns.
+     */
+    data: CampaignCreateManyInput | CampaignCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Campaign update
+   */
+  export type CampaignUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campaign
+     */
+    select?: CampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campaign
+     */
+    omit?: CampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Campaign.
+     */
+    data: XOR<CampaignUpdateInput, CampaignUncheckedUpdateInput>
+    /**
+     * Choose, which Campaign to update.
+     */
+    where: CampaignWhereUniqueInput
+  }
+
+  /**
+   * Campaign updateMany
+   */
+  export type CampaignUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Campaigns.
+     */
+    data: XOR<CampaignUpdateManyMutationInput, CampaignUncheckedUpdateManyInput>
+    /**
+     * Filter which Campaigns to update
+     */
+    where?: CampaignWhereInput
+    /**
+     * Limit how many Campaigns to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Campaign updateManyAndReturn
+   */
+  export type CampaignUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campaign
+     */
+    select?: CampaignSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campaign
+     */
+    omit?: CampaignOmit<ExtArgs> | null
+    /**
+     * The data used to update Campaigns.
+     */
+    data: XOR<CampaignUpdateManyMutationInput, CampaignUncheckedUpdateManyInput>
+    /**
+     * Filter which Campaigns to update
+     */
+    where?: CampaignWhereInput
+    /**
+     * Limit how many Campaigns to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Campaign upsert
+   */
+  export type CampaignUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campaign
+     */
+    select?: CampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campaign
+     */
+    omit?: CampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Campaign to update in case it exists.
+     */
+    where: CampaignWhereUniqueInput
+    /**
+     * In case the Campaign found by the `where` argument doesn't exist, create a new Campaign with this data.
+     */
+    create: XOR<CampaignCreateInput, CampaignUncheckedCreateInput>
+    /**
+     * In case the Campaign was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<CampaignUpdateInput, CampaignUncheckedUpdateInput>
+  }
+
+  /**
+   * Campaign delete
+   */
+  export type CampaignDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campaign
+     */
+    select?: CampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campaign
+     */
+    omit?: CampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignInclude<ExtArgs> | null
+    /**
+     * Filter which Campaign to delete.
+     */
+    where: CampaignWhereUniqueInput
+  }
+
+  /**
+   * Campaign deleteMany
+   */
+  export type CampaignDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Campaigns to delete
+     */
+    where?: CampaignWhereInput
+    /**
+     * Limit how many Campaigns to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Campaign.teamCampaign
+   */
+  export type Campaign$teamCampaignArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaign
+     */
+    select?: TeamCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaign
+     */
+    omit?: TeamCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamCampaignInclude<ExtArgs> | null
+    where?: TeamCampaignWhereInput
+  }
+
+  /**
+   * Campaign.leagueCampaign
+   */
+  export type Campaign$leagueCampaignArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueCampaign
+     */
+    select?: LeagueCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueCampaign
+     */
+    omit?: LeagueCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueCampaignInclude<ExtArgs> | null
+    where?: LeagueCampaignWhereInput
+  }
+
+  /**
+   * Campaign.players
+   */
+  export type Campaign$playersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerInclude<ExtArgs> | null
+    where?: CampaignPlayerWhereInput
+    orderBy?: CampaignPlayerOrderByWithRelationInput | CampaignPlayerOrderByWithRelationInput[]
+    cursor?: CampaignPlayerWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CampaignPlayerScalarFieldEnum | CampaignPlayerScalarFieldEnum[]
+  }
+
+  /**
+   * Campaign.homeFixtures
+   */
+  export type Campaign$homeFixturesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Fixture
+     */
+    select?: FixtureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Fixture
+     */
+    omit?: FixtureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FixtureInclude<ExtArgs> | null
+    where?: FixtureWhereInput
+    orderBy?: FixtureOrderByWithRelationInput | FixtureOrderByWithRelationInput[]
+    cursor?: FixtureWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FixtureScalarFieldEnum | FixtureScalarFieldEnum[]
+  }
+
+  /**
+   * Campaign.awayFixtures
+   */
+  export type Campaign$awayFixturesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Fixture
+     */
+    select?: FixtureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Fixture
+     */
+    omit?: FixtureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FixtureInclude<ExtArgs> | null
+    where?: FixtureWhereInput
+    orderBy?: FixtureOrderByWithRelationInput | FixtureOrderByWithRelationInput[]
+    cursor?: FixtureWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FixtureScalarFieldEnum | FixtureScalarFieldEnum[]
+  }
+
+  /**
+   * Campaign without action
+   */
+  export type CampaignDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campaign
+     */
+    select?: CampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campaign
+     */
+    omit?: CampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model LeagueCampaign
+   */
+
+  export type AggregateLeagueCampaign = {
+    _count: LeagueCampaignCountAggregateOutputType | null
+    _avg: LeagueCampaignAvgAggregateOutputType | null
+    _sum: LeagueCampaignSumAggregateOutputType | null
+    _min: LeagueCampaignMinAggregateOutputType | null
+    _max: LeagueCampaignMaxAggregateOutputType | null
+  }
+
+  export type LeagueCampaignAvgAggregateOutputType = {
+    played: number | null
+    points: number | null
+    pointsScoredFor: number | null
+    pointsScoredAgainst: number | null
+    framesPlayed: number | null
+  }
+
+  export type LeagueCampaignSumAggregateOutputType = {
+    played: number | null
+    points: number | null
+    pointsScoredFor: number | null
+    pointsScoredAgainst: number | null
+    framesPlayed: number | null
+  }
+
+  export type LeagueCampaignMinAggregateOutputType = {
+    campaignId: string | null
+    played: number | null
+    points: number | null
+    pointsScoredFor: number | null
+    pointsScoredAgainst: number | null
+    framesPlayed: number | null
+  }
+
+  export type LeagueCampaignMaxAggregateOutputType = {
+    campaignId: string | null
+    played: number | null
+    points: number | null
+    pointsScoredFor: number | null
+    pointsScoredAgainst: number | null
+    framesPlayed: number | null
+  }
+
+  export type LeagueCampaignCountAggregateOutputType = {
+    campaignId: number
+    played: number
+    points: number
+    pointsScoredFor: number
+    pointsScoredAgainst: number
+    framesPlayed: number
+    _all: number
+  }
+
+
+  export type LeagueCampaignAvgAggregateInputType = {
+    played?: true
+    points?: true
+    pointsScoredFor?: true
+    pointsScoredAgainst?: true
+    framesPlayed?: true
+  }
+
+  export type LeagueCampaignSumAggregateInputType = {
+    played?: true
+    points?: true
+    pointsScoredFor?: true
+    pointsScoredAgainst?: true
+    framesPlayed?: true
+  }
+
+  export type LeagueCampaignMinAggregateInputType = {
+    campaignId?: true
+    played?: true
+    points?: true
+    pointsScoredFor?: true
+    pointsScoredAgainst?: true
+    framesPlayed?: true
+  }
+
+  export type LeagueCampaignMaxAggregateInputType = {
+    campaignId?: true
+    played?: true
+    points?: true
+    pointsScoredFor?: true
+    pointsScoredAgainst?: true
+    framesPlayed?: true
+  }
+
+  export type LeagueCampaignCountAggregateInputType = {
+    campaignId?: true
+    played?: true
+    points?: true
+    pointsScoredFor?: true
+    pointsScoredAgainst?: true
+    framesPlayed?: true
+    _all?: true
+  }
+
+  export type LeagueCampaignAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which LeagueCampaign to aggregate.
+     */
+    where?: LeagueCampaignWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LeagueCampaigns to fetch.
+     */
+    orderBy?: LeagueCampaignOrderByWithRelationInput | LeagueCampaignOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: LeagueCampaignWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LeagueCampaigns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LeagueCampaigns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned LeagueCampaigns
+    **/
+    _count?: true | LeagueCampaignCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: LeagueCampaignAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: LeagueCampaignSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: LeagueCampaignMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: LeagueCampaignMaxAggregateInputType
+  }
+
+  export type GetLeagueCampaignAggregateType<T extends LeagueCampaignAggregateArgs> = {
+        [P in keyof T & keyof AggregateLeagueCampaign]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateLeagueCampaign[P]>
+      : GetScalarType<T[P], AggregateLeagueCampaign[P]>
+  }
+
+
+
+
+  export type LeagueCampaignGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: LeagueCampaignWhereInput
+    orderBy?: LeagueCampaignOrderByWithAggregationInput | LeagueCampaignOrderByWithAggregationInput[]
+    by: LeagueCampaignScalarFieldEnum[] | LeagueCampaignScalarFieldEnum
+    having?: LeagueCampaignScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: LeagueCampaignCountAggregateInputType | true
+    _avg?: LeagueCampaignAvgAggregateInputType
+    _sum?: LeagueCampaignSumAggregateInputType
+    _min?: LeagueCampaignMinAggregateInputType
+    _max?: LeagueCampaignMaxAggregateInputType
+  }
+
+  export type LeagueCampaignGroupByOutputType = {
+    campaignId: string
+    played: number
+    points: number
+    pointsScoredFor: number
+    pointsScoredAgainst: number
+    framesPlayed: number
+    _count: LeagueCampaignCountAggregateOutputType | null
+    _avg: LeagueCampaignAvgAggregateOutputType | null
+    _sum: LeagueCampaignSumAggregateOutputType | null
+    _min: LeagueCampaignMinAggregateOutputType | null
+    _max: LeagueCampaignMaxAggregateOutputType | null
+  }
+
+  type GetLeagueCampaignGroupByPayload<T extends LeagueCampaignGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<LeagueCampaignGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof LeagueCampaignGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], LeagueCampaignGroupByOutputType[P]>
+            : GetScalarType<T[P], LeagueCampaignGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type LeagueCampaignSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    campaignId?: boolean
+    played?: boolean
+    points?: boolean
+    pointsScoredFor?: boolean
+    pointsScoredAgainst?: boolean
+    framesPlayed?: boolean
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["leagueCampaign"]>
+
+  export type LeagueCampaignSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    campaignId?: boolean
+    played?: boolean
+    points?: boolean
+    pointsScoredFor?: boolean
+    pointsScoredAgainst?: boolean
+    framesPlayed?: boolean
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["leagueCampaign"]>
+
+  export type LeagueCampaignSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    campaignId?: boolean
+    played?: boolean
+    points?: boolean
+    pointsScoredFor?: boolean
+    pointsScoredAgainst?: boolean
+    framesPlayed?: boolean
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["leagueCampaign"]>
+
+  export type LeagueCampaignSelectScalar = {
+    campaignId?: boolean
+    played?: boolean
+    points?: boolean
+    pointsScoredFor?: boolean
+    pointsScoredAgainst?: boolean
+    framesPlayed?: boolean
+  }
+
+  export type LeagueCampaignOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"campaignId" | "played" | "points" | "pointsScoredFor" | "pointsScoredAgainst" | "framesPlayed", ExtArgs["result"]["leagueCampaign"]>
+  export type LeagueCampaignInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }
+  export type LeagueCampaignIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }
+  export type LeagueCampaignIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }
+
+  export type $LeagueCampaignPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "LeagueCampaign"
+    objects: {
+      campaign: Prisma.$CampaignPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      campaignId: string
+      played: number
+      points: number
+      pointsScoredFor: number
+      pointsScoredAgainst: number
+      framesPlayed: number
+    }, ExtArgs["result"]["leagueCampaign"]>
+    composites: {}
+  }
+
+  type LeagueCampaignGetPayload<S extends boolean | null | undefined | LeagueCampaignDefaultArgs> = $Result.GetResult<Prisma.$LeagueCampaignPayload, S>
+
+  type LeagueCampaignCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<LeagueCampaignFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: LeagueCampaignCountAggregateInputType | true
+    }
+
+  export interface LeagueCampaignDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['LeagueCampaign'], meta: { name: 'LeagueCampaign' } }
+    /**
+     * Find zero or one LeagueCampaign that matches the filter.
+     * @param {LeagueCampaignFindUniqueArgs} args - Arguments to find a LeagueCampaign
+     * @example
+     * // Get one LeagueCampaign
+     * const leagueCampaign = await prisma.leagueCampaign.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends LeagueCampaignFindUniqueArgs>(args: SelectSubset<T, LeagueCampaignFindUniqueArgs<ExtArgs>>): Prisma__LeagueCampaignClient<$Result.GetResult<Prisma.$LeagueCampaignPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one LeagueCampaign that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {LeagueCampaignFindUniqueOrThrowArgs} args - Arguments to find a LeagueCampaign
+     * @example
+     * // Get one LeagueCampaign
+     * const leagueCampaign = await prisma.leagueCampaign.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends LeagueCampaignFindUniqueOrThrowArgs>(args: SelectSubset<T, LeagueCampaignFindUniqueOrThrowArgs<ExtArgs>>): Prisma__LeagueCampaignClient<$Result.GetResult<Prisma.$LeagueCampaignPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first LeagueCampaign that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LeagueCampaignFindFirstArgs} args - Arguments to find a LeagueCampaign
+     * @example
+     * // Get one LeagueCampaign
+     * const leagueCampaign = await prisma.leagueCampaign.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends LeagueCampaignFindFirstArgs>(args?: SelectSubset<T, LeagueCampaignFindFirstArgs<ExtArgs>>): Prisma__LeagueCampaignClient<$Result.GetResult<Prisma.$LeagueCampaignPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first LeagueCampaign that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LeagueCampaignFindFirstOrThrowArgs} args - Arguments to find a LeagueCampaign
+     * @example
+     * // Get one LeagueCampaign
+     * const leagueCampaign = await prisma.leagueCampaign.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends LeagueCampaignFindFirstOrThrowArgs>(args?: SelectSubset<T, LeagueCampaignFindFirstOrThrowArgs<ExtArgs>>): Prisma__LeagueCampaignClient<$Result.GetResult<Prisma.$LeagueCampaignPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more LeagueCampaigns that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LeagueCampaignFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all LeagueCampaigns
+     * const leagueCampaigns = await prisma.leagueCampaign.findMany()
+     * 
+     * // Get first 10 LeagueCampaigns
+     * const leagueCampaigns = await prisma.leagueCampaign.findMany({ take: 10 })
+     * 
+     * // Only select the `campaignId`
+     * const leagueCampaignWithCampaignIdOnly = await prisma.leagueCampaign.findMany({ select: { campaignId: true } })
+     * 
+     */
+    findMany<T extends LeagueCampaignFindManyArgs>(args?: SelectSubset<T, LeagueCampaignFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LeagueCampaignPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a LeagueCampaign.
+     * @param {LeagueCampaignCreateArgs} args - Arguments to create a LeagueCampaign.
+     * @example
+     * // Create one LeagueCampaign
+     * const LeagueCampaign = await prisma.leagueCampaign.create({
+     *   data: {
+     *     // ... data to create a LeagueCampaign
+     *   }
+     * })
+     * 
+     */
+    create<T extends LeagueCampaignCreateArgs>(args: SelectSubset<T, LeagueCampaignCreateArgs<ExtArgs>>): Prisma__LeagueCampaignClient<$Result.GetResult<Prisma.$LeagueCampaignPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many LeagueCampaigns.
+     * @param {LeagueCampaignCreateManyArgs} args - Arguments to create many LeagueCampaigns.
+     * @example
+     * // Create many LeagueCampaigns
+     * const leagueCampaign = await prisma.leagueCampaign.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends LeagueCampaignCreateManyArgs>(args?: SelectSubset<T, LeagueCampaignCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many LeagueCampaigns and returns the data saved in the database.
+     * @param {LeagueCampaignCreateManyAndReturnArgs} args - Arguments to create many LeagueCampaigns.
+     * @example
+     * // Create many LeagueCampaigns
+     * const leagueCampaign = await prisma.leagueCampaign.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many LeagueCampaigns and only return the `campaignId`
+     * const leagueCampaignWithCampaignIdOnly = await prisma.leagueCampaign.createManyAndReturn({
+     *   select: { campaignId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends LeagueCampaignCreateManyAndReturnArgs>(args?: SelectSubset<T, LeagueCampaignCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LeagueCampaignPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a LeagueCampaign.
+     * @param {LeagueCampaignDeleteArgs} args - Arguments to delete one LeagueCampaign.
+     * @example
+     * // Delete one LeagueCampaign
+     * const LeagueCampaign = await prisma.leagueCampaign.delete({
+     *   where: {
+     *     // ... filter to delete one LeagueCampaign
+     *   }
+     * })
+     * 
+     */
+    delete<T extends LeagueCampaignDeleteArgs>(args: SelectSubset<T, LeagueCampaignDeleteArgs<ExtArgs>>): Prisma__LeagueCampaignClient<$Result.GetResult<Prisma.$LeagueCampaignPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one LeagueCampaign.
+     * @param {LeagueCampaignUpdateArgs} args - Arguments to update one LeagueCampaign.
+     * @example
+     * // Update one LeagueCampaign
+     * const leagueCampaign = await prisma.leagueCampaign.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends LeagueCampaignUpdateArgs>(args: SelectSubset<T, LeagueCampaignUpdateArgs<ExtArgs>>): Prisma__LeagueCampaignClient<$Result.GetResult<Prisma.$LeagueCampaignPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more LeagueCampaigns.
+     * @param {LeagueCampaignDeleteManyArgs} args - Arguments to filter LeagueCampaigns to delete.
+     * @example
+     * // Delete a few LeagueCampaigns
+     * const { count } = await prisma.leagueCampaign.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends LeagueCampaignDeleteManyArgs>(args?: SelectSubset<T, LeagueCampaignDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more LeagueCampaigns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LeagueCampaignUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many LeagueCampaigns
+     * const leagueCampaign = await prisma.leagueCampaign.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends LeagueCampaignUpdateManyArgs>(args: SelectSubset<T, LeagueCampaignUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more LeagueCampaigns and returns the data updated in the database.
+     * @param {LeagueCampaignUpdateManyAndReturnArgs} args - Arguments to update many LeagueCampaigns.
+     * @example
+     * // Update many LeagueCampaigns
+     * const leagueCampaign = await prisma.leagueCampaign.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more LeagueCampaigns and only return the `campaignId`
+     * const leagueCampaignWithCampaignIdOnly = await prisma.leagueCampaign.updateManyAndReturn({
+     *   select: { campaignId: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends LeagueCampaignUpdateManyAndReturnArgs>(args: SelectSubset<T, LeagueCampaignUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LeagueCampaignPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one LeagueCampaign.
+     * @param {LeagueCampaignUpsertArgs} args - Arguments to update or create a LeagueCampaign.
+     * @example
+     * // Update or create a LeagueCampaign
+     * const leagueCampaign = await prisma.leagueCampaign.upsert({
+     *   create: {
+     *     // ... data to create a LeagueCampaign
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the LeagueCampaign we want to update
+     *   }
+     * })
+     */
+    upsert<T extends LeagueCampaignUpsertArgs>(args: SelectSubset<T, LeagueCampaignUpsertArgs<ExtArgs>>): Prisma__LeagueCampaignClient<$Result.GetResult<Prisma.$LeagueCampaignPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of LeagueCampaigns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LeagueCampaignCountArgs} args - Arguments to filter LeagueCampaigns to count.
+     * @example
+     * // Count the number of LeagueCampaigns
+     * const count = await prisma.leagueCampaign.count({
+     *   where: {
+     *     // ... the filter for the LeagueCampaigns we want to count
+     *   }
+     * })
+    **/
+    count<T extends LeagueCampaignCountArgs>(
+      args?: Subset<T, LeagueCampaignCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], LeagueCampaignCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a LeagueCampaign.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LeagueCampaignAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends LeagueCampaignAggregateArgs>(args: Subset<T, LeagueCampaignAggregateArgs>): Prisma.PrismaPromise<GetLeagueCampaignAggregateType<T>>
+
+    /**
+     * Group by LeagueCampaign.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LeagueCampaignGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends LeagueCampaignGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: LeagueCampaignGroupByArgs['orderBy'] }
+        : { orderBy?: LeagueCampaignGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, LeagueCampaignGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLeagueCampaignGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the LeagueCampaign model
+   */
+  readonly fields: LeagueCampaignFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for LeagueCampaign.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__LeagueCampaignClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    campaign<T extends CampaignDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CampaignDefaultArgs<ExtArgs>>): Prisma__CampaignClient<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the LeagueCampaign model
+   */
+  interface LeagueCampaignFieldRefs {
+    readonly campaignId: FieldRef<"LeagueCampaign", 'String'>
+    readonly played: FieldRef<"LeagueCampaign", 'Int'>
+    readonly points: FieldRef<"LeagueCampaign", 'Float'>
+    readonly pointsScoredFor: FieldRef<"LeagueCampaign", 'Int'>
+    readonly pointsScoredAgainst: FieldRef<"LeagueCampaign", 'Int'>
+    readonly framesPlayed: FieldRef<"LeagueCampaign", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * LeagueCampaign findUnique
+   */
+  export type LeagueCampaignFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueCampaign
+     */
+    select?: LeagueCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueCampaign
+     */
+    omit?: LeagueCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueCampaignInclude<ExtArgs> | null
+    /**
+     * Filter, which LeagueCampaign to fetch.
+     */
+    where: LeagueCampaignWhereUniqueInput
+  }
+
+  /**
+   * LeagueCampaign findUniqueOrThrow
+   */
+  export type LeagueCampaignFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueCampaign
+     */
+    select?: LeagueCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueCampaign
+     */
+    omit?: LeagueCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueCampaignInclude<ExtArgs> | null
+    /**
+     * Filter, which LeagueCampaign to fetch.
+     */
+    where: LeagueCampaignWhereUniqueInput
+  }
+
+  /**
+   * LeagueCampaign findFirst
+   */
+  export type LeagueCampaignFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueCampaign
+     */
+    select?: LeagueCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueCampaign
+     */
+    omit?: LeagueCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueCampaignInclude<ExtArgs> | null
+    /**
+     * Filter, which LeagueCampaign to fetch.
+     */
+    where?: LeagueCampaignWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LeagueCampaigns to fetch.
+     */
+    orderBy?: LeagueCampaignOrderByWithRelationInput | LeagueCampaignOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for LeagueCampaigns.
+     */
+    cursor?: LeagueCampaignWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LeagueCampaigns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LeagueCampaigns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of LeagueCampaigns.
+     */
+    distinct?: LeagueCampaignScalarFieldEnum | LeagueCampaignScalarFieldEnum[]
+  }
+
+  /**
+   * LeagueCampaign findFirstOrThrow
+   */
+  export type LeagueCampaignFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueCampaign
+     */
+    select?: LeagueCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueCampaign
+     */
+    omit?: LeagueCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueCampaignInclude<ExtArgs> | null
+    /**
+     * Filter, which LeagueCampaign to fetch.
+     */
+    where?: LeagueCampaignWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LeagueCampaigns to fetch.
+     */
+    orderBy?: LeagueCampaignOrderByWithRelationInput | LeagueCampaignOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for LeagueCampaigns.
+     */
+    cursor?: LeagueCampaignWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LeagueCampaigns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LeagueCampaigns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of LeagueCampaigns.
+     */
+    distinct?: LeagueCampaignScalarFieldEnum | LeagueCampaignScalarFieldEnum[]
+  }
+
+  /**
+   * LeagueCampaign findMany
+   */
+  export type LeagueCampaignFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueCampaign
+     */
+    select?: LeagueCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueCampaign
+     */
+    omit?: LeagueCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueCampaignInclude<ExtArgs> | null
+    /**
+     * Filter, which LeagueCampaigns to fetch.
+     */
+    where?: LeagueCampaignWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LeagueCampaigns to fetch.
+     */
+    orderBy?: LeagueCampaignOrderByWithRelationInput | LeagueCampaignOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing LeagueCampaigns.
+     */
+    cursor?: LeagueCampaignWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LeagueCampaigns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LeagueCampaigns.
+     */
+    skip?: number
+    distinct?: LeagueCampaignScalarFieldEnum | LeagueCampaignScalarFieldEnum[]
+  }
+
+  /**
+   * LeagueCampaign create
+   */
+  export type LeagueCampaignCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueCampaign
+     */
+    select?: LeagueCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueCampaign
+     */
+    omit?: LeagueCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueCampaignInclude<ExtArgs> | null
+    /**
+     * The data needed to create a LeagueCampaign.
+     */
+    data: XOR<LeagueCampaignCreateInput, LeagueCampaignUncheckedCreateInput>
+  }
+
+  /**
+   * LeagueCampaign createMany
+   */
+  export type LeagueCampaignCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many LeagueCampaigns.
+     */
+    data: LeagueCampaignCreateManyInput | LeagueCampaignCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * LeagueCampaign createManyAndReturn
+   */
+  export type LeagueCampaignCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueCampaign
+     */
+    select?: LeagueCampaignSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueCampaign
+     */
+    omit?: LeagueCampaignOmit<ExtArgs> | null
+    /**
+     * The data used to create many LeagueCampaigns.
+     */
+    data: LeagueCampaignCreateManyInput | LeagueCampaignCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueCampaignIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * LeagueCampaign update
+   */
+  export type LeagueCampaignUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueCampaign
+     */
+    select?: LeagueCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueCampaign
+     */
+    omit?: LeagueCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueCampaignInclude<ExtArgs> | null
+    /**
+     * The data needed to update a LeagueCampaign.
+     */
+    data: XOR<LeagueCampaignUpdateInput, LeagueCampaignUncheckedUpdateInput>
+    /**
+     * Choose, which LeagueCampaign to update.
+     */
+    where: LeagueCampaignWhereUniqueInput
+  }
+
+  /**
+   * LeagueCampaign updateMany
+   */
+  export type LeagueCampaignUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update LeagueCampaigns.
+     */
+    data: XOR<LeagueCampaignUpdateManyMutationInput, LeagueCampaignUncheckedUpdateManyInput>
+    /**
+     * Filter which LeagueCampaigns to update
+     */
+    where?: LeagueCampaignWhereInput
+    /**
+     * Limit how many LeagueCampaigns to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * LeagueCampaign updateManyAndReturn
+   */
+  export type LeagueCampaignUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueCampaign
+     */
+    select?: LeagueCampaignSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueCampaign
+     */
+    omit?: LeagueCampaignOmit<ExtArgs> | null
+    /**
+     * The data used to update LeagueCampaigns.
+     */
+    data: XOR<LeagueCampaignUpdateManyMutationInput, LeagueCampaignUncheckedUpdateManyInput>
+    /**
+     * Filter which LeagueCampaigns to update
+     */
+    where?: LeagueCampaignWhereInput
+    /**
+     * Limit how many LeagueCampaigns to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueCampaignIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * LeagueCampaign upsert
+   */
+  export type LeagueCampaignUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueCampaign
+     */
+    select?: LeagueCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueCampaign
+     */
+    omit?: LeagueCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueCampaignInclude<ExtArgs> | null
+    /**
+     * The filter to search for the LeagueCampaign to update in case it exists.
+     */
+    where: LeagueCampaignWhereUniqueInput
+    /**
+     * In case the LeagueCampaign found by the `where` argument doesn't exist, create a new LeagueCampaign with this data.
+     */
+    create: XOR<LeagueCampaignCreateInput, LeagueCampaignUncheckedCreateInput>
+    /**
+     * In case the LeagueCampaign was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<LeagueCampaignUpdateInput, LeagueCampaignUncheckedUpdateInput>
+  }
+
+  /**
+   * LeagueCampaign delete
+   */
+  export type LeagueCampaignDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueCampaign
+     */
+    select?: LeagueCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueCampaign
+     */
+    omit?: LeagueCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueCampaignInclude<ExtArgs> | null
+    /**
+     * Filter which LeagueCampaign to delete.
+     */
+    where: LeagueCampaignWhereUniqueInput
+  }
+
+  /**
+   * LeagueCampaign deleteMany
+   */
+  export type LeagueCampaignDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which LeagueCampaigns to delete
+     */
+    where?: LeagueCampaignWhereInput
+    /**
+     * Limit how many LeagueCampaigns to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * LeagueCampaign without action
+   */
+  export type LeagueCampaignDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueCampaign
+     */
+    select?: LeagueCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueCampaign
+     */
+    omit?: LeagueCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueCampaignInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Team
+   */
+
+  export type AggregateTeam = {
+    _count: TeamCountAggregateOutputType | null
+    _min: TeamMinAggregateOutputType | null
+    _max: TeamMaxAggregateOutputType | null
+  }
+
+  export type TeamMinAggregateOutputType = {
+    id: string | null
+    name: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type TeamMaxAggregateOutputType = {
+    id: string | null
+    name: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type TeamCountAggregateOutputType = {
+    id: number
+    name: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type TeamMinAggregateInputType = {
+    id?: true
+    name?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type TeamMaxAggregateInputType = {
+    id?: true
+    name?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type TeamCountAggregateInputType = {
+    id?: true
+    name?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type TeamAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Team to aggregate.
+     */
+    where?: TeamWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Teams to fetch.
+     */
+    orderBy?: TeamOrderByWithRelationInput | TeamOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: TeamWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Teams from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Teams.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Teams
+    **/
+    _count?: true | TeamCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TeamMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TeamMaxAggregateInputType
+  }
+
+  export type GetTeamAggregateType<T extends TeamAggregateArgs> = {
+        [P in keyof T & keyof AggregateTeam]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTeam[P]>
+      : GetScalarType<T[P], AggregateTeam[P]>
+  }
+
+
+
+
+  export type TeamGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TeamWhereInput
+    orderBy?: TeamOrderByWithAggregationInput | TeamOrderByWithAggregationInput[]
+    by: TeamScalarFieldEnum[] | TeamScalarFieldEnum
+    having?: TeamScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TeamCountAggregateInputType | true
+    _min?: TeamMinAggregateInputType
+    _max?: TeamMaxAggregateInputType
+  }
+
+  export type TeamGroupByOutputType = {
+    id: string
+    name: string
+    createdAt: Date
+    updatedAt: Date | null
+    _count: TeamCountAggregateOutputType | null
+    _min: TeamMinAggregateOutputType | null
+    _max: TeamMaxAggregateOutputType | null
+  }
+
+  type GetTeamGroupByPayload<T extends TeamGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TeamGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TeamGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TeamGroupByOutputType[P]>
+            : GetScalarType<T[P], TeamGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type TeamSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    campaigns?: boolean | Team$campaignsArgs<ExtArgs>
+    leagueSnapshots?: boolean | Team$leagueSnapshotsArgs<ExtArgs>
+    _count?: boolean | TeamCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["team"]>
+
+  export type TeamSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["team"]>
+
+  export type TeamSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["team"]>
+
+  export type TeamSelectScalar = {
+    id?: boolean
+    name?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type TeamOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "createdAt" | "updatedAt", ExtArgs["result"]["team"]>
+  export type TeamInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    campaigns?: boolean | Team$campaignsArgs<ExtArgs>
+    leagueSnapshots?: boolean | Team$leagueSnapshotsArgs<ExtArgs>
+    _count?: boolean | TeamCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type TeamIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type TeamIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $TeamPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Team"
+    objects: {
+      campaigns: Prisma.$TeamCampaignPayload<ExtArgs>[]
+      leagueSnapshots: Prisma.$LeagueTableSnapshotPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      name: string
+      createdAt: Date
+      updatedAt: Date | null
+    }, ExtArgs["result"]["team"]>
+    composites: {}
+  }
+
+  type TeamGetPayload<S extends boolean | null | undefined | TeamDefaultArgs> = $Result.GetResult<Prisma.$TeamPayload, S>
+
+  type TeamCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<TeamFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: TeamCountAggregateInputType | true
+    }
+
+  export interface TeamDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Team'], meta: { name: 'Team' } }
+    /**
+     * Find zero or one Team that matches the filter.
+     * @param {TeamFindUniqueArgs} args - Arguments to find a Team
+     * @example
+     * // Get one Team
+     * const team = await prisma.team.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends TeamFindUniqueArgs>(args: SelectSubset<T, TeamFindUniqueArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Team that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {TeamFindUniqueOrThrowArgs} args - Arguments to find a Team
+     * @example
+     * // Get one Team
+     * const team = await prisma.team.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends TeamFindUniqueOrThrowArgs>(args: SelectSubset<T, TeamFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Team that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamFindFirstArgs} args - Arguments to find a Team
+     * @example
+     * // Get one Team
+     * const team = await prisma.team.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends TeamFindFirstArgs>(args?: SelectSubset<T, TeamFindFirstArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Team that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamFindFirstOrThrowArgs} args - Arguments to find a Team
+     * @example
+     * // Get one Team
+     * const team = await prisma.team.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends TeamFindFirstOrThrowArgs>(args?: SelectSubset<T, TeamFindFirstOrThrowArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Teams that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Teams
+     * const teams = await prisma.team.findMany()
+     * 
+     * // Get first 10 Teams
+     * const teams = await prisma.team.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const teamWithIdOnly = await prisma.team.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends TeamFindManyArgs>(args?: SelectSubset<T, TeamFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Team.
+     * @param {TeamCreateArgs} args - Arguments to create a Team.
+     * @example
+     * // Create one Team
+     * const Team = await prisma.team.create({
+     *   data: {
+     *     // ... data to create a Team
+     *   }
+     * })
+     * 
+     */
+    create<T extends TeamCreateArgs>(args: SelectSubset<T, TeamCreateArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Teams.
+     * @param {TeamCreateManyArgs} args - Arguments to create many Teams.
+     * @example
+     * // Create many Teams
+     * const team = await prisma.team.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends TeamCreateManyArgs>(args?: SelectSubset<T, TeamCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Teams and returns the data saved in the database.
+     * @param {TeamCreateManyAndReturnArgs} args - Arguments to create many Teams.
+     * @example
+     * // Create many Teams
+     * const team = await prisma.team.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Teams and only return the `id`
+     * const teamWithIdOnly = await prisma.team.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends TeamCreateManyAndReturnArgs>(args?: SelectSubset<T, TeamCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Team.
+     * @param {TeamDeleteArgs} args - Arguments to delete one Team.
+     * @example
+     * // Delete one Team
+     * const Team = await prisma.team.delete({
+     *   where: {
+     *     // ... filter to delete one Team
+     *   }
+     * })
+     * 
+     */
+    delete<T extends TeamDeleteArgs>(args: SelectSubset<T, TeamDeleteArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Team.
+     * @param {TeamUpdateArgs} args - Arguments to update one Team.
+     * @example
+     * // Update one Team
+     * const team = await prisma.team.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends TeamUpdateArgs>(args: SelectSubset<T, TeamUpdateArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Teams.
+     * @param {TeamDeleteManyArgs} args - Arguments to filter Teams to delete.
+     * @example
+     * // Delete a few Teams
+     * const { count } = await prisma.team.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends TeamDeleteManyArgs>(args?: SelectSubset<T, TeamDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Teams.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Teams
+     * const team = await prisma.team.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends TeamUpdateManyArgs>(args: SelectSubset<T, TeamUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Teams and returns the data updated in the database.
+     * @param {TeamUpdateManyAndReturnArgs} args - Arguments to update many Teams.
+     * @example
+     * // Update many Teams
+     * const team = await prisma.team.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Teams and only return the `id`
+     * const teamWithIdOnly = await prisma.team.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends TeamUpdateManyAndReturnArgs>(args: SelectSubset<T, TeamUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Team.
+     * @param {TeamUpsertArgs} args - Arguments to update or create a Team.
+     * @example
+     * // Update or create a Team
+     * const team = await prisma.team.upsert({
+     *   create: {
+     *     // ... data to create a Team
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Team we want to update
+     *   }
+     * })
+     */
+    upsert<T extends TeamUpsertArgs>(args: SelectSubset<T, TeamUpsertArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Teams.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamCountArgs} args - Arguments to filter Teams to count.
+     * @example
+     * // Count the number of Teams
+     * const count = await prisma.team.count({
+     *   where: {
+     *     // ... the filter for the Teams we want to count
+     *   }
+     * })
+    **/
+    count<T extends TeamCountArgs>(
+      args?: Subset<T, TeamCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TeamCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Team.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TeamAggregateArgs>(args: Subset<T, TeamAggregateArgs>): Prisma.PrismaPromise<GetTeamAggregateType<T>>
+
+    /**
+     * Group by Team.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends TeamGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: TeamGroupByArgs['orderBy'] }
+        : { orderBy?: TeamGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, TeamGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTeamGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Team model
+   */
+  readonly fields: TeamFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Team.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__TeamClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    campaigns<T extends Team$campaignsArgs<ExtArgs> = {}>(args?: Subset<T, Team$campaignsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamCampaignPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    leagueSnapshots<T extends Team$leagueSnapshotsArgs<ExtArgs> = {}>(args?: Subset<T, Team$leagueSnapshotsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LeagueTableSnapshotPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Team model
+   */
+  interface TeamFieldRefs {
+    readonly id: FieldRef<"Team", 'String'>
+    readonly name: FieldRef<"Team", 'String'>
+    readonly createdAt: FieldRef<"Team", 'DateTime'>
+    readonly updatedAt: FieldRef<"Team", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Team findUnique
+   */
+  export type TeamFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * Filter, which Team to fetch.
+     */
+    where: TeamWhereUniqueInput
+  }
+
+  /**
+   * Team findUniqueOrThrow
+   */
+  export type TeamFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * Filter, which Team to fetch.
+     */
+    where: TeamWhereUniqueInput
+  }
+
+  /**
+   * Team findFirst
+   */
+  export type TeamFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * Filter, which Team to fetch.
+     */
+    where?: TeamWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Teams to fetch.
+     */
+    orderBy?: TeamOrderByWithRelationInput | TeamOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Teams.
+     */
+    cursor?: TeamWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Teams from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Teams.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Teams.
+     */
+    distinct?: TeamScalarFieldEnum | TeamScalarFieldEnum[]
+  }
+
+  /**
+   * Team findFirstOrThrow
+   */
+  export type TeamFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * Filter, which Team to fetch.
+     */
+    where?: TeamWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Teams to fetch.
+     */
+    orderBy?: TeamOrderByWithRelationInput | TeamOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Teams.
+     */
+    cursor?: TeamWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Teams from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Teams.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Teams.
+     */
+    distinct?: TeamScalarFieldEnum | TeamScalarFieldEnum[]
+  }
+
+  /**
+   * Team findMany
+   */
+  export type TeamFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * Filter, which Teams to fetch.
+     */
+    where?: TeamWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Teams to fetch.
+     */
+    orderBy?: TeamOrderByWithRelationInput | TeamOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Teams.
+     */
+    cursor?: TeamWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Teams from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Teams.
+     */
+    skip?: number
+    distinct?: TeamScalarFieldEnum | TeamScalarFieldEnum[]
+  }
+
+  /**
+   * Team create
+   */
+  export type TeamCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Team.
+     */
+    data: XOR<TeamCreateInput, TeamUncheckedCreateInput>
+  }
+
+  /**
+   * Team createMany
+   */
+  export type TeamCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Teams.
+     */
+    data: TeamCreateManyInput | TeamCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Team createManyAndReturn
+   */
+  export type TeamCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * The data used to create many Teams.
+     */
+    data: TeamCreateManyInput | TeamCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Team update
+   */
+  export type TeamUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Team.
+     */
+    data: XOR<TeamUpdateInput, TeamUncheckedUpdateInput>
+    /**
+     * Choose, which Team to update.
+     */
+    where: TeamWhereUniqueInput
+  }
+
+  /**
+   * Team updateMany
+   */
+  export type TeamUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Teams.
+     */
+    data: XOR<TeamUpdateManyMutationInput, TeamUncheckedUpdateManyInput>
+    /**
+     * Filter which Teams to update
+     */
+    where?: TeamWhereInput
+    /**
+     * Limit how many Teams to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Team updateManyAndReturn
+   */
+  export type TeamUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * The data used to update Teams.
+     */
+    data: XOR<TeamUpdateManyMutationInput, TeamUncheckedUpdateManyInput>
+    /**
+     * Filter which Teams to update
+     */
+    where?: TeamWhereInput
+    /**
+     * Limit how many Teams to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Team upsert
+   */
+  export type TeamUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Team to update in case it exists.
+     */
+    where: TeamWhereUniqueInput
+    /**
+     * In case the Team found by the `where` argument doesn't exist, create a new Team with this data.
+     */
+    create: XOR<TeamCreateInput, TeamUncheckedCreateInput>
+    /**
+     * In case the Team was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<TeamUpdateInput, TeamUncheckedUpdateInput>
+  }
+
+  /**
+   * Team delete
+   */
+  export type TeamDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * Filter which Team to delete.
+     */
+    where: TeamWhereUniqueInput
+  }
+
+  /**
+   * Team deleteMany
+   */
+  export type TeamDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Teams to delete
+     */
+    where?: TeamWhereInput
+    /**
+     * Limit how many Teams to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Team.campaigns
+   */
+  export type Team$campaignsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaign
+     */
+    select?: TeamCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaign
+     */
+    omit?: TeamCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamCampaignInclude<ExtArgs> | null
+    where?: TeamCampaignWhereInput
+    orderBy?: TeamCampaignOrderByWithRelationInput | TeamCampaignOrderByWithRelationInput[]
+    cursor?: TeamCampaignWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: TeamCampaignScalarFieldEnum | TeamCampaignScalarFieldEnum[]
+  }
+
+  /**
+   * Team.leagueSnapshots
+   */
+  export type Team$leagueSnapshotsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueTableSnapshot
+     */
+    select?: LeagueTableSnapshotSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueTableSnapshot
+     */
+    omit?: LeagueTableSnapshotOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueTableSnapshotInclude<ExtArgs> | null
+    where?: LeagueTableSnapshotWhereInput
+    orderBy?: LeagueTableSnapshotOrderByWithRelationInput | LeagueTableSnapshotOrderByWithRelationInput[]
+    cursor?: LeagueTableSnapshotWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: LeagueTableSnapshotScalarFieldEnum | LeagueTableSnapshotScalarFieldEnum[]
+  }
+
+  /**
+   * Team without action
+   */
+  export type TeamDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model TeamCampaign
+   */
+
+  export type AggregateTeamCampaign = {
+    _count: TeamCampaignCountAggregateOutputType | null
+    _min: TeamCampaignMinAggregateOutputType | null
+    _max: TeamCampaignMaxAggregateOutputType | null
+  }
+
+  export type TeamCampaignMinAggregateOutputType = {
+    campaignId: string | null
+    teamId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type TeamCampaignMaxAggregateOutputType = {
+    campaignId: string | null
+    teamId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type TeamCampaignCountAggregateOutputType = {
+    campaignId: number
+    teamId: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type TeamCampaignMinAggregateInputType = {
+    campaignId?: true
+    teamId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type TeamCampaignMaxAggregateInputType = {
+    campaignId?: true
+    teamId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type TeamCampaignCountAggregateInputType = {
+    campaignId?: true
+    teamId?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type TeamCampaignAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TeamCampaign to aggregate.
+     */
+    where?: TeamCampaignWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TeamCampaigns to fetch.
+     */
+    orderBy?: TeamCampaignOrderByWithRelationInput | TeamCampaignOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: TeamCampaignWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TeamCampaigns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TeamCampaigns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned TeamCampaigns
+    **/
+    _count?: true | TeamCampaignCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TeamCampaignMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TeamCampaignMaxAggregateInputType
+  }
+
+  export type GetTeamCampaignAggregateType<T extends TeamCampaignAggregateArgs> = {
+        [P in keyof T & keyof AggregateTeamCampaign]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTeamCampaign[P]>
+      : GetScalarType<T[P], AggregateTeamCampaign[P]>
+  }
+
+
+
+
+  export type TeamCampaignGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TeamCampaignWhereInput
+    orderBy?: TeamCampaignOrderByWithAggregationInput | TeamCampaignOrderByWithAggregationInput[]
+    by: TeamCampaignScalarFieldEnum[] | TeamCampaignScalarFieldEnum
+    having?: TeamCampaignScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TeamCampaignCountAggregateInputType | true
+    _min?: TeamCampaignMinAggregateInputType
+    _max?: TeamCampaignMaxAggregateInputType
+  }
+
+  export type TeamCampaignGroupByOutputType = {
+    campaignId: string
+    teamId: string
+    createdAt: Date
+    updatedAt: Date | null
+    _count: TeamCampaignCountAggregateOutputType | null
+    _min: TeamCampaignMinAggregateOutputType | null
+    _max: TeamCampaignMaxAggregateOutputType | null
+  }
+
+  type GetTeamCampaignGroupByPayload<T extends TeamCampaignGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TeamCampaignGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TeamCampaignGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TeamCampaignGroupByOutputType[P]>
+            : GetScalarType<T[P], TeamCampaignGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type TeamCampaignSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    campaignId?: boolean
+    teamId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["teamCampaign"]>
+
+  export type TeamCampaignSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    campaignId?: boolean
+    teamId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["teamCampaign"]>
+
+  export type TeamCampaignSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    campaignId?: boolean
+    teamId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["teamCampaign"]>
+
+  export type TeamCampaignSelectScalar = {
+    campaignId?: boolean
+    teamId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type TeamCampaignOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"campaignId" | "teamId" | "createdAt" | "updatedAt", ExtArgs["result"]["teamCampaign"]>
+  export type TeamCampaignInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }
+  export type TeamCampaignIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }
+  export type TeamCampaignIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }
+
+  export type $TeamCampaignPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "TeamCampaign"
+    objects: {
+      team: Prisma.$TeamPayload<ExtArgs>
+      campaign: Prisma.$CampaignPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      campaignId: string
+      teamId: string
+      createdAt: Date
+      updatedAt: Date | null
+    }, ExtArgs["result"]["teamCampaign"]>
+    composites: {}
+  }
+
+  type TeamCampaignGetPayload<S extends boolean | null | undefined | TeamCampaignDefaultArgs> = $Result.GetResult<Prisma.$TeamCampaignPayload, S>
+
+  type TeamCampaignCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<TeamCampaignFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: TeamCampaignCountAggregateInputType | true
+    }
+
+  export interface TeamCampaignDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['TeamCampaign'], meta: { name: 'TeamCampaign' } }
+    /**
+     * Find zero or one TeamCampaign that matches the filter.
+     * @param {TeamCampaignFindUniqueArgs} args - Arguments to find a TeamCampaign
+     * @example
+     * // Get one TeamCampaign
+     * const teamCampaign = await prisma.teamCampaign.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends TeamCampaignFindUniqueArgs>(args: SelectSubset<T, TeamCampaignFindUniqueArgs<ExtArgs>>): Prisma__TeamCampaignClient<$Result.GetResult<Prisma.$TeamCampaignPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one TeamCampaign that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {TeamCampaignFindUniqueOrThrowArgs} args - Arguments to find a TeamCampaign
+     * @example
+     * // Get one TeamCampaign
+     * const teamCampaign = await prisma.teamCampaign.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends TeamCampaignFindUniqueOrThrowArgs>(args: SelectSubset<T, TeamCampaignFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TeamCampaignClient<$Result.GetResult<Prisma.$TeamCampaignPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first TeamCampaign that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamCampaignFindFirstArgs} args - Arguments to find a TeamCampaign
+     * @example
+     * // Get one TeamCampaign
+     * const teamCampaign = await prisma.teamCampaign.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends TeamCampaignFindFirstArgs>(args?: SelectSubset<T, TeamCampaignFindFirstArgs<ExtArgs>>): Prisma__TeamCampaignClient<$Result.GetResult<Prisma.$TeamCampaignPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first TeamCampaign that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamCampaignFindFirstOrThrowArgs} args - Arguments to find a TeamCampaign
+     * @example
+     * // Get one TeamCampaign
+     * const teamCampaign = await prisma.teamCampaign.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends TeamCampaignFindFirstOrThrowArgs>(args?: SelectSubset<T, TeamCampaignFindFirstOrThrowArgs<ExtArgs>>): Prisma__TeamCampaignClient<$Result.GetResult<Prisma.$TeamCampaignPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more TeamCampaigns that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamCampaignFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all TeamCampaigns
+     * const teamCampaigns = await prisma.teamCampaign.findMany()
+     * 
+     * // Get first 10 TeamCampaigns
+     * const teamCampaigns = await prisma.teamCampaign.findMany({ take: 10 })
+     * 
+     * // Only select the `campaignId`
+     * const teamCampaignWithCampaignIdOnly = await prisma.teamCampaign.findMany({ select: { campaignId: true } })
+     * 
+     */
+    findMany<T extends TeamCampaignFindManyArgs>(args?: SelectSubset<T, TeamCampaignFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamCampaignPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a TeamCampaign.
+     * @param {TeamCampaignCreateArgs} args - Arguments to create a TeamCampaign.
+     * @example
+     * // Create one TeamCampaign
+     * const TeamCampaign = await prisma.teamCampaign.create({
+     *   data: {
+     *     // ... data to create a TeamCampaign
+     *   }
+     * })
+     * 
+     */
+    create<T extends TeamCampaignCreateArgs>(args: SelectSubset<T, TeamCampaignCreateArgs<ExtArgs>>): Prisma__TeamCampaignClient<$Result.GetResult<Prisma.$TeamCampaignPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many TeamCampaigns.
+     * @param {TeamCampaignCreateManyArgs} args - Arguments to create many TeamCampaigns.
+     * @example
+     * // Create many TeamCampaigns
+     * const teamCampaign = await prisma.teamCampaign.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends TeamCampaignCreateManyArgs>(args?: SelectSubset<T, TeamCampaignCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many TeamCampaigns and returns the data saved in the database.
+     * @param {TeamCampaignCreateManyAndReturnArgs} args - Arguments to create many TeamCampaigns.
+     * @example
+     * // Create many TeamCampaigns
+     * const teamCampaign = await prisma.teamCampaign.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many TeamCampaigns and only return the `campaignId`
+     * const teamCampaignWithCampaignIdOnly = await prisma.teamCampaign.createManyAndReturn({
+     *   select: { campaignId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends TeamCampaignCreateManyAndReturnArgs>(args?: SelectSubset<T, TeamCampaignCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamCampaignPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a TeamCampaign.
+     * @param {TeamCampaignDeleteArgs} args - Arguments to delete one TeamCampaign.
+     * @example
+     * // Delete one TeamCampaign
+     * const TeamCampaign = await prisma.teamCampaign.delete({
+     *   where: {
+     *     // ... filter to delete one TeamCampaign
+     *   }
+     * })
+     * 
+     */
+    delete<T extends TeamCampaignDeleteArgs>(args: SelectSubset<T, TeamCampaignDeleteArgs<ExtArgs>>): Prisma__TeamCampaignClient<$Result.GetResult<Prisma.$TeamCampaignPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one TeamCampaign.
+     * @param {TeamCampaignUpdateArgs} args - Arguments to update one TeamCampaign.
+     * @example
+     * // Update one TeamCampaign
+     * const teamCampaign = await prisma.teamCampaign.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends TeamCampaignUpdateArgs>(args: SelectSubset<T, TeamCampaignUpdateArgs<ExtArgs>>): Prisma__TeamCampaignClient<$Result.GetResult<Prisma.$TeamCampaignPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more TeamCampaigns.
+     * @param {TeamCampaignDeleteManyArgs} args - Arguments to filter TeamCampaigns to delete.
+     * @example
+     * // Delete a few TeamCampaigns
+     * const { count } = await prisma.teamCampaign.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends TeamCampaignDeleteManyArgs>(args?: SelectSubset<T, TeamCampaignDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TeamCampaigns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamCampaignUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many TeamCampaigns
+     * const teamCampaign = await prisma.teamCampaign.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends TeamCampaignUpdateManyArgs>(args: SelectSubset<T, TeamCampaignUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TeamCampaigns and returns the data updated in the database.
+     * @param {TeamCampaignUpdateManyAndReturnArgs} args - Arguments to update many TeamCampaigns.
+     * @example
+     * // Update many TeamCampaigns
+     * const teamCampaign = await prisma.teamCampaign.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more TeamCampaigns and only return the `campaignId`
+     * const teamCampaignWithCampaignIdOnly = await prisma.teamCampaign.updateManyAndReturn({
+     *   select: { campaignId: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends TeamCampaignUpdateManyAndReturnArgs>(args: SelectSubset<T, TeamCampaignUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamCampaignPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one TeamCampaign.
+     * @param {TeamCampaignUpsertArgs} args - Arguments to update or create a TeamCampaign.
+     * @example
+     * // Update or create a TeamCampaign
+     * const teamCampaign = await prisma.teamCampaign.upsert({
+     *   create: {
+     *     // ... data to create a TeamCampaign
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the TeamCampaign we want to update
+     *   }
+     * })
+     */
+    upsert<T extends TeamCampaignUpsertArgs>(args: SelectSubset<T, TeamCampaignUpsertArgs<ExtArgs>>): Prisma__TeamCampaignClient<$Result.GetResult<Prisma.$TeamCampaignPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of TeamCampaigns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamCampaignCountArgs} args - Arguments to filter TeamCampaigns to count.
+     * @example
+     * // Count the number of TeamCampaigns
+     * const count = await prisma.teamCampaign.count({
+     *   where: {
+     *     // ... the filter for the TeamCampaigns we want to count
+     *   }
+     * })
+    **/
+    count<T extends TeamCampaignCountArgs>(
+      args?: Subset<T, TeamCampaignCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TeamCampaignCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a TeamCampaign.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamCampaignAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TeamCampaignAggregateArgs>(args: Subset<T, TeamCampaignAggregateArgs>): Prisma.PrismaPromise<GetTeamCampaignAggregateType<T>>
+
+    /**
+     * Group by TeamCampaign.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamCampaignGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends TeamCampaignGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: TeamCampaignGroupByArgs['orderBy'] }
+        : { orderBy?: TeamCampaignGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, TeamCampaignGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTeamCampaignGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the TeamCampaign model
+   */
+  readonly fields: TeamCampaignFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for TeamCampaign.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__TeamCampaignClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    team<T extends TeamDefaultArgs<ExtArgs> = {}>(args?: Subset<T, TeamDefaultArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    campaign<T extends CampaignDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CampaignDefaultArgs<ExtArgs>>): Prisma__CampaignClient<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the TeamCampaign model
+   */
+  interface TeamCampaignFieldRefs {
+    readonly campaignId: FieldRef<"TeamCampaign", 'String'>
+    readonly teamId: FieldRef<"TeamCampaign", 'String'>
+    readonly createdAt: FieldRef<"TeamCampaign", 'DateTime'>
+    readonly updatedAt: FieldRef<"TeamCampaign", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * TeamCampaign findUnique
+   */
+  export type TeamCampaignFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaign
+     */
+    select?: TeamCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaign
+     */
+    omit?: TeamCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamCampaignInclude<ExtArgs> | null
+    /**
+     * Filter, which TeamCampaign to fetch.
+     */
+    where: TeamCampaignWhereUniqueInput
+  }
+
+  /**
+   * TeamCampaign findUniqueOrThrow
+   */
+  export type TeamCampaignFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaign
+     */
+    select?: TeamCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaign
+     */
+    omit?: TeamCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamCampaignInclude<ExtArgs> | null
+    /**
+     * Filter, which TeamCampaign to fetch.
+     */
+    where: TeamCampaignWhereUniqueInput
+  }
+
+  /**
+   * TeamCampaign findFirst
+   */
+  export type TeamCampaignFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaign
+     */
+    select?: TeamCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaign
+     */
+    omit?: TeamCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamCampaignInclude<ExtArgs> | null
+    /**
+     * Filter, which TeamCampaign to fetch.
+     */
+    where?: TeamCampaignWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TeamCampaigns to fetch.
+     */
+    orderBy?: TeamCampaignOrderByWithRelationInput | TeamCampaignOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TeamCampaigns.
+     */
+    cursor?: TeamCampaignWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TeamCampaigns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TeamCampaigns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TeamCampaigns.
+     */
+    distinct?: TeamCampaignScalarFieldEnum | TeamCampaignScalarFieldEnum[]
+  }
+
+  /**
+   * TeamCampaign findFirstOrThrow
+   */
+  export type TeamCampaignFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaign
+     */
+    select?: TeamCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaign
+     */
+    omit?: TeamCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamCampaignInclude<ExtArgs> | null
+    /**
+     * Filter, which TeamCampaign to fetch.
+     */
+    where?: TeamCampaignWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TeamCampaigns to fetch.
+     */
+    orderBy?: TeamCampaignOrderByWithRelationInput | TeamCampaignOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TeamCampaigns.
+     */
+    cursor?: TeamCampaignWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TeamCampaigns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TeamCampaigns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TeamCampaigns.
+     */
+    distinct?: TeamCampaignScalarFieldEnum | TeamCampaignScalarFieldEnum[]
+  }
+
+  /**
+   * TeamCampaign findMany
+   */
+  export type TeamCampaignFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaign
+     */
+    select?: TeamCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaign
+     */
+    omit?: TeamCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamCampaignInclude<ExtArgs> | null
+    /**
+     * Filter, which TeamCampaigns to fetch.
+     */
+    where?: TeamCampaignWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TeamCampaigns to fetch.
+     */
+    orderBy?: TeamCampaignOrderByWithRelationInput | TeamCampaignOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing TeamCampaigns.
+     */
+    cursor?: TeamCampaignWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TeamCampaigns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TeamCampaigns.
+     */
+    skip?: number
+    distinct?: TeamCampaignScalarFieldEnum | TeamCampaignScalarFieldEnum[]
+  }
+
+  /**
+   * TeamCampaign create
+   */
+  export type TeamCampaignCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaign
+     */
+    select?: TeamCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaign
+     */
+    omit?: TeamCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamCampaignInclude<ExtArgs> | null
+    /**
+     * The data needed to create a TeamCampaign.
+     */
+    data: XOR<TeamCampaignCreateInput, TeamCampaignUncheckedCreateInput>
+  }
+
+  /**
+   * TeamCampaign createMany
+   */
+  export type TeamCampaignCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many TeamCampaigns.
+     */
+    data: TeamCampaignCreateManyInput | TeamCampaignCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * TeamCampaign createManyAndReturn
+   */
+  export type TeamCampaignCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaign
+     */
+    select?: TeamCampaignSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaign
+     */
+    omit?: TeamCampaignOmit<ExtArgs> | null
+    /**
+     * The data used to create many TeamCampaigns.
+     */
+    data: TeamCampaignCreateManyInput | TeamCampaignCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamCampaignIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * TeamCampaign update
+   */
+  export type TeamCampaignUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaign
+     */
+    select?: TeamCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaign
+     */
+    omit?: TeamCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamCampaignInclude<ExtArgs> | null
+    /**
+     * The data needed to update a TeamCampaign.
+     */
+    data: XOR<TeamCampaignUpdateInput, TeamCampaignUncheckedUpdateInput>
+    /**
+     * Choose, which TeamCampaign to update.
+     */
+    where: TeamCampaignWhereUniqueInput
+  }
+
+  /**
+   * TeamCampaign updateMany
+   */
+  export type TeamCampaignUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update TeamCampaigns.
+     */
+    data: XOR<TeamCampaignUpdateManyMutationInput, TeamCampaignUncheckedUpdateManyInput>
+    /**
+     * Filter which TeamCampaigns to update
+     */
+    where?: TeamCampaignWhereInput
+    /**
+     * Limit how many TeamCampaigns to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * TeamCampaign updateManyAndReturn
+   */
+  export type TeamCampaignUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaign
+     */
+    select?: TeamCampaignSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaign
+     */
+    omit?: TeamCampaignOmit<ExtArgs> | null
+    /**
+     * The data used to update TeamCampaigns.
+     */
+    data: XOR<TeamCampaignUpdateManyMutationInput, TeamCampaignUncheckedUpdateManyInput>
+    /**
+     * Filter which TeamCampaigns to update
+     */
+    where?: TeamCampaignWhereInput
+    /**
+     * Limit how many TeamCampaigns to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamCampaignIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * TeamCampaign upsert
+   */
+  export type TeamCampaignUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaign
+     */
+    select?: TeamCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaign
+     */
+    omit?: TeamCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamCampaignInclude<ExtArgs> | null
+    /**
+     * The filter to search for the TeamCampaign to update in case it exists.
+     */
+    where: TeamCampaignWhereUniqueInput
+    /**
+     * In case the TeamCampaign found by the `where` argument doesn't exist, create a new TeamCampaign with this data.
+     */
+    create: XOR<TeamCampaignCreateInput, TeamCampaignUncheckedCreateInput>
+    /**
+     * In case the TeamCampaign was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<TeamCampaignUpdateInput, TeamCampaignUncheckedUpdateInput>
+  }
+
+  /**
+   * TeamCampaign delete
+   */
+  export type TeamCampaignDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaign
+     */
+    select?: TeamCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaign
+     */
+    omit?: TeamCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamCampaignInclude<ExtArgs> | null
+    /**
+     * Filter which TeamCampaign to delete.
+     */
+    where: TeamCampaignWhereUniqueInput
+  }
+
+  /**
+   * TeamCampaign deleteMany
+   */
+  export type TeamCampaignDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TeamCampaigns to delete
+     */
+    where?: TeamCampaignWhereInput
+    /**
+     * Limit how many TeamCampaigns to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * TeamCampaign without action
+   */
+  export type TeamCampaignDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaign
+     */
+    select?: TeamCampaignSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaign
+     */
+    omit?: TeamCampaignOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamCampaignInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model LeagueTableSnapshot
+   */
+
+  export type AggregateLeagueTableSnapshot = {
+    _count: LeagueTableSnapshotCountAggregateOutputType | null
+    _avg: LeagueTableSnapshotAvgAggregateOutputType | null
+    _sum: LeagueTableSnapshotSumAggregateOutputType | null
+    _min: LeagueTableSnapshotMinAggregateOutputType | null
+    _max: LeagueTableSnapshotMaxAggregateOutputType | null
+  }
+
+  export type LeagueTableSnapshotAvgAggregateOutputType = {
+    position: number | null
+    points: number | null
+    played: number | null
+    won: number | null
+    lost: number | null
+    drawn: number | null
+    framesFor: number | null
+    framesAgainst: number | null
+    frameDifference: number | null
+  }
+
+  export type LeagueTableSnapshotSumAggregateOutputType = {
+    position: number | null
+    points: number | null
+    played: number | null
+    won: number | null
+    lost: number | null
+    drawn: number | null
+    framesFor: number | null
+    framesAgainst: number | null
+    frameDifference: number | null
+  }
+
+  export type LeagueTableSnapshotMinAggregateOutputType = {
+    id: string | null
+    competitionId: string | null
+    seasonId: string | null
+    teamId: string | null
+    position: number | null
+    points: number | null
+    played: number | null
+    won: number | null
+    lost: number | null
+    drawn: number | null
+    framesFor: number | null
+    framesAgainst: number | null
+    frameDifference: number | null
+    snapshotDate: Date | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type LeagueTableSnapshotMaxAggregateOutputType = {
+    id: string | null
+    competitionId: string | null
+    seasonId: string | null
+    teamId: string | null
+    position: number | null
+    points: number | null
+    played: number | null
+    won: number | null
+    lost: number | null
+    drawn: number | null
+    framesFor: number | null
+    framesAgainst: number | null
+    frameDifference: number | null
+    snapshotDate: Date | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type LeagueTableSnapshotCountAggregateOutputType = {
+    id: number
+    competitionId: number
+    seasonId: number
+    teamId: number
+    position: number
+    points: number
+    played: number
+    won: number
+    lost: number
+    drawn: number
+    framesFor: number
+    framesAgainst: number
+    frameDifference: number
+    snapshotDate: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type LeagueTableSnapshotAvgAggregateInputType = {
+    position?: true
+    points?: true
+    played?: true
+    won?: true
+    lost?: true
+    drawn?: true
+    framesFor?: true
+    framesAgainst?: true
+    frameDifference?: true
+  }
+
+  export type LeagueTableSnapshotSumAggregateInputType = {
+    position?: true
+    points?: true
+    played?: true
+    won?: true
+    lost?: true
+    drawn?: true
+    framesFor?: true
+    framesAgainst?: true
+    frameDifference?: true
+  }
+
+  export type LeagueTableSnapshotMinAggregateInputType = {
+    id?: true
+    competitionId?: true
+    seasonId?: true
+    teamId?: true
+    position?: true
+    points?: true
+    played?: true
+    won?: true
+    lost?: true
+    drawn?: true
+    framesFor?: true
+    framesAgainst?: true
+    frameDifference?: true
+    snapshotDate?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type LeagueTableSnapshotMaxAggregateInputType = {
+    id?: true
+    competitionId?: true
+    seasonId?: true
+    teamId?: true
+    position?: true
+    points?: true
+    played?: true
+    won?: true
+    lost?: true
+    drawn?: true
+    framesFor?: true
+    framesAgainst?: true
+    frameDifference?: true
+    snapshotDate?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type LeagueTableSnapshotCountAggregateInputType = {
+    id?: true
+    competitionId?: true
+    seasonId?: true
+    teamId?: true
+    position?: true
+    points?: true
+    played?: true
+    won?: true
+    lost?: true
+    drawn?: true
+    framesFor?: true
+    framesAgainst?: true
+    frameDifference?: true
+    snapshotDate?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type LeagueTableSnapshotAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which LeagueTableSnapshot to aggregate.
+     */
+    where?: LeagueTableSnapshotWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LeagueTableSnapshots to fetch.
+     */
+    orderBy?: LeagueTableSnapshotOrderByWithRelationInput | LeagueTableSnapshotOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: LeagueTableSnapshotWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LeagueTableSnapshots from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LeagueTableSnapshots.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned LeagueTableSnapshots
+    **/
+    _count?: true | LeagueTableSnapshotCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: LeagueTableSnapshotAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: LeagueTableSnapshotSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: LeagueTableSnapshotMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: LeagueTableSnapshotMaxAggregateInputType
+  }
+
+  export type GetLeagueTableSnapshotAggregateType<T extends LeagueTableSnapshotAggregateArgs> = {
+        [P in keyof T & keyof AggregateLeagueTableSnapshot]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateLeagueTableSnapshot[P]>
+      : GetScalarType<T[P], AggregateLeagueTableSnapshot[P]>
+  }
+
+
+
+
+  export type LeagueTableSnapshotGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: LeagueTableSnapshotWhereInput
+    orderBy?: LeagueTableSnapshotOrderByWithAggregationInput | LeagueTableSnapshotOrderByWithAggregationInput[]
+    by: LeagueTableSnapshotScalarFieldEnum[] | LeagueTableSnapshotScalarFieldEnum
+    having?: LeagueTableSnapshotScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: LeagueTableSnapshotCountAggregateInputType | true
+    _avg?: LeagueTableSnapshotAvgAggregateInputType
+    _sum?: LeagueTableSnapshotSumAggregateInputType
+    _min?: LeagueTableSnapshotMinAggregateInputType
+    _max?: LeagueTableSnapshotMaxAggregateInputType
+  }
+
+  export type LeagueTableSnapshotGroupByOutputType = {
+    id: string
+    competitionId: string
+    seasonId: string
+    teamId: string
+    position: number
+    points: number
+    played: number
+    won: number
+    lost: number
+    drawn: number
+    framesFor: number
+    framesAgainst: number
+    frameDifference: number
+    snapshotDate: Date
+    createdAt: Date
+    updatedAt: Date | null
+    _count: LeagueTableSnapshotCountAggregateOutputType | null
+    _avg: LeagueTableSnapshotAvgAggregateOutputType | null
+    _sum: LeagueTableSnapshotSumAggregateOutputType | null
+    _min: LeagueTableSnapshotMinAggregateOutputType | null
+    _max: LeagueTableSnapshotMaxAggregateOutputType | null
+  }
+
+  type GetLeagueTableSnapshotGroupByPayload<T extends LeagueTableSnapshotGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<LeagueTableSnapshotGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof LeagueTableSnapshotGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], LeagueTableSnapshotGroupByOutputType[P]>
+            : GetScalarType<T[P], LeagueTableSnapshotGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type LeagueTableSnapshotSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    competitionId?: boolean
+    seasonId?: boolean
+    teamId?: boolean
+    position?: boolean
+    points?: boolean
+    played?: boolean
+    won?: boolean
+    lost?: boolean
+    drawn?: boolean
+    framesFor?: boolean
+    framesAgainst?: boolean
+    frameDifference?: boolean
+    snapshotDate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["leagueTableSnapshot"]>
+
+  export type LeagueTableSnapshotSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    competitionId?: boolean
+    seasonId?: boolean
+    teamId?: boolean
+    position?: boolean
+    points?: boolean
+    played?: boolean
+    won?: boolean
+    lost?: boolean
+    drawn?: boolean
+    framesFor?: boolean
+    framesAgainst?: boolean
+    frameDifference?: boolean
+    snapshotDate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["leagueTableSnapshot"]>
+
+  export type LeagueTableSnapshotSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    competitionId?: boolean
+    seasonId?: boolean
+    teamId?: boolean
+    position?: boolean
+    points?: boolean
+    played?: boolean
+    won?: boolean
+    lost?: boolean
+    drawn?: boolean
+    framesFor?: boolean
+    framesAgainst?: boolean
+    frameDifference?: boolean
+    snapshotDate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["leagueTableSnapshot"]>
+
+  export type LeagueTableSnapshotSelectScalar = {
+    id?: boolean
+    competitionId?: boolean
+    seasonId?: boolean
+    teamId?: boolean
+    position?: boolean
+    points?: boolean
+    played?: boolean
+    won?: boolean
+    lost?: boolean
+    drawn?: boolean
+    framesFor?: boolean
+    framesAgainst?: boolean
+    frameDifference?: boolean
+    snapshotDate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type LeagueTableSnapshotOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "competitionId" | "seasonId" | "teamId" | "position" | "points" | "played" | "won" | "lost" | "drawn" | "framesFor" | "framesAgainst" | "frameDifference" | "snapshotDate" | "createdAt" | "updatedAt", ExtArgs["result"]["leagueTableSnapshot"]>
+  export type LeagueTableSnapshotInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+  }
+  export type LeagueTableSnapshotIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+  }
+  export type LeagueTableSnapshotIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+  }
+
+  export type $LeagueTableSnapshotPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "LeagueTableSnapshot"
+    objects: {
+      competition: Prisma.$CompetitionPayload<ExtArgs>
+      season: Prisma.$SeasonPayload<ExtArgs>
+      team: Prisma.$TeamPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      competitionId: string
+      seasonId: string
+      teamId: string
+      position: number
+      points: number
+      played: number
+      won: number
+      lost: number
+      drawn: number
+      framesFor: number
+      framesAgainst: number
+      frameDifference: number
+      snapshotDate: Date
+      createdAt: Date
+      updatedAt: Date | null
+    }, ExtArgs["result"]["leagueTableSnapshot"]>
+    composites: {}
+  }
+
+  type LeagueTableSnapshotGetPayload<S extends boolean | null | undefined | LeagueTableSnapshotDefaultArgs> = $Result.GetResult<Prisma.$LeagueTableSnapshotPayload, S>
+
+  type LeagueTableSnapshotCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<LeagueTableSnapshotFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: LeagueTableSnapshotCountAggregateInputType | true
+    }
+
+  export interface LeagueTableSnapshotDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['LeagueTableSnapshot'], meta: { name: 'LeagueTableSnapshot' } }
+    /**
+     * Find zero or one LeagueTableSnapshot that matches the filter.
+     * @param {LeagueTableSnapshotFindUniqueArgs} args - Arguments to find a LeagueTableSnapshot
+     * @example
+     * // Get one LeagueTableSnapshot
+     * const leagueTableSnapshot = await prisma.leagueTableSnapshot.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends LeagueTableSnapshotFindUniqueArgs>(args: SelectSubset<T, LeagueTableSnapshotFindUniqueArgs<ExtArgs>>): Prisma__LeagueTableSnapshotClient<$Result.GetResult<Prisma.$LeagueTableSnapshotPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one LeagueTableSnapshot that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {LeagueTableSnapshotFindUniqueOrThrowArgs} args - Arguments to find a LeagueTableSnapshot
+     * @example
+     * // Get one LeagueTableSnapshot
+     * const leagueTableSnapshot = await prisma.leagueTableSnapshot.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends LeagueTableSnapshotFindUniqueOrThrowArgs>(args: SelectSubset<T, LeagueTableSnapshotFindUniqueOrThrowArgs<ExtArgs>>): Prisma__LeagueTableSnapshotClient<$Result.GetResult<Prisma.$LeagueTableSnapshotPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first LeagueTableSnapshot that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LeagueTableSnapshotFindFirstArgs} args - Arguments to find a LeagueTableSnapshot
+     * @example
+     * // Get one LeagueTableSnapshot
+     * const leagueTableSnapshot = await prisma.leagueTableSnapshot.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends LeagueTableSnapshotFindFirstArgs>(args?: SelectSubset<T, LeagueTableSnapshotFindFirstArgs<ExtArgs>>): Prisma__LeagueTableSnapshotClient<$Result.GetResult<Prisma.$LeagueTableSnapshotPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first LeagueTableSnapshot that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LeagueTableSnapshotFindFirstOrThrowArgs} args - Arguments to find a LeagueTableSnapshot
+     * @example
+     * // Get one LeagueTableSnapshot
+     * const leagueTableSnapshot = await prisma.leagueTableSnapshot.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends LeagueTableSnapshotFindFirstOrThrowArgs>(args?: SelectSubset<T, LeagueTableSnapshotFindFirstOrThrowArgs<ExtArgs>>): Prisma__LeagueTableSnapshotClient<$Result.GetResult<Prisma.$LeagueTableSnapshotPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more LeagueTableSnapshots that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LeagueTableSnapshotFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all LeagueTableSnapshots
+     * const leagueTableSnapshots = await prisma.leagueTableSnapshot.findMany()
+     * 
+     * // Get first 10 LeagueTableSnapshots
+     * const leagueTableSnapshots = await prisma.leagueTableSnapshot.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const leagueTableSnapshotWithIdOnly = await prisma.leagueTableSnapshot.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends LeagueTableSnapshotFindManyArgs>(args?: SelectSubset<T, LeagueTableSnapshotFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LeagueTableSnapshotPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a LeagueTableSnapshot.
+     * @param {LeagueTableSnapshotCreateArgs} args - Arguments to create a LeagueTableSnapshot.
+     * @example
+     * // Create one LeagueTableSnapshot
+     * const LeagueTableSnapshot = await prisma.leagueTableSnapshot.create({
+     *   data: {
+     *     // ... data to create a LeagueTableSnapshot
+     *   }
+     * })
+     * 
+     */
+    create<T extends LeagueTableSnapshotCreateArgs>(args: SelectSubset<T, LeagueTableSnapshotCreateArgs<ExtArgs>>): Prisma__LeagueTableSnapshotClient<$Result.GetResult<Prisma.$LeagueTableSnapshotPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many LeagueTableSnapshots.
+     * @param {LeagueTableSnapshotCreateManyArgs} args - Arguments to create many LeagueTableSnapshots.
+     * @example
+     * // Create many LeagueTableSnapshots
+     * const leagueTableSnapshot = await prisma.leagueTableSnapshot.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends LeagueTableSnapshotCreateManyArgs>(args?: SelectSubset<T, LeagueTableSnapshotCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many LeagueTableSnapshots and returns the data saved in the database.
+     * @param {LeagueTableSnapshotCreateManyAndReturnArgs} args - Arguments to create many LeagueTableSnapshots.
+     * @example
+     * // Create many LeagueTableSnapshots
+     * const leagueTableSnapshot = await prisma.leagueTableSnapshot.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many LeagueTableSnapshots and only return the `id`
+     * const leagueTableSnapshotWithIdOnly = await prisma.leagueTableSnapshot.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends LeagueTableSnapshotCreateManyAndReturnArgs>(args?: SelectSubset<T, LeagueTableSnapshotCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LeagueTableSnapshotPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a LeagueTableSnapshot.
+     * @param {LeagueTableSnapshotDeleteArgs} args - Arguments to delete one LeagueTableSnapshot.
+     * @example
+     * // Delete one LeagueTableSnapshot
+     * const LeagueTableSnapshot = await prisma.leagueTableSnapshot.delete({
+     *   where: {
+     *     // ... filter to delete one LeagueTableSnapshot
+     *   }
+     * })
+     * 
+     */
+    delete<T extends LeagueTableSnapshotDeleteArgs>(args: SelectSubset<T, LeagueTableSnapshotDeleteArgs<ExtArgs>>): Prisma__LeagueTableSnapshotClient<$Result.GetResult<Prisma.$LeagueTableSnapshotPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one LeagueTableSnapshot.
+     * @param {LeagueTableSnapshotUpdateArgs} args - Arguments to update one LeagueTableSnapshot.
+     * @example
+     * // Update one LeagueTableSnapshot
+     * const leagueTableSnapshot = await prisma.leagueTableSnapshot.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends LeagueTableSnapshotUpdateArgs>(args: SelectSubset<T, LeagueTableSnapshotUpdateArgs<ExtArgs>>): Prisma__LeagueTableSnapshotClient<$Result.GetResult<Prisma.$LeagueTableSnapshotPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more LeagueTableSnapshots.
+     * @param {LeagueTableSnapshotDeleteManyArgs} args - Arguments to filter LeagueTableSnapshots to delete.
+     * @example
+     * // Delete a few LeagueTableSnapshots
+     * const { count } = await prisma.leagueTableSnapshot.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends LeagueTableSnapshotDeleteManyArgs>(args?: SelectSubset<T, LeagueTableSnapshotDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more LeagueTableSnapshots.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LeagueTableSnapshotUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many LeagueTableSnapshots
+     * const leagueTableSnapshot = await prisma.leagueTableSnapshot.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends LeagueTableSnapshotUpdateManyArgs>(args: SelectSubset<T, LeagueTableSnapshotUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more LeagueTableSnapshots and returns the data updated in the database.
+     * @param {LeagueTableSnapshotUpdateManyAndReturnArgs} args - Arguments to update many LeagueTableSnapshots.
+     * @example
+     * // Update many LeagueTableSnapshots
+     * const leagueTableSnapshot = await prisma.leagueTableSnapshot.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more LeagueTableSnapshots and only return the `id`
+     * const leagueTableSnapshotWithIdOnly = await prisma.leagueTableSnapshot.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends LeagueTableSnapshotUpdateManyAndReturnArgs>(args: SelectSubset<T, LeagueTableSnapshotUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LeagueTableSnapshotPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one LeagueTableSnapshot.
+     * @param {LeagueTableSnapshotUpsertArgs} args - Arguments to update or create a LeagueTableSnapshot.
+     * @example
+     * // Update or create a LeagueTableSnapshot
+     * const leagueTableSnapshot = await prisma.leagueTableSnapshot.upsert({
+     *   create: {
+     *     // ... data to create a LeagueTableSnapshot
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the LeagueTableSnapshot we want to update
+     *   }
+     * })
+     */
+    upsert<T extends LeagueTableSnapshotUpsertArgs>(args: SelectSubset<T, LeagueTableSnapshotUpsertArgs<ExtArgs>>): Prisma__LeagueTableSnapshotClient<$Result.GetResult<Prisma.$LeagueTableSnapshotPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of LeagueTableSnapshots.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LeagueTableSnapshotCountArgs} args - Arguments to filter LeagueTableSnapshots to count.
+     * @example
+     * // Count the number of LeagueTableSnapshots
+     * const count = await prisma.leagueTableSnapshot.count({
+     *   where: {
+     *     // ... the filter for the LeagueTableSnapshots we want to count
+     *   }
+     * })
+    **/
+    count<T extends LeagueTableSnapshotCountArgs>(
+      args?: Subset<T, LeagueTableSnapshotCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], LeagueTableSnapshotCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a LeagueTableSnapshot.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LeagueTableSnapshotAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends LeagueTableSnapshotAggregateArgs>(args: Subset<T, LeagueTableSnapshotAggregateArgs>): Prisma.PrismaPromise<GetLeagueTableSnapshotAggregateType<T>>
+
+    /**
+     * Group by LeagueTableSnapshot.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LeagueTableSnapshotGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends LeagueTableSnapshotGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: LeagueTableSnapshotGroupByArgs['orderBy'] }
+        : { orderBy?: LeagueTableSnapshotGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, LeagueTableSnapshotGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLeagueTableSnapshotGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the LeagueTableSnapshot model
+   */
+  readonly fields: LeagueTableSnapshotFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for LeagueTableSnapshot.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__LeagueTableSnapshotClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    competition<T extends CompetitionDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CompetitionDefaultArgs<ExtArgs>>): Prisma__CompetitionClient<$Result.GetResult<Prisma.$CompetitionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    season<T extends SeasonDefaultArgs<ExtArgs> = {}>(args?: Subset<T, SeasonDefaultArgs<ExtArgs>>): Prisma__SeasonClient<$Result.GetResult<Prisma.$SeasonPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    team<T extends TeamDefaultArgs<ExtArgs> = {}>(args?: Subset<T, TeamDefaultArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the LeagueTableSnapshot model
+   */
+  interface LeagueTableSnapshotFieldRefs {
+    readonly id: FieldRef<"LeagueTableSnapshot", 'String'>
+    readonly competitionId: FieldRef<"LeagueTableSnapshot", 'String'>
+    readonly seasonId: FieldRef<"LeagueTableSnapshot", 'String'>
+    readonly teamId: FieldRef<"LeagueTableSnapshot", 'String'>
+    readonly position: FieldRef<"LeagueTableSnapshot", 'Int'>
+    readonly points: FieldRef<"LeagueTableSnapshot", 'Float'>
+    readonly played: FieldRef<"LeagueTableSnapshot", 'Int'>
+    readonly won: FieldRef<"LeagueTableSnapshot", 'Int'>
+    readonly lost: FieldRef<"LeagueTableSnapshot", 'Int'>
+    readonly drawn: FieldRef<"LeagueTableSnapshot", 'Int'>
+    readonly framesFor: FieldRef<"LeagueTableSnapshot", 'Int'>
+    readonly framesAgainst: FieldRef<"LeagueTableSnapshot", 'Int'>
+    readonly frameDifference: FieldRef<"LeagueTableSnapshot", 'Int'>
+    readonly snapshotDate: FieldRef<"LeagueTableSnapshot", 'DateTime'>
+    readonly createdAt: FieldRef<"LeagueTableSnapshot", 'DateTime'>
+    readonly updatedAt: FieldRef<"LeagueTableSnapshot", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * LeagueTableSnapshot findUnique
+   */
+  export type LeagueTableSnapshotFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueTableSnapshot
+     */
+    select?: LeagueTableSnapshotSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueTableSnapshot
+     */
+    omit?: LeagueTableSnapshotOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueTableSnapshotInclude<ExtArgs> | null
+    /**
+     * Filter, which LeagueTableSnapshot to fetch.
+     */
+    where: LeagueTableSnapshotWhereUniqueInput
+  }
+
+  /**
+   * LeagueTableSnapshot findUniqueOrThrow
+   */
+  export type LeagueTableSnapshotFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueTableSnapshot
+     */
+    select?: LeagueTableSnapshotSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueTableSnapshot
+     */
+    omit?: LeagueTableSnapshotOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueTableSnapshotInclude<ExtArgs> | null
+    /**
+     * Filter, which LeagueTableSnapshot to fetch.
+     */
+    where: LeagueTableSnapshotWhereUniqueInput
+  }
+
+  /**
+   * LeagueTableSnapshot findFirst
+   */
+  export type LeagueTableSnapshotFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueTableSnapshot
+     */
+    select?: LeagueTableSnapshotSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueTableSnapshot
+     */
+    omit?: LeagueTableSnapshotOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueTableSnapshotInclude<ExtArgs> | null
+    /**
+     * Filter, which LeagueTableSnapshot to fetch.
+     */
+    where?: LeagueTableSnapshotWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LeagueTableSnapshots to fetch.
+     */
+    orderBy?: LeagueTableSnapshotOrderByWithRelationInput | LeagueTableSnapshotOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for LeagueTableSnapshots.
+     */
+    cursor?: LeagueTableSnapshotWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LeagueTableSnapshots from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LeagueTableSnapshots.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of LeagueTableSnapshots.
+     */
+    distinct?: LeagueTableSnapshotScalarFieldEnum | LeagueTableSnapshotScalarFieldEnum[]
+  }
+
+  /**
+   * LeagueTableSnapshot findFirstOrThrow
+   */
+  export type LeagueTableSnapshotFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueTableSnapshot
+     */
+    select?: LeagueTableSnapshotSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueTableSnapshot
+     */
+    omit?: LeagueTableSnapshotOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueTableSnapshotInclude<ExtArgs> | null
+    /**
+     * Filter, which LeagueTableSnapshot to fetch.
+     */
+    where?: LeagueTableSnapshotWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LeagueTableSnapshots to fetch.
+     */
+    orderBy?: LeagueTableSnapshotOrderByWithRelationInput | LeagueTableSnapshotOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for LeagueTableSnapshots.
+     */
+    cursor?: LeagueTableSnapshotWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LeagueTableSnapshots from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LeagueTableSnapshots.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of LeagueTableSnapshots.
+     */
+    distinct?: LeagueTableSnapshotScalarFieldEnum | LeagueTableSnapshotScalarFieldEnum[]
+  }
+
+  /**
+   * LeagueTableSnapshot findMany
+   */
+  export type LeagueTableSnapshotFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueTableSnapshot
+     */
+    select?: LeagueTableSnapshotSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueTableSnapshot
+     */
+    omit?: LeagueTableSnapshotOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueTableSnapshotInclude<ExtArgs> | null
+    /**
+     * Filter, which LeagueTableSnapshots to fetch.
+     */
+    where?: LeagueTableSnapshotWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LeagueTableSnapshots to fetch.
+     */
+    orderBy?: LeagueTableSnapshotOrderByWithRelationInput | LeagueTableSnapshotOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing LeagueTableSnapshots.
+     */
+    cursor?: LeagueTableSnapshotWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LeagueTableSnapshots from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LeagueTableSnapshots.
+     */
+    skip?: number
+    distinct?: LeagueTableSnapshotScalarFieldEnum | LeagueTableSnapshotScalarFieldEnum[]
+  }
+
+  /**
+   * LeagueTableSnapshot create
+   */
+  export type LeagueTableSnapshotCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueTableSnapshot
+     */
+    select?: LeagueTableSnapshotSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueTableSnapshot
+     */
+    omit?: LeagueTableSnapshotOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueTableSnapshotInclude<ExtArgs> | null
+    /**
+     * The data needed to create a LeagueTableSnapshot.
+     */
+    data: XOR<LeagueTableSnapshotCreateInput, LeagueTableSnapshotUncheckedCreateInput>
+  }
+
+  /**
+   * LeagueTableSnapshot createMany
+   */
+  export type LeagueTableSnapshotCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many LeagueTableSnapshots.
+     */
+    data: LeagueTableSnapshotCreateManyInput | LeagueTableSnapshotCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * LeagueTableSnapshot createManyAndReturn
+   */
+  export type LeagueTableSnapshotCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueTableSnapshot
+     */
+    select?: LeagueTableSnapshotSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueTableSnapshot
+     */
+    omit?: LeagueTableSnapshotOmit<ExtArgs> | null
+    /**
+     * The data used to create many LeagueTableSnapshots.
+     */
+    data: LeagueTableSnapshotCreateManyInput | LeagueTableSnapshotCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueTableSnapshotIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * LeagueTableSnapshot update
+   */
+  export type LeagueTableSnapshotUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueTableSnapshot
+     */
+    select?: LeagueTableSnapshotSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueTableSnapshot
+     */
+    omit?: LeagueTableSnapshotOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueTableSnapshotInclude<ExtArgs> | null
+    /**
+     * The data needed to update a LeagueTableSnapshot.
+     */
+    data: XOR<LeagueTableSnapshotUpdateInput, LeagueTableSnapshotUncheckedUpdateInput>
+    /**
+     * Choose, which LeagueTableSnapshot to update.
+     */
+    where: LeagueTableSnapshotWhereUniqueInput
+  }
+
+  /**
+   * LeagueTableSnapshot updateMany
+   */
+  export type LeagueTableSnapshotUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update LeagueTableSnapshots.
+     */
+    data: XOR<LeagueTableSnapshotUpdateManyMutationInput, LeagueTableSnapshotUncheckedUpdateManyInput>
+    /**
+     * Filter which LeagueTableSnapshots to update
+     */
+    where?: LeagueTableSnapshotWhereInput
+    /**
+     * Limit how many LeagueTableSnapshots to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * LeagueTableSnapshot updateManyAndReturn
+   */
+  export type LeagueTableSnapshotUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueTableSnapshot
+     */
+    select?: LeagueTableSnapshotSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueTableSnapshot
+     */
+    omit?: LeagueTableSnapshotOmit<ExtArgs> | null
+    /**
+     * The data used to update LeagueTableSnapshots.
+     */
+    data: XOR<LeagueTableSnapshotUpdateManyMutationInput, LeagueTableSnapshotUncheckedUpdateManyInput>
+    /**
+     * Filter which LeagueTableSnapshots to update
+     */
+    where?: LeagueTableSnapshotWhereInput
+    /**
+     * Limit how many LeagueTableSnapshots to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueTableSnapshotIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * LeagueTableSnapshot upsert
+   */
+  export type LeagueTableSnapshotUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueTableSnapshot
+     */
+    select?: LeagueTableSnapshotSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueTableSnapshot
+     */
+    omit?: LeagueTableSnapshotOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueTableSnapshotInclude<ExtArgs> | null
+    /**
+     * The filter to search for the LeagueTableSnapshot to update in case it exists.
+     */
+    where: LeagueTableSnapshotWhereUniqueInput
+    /**
+     * In case the LeagueTableSnapshot found by the `where` argument doesn't exist, create a new LeagueTableSnapshot with this data.
+     */
+    create: XOR<LeagueTableSnapshotCreateInput, LeagueTableSnapshotUncheckedCreateInput>
+    /**
+     * In case the LeagueTableSnapshot was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<LeagueTableSnapshotUpdateInput, LeagueTableSnapshotUncheckedUpdateInput>
+  }
+
+  /**
+   * LeagueTableSnapshot delete
+   */
+  export type LeagueTableSnapshotDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueTableSnapshot
+     */
+    select?: LeagueTableSnapshotSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueTableSnapshot
+     */
+    omit?: LeagueTableSnapshotOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueTableSnapshotInclude<ExtArgs> | null
+    /**
+     * Filter which LeagueTableSnapshot to delete.
+     */
+    where: LeagueTableSnapshotWhereUniqueInput
+  }
+
+  /**
+   * LeagueTableSnapshot deleteMany
+   */
+  export type LeagueTableSnapshotDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which LeagueTableSnapshots to delete
+     */
+    where?: LeagueTableSnapshotWhereInput
+    /**
+     * Limit how many LeagueTableSnapshots to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * LeagueTableSnapshot without action
+   */
+  export type LeagueTableSnapshotDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LeagueTableSnapshot
+     */
+    select?: LeagueTableSnapshotSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LeagueTableSnapshot
+     */
+    omit?: LeagueTableSnapshotOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LeagueTableSnapshotInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model TeamCampaignPlayer
+   */
+
+  export type AggregateTeamCampaignPlayer = {
+    _count: TeamCampaignPlayerCountAggregateOutputType | null
+    _min: TeamCampaignPlayerMinAggregateOutputType | null
+    _max: TeamCampaignPlayerMaxAggregateOutputType | null
+  }
+
+  export type TeamCampaignPlayerMinAggregateOutputType = {
+    campaignPlayerId: string | null
+    isTeamCaptain: boolean | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type TeamCampaignPlayerMaxAggregateOutputType = {
+    campaignPlayerId: string | null
+    isTeamCaptain: boolean | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type TeamCampaignPlayerCountAggregateOutputType = {
+    campaignPlayerId: number
+    isTeamCaptain: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type TeamCampaignPlayerMinAggregateInputType = {
+    campaignPlayerId?: true
+    isTeamCaptain?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type TeamCampaignPlayerMaxAggregateInputType = {
+    campaignPlayerId?: true
+    isTeamCaptain?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type TeamCampaignPlayerCountAggregateInputType = {
+    campaignPlayerId?: true
+    isTeamCaptain?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type TeamCampaignPlayerAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TeamCampaignPlayer to aggregate.
+     */
+    where?: TeamCampaignPlayerWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TeamCampaignPlayers to fetch.
+     */
+    orderBy?: TeamCampaignPlayerOrderByWithRelationInput | TeamCampaignPlayerOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: TeamCampaignPlayerWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TeamCampaignPlayers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TeamCampaignPlayers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned TeamCampaignPlayers
+    **/
+    _count?: true | TeamCampaignPlayerCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TeamCampaignPlayerMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TeamCampaignPlayerMaxAggregateInputType
+  }
+
+  export type GetTeamCampaignPlayerAggregateType<T extends TeamCampaignPlayerAggregateArgs> = {
+        [P in keyof T & keyof AggregateTeamCampaignPlayer]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTeamCampaignPlayer[P]>
+      : GetScalarType<T[P], AggregateTeamCampaignPlayer[P]>
+  }
+
+
+
+
+  export type TeamCampaignPlayerGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TeamCampaignPlayerWhereInput
+    orderBy?: TeamCampaignPlayerOrderByWithAggregationInput | TeamCampaignPlayerOrderByWithAggregationInput[]
+    by: TeamCampaignPlayerScalarFieldEnum[] | TeamCampaignPlayerScalarFieldEnum
+    having?: TeamCampaignPlayerScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TeamCampaignPlayerCountAggregateInputType | true
+    _min?: TeamCampaignPlayerMinAggregateInputType
+    _max?: TeamCampaignPlayerMaxAggregateInputType
+  }
+
+  export type TeamCampaignPlayerGroupByOutputType = {
+    campaignPlayerId: string
+    isTeamCaptain: boolean
+    createdAt: Date
+    updatedAt: Date | null
+    _count: TeamCampaignPlayerCountAggregateOutputType | null
+    _min: TeamCampaignPlayerMinAggregateOutputType | null
+    _max: TeamCampaignPlayerMaxAggregateOutputType | null
+  }
+
+  type GetTeamCampaignPlayerGroupByPayload<T extends TeamCampaignPlayerGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TeamCampaignPlayerGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TeamCampaignPlayerGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TeamCampaignPlayerGroupByOutputType[P]>
+            : GetScalarType<T[P], TeamCampaignPlayerGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type TeamCampaignPlayerSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    campaignPlayerId?: boolean
+    isTeamCaptain?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["teamCampaignPlayer"]>
+
+  export type TeamCampaignPlayerSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    campaignPlayerId?: boolean
+    isTeamCaptain?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["teamCampaignPlayer"]>
+
+  export type TeamCampaignPlayerSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    campaignPlayerId?: boolean
+    isTeamCaptain?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["teamCampaignPlayer"]>
+
+  export type TeamCampaignPlayerSelectScalar = {
+    campaignPlayerId?: boolean
+    isTeamCaptain?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type TeamCampaignPlayerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"campaignPlayerId" | "isTeamCaptain" | "createdAt" | "updatedAt", ExtArgs["result"]["teamCampaignPlayer"]>
+
+  export type $TeamCampaignPlayerPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "TeamCampaignPlayer"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      campaignPlayerId: string
+      isTeamCaptain: boolean
+      createdAt: Date
+      updatedAt: Date | null
+    }, ExtArgs["result"]["teamCampaignPlayer"]>
+    composites: {}
+  }
+
+  type TeamCampaignPlayerGetPayload<S extends boolean | null | undefined | TeamCampaignPlayerDefaultArgs> = $Result.GetResult<Prisma.$TeamCampaignPlayerPayload, S>
+
+  type TeamCampaignPlayerCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<TeamCampaignPlayerFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: TeamCampaignPlayerCountAggregateInputType | true
+    }
+
+  export interface TeamCampaignPlayerDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['TeamCampaignPlayer'], meta: { name: 'TeamCampaignPlayer' } }
+    /**
+     * Find zero or one TeamCampaignPlayer that matches the filter.
+     * @param {TeamCampaignPlayerFindUniqueArgs} args - Arguments to find a TeamCampaignPlayer
+     * @example
+     * // Get one TeamCampaignPlayer
+     * const teamCampaignPlayer = await prisma.teamCampaignPlayer.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends TeamCampaignPlayerFindUniqueArgs>(args: SelectSubset<T, TeamCampaignPlayerFindUniqueArgs<ExtArgs>>): Prisma__TeamCampaignPlayerClient<$Result.GetResult<Prisma.$TeamCampaignPlayerPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one TeamCampaignPlayer that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {TeamCampaignPlayerFindUniqueOrThrowArgs} args - Arguments to find a TeamCampaignPlayer
+     * @example
+     * // Get one TeamCampaignPlayer
+     * const teamCampaignPlayer = await prisma.teamCampaignPlayer.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends TeamCampaignPlayerFindUniqueOrThrowArgs>(args: SelectSubset<T, TeamCampaignPlayerFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TeamCampaignPlayerClient<$Result.GetResult<Prisma.$TeamCampaignPlayerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first TeamCampaignPlayer that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamCampaignPlayerFindFirstArgs} args - Arguments to find a TeamCampaignPlayer
+     * @example
+     * // Get one TeamCampaignPlayer
+     * const teamCampaignPlayer = await prisma.teamCampaignPlayer.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends TeamCampaignPlayerFindFirstArgs>(args?: SelectSubset<T, TeamCampaignPlayerFindFirstArgs<ExtArgs>>): Prisma__TeamCampaignPlayerClient<$Result.GetResult<Prisma.$TeamCampaignPlayerPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first TeamCampaignPlayer that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamCampaignPlayerFindFirstOrThrowArgs} args - Arguments to find a TeamCampaignPlayer
+     * @example
+     * // Get one TeamCampaignPlayer
+     * const teamCampaignPlayer = await prisma.teamCampaignPlayer.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends TeamCampaignPlayerFindFirstOrThrowArgs>(args?: SelectSubset<T, TeamCampaignPlayerFindFirstOrThrowArgs<ExtArgs>>): Prisma__TeamCampaignPlayerClient<$Result.GetResult<Prisma.$TeamCampaignPlayerPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more TeamCampaignPlayers that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamCampaignPlayerFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all TeamCampaignPlayers
+     * const teamCampaignPlayers = await prisma.teamCampaignPlayer.findMany()
+     * 
+     * // Get first 10 TeamCampaignPlayers
+     * const teamCampaignPlayers = await prisma.teamCampaignPlayer.findMany({ take: 10 })
+     * 
+     * // Only select the `campaignPlayerId`
+     * const teamCampaignPlayerWithCampaignPlayerIdOnly = await prisma.teamCampaignPlayer.findMany({ select: { campaignPlayerId: true } })
+     * 
+     */
+    findMany<T extends TeamCampaignPlayerFindManyArgs>(args?: SelectSubset<T, TeamCampaignPlayerFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamCampaignPlayerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a TeamCampaignPlayer.
+     * @param {TeamCampaignPlayerCreateArgs} args - Arguments to create a TeamCampaignPlayer.
+     * @example
+     * // Create one TeamCampaignPlayer
+     * const TeamCampaignPlayer = await prisma.teamCampaignPlayer.create({
+     *   data: {
+     *     // ... data to create a TeamCampaignPlayer
+     *   }
+     * })
+     * 
+     */
+    create<T extends TeamCampaignPlayerCreateArgs>(args: SelectSubset<T, TeamCampaignPlayerCreateArgs<ExtArgs>>): Prisma__TeamCampaignPlayerClient<$Result.GetResult<Prisma.$TeamCampaignPlayerPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many TeamCampaignPlayers.
+     * @param {TeamCampaignPlayerCreateManyArgs} args - Arguments to create many TeamCampaignPlayers.
+     * @example
+     * // Create many TeamCampaignPlayers
+     * const teamCampaignPlayer = await prisma.teamCampaignPlayer.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends TeamCampaignPlayerCreateManyArgs>(args?: SelectSubset<T, TeamCampaignPlayerCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many TeamCampaignPlayers and returns the data saved in the database.
+     * @param {TeamCampaignPlayerCreateManyAndReturnArgs} args - Arguments to create many TeamCampaignPlayers.
+     * @example
+     * // Create many TeamCampaignPlayers
+     * const teamCampaignPlayer = await prisma.teamCampaignPlayer.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many TeamCampaignPlayers and only return the `campaignPlayerId`
+     * const teamCampaignPlayerWithCampaignPlayerIdOnly = await prisma.teamCampaignPlayer.createManyAndReturn({
+     *   select: { campaignPlayerId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends TeamCampaignPlayerCreateManyAndReturnArgs>(args?: SelectSubset<T, TeamCampaignPlayerCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamCampaignPlayerPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a TeamCampaignPlayer.
+     * @param {TeamCampaignPlayerDeleteArgs} args - Arguments to delete one TeamCampaignPlayer.
+     * @example
+     * // Delete one TeamCampaignPlayer
+     * const TeamCampaignPlayer = await prisma.teamCampaignPlayer.delete({
+     *   where: {
+     *     // ... filter to delete one TeamCampaignPlayer
+     *   }
+     * })
+     * 
+     */
+    delete<T extends TeamCampaignPlayerDeleteArgs>(args: SelectSubset<T, TeamCampaignPlayerDeleteArgs<ExtArgs>>): Prisma__TeamCampaignPlayerClient<$Result.GetResult<Prisma.$TeamCampaignPlayerPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one TeamCampaignPlayer.
+     * @param {TeamCampaignPlayerUpdateArgs} args - Arguments to update one TeamCampaignPlayer.
+     * @example
+     * // Update one TeamCampaignPlayer
+     * const teamCampaignPlayer = await prisma.teamCampaignPlayer.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends TeamCampaignPlayerUpdateArgs>(args: SelectSubset<T, TeamCampaignPlayerUpdateArgs<ExtArgs>>): Prisma__TeamCampaignPlayerClient<$Result.GetResult<Prisma.$TeamCampaignPlayerPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more TeamCampaignPlayers.
+     * @param {TeamCampaignPlayerDeleteManyArgs} args - Arguments to filter TeamCampaignPlayers to delete.
+     * @example
+     * // Delete a few TeamCampaignPlayers
+     * const { count } = await prisma.teamCampaignPlayer.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends TeamCampaignPlayerDeleteManyArgs>(args?: SelectSubset<T, TeamCampaignPlayerDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TeamCampaignPlayers.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamCampaignPlayerUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many TeamCampaignPlayers
+     * const teamCampaignPlayer = await prisma.teamCampaignPlayer.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends TeamCampaignPlayerUpdateManyArgs>(args: SelectSubset<T, TeamCampaignPlayerUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TeamCampaignPlayers and returns the data updated in the database.
+     * @param {TeamCampaignPlayerUpdateManyAndReturnArgs} args - Arguments to update many TeamCampaignPlayers.
+     * @example
+     * // Update many TeamCampaignPlayers
+     * const teamCampaignPlayer = await prisma.teamCampaignPlayer.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more TeamCampaignPlayers and only return the `campaignPlayerId`
+     * const teamCampaignPlayerWithCampaignPlayerIdOnly = await prisma.teamCampaignPlayer.updateManyAndReturn({
+     *   select: { campaignPlayerId: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends TeamCampaignPlayerUpdateManyAndReturnArgs>(args: SelectSubset<T, TeamCampaignPlayerUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamCampaignPlayerPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one TeamCampaignPlayer.
+     * @param {TeamCampaignPlayerUpsertArgs} args - Arguments to update or create a TeamCampaignPlayer.
+     * @example
+     * // Update or create a TeamCampaignPlayer
+     * const teamCampaignPlayer = await prisma.teamCampaignPlayer.upsert({
+     *   create: {
+     *     // ... data to create a TeamCampaignPlayer
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the TeamCampaignPlayer we want to update
+     *   }
+     * })
+     */
+    upsert<T extends TeamCampaignPlayerUpsertArgs>(args: SelectSubset<T, TeamCampaignPlayerUpsertArgs<ExtArgs>>): Prisma__TeamCampaignPlayerClient<$Result.GetResult<Prisma.$TeamCampaignPlayerPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of TeamCampaignPlayers.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamCampaignPlayerCountArgs} args - Arguments to filter TeamCampaignPlayers to count.
+     * @example
+     * // Count the number of TeamCampaignPlayers
+     * const count = await prisma.teamCampaignPlayer.count({
+     *   where: {
+     *     // ... the filter for the TeamCampaignPlayers we want to count
+     *   }
+     * })
+    **/
+    count<T extends TeamCampaignPlayerCountArgs>(
+      args?: Subset<T, TeamCampaignPlayerCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TeamCampaignPlayerCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a TeamCampaignPlayer.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamCampaignPlayerAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TeamCampaignPlayerAggregateArgs>(args: Subset<T, TeamCampaignPlayerAggregateArgs>): Prisma.PrismaPromise<GetTeamCampaignPlayerAggregateType<T>>
+
+    /**
+     * Group by TeamCampaignPlayer.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamCampaignPlayerGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends TeamCampaignPlayerGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: TeamCampaignPlayerGroupByArgs['orderBy'] }
+        : { orderBy?: TeamCampaignPlayerGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, TeamCampaignPlayerGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTeamCampaignPlayerGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the TeamCampaignPlayer model
+   */
+  readonly fields: TeamCampaignPlayerFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for TeamCampaignPlayer.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__TeamCampaignPlayerClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the TeamCampaignPlayer model
+   */
+  interface TeamCampaignPlayerFieldRefs {
+    readonly campaignPlayerId: FieldRef<"TeamCampaignPlayer", 'String'>
+    readonly isTeamCaptain: FieldRef<"TeamCampaignPlayer", 'Boolean'>
+    readonly createdAt: FieldRef<"TeamCampaignPlayer", 'DateTime'>
+    readonly updatedAt: FieldRef<"TeamCampaignPlayer", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * TeamCampaignPlayer findUnique
+   */
+  export type TeamCampaignPlayerFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaignPlayer
+     */
+    select?: TeamCampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaignPlayer
+     */
+    omit?: TeamCampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Filter, which TeamCampaignPlayer to fetch.
+     */
+    where: TeamCampaignPlayerWhereUniqueInput
+  }
+
+  /**
+   * TeamCampaignPlayer findUniqueOrThrow
+   */
+  export type TeamCampaignPlayerFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaignPlayer
+     */
+    select?: TeamCampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaignPlayer
+     */
+    omit?: TeamCampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Filter, which TeamCampaignPlayer to fetch.
+     */
+    where: TeamCampaignPlayerWhereUniqueInput
+  }
+
+  /**
+   * TeamCampaignPlayer findFirst
+   */
+  export type TeamCampaignPlayerFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaignPlayer
+     */
+    select?: TeamCampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaignPlayer
+     */
+    omit?: TeamCampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Filter, which TeamCampaignPlayer to fetch.
+     */
+    where?: TeamCampaignPlayerWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TeamCampaignPlayers to fetch.
+     */
+    orderBy?: TeamCampaignPlayerOrderByWithRelationInput | TeamCampaignPlayerOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TeamCampaignPlayers.
+     */
+    cursor?: TeamCampaignPlayerWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TeamCampaignPlayers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TeamCampaignPlayers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TeamCampaignPlayers.
+     */
+    distinct?: TeamCampaignPlayerScalarFieldEnum | TeamCampaignPlayerScalarFieldEnum[]
+  }
+
+  /**
+   * TeamCampaignPlayer findFirstOrThrow
+   */
+  export type TeamCampaignPlayerFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaignPlayer
+     */
+    select?: TeamCampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaignPlayer
+     */
+    omit?: TeamCampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Filter, which TeamCampaignPlayer to fetch.
+     */
+    where?: TeamCampaignPlayerWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TeamCampaignPlayers to fetch.
+     */
+    orderBy?: TeamCampaignPlayerOrderByWithRelationInput | TeamCampaignPlayerOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TeamCampaignPlayers.
+     */
+    cursor?: TeamCampaignPlayerWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TeamCampaignPlayers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TeamCampaignPlayers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TeamCampaignPlayers.
+     */
+    distinct?: TeamCampaignPlayerScalarFieldEnum | TeamCampaignPlayerScalarFieldEnum[]
+  }
+
+  /**
+   * TeamCampaignPlayer findMany
+   */
+  export type TeamCampaignPlayerFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaignPlayer
+     */
+    select?: TeamCampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaignPlayer
+     */
+    omit?: TeamCampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Filter, which TeamCampaignPlayers to fetch.
+     */
+    where?: TeamCampaignPlayerWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TeamCampaignPlayers to fetch.
+     */
+    orderBy?: TeamCampaignPlayerOrderByWithRelationInput | TeamCampaignPlayerOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing TeamCampaignPlayers.
+     */
+    cursor?: TeamCampaignPlayerWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TeamCampaignPlayers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TeamCampaignPlayers.
+     */
+    skip?: number
+    distinct?: TeamCampaignPlayerScalarFieldEnum | TeamCampaignPlayerScalarFieldEnum[]
+  }
+
+  /**
+   * TeamCampaignPlayer create
+   */
+  export type TeamCampaignPlayerCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaignPlayer
+     */
+    select?: TeamCampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaignPlayer
+     */
+    omit?: TeamCampaignPlayerOmit<ExtArgs> | null
+    /**
+     * The data needed to create a TeamCampaignPlayer.
+     */
+    data: XOR<TeamCampaignPlayerCreateInput, TeamCampaignPlayerUncheckedCreateInput>
+  }
+
+  /**
+   * TeamCampaignPlayer createMany
+   */
+  export type TeamCampaignPlayerCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many TeamCampaignPlayers.
+     */
+    data: TeamCampaignPlayerCreateManyInput | TeamCampaignPlayerCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * TeamCampaignPlayer createManyAndReturn
+   */
+  export type TeamCampaignPlayerCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaignPlayer
+     */
+    select?: TeamCampaignPlayerSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaignPlayer
+     */
+    omit?: TeamCampaignPlayerOmit<ExtArgs> | null
+    /**
+     * The data used to create many TeamCampaignPlayers.
+     */
+    data: TeamCampaignPlayerCreateManyInput | TeamCampaignPlayerCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * TeamCampaignPlayer update
+   */
+  export type TeamCampaignPlayerUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaignPlayer
+     */
+    select?: TeamCampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaignPlayer
+     */
+    omit?: TeamCampaignPlayerOmit<ExtArgs> | null
+    /**
+     * The data needed to update a TeamCampaignPlayer.
+     */
+    data: XOR<TeamCampaignPlayerUpdateInput, TeamCampaignPlayerUncheckedUpdateInput>
+    /**
+     * Choose, which TeamCampaignPlayer to update.
+     */
+    where: TeamCampaignPlayerWhereUniqueInput
+  }
+
+  /**
+   * TeamCampaignPlayer updateMany
+   */
+  export type TeamCampaignPlayerUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update TeamCampaignPlayers.
+     */
+    data: XOR<TeamCampaignPlayerUpdateManyMutationInput, TeamCampaignPlayerUncheckedUpdateManyInput>
+    /**
+     * Filter which TeamCampaignPlayers to update
+     */
+    where?: TeamCampaignPlayerWhereInput
+    /**
+     * Limit how many TeamCampaignPlayers to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * TeamCampaignPlayer updateManyAndReturn
+   */
+  export type TeamCampaignPlayerUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaignPlayer
+     */
+    select?: TeamCampaignPlayerSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaignPlayer
+     */
+    omit?: TeamCampaignPlayerOmit<ExtArgs> | null
+    /**
+     * The data used to update TeamCampaignPlayers.
+     */
+    data: XOR<TeamCampaignPlayerUpdateManyMutationInput, TeamCampaignPlayerUncheckedUpdateManyInput>
+    /**
+     * Filter which TeamCampaignPlayers to update
+     */
+    where?: TeamCampaignPlayerWhereInput
+    /**
+     * Limit how many TeamCampaignPlayers to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * TeamCampaignPlayer upsert
+   */
+  export type TeamCampaignPlayerUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaignPlayer
+     */
+    select?: TeamCampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaignPlayer
+     */
+    omit?: TeamCampaignPlayerOmit<ExtArgs> | null
+    /**
+     * The filter to search for the TeamCampaignPlayer to update in case it exists.
+     */
+    where: TeamCampaignPlayerWhereUniqueInput
+    /**
+     * In case the TeamCampaignPlayer found by the `where` argument doesn't exist, create a new TeamCampaignPlayer with this data.
+     */
+    create: XOR<TeamCampaignPlayerCreateInput, TeamCampaignPlayerUncheckedCreateInput>
+    /**
+     * In case the TeamCampaignPlayer was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<TeamCampaignPlayerUpdateInput, TeamCampaignPlayerUncheckedUpdateInput>
+  }
+
+  /**
+   * TeamCampaignPlayer delete
+   */
+  export type TeamCampaignPlayerDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaignPlayer
+     */
+    select?: TeamCampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaignPlayer
+     */
+    omit?: TeamCampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Filter which TeamCampaignPlayer to delete.
+     */
+    where: TeamCampaignPlayerWhereUniqueInput
+  }
+
+  /**
+   * TeamCampaignPlayer deleteMany
+   */
+  export type TeamCampaignPlayerDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TeamCampaignPlayers to delete
+     */
+    where?: TeamCampaignPlayerWhereInput
+    /**
+     * Limit how many TeamCampaignPlayers to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * TeamCampaignPlayer without action
+   */
+  export type TeamCampaignPlayerDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCampaignPlayer
+     */
+    select?: TeamCampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamCampaignPlayer
+     */
+    omit?: TeamCampaignPlayerOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model CampaignPlayer
+   */
+
+  export type AggregateCampaignPlayer = {
+    _count: CampaignPlayerCountAggregateOutputType | null
+    _min: CampaignPlayerMinAggregateOutputType | null
+    _max: CampaignPlayerMaxAggregateOutputType | null
+  }
+
+  export type CampaignPlayerMinAggregateOutputType = {
+    id: string | null
+    campaignId: string | null
+    userId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type CampaignPlayerMaxAggregateOutputType = {
+    id: string | null
+    campaignId: string | null
+    userId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type CampaignPlayerCountAggregateOutputType = {
+    id: number
+    campaignId: number
+    userId: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type CampaignPlayerMinAggregateInputType = {
+    id?: true
+    campaignId?: true
+    userId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type CampaignPlayerMaxAggregateInputType = {
+    id?: true
+    campaignId?: true
+    userId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type CampaignPlayerCountAggregateInputType = {
+    id?: true
+    campaignId?: true
+    userId?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type CampaignPlayerAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which CampaignPlayer to aggregate.
+     */
+    where?: CampaignPlayerWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CampaignPlayers to fetch.
+     */
+    orderBy?: CampaignPlayerOrderByWithRelationInput | CampaignPlayerOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: CampaignPlayerWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CampaignPlayers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CampaignPlayers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned CampaignPlayers
+    **/
+    _count?: true | CampaignPlayerCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: CampaignPlayerMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: CampaignPlayerMaxAggregateInputType
+  }
+
+  export type GetCampaignPlayerAggregateType<T extends CampaignPlayerAggregateArgs> = {
+        [P in keyof T & keyof AggregateCampaignPlayer]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateCampaignPlayer[P]>
+      : GetScalarType<T[P], AggregateCampaignPlayer[P]>
+  }
+
+
+
+
+  export type CampaignPlayerGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CampaignPlayerWhereInput
+    orderBy?: CampaignPlayerOrderByWithAggregationInput | CampaignPlayerOrderByWithAggregationInput[]
+    by: CampaignPlayerScalarFieldEnum[] | CampaignPlayerScalarFieldEnum
+    having?: CampaignPlayerScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: CampaignPlayerCountAggregateInputType | true
+    _min?: CampaignPlayerMinAggregateInputType
+    _max?: CampaignPlayerMaxAggregateInputType
+  }
+
+  export type CampaignPlayerGroupByOutputType = {
+    id: string
+    campaignId: string
+    userId: string
+    createdAt: Date
+    updatedAt: Date | null
+    _count: CampaignPlayerCountAggregateOutputType | null
+    _min: CampaignPlayerMinAggregateOutputType | null
+    _max: CampaignPlayerMaxAggregateOutputType | null
+  }
+
+  type GetCampaignPlayerGroupByPayload<T extends CampaignPlayerGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<CampaignPlayerGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof CampaignPlayerGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], CampaignPlayerGroupByOutputType[P]>
+            : GetScalarType<T[P], CampaignPlayerGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type CampaignPlayerSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    campaignId?: boolean
+    userId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+    homeFrames?: boolean | CampaignPlayer$homeFramesArgs<ExtArgs>
+    awayFrames?: boolean | CampaignPlayer$awayFramesArgs<ExtArgs>
+    wonFrames?: boolean | CampaignPlayer$wonFramesArgs<ExtArgs>
+    handicaps?: boolean | CampaignPlayer$handicapsArgs<ExtArgs>
+    _count?: boolean | CampaignPlayerCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["campaignPlayer"]>
+
+  export type CampaignPlayerSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    campaignId?: boolean
+    userId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["campaignPlayer"]>
+
+  export type CampaignPlayerSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    campaignId?: boolean
+    userId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["campaignPlayer"]>
+
+  export type CampaignPlayerSelectScalar = {
+    id?: boolean
+    campaignId?: boolean
+    userId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type CampaignPlayerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "campaignId" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["campaignPlayer"]>
+  export type CampaignPlayerInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+    homeFrames?: boolean | CampaignPlayer$homeFramesArgs<ExtArgs>
+    awayFrames?: boolean | CampaignPlayer$awayFramesArgs<ExtArgs>
+    wonFrames?: boolean | CampaignPlayer$wonFramesArgs<ExtArgs>
+    handicaps?: boolean | CampaignPlayer$handicapsArgs<ExtArgs>
+    _count?: boolean | CampaignPlayerCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type CampaignPlayerIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }
+  export type CampaignPlayerIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    campaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }
+
+  export type $CampaignPlayerPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "CampaignPlayer"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+      campaign: Prisma.$CampaignPayload<ExtArgs>
+      homeFrames: Prisma.$FramePayload<ExtArgs>[]
+      awayFrames: Prisma.$FramePayload<ExtArgs>[]
+      wonFrames: Prisma.$FramePayload<ExtArgs>[]
+      handicaps: Prisma.$HandicapPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      campaignId: string
+      userId: string
+      createdAt: Date
+      updatedAt: Date | null
+    }, ExtArgs["result"]["campaignPlayer"]>
+    composites: {}
+  }
+
+  type CampaignPlayerGetPayload<S extends boolean | null | undefined | CampaignPlayerDefaultArgs> = $Result.GetResult<Prisma.$CampaignPlayerPayload, S>
+
+  type CampaignPlayerCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CampaignPlayerFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CampaignPlayerCountAggregateInputType | true
+    }
+
+  export interface CampaignPlayerDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['CampaignPlayer'], meta: { name: 'CampaignPlayer' } }
+    /**
+     * Find zero or one CampaignPlayer that matches the filter.
+     * @param {CampaignPlayerFindUniqueArgs} args - Arguments to find a CampaignPlayer
+     * @example
+     * // Get one CampaignPlayer
+     * const campaignPlayer = await prisma.campaignPlayer.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends CampaignPlayerFindUniqueArgs>(args: SelectSubset<T, CampaignPlayerFindUniqueArgs<ExtArgs>>): Prisma__CampaignPlayerClient<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one CampaignPlayer that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {CampaignPlayerFindUniqueOrThrowArgs} args - Arguments to find a CampaignPlayer
+     * @example
+     * // Get one CampaignPlayer
+     * const campaignPlayer = await prisma.campaignPlayer.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends CampaignPlayerFindUniqueOrThrowArgs>(args: SelectSubset<T, CampaignPlayerFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CampaignPlayerClient<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first CampaignPlayer that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampaignPlayerFindFirstArgs} args - Arguments to find a CampaignPlayer
+     * @example
+     * // Get one CampaignPlayer
+     * const campaignPlayer = await prisma.campaignPlayer.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends CampaignPlayerFindFirstArgs>(args?: SelectSubset<T, CampaignPlayerFindFirstArgs<ExtArgs>>): Prisma__CampaignPlayerClient<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first CampaignPlayer that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampaignPlayerFindFirstOrThrowArgs} args - Arguments to find a CampaignPlayer
+     * @example
+     * // Get one CampaignPlayer
+     * const campaignPlayer = await prisma.campaignPlayer.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends CampaignPlayerFindFirstOrThrowArgs>(args?: SelectSubset<T, CampaignPlayerFindFirstOrThrowArgs<ExtArgs>>): Prisma__CampaignPlayerClient<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more CampaignPlayers that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampaignPlayerFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all CampaignPlayers
+     * const campaignPlayers = await prisma.campaignPlayer.findMany()
+     * 
+     * // Get first 10 CampaignPlayers
+     * const campaignPlayers = await prisma.campaignPlayer.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const campaignPlayerWithIdOnly = await prisma.campaignPlayer.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends CampaignPlayerFindManyArgs>(args?: SelectSubset<T, CampaignPlayerFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a CampaignPlayer.
+     * @param {CampaignPlayerCreateArgs} args - Arguments to create a CampaignPlayer.
+     * @example
+     * // Create one CampaignPlayer
+     * const CampaignPlayer = await prisma.campaignPlayer.create({
+     *   data: {
+     *     // ... data to create a CampaignPlayer
+     *   }
+     * })
+     * 
+     */
+    create<T extends CampaignPlayerCreateArgs>(args: SelectSubset<T, CampaignPlayerCreateArgs<ExtArgs>>): Prisma__CampaignPlayerClient<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many CampaignPlayers.
+     * @param {CampaignPlayerCreateManyArgs} args - Arguments to create many CampaignPlayers.
+     * @example
+     * // Create many CampaignPlayers
+     * const campaignPlayer = await prisma.campaignPlayer.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends CampaignPlayerCreateManyArgs>(args?: SelectSubset<T, CampaignPlayerCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many CampaignPlayers and returns the data saved in the database.
+     * @param {CampaignPlayerCreateManyAndReturnArgs} args - Arguments to create many CampaignPlayers.
+     * @example
+     * // Create many CampaignPlayers
+     * const campaignPlayer = await prisma.campaignPlayer.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many CampaignPlayers and only return the `id`
+     * const campaignPlayerWithIdOnly = await prisma.campaignPlayer.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends CampaignPlayerCreateManyAndReturnArgs>(args?: SelectSubset<T, CampaignPlayerCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a CampaignPlayer.
+     * @param {CampaignPlayerDeleteArgs} args - Arguments to delete one CampaignPlayer.
+     * @example
+     * // Delete one CampaignPlayer
+     * const CampaignPlayer = await prisma.campaignPlayer.delete({
+     *   where: {
+     *     // ... filter to delete one CampaignPlayer
+     *   }
+     * })
+     * 
+     */
+    delete<T extends CampaignPlayerDeleteArgs>(args: SelectSubset<T, CampaignPlayerDeleteArgs<ExtArgs>>): Prisma__CampaignPlayerClient<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one CampaignPlayer.
+     * @param {CampaignPlayerUpdateArgs} args - Arguments to update one CampaignPlayer.
+     * @example
+     * // Update one CampaignPlayer
+     * const campaignPlayer = await prisma.campaignPlayer.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends CampaignPlayerUpdateArgs>(args: SelectSubset<T, CampaignPlayerUpdateArgs<ExtArgs>>): Prisma__CampaignPlayerClient<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more CampaignPlayers.
+     * @param {CampaignPlayerDeleteManyArgs} args - Arguments to filter CampaignPlayers to delete.
+     * @example
+     * // Delete a few CampaignPlayers
+     * const { count } = await prisma.campaignPlayer.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends CampaignPlayerDeleteManyArgs>(args?: SelectSubset<T, CampaignPlayerDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more CampaignPlayers.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampaignPlayerUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many CampaignPlayers
+     * const campaignPlayer = await prisma.campaignPlayer.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends CampaignPlayerUpdateManyArgs>(args: SelectSubset<T, CampaignPlayerUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more CampaignPlayers and returns the data updated in the database.
+     * @param {CampaignPlayerUpdateManyAndReturnArgs} args - Arguments to update many CampaignPlayers.
+     * @example
+     * // Update many CampaignPlayers
+     * const campaignPlayer = await prisma.campaignPlayer.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more CampaignPlayers and only return the `id`
+     * const campaignPlayerWithIdOnly = await prisma.campaignPlayer.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends CampaignPlayerUpdateManyAndReturnArgs>(args: SelectSubset<T, CampaignPlayerUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one CampaignPlayer.
+     * @param {CampaignPlayerUpsertArgs} args - Arguments to update or create a CampaignPlayer.
+     * @example
+     * // Update or create a CampaignPlayer
+     * const campaignPlayer = await prisma.campaignPlayer.upsert({
+     *   create: {
+     *     // ... data to create a CampaignPlayer
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the CampaignPlayer we want to update
+     *   }
+     * })
+     */
+    upsert<T extends CampaignPlayerUpsertArgs>(args: SelectSubset<T, CampaignPlayerUpsertArgs<ExtArgs>>): Prisma__CampaignPlayerClient<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of CampaignPlayers.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampaignPlayerCountArgs} args - Arguments to filter CampaignPlayers to count.
+     * @example
+     * // Count the number of CampaignPlayers
+     * const count = await prisma.campaignPlayer.count({
+     *   where: {
+     *     // ... the filter for the CampaignPlayers we want to count
+     *   }
+     * })
+    **/
+    count<T extends CampaignPlayerCountArgs>(
+      args?: Subset<T, CampaignPlayerCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], CampaignPlayerCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a CampaignPlayer.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampaignPlayerAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends CampaignPlayerAggregateArgs>(args: Subset<T, CampaignPlayerAggregateArgs>): Prisma.PrismaPromise<GetCampaignPlayerAggregateType<T>>
+
+    /**
+     * Group by CampaignPlayer.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampaignPlayerGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends CampaignPlayerGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: CampaignPlayerGroupByArgs['orderBy'] }
+        : { orderBy?: CampaignPlayerGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, CampaignPlayerGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCampaignPlayerGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the CampaignPlayer model
+   */
+  readonly fields: CampaignPlayerFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for CampaignPlayer.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__CampaignPlayerClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    campaign<T extends CampaignDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CampaignDefaultArgs<ExtArgs>>): Prisma__CampaignClient<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    homeFrames<T extends CampaignPlayer$homeFramesArgs<ExtArgs> = {}>(args?: Subset<T, CampaignPlayer$homeFramesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    awayFrames<T extends CampaignPlayer$awayFramesArgs<ExtArgs> = {}>(args?: Subset<T, CampaignPlayer$awayFramesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    wonFrames<T extends CampaignPlayer$wonFramesArgs<ExtArgs> = {}>(args?: Subset<T, CampaignPlayer$wonFramesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    handicaps<T extends CampaignPlayer$handicapsArgs<ExtArgs> = {}>(args?: Subset<T, CampaignPlayer$handicapsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the CampaignPlayer model
+   */
+  interface CampaignPlayerFieldRefs {
+    readonly id: FieldRef<"CampaignPlayer", 'String'>
+    readonly campaignId: FieldRef<"CampaignPlayer", 'String'>
+    readonly userId: FieldRef<"CampaignPlayer", 'String'>
+    readonly createdAt: FieldRef<"CampaignPlayer", 'DateTime'>
+    readonly updatedAt: FieldRef<"CampaignPlayer", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * CampaignPlayer findUnique
+   */
+  export type CampaignPlayerFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerInclude<ExtArgs> | null
+    /**
+     * Filter, which CampaignPlayer to fetch.
+     */
+    where: CampaignPlayerWhereUniqueInput
+  }
+
+  /**
+   * CampaignPlayer findUniqueOrThrow
+   */
+  export type CampaignPlayerFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerInclude<ExtArgs> | null
+    /**
+     * Filter, which CampaignPlayer to fetch.
+     */
+    where: CampaignPlayerWhereUniqueInput
+  }
+
+  /**
+   * CampaignPlayer findFirst
+   */
+  export type CampaignPlayerFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerInclude<ExtArgs> | null
+    /**
+     * Filter, which CampaignPlayer to fetch.
+     */
+    where?: CampaignPlayerWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CampaignPlayers to fetch.
+     */
+    orderBy?: CampaignPlayerOrderByWithRelationInput | CampaignPlayerOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for CampaignPlayers.
+     */
+    cursor?: CampaignPlayerWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CampaignPlayers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CampaignPlayers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of CampaignPlayers.
+     */
+    distinct?: CampaignPlayerScalarFieldEnum | CampaignPlayerScalarFieldEnum[]
+  }
+
+  /**
+   * CampaignPlayer findFirstOrThrow
+   */
+  export type CampaignPlayerFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerInclude<ExtArgs> | null
+    /**
+     * Filter, which CampaignPlayer to fetch.
+     */
+    where?: CampaignPlayerWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CampaignPlayers to fetch.
+     */
+    orderBy?: CampaignPlayerOrderByWithRelationInput | CampaignPlayerOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for CampaignPlayers.
+     */
+    cursor?: CampaignPlayerWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CampaignPlayers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CampaignPlayers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of CampaignPlayers.
+     */
+    distinct?: CampaignPlayerScalarFieldEnum | CampaignPlayerScalarFieldEnum[]
+  }
+
+  /**
+   * CampaignPlayer findMany
+   */
+  export type CampaignPlayerFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerInclude<ExtArgs> | null
+    /**
+     * Filter, which CampaignPlayers to fetch.
+     */
+    where?: CampaignPlayerWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CampaignPlayers to fetch.
+     */
+    orderBy?: CampaignPlayerOrderByWithRelationInput | CampaignPlayerOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing CampaignPlayers.
+     */
+    cursor?: CampaignPlayerWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CampaignPlayers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CampaignPlayers.
+     */
+    skip?: number
+    distinct?: CampaignPlayerScalarFieldEnum | CampaignPlayerScalarFieldEnum[]
+  }
+
+  /**
+   * CampaignPlayer create
+   */
+  export type CampaignPlayerCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerInclude<ExtArgs> | null
+    /**
+     * The data needed to create a CampaignPlayer.
+     */
+    data: XOR<CampaignPlayerCreateInput, CampaignPlayerUncheckedCreateInput>
+  }
+
+  /**
+   * CampaignPlayer createMany
+   */
+  export type CampaignPlayerCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many CampaignPlayers.
+     */
+    data: CampaignPlayerCreateManyInput | CampaignPlayerCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * CampaignPlayer createManyAndReturn
+   */
+  export type CampaignPlayerCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * The data used to create many CampaignPlayers.
+     */
+    data: CampaignPlayerCreateManyInput | CampaignPlayerCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * CampaignPlayer update
+   */
+  export type CampaignPlayerUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerInclude<ExtArgs> | null
+    /**
+     * The data needed to update a CampaignPlayer.
+     */
+    data: XOR<CampaignPlayerUpdateInput, CampaignPlayerUncheckedUpdateInput>
+    /**
+     * Choose, which CampaignPlayer to update.
+     */
+    where: CampaignPlayerWhereUniqueInput
+  }
+
+  /**
+   * CampaignPlayer updateMany
+   */
+  export type CampaignPlayerUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update CampaignPlayers.
+     */
+    data: XOR<CampaignPlayerUpdateManyMutationInput, CampaignPlayerUncheckedUpdateManyInput>
+    /**
+     * Filter which CampaignPlayers to update
+     */
+    where?: CampaignPlayerWhereInput
+    /**
+     * Limit how many CampaignPlayers to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * CampaignPlayer updateManyAndReturn
+   */
+  export type CampaignPlayerUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * The data used to update CampaignPlayers.
+     */
+    data: XOR<CampaignPlayerUpdateManyMutationInput, CampaignPlayerUncheckedUpdateManyInput>
+    /**
+     * Filter which CampaignPlayers to update
+     */
+    where?: CampaignPlayerWhereInput
+    /**
+     * Limit how many CampaignPlayers to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * CampaignPlayer upsert
+   */
+  export type CampaignPlayerUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerInclude<ExtArgs> | null
+    /**
+     * The filter to search for the CampaignPlayer to update in case it exists.
+     */
+    where: CampaignPlayerWhereUniqueInput
+    /**
+     * In case the CampaignPlayer found by the `where` argument doesn't exist, create a new CampaignPlayer with this data.
+     */
+    create: XOR<CampaignPlayerCreateInput, CampaignPlayerUncheckedCreateInput>
+    /**
+     * In case the CampaignPlayer was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<CampaignPlayerUpdateInput, CampaignPlayerUncheckedUpdateInput>
+  }
+
+  /**
+   * CampaignPlayer delete
+   */
+  export type CampaignPlayerDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerInclude<ExtArgs> | null
+    /**
+     * Filter which CampaignPlayer to delete.
+     */
+    where: CampaignPlayerWhereUniqueInput
+  }
+
+  /**
+   * CampaignPlayer deleteMany
+   */
+  export type CampaignPlayerDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which CampaignPlayers to delete
+     */
+    where?: CampaignPlayerWhereInput
+    /**
+     * Limit how many CampaignPlayers to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * CampaignPlayer.homeFrames
+   */
+  export type CampaignPlayer$homeFramesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    where?: FrameWhereInput
+    orderBy?: FrameOrderByWithRelationInput | FrameOrderByWithRelationInput[]
+    cursor?: FrameWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FrameScalarFieldEnum | FrameScalarFieldEnum[]
+  }
+
+  /**
+   * CampaignPlayer.awayFrames
+   */
+  export type CampaignPlayer$awayFramesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    where?: FrameWhereInput
+    orderBy?: FrameOrderByWithRelationInput | FrameOrderByWithRelationInput[]
+    cursor?: FrameWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FrameScalarFieldEnum | FrameScalarFieldEnum[]
+  }
+
+  /**
+   * CampaignPlayer.wonFrames
+   */
+  export type CampaignPlayer$wonFramesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    where?: FrameWhereInput
+    orderBy?: FrameOrderByWithRelationInput | FrameOrderByWithRelationInput[]
+    cursor?: FrameWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FrameScalarFieldEnum | FrameScalarFieldEnum[]
+  }
+
+  /**
+   * CampaignPlayer.handicaps
+   */
+  export type CampaignPlayer$handicapsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    where?: HandicapWhereInput
+    orderBy?: HandicapOrderByWithRelationInput | HandicapOrderByWithRelationInput[]
+    cursor?: HandicapWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: HandicapScalarFieldEnum | HandicapScalarFieldEnum[]
+  }
+
+  /**
+   * CampaignPlayer without action
+   */
+  export type CampaignPlayerDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Handicap
+   */
+
+  export type AggregateHandicap = {
+    _count: HandicapCountAggregateOutputType | null
+    _avg: HandicapAvgAggregateOutputType | null
+    _sum: HandicapSumAggregateOutputType | null
+    _min: HandicapMinAggregateOutputType | null
+    _max: HandicapMaxAggregateOutputType | null
+  }
+
+  export type HandicapAvgAggregateOutputType = {
+    value: number | null
+  }
+
+  export type HandicapSumAggregateOutputType = {
+    value: number | null
+  }
+
+  export type HandicapMinAggregateOutputType = {
+    id: string | null
+    value: number | null
+    campaignPlayerId: string | null
+    createdAt: Date | null
+  }
+
+  export type HandicapMaxAggregateOutputType = {
+    id: string | null
+    value: number | null
+    campaignPlayerId: string | null
+    createdAt: Date | null
+  }
+
+  export type HandicapCountAggregateOutputType = {
+    id: number
+    value: number
+    campaignPlayerId: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type HandicapAvgAggregateInputType = {
+    value?: true
+  }
+
+  export type HandicapSumAggregateInputType = {
+    value?: true
+  }
+
+  export type HandicapMinAggregateInputType = {
+    id?: true
+    value?: true
+    campaignPlayerId?: true
+    createdAt?: true
+  }
+
+  export type HandicapMaxAggregateInputType = {
+    id?: true
+    value?: true
+    campaignPlayerId?: true
+    createdAt?: true
+  }
+
+  export type HandicapCountAggregateInputType = {
+    id?: true
+    value?: true
+    campaignPlayerId?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type HandicapAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Handicap to aggregate.
+     */
+    where?: HandicapWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Handicaps to fetch.
+     */
+    orderBy?: HandicapOrderByWithRelationInput | HandicapOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: HandicapWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Handicaps from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Handicaps.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Handicaps
+    **/
+    _count?: true | HandicapCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: HandicapAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: HandicapSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: HandicapMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: HandicapMaxAggregateInputType
+  }
+
+  export type GetHandicapAggregateType<T extends HandicapAggregateArgs> = {
+        [P in keyof T & keyof AggregateHandicap]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateHandicap[P]>
+      : GetScalarType<T[P], AggregateHandicap[P]>
+  }
+
+
+
+
+  export type HandicapGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HandicapWhereInput
+    orderBy?: HandicapOrderByWithAggregationInput | HandicapOrderByWithAggregationInput[]
+    by: HandicapScalarFieldEnum[] | HandicapScalarFieldEnum
+    having?: HandicapScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: HandicapCountAggregateInputType | true
+    _avg?: HandicapAvgAggregateInputType
+    _sum?: HandicapSumAggregateInputType
+    _min?: HandicapMinAggregateInputType
+    _max?: HandicapMaxAggregateInputType
+  }
+
+  export type HandicapGroupByOutputType = {
+    id: string
+    value: number
+    campaignPlayerId: string
+    createdAt: Date
+    _count: HandicapCountAggregateOutputType | null
+    _avg: HandicapAvgAggregateOutputType | null
+    _sum: HandicapSumAggregateOutputType | null
+    _min: HandicapMinAggregateOutputType | null
+    _max: HandicapMaxAggregateOutputType | null
+  }
+
+  type GetHandicapGroupByPayload<T extends HandicapGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<HandicapGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof HandicapGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], HandicapGroupByOutputType[P]>
+            : GetScalarType<T[P], HandicapGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type HandicapSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    value?: boolean
+    campaignPlayerId?: boolean
+    createdAt?: boolean
+    homeFrames?: boolean | Handicap$homeFramesArgs<ExtArgs>
+    awayFrames?: boolean | Handicap$awayFramesArgs<ExtArgs>
+    campaignPlayer?: boolean | CampaignPlayerDefaultArgs<ExtArgs>
+    _count?: boolean | HandicapCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["handicap"]>
+
+  export type HandicapSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    value?: boolean
+    campaignPlayerId?: boolean
+    createdAt?: boolean
+    campaignPlayer?: boolean | CampaignPlayerDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["handicap"]>
+
+  export type HandicapSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    value?: boolean
+    campaignPlayerId?: boolean
+    createdAt?: boolean
+    campaignPlayer?: boolean | CampaignPlayerDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["handicap"]>
+
+  export type HandicapSelectScalar = {
+    id?: boolean
+    value?: boolean
+    campaignPlayerId?: boolean
+    createdAt?: boolean
+  }
+
+  export type HandicapOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "value" | "campaignPlayerId" | "createdAt", ExtArgs["result"]["handicap"]>
+  export type HandicapInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    homeFrames?: boolean | Handicap$homeFramesArgs<ExtArgs>
+    awayFrames?: boolean | Handicap$awayFramesArgs<ExtArgs>
+    campaignPlayer?: boolean | CampaignPlayerDefaultArgs<ExtArgs>
+    _count?: boolean | HandicapCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type HandicapIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    campaignPlayer?: boolean | CampaignPlayerDefaultArgs<ExtArgs>
+  }
+  export type HandicapIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    campaignPlayer?: boolean | CampaignPlayerDefaultArgs<ExtArgs>
+  }
+
+  export type $HandicapPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Handicap"
+    objects: {
+      homeFrames: Prisma.$FramePayload<ExtArgs>[]
+      awayFrames: Prisma.$FramePayload<ExtArgs>[]
+      campaignPlayer: Prisma.$CampaignPlayerPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      value: number
+      campaignPlayerId: string
+      createdAt: Date
+    }, ExtArgs["result"]["handicap"]>
+    composites: {}
+  }
+
+  type HandicapGetPayload<S extends boolean | null | undefined | HandicapDefaultArgs> = $Result.GetResult<Prisma.$HandicapPayload, S>
+
+  type HandicapCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HandicapFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HandicapCountAggregateInputType | true
+    }
+
+  export interface HandicapDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Handicap'], meta: { name: 'Handicap' } }
+    /**
+     * Find zero or one Handicap that matches the filter.
+     * @param {HandicapFindUniqueArgs} args - Arguments to find a Handicap
+     * @example
+     * // Get one Handicap
+     * const handicap = await prisma.handicap.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends HandicapFindUniqueArgs>(args: SelectSubset<T, HandicapFindUniqueArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Handicap that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {HandicapFindUniqueOrThrowArgs} args - Arguments to find a Handicap
+     * @example
+     * // Get one Handicap
+     * const handicap = await prisma.handicap.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends HandicapFindUniqueOrThrowArgs>(args: SelectSubset<T, HandicapFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Handicap that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HandicapFindFirstArgs} args - Arguments to find a Handicap
+     * @example
+     * // Get one Handicap
+     * const handicap = await prisma.handicap.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends HandicapFindFirstArgs>(args?: SelectSubset<T, HandicapFindFirstArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Handicap that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HandicapFindFirstOrThrowArgs} args - Arguments to find a Handicap
+     * @example
+     * // Get one Handicap
+     * const handicap = await prisma.handicap.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends HandicapFindFirstOrThrowArgs>(args?: SelectSubset<T, HandicapFindFirstOrThrowArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Handicaps that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HandicapFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Handicaps
+     * const handicaps = await prisma.handicap.findMany()
+     * 
+     * // Get first 10 Handicaps
+     * const handicaps = await prisma.handicap.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const handicapWithIdOnly = await prisma.handicap.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends HandicapFindManyArgs>(args?: SelectSubset<T, HandicapFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Handicap.
+     * @param {HandicapCreateArgs} args - Arguments to create a Handicap.
+     * @example
+     * // Create one Handicap
+     * const Handicap = await prisma.handicap.create({
+     *   data: {
+     *     // ... data to create a Handicap
+     *   }
+     * })
+     * 
+     */
+    create<T extends HandicapCreateArgs>(args: SelectSubset<T, HandicapCreateArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Handicaps.
+     * @param {HandicapCreateManyArgs} args - Arguments to create many Handicaps.
+     * @example
+     * // Create many Handicaps
+     * const handicap = await prisma.handicap.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends HandicapCreateManyArgs>(args?: SelectSubset<T, HandicapCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Handicaps and returns the data saved in the database.
+     * @param {HandicapCreateManyAndReturnArgs} args - Arguments to create many Handicaps.
+     * @example
+     * // Create many Handicaps
+     * const handicap = await prisma.handicap.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Handicaps and only return the `id`
+     * const handicapWithIdOnly = await prisma.handicap.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends HandicapCreateManyAndReturnArgs>(args?: SelectSubset<T, HandicapCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Handicap.
+     * @param {HandicapDeleteArgs} args - Arguments to delete one Handicap.
+     * @example
+     * // Delete one Handicap
+     * const Handicap = await prisma.handicap.delete({
+     *   where: {
+     *     // ... filter to delete one Handicap
+     *   }
+     * })
+     * 
+     */
+    delete<T extends HandicapDeleteArgs>(args: SelectSubset<T, HandicapDeleteArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Handicap.
+     * @param {HandicapUpdateArgs} args - Arguments to update one Handicap.
+     * @example
+     * // Update one Handicap
+     * const handicap = await prisma.handicap.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends HandicapUpdateArgs>(args: SelectSubset<T, HandicapUpdateArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Handicaps.
+     * @param {HandicapDeleteManyArgs} args - Arguments to filter Handicaps to delete.
+     * @example
+     * // Delete a few Handicaps
+     * const { count } = await prisma.handicap.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends HandicapDeleteManyArgs>(args?: SelectSubset<T, HandicapDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Handicaps.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HandicapUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Handicaps
+     * const handicap = await prisma.handicap.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends HandicapUpdateManyArgs>(args: SelectSubset<T, HandicapUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Handicaps and returns the data updated in the database.
+     * @param {HandicapUpdateManyAndReturnArgs} args - Arguments to update many Handicaps.
+     * @example
+     * // Update many Handicaps
+     * const handicap = await prisma.handicap.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Handicaps and only return the `id`
+     * const handicapWithIdOnly = await prisma.handicap.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends HandicapUpdateManyAndReturnArgs>(args: SelectSubset<T, HandicapUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Handicap.
+     * @param {HandicapUpsertArgs} args - Arguments to update or create a Handicap.
+     * @example
+     * // Update or create a Handicap
+     * const handicap = await prisma.handicap.upsert({
+     *   create: {
+     *     // ... data to create a Handicap
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Handicap we want to update
+     *   }
+     * })
+     */
+    upsert<T extends HandicapUpsertArgs>(args: SelectSubset<T, HandicapUpsertArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Handicaps.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HandicapCountArgs} args - Arguments to filter Handicaps to count.
+     * @example
+     * // Count the number of Handicaps
+     * const count = await prisma.handicap.count({
+     *   where: {
+     *     // ... the filter for the Handicaps we want to count
+     *   }
+     * })
+    **/
+    count<T extends HandicapCountArgs>(
+      args?: Subset<T, HandicapCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], HandicapCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Handicap.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HandicapAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends HandicapAggregateArgs>(args: Subset<T, HandicapAggregateArgs>): Prisma.PrismaPromise<GetHandicapAggregateType<T>>
+
+    /**
+     * Group by Handicap.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HandicapGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends HandicapGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: HandicapGroupByArgs['orderBy'] }
+        : { orderBy?: HandicapGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, HandicapGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHandicapGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Handicap model
+   */
+  readonly fields: HandicapFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Handicap.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__HandicapClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    homeFrames<T extends Handicap$homeFramesArgs<ExtArgs> = {}>(args?: Subset<T, Handicap$homeFramesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    awayFrames<T extends Handicap$awayFramesArgs<ExtArgs> = {}>(args?: Subset<T, Handicap$awayFramesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    campaignPlayer<T extends CampaignPlayerDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CampaignPlayerDefaultArgs<ExtArgs>>): Prisma__CampaignPlayerClient<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Handicap model
+   */
+  interface HandicapFieldRefs {
+    readonly id: FieldRef<"Handicap", 'String'>
+    readonly value: FieldRef<"Handicap", 'Int'>
+    readonly campaignPlayerId: FieldRef<"Handicap", 'String'>
+    readonly createdAt: FieldRef<"Handicap", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Handicap findUnique
+   */
+  export type HandicapFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * Filter, which Handicap to fetch.
+     */
+    where: HandicapWhereUniqueInput
+  }
+
+  /**
+   * Handicap findUniqueOrThrow
+   */
+  export type HandicapFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * Filter, which Handicap to fetch.
+     */
+    where: HandicapWhereUniqueInput
+  }
+
+  /**
+   * Handicap findFirst
+   */
+  export type HandicapFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * Filter, which Handicap to fetch.
+     */
+    where?: HandicapWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Handicaps to fetch.
+     */
+    orderBy?: HandicapOrderByWithRelationInput | HandicapOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Handicaps.
+     */
+    cursor?: HandicapWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Handicaps from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Handicaps.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Handicaps.
+     */
+    distinct?: HandicapScalarFieldEnum | HandicapScalarFieldEnum[]
+  }
+
+  /**
+   * Handicap findFirstOrThrow
+   */
+  export type HandicapFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * Filter, which Handicap to fetch.
+     */
+    where?: HandicapWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Handicaps to fetch.
+     */
+    orderBy?: HandicapOrderByWithRelationInput | HandicapOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Handicaps.
+     */
+    cursor?: HandicapWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Handicaps from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Handicaps.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Handicaps.
+     */
+    distinct?: HandicapScalarFieldEnum | HandicapScalarFieldEnum[]
+  }
+
+  /**
+   * Handicap findMany
+   */
+  export type HandicapFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * Filter, which Handicaps to fetch.
+     */
+    where?: HandicapWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Handicaps to fetch.
+     */
+    orderBy?: HandicapOrderByWithRelationInput | HandicapOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Handicaps.
+     */
+    cursor?: HandicapWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Handicaps from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Handicaps.
+     */
+    skip?: number
+    distinct?: HandicapScalarFieldEnum | HandicapScalarFieldEnum[]
+  }
+
+  /**
+   * Handicap create
+   */
+  export type HandicapCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Handicap.
+     */
+    data: XOR<HandicapCreateInput, HandicapUncheckedCreateInput>
+  }
+
+  /**
+   * Handicap createMany
+   */
+  export type HandicapCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Handicaps.
+     */
+    data: HandicapCreateManyInput | HandicapCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Handicap createManyAndReturn
+   */
+  export type HandicapCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * The data used to create many Handicaps.
+     */
+    data: HandicapCreateManyInput | HandicapCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Handicap update
+   */
+  export type HandicapUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Handicap.
+     */
+    data: XOR<HandicapUpdateInput, HandicapUncheckedUpdateInput>
+    /**
+     * Choose, which Handicap to update.
+     */
+    where: HandicapWhereUniqueInput
+  }
+
+  /**
+   * Handicap updateMany
+   */
+  export type HandicapUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Handicaps.
+     */
+    data: XOR<HandicapUpdateManyMutationInput, HandicapUncheckedUpdateManyInput>
+    /**
+     * Filter which Handicaps to update
+     */
+    where?: HandicapWhereInput
+    /**
+     * Limit how many Handicaps to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Handicap updateManyAndReturn
+   */
+  export type HandicapUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * The data used to update Handicaps.
+     */
+    data: XOR<HandicapUpdateManyMutationInput, HandicapUncheckedUpdateManyInput>
+    /**
+     * Filter which Handicaps to update
+     */
+    where?: HandicapWhereInput
+    /**
+     * Limit how many Handicaps to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Handicap upsert
+   */
+  export type HandicapUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Handicap to update in case it exists.
+     */
+    where: HandicapWhereUniqueInput
+    /**
+     * In case the Handicap found by the `where` argument doesn't exist, create a new Handicap with this data.
+     */
+    create: XOR<HandicapCreateInput, HandicapUncheckedCreateInput>
+    /**
+     * In case the Handicap was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<HandicapUpdateInput, HandicapUncheckedUpdateInput>
+  }
+
+  /**
+   * Handicap delete
+   */
+  export type HandicapDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * Filter which Handicap to delete.
+     */
+    where: HandicapWhereUniqueInput
+  }
+
+  /**
+   * Handicap deleteMany
+   */
+  export type HandicapDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Handicaps to delete
+     */
+    where?: HandicapWhereInput
+    /**
+     * Limit how many Handicaps to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Handicap.homeFrames
+   */
+  export type Handicap$homeFramesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    where?: FrameWhereInput
+    orderBy?: FrameOrderByWithRelationInput | FrameOrderByWithRelationInput[]
+    cursor?: FrameWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FrameScalarFieldEnum | FrameScalarFieldEnum[]
+  }
+
+  /**
+   * Handicap.awayFrames
+   */
+  export type Handicap$awayFramesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    where?: FrameWhereInput
+    orderBy?: FrameOrderByWithRelationInput | FrameOrderByWithRelationInput[]
+    cursor?: FrameWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FrameScalarFieldEnum | FrameScalarFieldEnum[]
+  }
+
+  /**
+   * Handicap without action
+   */
+  export type HandicapDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Fixture
+   */
+
+  export type AggregateFixture = {
+    _count: FixtureCountAggregateOutputType | null
+    _avg: FixtureAvgAggregateOutputType | null
+    _sum: FixtureSumAggregateOutputType | null
+    _min: FixtureMinAggregateOutputType | null
+    _max: FixtureMaxAggregateOutputType | null
+  }
+
+  export type FixtureAvgAggregateOutputType = {
+    homeScore: number | null
+    awayScore: number | null
+    totalFrames: number | null
+  }
+
+  export type FixtureSumAggregateOutputType = {
+    homeScore: number | null
+    awayScore: number | null
+    totalFrames: number | null
+  }
+
+  export type FixtureMinAggregateOutputType = {
+    id: string | null
+    competitionId: string | null
+    seasonId: string | null
+    homeCampaignId: string | null
+    awayCampaignId: string | null
+    scheduledDate: Date | null
+    actualDate: Date | null
+    homeScore: number | null
+    awayScore: number | null
+    status: string | null
+    venue: string | null
+    notes: string | null
+    totalFrames: number | null
+    isCompleted: boolean | null
+    completedAt: Date | null
+    isLive: boolean | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type FixtureMaxAggregateOutputType = {
+    id: string | null
+    competitionId: string | null
+    seasonId: string | null
+    homeCampaignId: string | null
+    awayCampaignId: string | null
+    scheduledDate: Date | null
+    actualDate: Date | null
+    homeScore: number | null
+    awayScore: number | null
+    status: string | null
+    venue: string | null
+    notes: string | null
+    totalFrames: number | null
+    isCompleted: boolean | null
+    completedAt: Date | null
+    isLive: boolean | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type FixtureCountAggregateOutputType = {
+    id: number
+    competitionId: number
+    seasonId: number
+    homeCampaignId: number
+    awayCampaignId: number
+    scheduledDate: number
+    actualDate: number
+    homeScore: number
+    awayScore: number
+    status: number
+    venue: number
+    notes: number
+    totalFrames: number
+    isCompleted: number
+    completedAt: number
+    isLive: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type FixtureAvgAggregateInputType = {
+    homeScore?: true
+    awayScore?: true
+    totalFrames?: true
+  }
+
+  export type FixtureSumAggregateInputType = {
+    homeScore?: true
+    awayScore?: true
+    totalFrames?: true
+  }
+
+  export type FixtureMinAggregateInputType = {
+    id?: true
+    competitionId?: true
+    seasonId?: true
+    homeCampaignId?: true
+    awayCampaignId?: true
+    scheduledDate?: true
+    actualDate?: true
+    homeScore?: true
+    awayScore?: true
+    status?: true
+    venue?: true
+    notes?: true
+    totalFrames?: true
+    isCompleted?: true
+    completedAt?: true
+    isLive?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type FixtureMaxAggregateInputType = {
+    id?: true
+    competitionId?: true
+    seasonId?: true
+    homeCampaignId?: true
+    awayCampaignId?: true
+    scheduledDate?: true
+    actualDate?: true
+    homeScore?: true
+    awayScore?: true
+    status?: true
+    venue?: true
+    notes?: true
+    totalFrames?: true
+    isCompleted?: true
+    completedAt?: true
+    isLive?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type FixtureCountAggregateInputType = {
+    id?: true
+    competitionId?: true
+    seasonId?: true
+    homeCampaignId?: true
+    awayCampaignId?: true
+    scheduledDate?: true
+    actualDate?: true
+    homeScore?: true
+    awayScore?: true
+    status?: true
+    venue?: true
+    notes?: true
+    totalFrames?: true
+    isCompleted?: true
+    completedAt?: true
+    isLive?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type FixtureAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Fixture to aggregate.
+     */
+    where?: FixtureWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Fixtures to fetch.
+     */
+    orderBy?: FixtureOrderByWithRelationInput | FixtureOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FixtureWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Fixtures from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Fixtures.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Fixtures
+    **/
+    _count?: true | FixtureCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: FixtureAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: FixtureSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FixtureMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FixtureMaxAggregateInputType
+  }
+
+  export type GetFixtureAggregateType<T extends FixtureAggregateArgs> = {
+        [P in keyof T & keyof AggregateFixture]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFixture[P]>
+      : GetScalarType<T[P], AggregateFixture[P]>
+  }
+
+
+
+
+  export type FixtureGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FixtureWhereInput
+    orderBy?: FixtureOrderByWithAggregationInput | FixtureOrderByWithAggregationInput[]
+    by: FixtureScalarFieldEnum[] | FixtureScalarFieldEnum
+    having?: FixtureScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FixtureCountAggregateInputType | true
+    _avg?: FixtureAvgAggregateInputType
+    _sum?: FixtureSumAggregateInputType
+    _min?: FixtureMinAggregateInputType
+    _max?: FixtureMaxAggregateInputType
+  }
+
+  export type FixtureGroupByOutputType = {
+    id: string
+    competitionId: string
+    seasonId: string
+    homeCampaignId: string
+    awayCampaignId: string
+    scheduledDate: Date | null
+    actualDate: Date | null
+    homeScore: number
+    awayScore: number
+    status: string
+    venue: string | null
+    notes: string | null
+    totalFrames: number
+    isCompleted: boolean
+    completedAt: Date | null
+    isLive: boolean
+    createdAt: Date
+    updatedAt: Date | null
+    _count: FixtureCountAggregateOutputType | null
+    _avg: FixtureAvgAggregateOutputType | null
+    _sum: FixtureSumAggregateOutputType | null
+    _min: FixtureMinAggregateOutputType | null
+    _max: FixtureMaxAggregateOutputType | null
+  }
+
+  type GetFixtureGroupByPayload<T extends FixtureGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FixtureGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FixtureGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FixtureGroupByOutputType[P]>
+            : GetScalarType<T[P], FixtureGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FixtureSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    competitionId?: boolean
+    seasonId?: boolean
+    homeCampaignId?: boolean
+    awayCampaignId?: boolean
+    scheduledDate?: boolean
+    actualDate?: boolean
+    homeScore?: boolean
+    awayScore?: boolean
+    status?: boolean
+    venue?: boolean
+    notes?: boolean
+    totalFrames?: boolean
+    isCompleted?: boolean
+    completedAt?: boolean
+    isLive?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+    homeCampaign?: boolean | CampaignDefaultArgs<ExtArgs>
+    awayCampaign?: boolean | CampaignDefaultArgs<ExtArgs>
+    frames?: boolean | Fixture$framesArgs<ExtArgs>
+    _count?: boolean | FixtureCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["fixture"]>
+
+  export type FixtureSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    competitionId?: boolean
+    seasonId?: boolean
+    homeCampaignId?: boolean
+    awayCampaignId?: boolean
+    scheduledDate?: boolean
+    actualDate?: boolean
+    homeScore?: boolean
+    awayScore?: boolean
+    status?: boolean
+    venue?: boolean
+    notes?: boolean
+    totalFrames?: boolean
+    isCompleted?: boolean
+    completedAt?: boolean
+    isLive?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+    homeCampaign?: boolean | CampaignDefaultArgs<ExtArgs>
+    awayCampaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["fixture"]>
+
+  export type FixtureSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    competitionId?: boolean
+    seasonId?: boolean
+    homeCampaignId?: boolean
+    awayCampaignId?: boolean
+    scheduledDate?: boolean
+    actualDate?: boolean
+    homeScore?: boolean
+    awayScore?: boolean
+    status?: boolean
+    venue?: boolean
+    notes?: boolean
+    totalFrames?: boolean
+    isCompleted?: boolean
+    completedAt?: boolean
+    isLive?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+    homeCampaign?: boolean | CampaignDefaultArgs<ExtArgs>
+    awayCampaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["fixture"]>
+
+  export type FixtureSelectScalar = {
+    id?: boolean
+    competitionId?: boolean
+    seasonId?: boolean
+    homeCampaignId?: boolean
+    awayCampaignId?: boolean
+    scheduledDate?: boolean
+    actualDate?: boolean
+    homeScore?: boolean
+    awayScore?: boolean
+    status?: boolean
+    venue?: boolean
+    notes?: boolean
+    totalFrames?: boolean
+    isCompleted?: boolean
+    completedAt?: boolean
+    isLive?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type FixtureOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "competitionId" | "seasonId" | "homeCampaignId" | "awayCampaignId" | "scheduledDate" | "actualDate" | "homeScore" | "awayScore" | "status" | "venue" | "notes" | "totalFrames" | "isCompleted" | "completedAt" | "isLive" | "createdAt" | "updatedAt", ExtArgs["result"]["fixture"]>
+  export type FixtureInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+    homeCampaign?: boolean | CampaignDefaultArgs<ExtArgs>
+    awayCampaign?: boolean | CampaignDefaultArgs<ExtArgs>
+    frames?: boolean | Fixture$framesArgs<ExtArgs>
+    _count?: boolean | FixtureCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type FixtureIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+    homeCampaign?: boolean | CampaignDefaultArgs<ExtArgs>
+    awayCampaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }
+  export type FixtureIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    competition?: boolean | CompetitionDefaultArgs<ExtArgs>
+    season?: boolean | SeasonDefaultArgs<ExtArgs>
+    homeCampaign?: boolean | CampaignDefaultArgs<ExtArgs>
+    awayCampaign?: boolean | CampaignDefaultArgs<ExtArgs>
+  }
+
+  export type $FixturePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Fixture"
+    objects: {
+      competition: Prisma.$CompetitionPayload<ExtArgs>
+      season: Prisma.$SeasonPayload<ExtArgs>
+      homeCampaign: Prisma.$CampaignPayload<ExtArgs>
+      awayCampaign: Prisma.$CampaignPayload<ExtArgs>
+      frames: Prisma.$FramePayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      competitionId: string
+      seasonId: string
+      homeCampaignId: string
+      awayCampaignId: string
+      scheduledDate: Date | null
+      actualDate: Date | null
+      homeScore: number
+      awayScore: number
+      status: string
+      venue: string | null
+      notes: string | null
+      totalFrames: number
+      isCompleted: boolean
+      completedAt: Date | null
+      isLive: boolean
+      createdAt: Date
+      updatedAt: Date | null
+    }, ExtArgs["result"]["fixture"]>
+    composites: {}
+  }
+
+  type FixtureGetPayload<S extends boolean | null | undefined | FixtureDefaultArgs> = $Result.GetResult<Prisma.$FixturePayload, S>
+
+  type FixtureCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FixtureFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FixtureCountAggregateInputType | true
+    }
+
+  export interface FixtureDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Fixture'], meta: { name: 'Fixture' } }
+    /**
+     * Find zero or one Fixture that matches the filter.
+     * @param {FixtureFindUniqueArgs} args - Arguments to find a Fixture
+     * @example
+     * // Get one Fixture
+     * const fixture = await prisma.fixture.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FixtureFindUniqueArgs>(args: SelectSubset<T, FixtureFindUniqueArgs<ExtArgs>>): Prisma__FixtureClient<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Fixture that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {FixtureFindUniqueOrThrowArgs} args - Arguments to find a Fixture
+     * @example
+     * // Get one Fixture
+     * const fixture = await prisma.fixture.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FixtureFindUniqueOrThrowArgs>(args: SelectSubset<T, FixtureFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FixtureClient<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Fixture that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FixtureFindFirstArgs} args - Arguments to find a Fixture
+     * @example
+     * // Get one Fixture
+     * const fixture = await prisma.fixture.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FixtureFindFirstArgs>(args?: SelectSubset<T, FixtureFindFirstArgs<ExtArgs>>): Prisma__FixtureClient<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Fixture that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FixtureFindFirstOrThrowArgs} args - Arguments to find a Fixture
+     * @example
+     * // Get one Fixture
+     * const fixture = await prisma.fixture.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FixtureFindFirstOrThrowArgs>(args?: SelectSubset<T, FixtureFindFirstOrThrowArgs<ExtArgs>>): Prisma__FixtureClient<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Fixtures that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FixtureFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Fixtures
+     * const fixtures = await prisma.fixture.findMany()
+     * 
+     * // Get first 10 Fixtures
+     * const fixtures = await prisma.fixture.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const fixtureWithIdOnly = await prisma.fixture.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends FixtureFindManyArgs>(args?: SelectSubset<T, FixtureFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Fixture.
+     * @param {FixtureCreateArgs} args - Arguments to create a Fixture.
+     * @example
+     * // Create one Fixture
+     * const Fixture = await prisma.fixture.create({
+     *   data: {
+     *     // ... data to create a Fixture
+     *   }
+     * })
+     * 
+     */
+    create<T extends FixtureCreateArgs>(args: SelectSubset<T, FixtureCreateArgs<ExtArgs>>): Prisma__FixtureClient<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Fixtures.
+     * @param {FixtureCreateManyArgs} args - Arguments to create many Fixtures.
+     * @example
+     * // Create many Fixtures
+     * const fixture = await prisma.fixture.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FixtureCreateManyArgs>(args?: SelectSubset<T, FixtureCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Fixtures and returns the data saved in the database.
+     * @param {FixtureCreateManyAndReturnArgs} args - Arguments to create many Fixtures.
+     * @example
+     * // Create many Fixtures
+     * const fixture = await prisma.fixture.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Fixtures and only return the `id`
+     * const fixtureWithIdOnly = await prisma.fixture.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FixtureCreateManyAndReturnArgs>(args?: SelectSubset<T, FixtureCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Fixture.
+     * @param {FixtureDeleteArgs} args - Arguments to delete one Fixture.
+     * @example
+     * // Delete one Fixture
+     * const Fixture = await prisma.fixture.delete({
+     *   where: {
+     *     // ... filter to delete one Fixture
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FixtureDeleteArgs>(args: SelectSubset<T, FixtureDeleteArgs<ExtArgs>>): Prisma__FixtureClient<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Fixture.
+     * @param {FixtureUpdateArgs} args - Arguments to update one Fixture.
+     * @example
+     * // Update one Fixture
+     * const fixture = await prisma.fixture.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FixtureUpdateArgs>(args: SelectSubset<T, FixtureUpdateArgs<ExtArgs>>): Prisma__FixtureClient<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Fixtures.
+     * @param {FixtureDeleteManyArgs} args - Arguments to filter Fixtures to delete.
+     * @example
+     * // Delete a few Fixtures
+     * const { count } = await prisma.fixture.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FixtureDeleteManyArgs>(args?: SelectSubset<T, FixtureDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Fixtures.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FixtureUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Fixtures
+     * const fixture = await prisma.fixture.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FixtureUpdateManyArgs>(args: SelectSubset<T, FixtureUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Fixtures and returns the data updated in the database.
+     * @param {FixtureUpdateManyAndReturnArgs} args - Arguments to update many Fixtures.
+     * @example
+     * // Update many Fixtures
+     * const fixture = await prisma.fixture.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Fixtures and only return the `id`
+     * const fixtureWithIdOnly = await prisma.fixture.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends FixtureUpdateManyAndReturnArgs>(args: SelectSubset<T, FixtureUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Fixture.
+     * @param {FixtureUpsertArgs} args - Arguments to update or create a Fixture.
+     * @example
+     * // Update or create a Fixture
+     * const fixture = await prisma.fixture.upsert({
+     *   create: {
+     *     // ... data to create a Fixture
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Fixture we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FixtureUpsertArgs>(args: SelectSubset<T, FixtureUpsertArgs<ExtArgs>>): Prisma__FixtureClient<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Fixtures.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FixtureCountArgs} args - Arguments to filter Fixtures to count.
+     * @example
+     * // Count the number of Fixtures
+     * const count = await prisma.fixture.count({
+     *   where: {
+     *     // ... the filter for the Fixtures we want to count
+     *   }
+     * })
+    **/
+    count<T extends FixtureCountArgs>(
+      args?: Subset<T, FixtureCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FixtureCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Fixture.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FixtureAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FixtureAggregateArgs>(args: Subset<T, FixtureAggregateArgs>): Prisma.PrismaPromise<GetFixtureAggregateType<T>>
+
+    /**
+     * Group by Fixture.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FixtureGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FixtureGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FixtureGroupByArgs['orderBy'] }
+        : { orderBy?: FixtureGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FixtureGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFixtureGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Fixture model
+   */
+  readonly fields: FixtureFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Fixture.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FixtureClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    competition<T extends CompetitionDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CompetitionDefaultArgs<ExtArgs>>): Prisma__CompetitionClient<$Result.GetResult<Prisma.$CompetitionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    season<T extends SeasonDefaultArgs<ExtArgs> = {}>(args?: Subset<T, SeasonDefaultArgs<ExtArgs>>): Prisma__SeasonClient<$Result.GetResult<Prisma.$SeasonPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    homeCampaign<T extends CampaignDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CampaignDefaultArgs<ExtArgs>>): Prisma__CampaignClient<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    awayCampaign<T extends CampaignDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CampaignDefaultArgs<ExtArgs>>): Prisma__CampaignClient<$Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    frames<T extends Fixture$framesArgs<ExtArgs> = {}>(args?: Subset<T, Fixture$framesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Fixture model
+   */
+  interface FixtureFieldRefs {
+    readonly id: FieldRef<"Fixture", 'String'>
+    readonly competitionId: FieldRef<"Fixture", 'String'>
+    readonly seasonId: FieldRef<"Fixture", 'String'>
+    readonly homeCampaignId: FieldRef<"Fixture", 'String'>
+    readonly awayCampaignId: FieldRef<"Fixture", 'String'>
+    readonly scheduledDate: FieldRef<"Fixture", 'DateTime'>
+    readonly actualDate: FieldRef<"Fixture", 'DateTime'>
+    readonly homeScore: FieldRef<"Fixture", 'Int'>
+    readonly awayScore: FieldRef<"Fixture", 'Int'>
+    readonly status: FieldRef<"Fixture", 'String'>
+    readonly venue: FieldRef<"Fixture", 'String'>
+    readonly notes: FieldRef<"Fixture", 'String'>
+    readonly totalFrames: FieldRef<"Fixture", 'Int'>
+    readonly isCompleted: FieldRef<"Fixture", 'Boolean'>
+    readonly completedAt: FieldRef<"Fixture", 'DateTime'>
+    readonly isLive: FieldRef<"Fixture", 'Boolean'>
+    readonly createdAt: FieldRef<"Fixture", 'DateTime'>
+    readonly updatedAt: FieldRef<"Fixture", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Fixture findUnique
+   */
+  export type FixtureFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Fixture
+     */
+    select?: FixtureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Fixture
+     */
+    omit?: FixtureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FixtureInclude<ExtArgs> | null
+    /**
+     * Filter, which Fixture to fetch.
+     */
+    where: FixtureWhereUniqueInput
+  }
+
+  /**
+   * Fixture findUniqueOrThrow
+   */
+  export type FixtureFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Fixture
+     */
+    select?: FixtureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Fixture
+     */
+    omit?: FixtureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FixtureInclude<ExtArgs> | null
+    /**
+     * Filter, which Fixture to fetch.
+     */
+    where: FixtureWhereUniqueInput
+  }
+
+  /**
+   * Fixture findFirst
+   */
+  export type FixtureFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Fixture
+     */
+    select?: FixtureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Fixture
+     */
+    omit?: FixtureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FixtureInclude<ExtArgs> | null
+    /**
+     * Filter, which Fixture to fetch.
+     */
+    where?: FixtureWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Fixtures to fetch.
+     */
+    orderBy?: FixtureOrderByWithRelationInput | FixtureOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Fixtures.
+     */
+    cursor?: FixtureWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Fixtures from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Fixtures.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Fixtures.
+     */
+    distinct?: FixtureScalarFieldEnum | FixtureScalarFieldEnum[]
+  }
+
+  /**
+   * Fixture findFirstOrThrow
+   */
+  export type FixtureFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Fixture
+     */
+    select?: FixtureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Fixture
+     */
+    omit?: FixtureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FixtureInclude<ExtArgs> | null
+    /**
+     * Filter, which Fixture to fetch.
+     */
+    where?: FixtureWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Fixtures to fetch.
+     */
+    orderBy?: FixtureOrderByWithRelationInput | FixtureOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Fixtures.
+     */
+    cursor?: FixtureWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Fixtures from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Fixtures.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Fixtures.
+     */
+    distinct?: FixtureScalarFieldEnum | FixtureScalarFieldEnum[]
+  }
+
+  /**
+   * Fixture findMany
+   */
+  export type FixtureFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Fixture
+     */
+    select?: FixtureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Fixture
+     */
+    omit?: FixtureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FixtureInclude<ExtArgs> | null
+    /**
+     * Filter, which Fixtures to fetch.
+     */
+    where?: FixtureWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Fixtures to fetch.
+     */
+    orderBy?: FixtureOrderByWithRelationInput | FixtureOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Fixtures.
+     */
+    cursor?: FixtureWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Fixtures from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Fixtures.
+     */
+    skip?: number
+    distinct?: FixtureScalarFieldEnum | FixtureScalarFieldEnum[]
+  }
+
+  /**
+   * Fixture create
+   */
+  export type FixtureCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Fixture
+     */
+    select?: FixtureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Fixture
+     */
+    omit?: FixtureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FixtureInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Fixture.
+     */
+    data: XOR<FixtureCreateInput, FixtureUncheckedCreateInput>
+  }
+
+  /**
+   * Fixture createMany
+   */
+  export type FixtureCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Fixtures.
+     */
+    data: FixtureCreateManyInput | FixtureCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Fixture createManyAndReturn
+   */
+  export type FixtureCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Fixture
+     */
+    select?: FixtureSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Fixture
+     */
+    omit?: FixtureOmit<ExtArgs> | null
+    /**
+     * The data used to create many Fixtures.
+     */
+    data: FixtureCreateManyInput | FixtureCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FixtureIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Fixture update
+   */
+  export type FixtureUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Fixture
+     */
+    select?: FixtureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Fixture
+     */
+    omit?: FixtureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FixtureInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Fixture.
+     */
+    data: XOR<FixtureUpdateInput, FixtureUncheckedUpdateInput>
+    /**
+     * Choose, which Fixture to update.
+     */
+    where: FixtureWhereUniqueInput
+  }
+
+  /**
+   * Fixture updateMany
+   */
+  export type FixtureUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Fixtures.
+     */
+    data: XOR<FixtureUpdateManyMutationInput, FixtureUncheckedUpdateManyInput>
+    /**
+     * Filter which Fixtures to update
+     */
+    where?: FixtureWhereInput
+    /**
+     * Limit how many Fixtures to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Fixture updateManyAndReturn
+   */
+  export type FixtureUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Fixture
+     */
+    select?: FixtureSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Fixture
+     */
+    omit?: FixtureOmit<ExtArgs> | null
+    /**
+     * The data used to update Fixtures.
+     */
+    data: XOR<FixtureUpdateManyMutationInput, FixtureUncheckedUpdateManyInput>
+    /**
+     * Filter which Fixtures to update
+     */
+    where?: FixtureWhereInput
+    /**
+     * Limit how many Fixtures to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FixtureIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Fixture upsert
+   */
+  export type FixtureUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Fixture
+     */
+    select?: FixtureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Fixture
+     */
+    omit?: FixtureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FixtureInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Fixture to update in case it exists.
+     */
+    where: FixtureWhereUniqueInput
+    /**
+     * In case the Fixture found by the `where` argument doesn't exist, create a new Fixture with this data.
+     */
+    create: XOR<FixtureCreateInput, FixtureUncheckedCreateInput>
+    /**
+     * In case the Fixture was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FixtureUpdateInput, FixtureUncheckedUpdateInput>
+  }
+
+  /**
+   * Fixture delete
+   */
+  export type FixtureDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Fixture
+     */
+    select?: FixtureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Fixture
+     */
+    omit?: FixtureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FixtureInclude<ExtArgs> | null
+    /**
+     * Filter which Fixture to delete.
+     */
+    where: FixtureWhereUniqueInput
+  }
+
+  /**
+   * Fixture deleteMany
+   */
+  export type FixtureDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Fixtures to delete
+     */
+    where?: FixtureWhereInput
+    /**
+     * Limit how many Fixtures to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Fixture.frames
+   */
+  export type Fixture$framesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    where?: FrameWhereInput
+    orderBy?: FrameOrderByWithRelationInput | FrameOrderByWithRelationInput[]
+    cursor?: FrameWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FrameScalarFieldEnum | FrameScalarFieldEnum[]
+  }
+
+  /**
+   * Fixture without action
+   */
+  export type FixtureDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Fixture
+     */
+    select?: FixtureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Fixture
+     */
+    omit?: FixtureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FixtureInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Frame
+   */
+
+  export type AggregateFrame = {
+    _count: FrameCountAggregateOutputType | null
+    _avg: FrameAvgAggregateOutputType | null
+    _sum: FrameSumAggregateOutputType | null
+    _min: FrameMinAggregateOutputType | null
+    _max: FrameMaxAggregateOutputType | null
+  }
+
+  export type FrameAvgAggregateOutputType = {
+    frameNumber: number | null
+    homeScore: number | null
+    awayScore: number | null
+  }
+
+  export type FrameSumAggregateOutputType = {
+    frameNumber: number | null
+    homeScore: number | null
+    awayScore: number | null
+  }
+
+  export type FrameMinAggregateOutputType = {
+    id: string | null
+    fixtureId: string | null
+    frameNumber: number | null
+    homePlayerId: string | null
+    homePlayerHandicapId: string | null
+    awayPlayerId: string | null
+    awayPlayerHandicapId: string | null
+    homeScore: number | null
+    awayScore: number | null
+    winnerId: string | null
+    status: string | null
+    notes: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type FrameMaxAggregateOutputType = {
+    id: string | null
+    fixtureId: string | null
+    frameNumber: number | null
+    homePlayerId: string | null
+    homePlayerHandicapId: string | null
+    awayPlayerId: string | null
+    awayPlayerHandicapId: string | null
+    homeScore: number | null
+    awayScore: number | null
+    winnerId: string | null
+    status: string | null
+    notes: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type FrameCountAggregateOutputType = {
+    id: number
+    fixtureId: number
+    frameNumber: number
+    homePlayerId: number
+    homePlayerHandicapId: number
+    awayPlayerId: number
+    awayPlayerHandicapId: number
+    homeScore: number
+    awayScore: number
+    winnerId: number
+    status: number
+    notes: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type FrameAvgAggregateInputType = {
+    frameNumber?: true
+    homeScore?: true
+    awayScore?: true
+  }
+
+  export type FrameSumAggregateInputType = {
+    frameNumber?: true
+    homeScore?: true
+    awayScore?: true
+  }
+
+  export type FrameMinAggregateInputType = {
+    id?: true
+    fixtureId?: true
+    frameNumber?: true
+    homePlayerId?: true
+    homePlayerHandicapId?: true
+    awayPlayerId?: true
+    awayPlayerHandicapId?: true
+    homeScore?: true
+    awayScore?: true
+    winnerId?: true
+    status?: true
+    notes?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type FrameMaxAggregateInputType = {
+    id?: true
+    fixtureId?: true
+    frameNumber?: true
+    homePlayerId?: true
+    homePlayerHandicapId?: true
+    awayPlayerId?: true
+    awayPlayerHandicapId?: true
+    homeScore?: true
+    awayScore?: true
+    winnerId?: true
+    status?: true
+    notes?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type FrameCountAggregateInputType = {
+    id?: true
+    fixtureId?: true
+    frameNumber?: true
+    homePlayerId?: true
+    homePlayerHandicapId?: true
+    awayPlayerId?: true
+    awayPlayerHandicapId?: true
+    homeScore?: true
+    awayScore?: true
+    winnerId?: true
+    status?: true
+    notes?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type FrameAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Frame to aggregate.
+     */
+    where?: FrameWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Frames to fetch.
+     */
+    orderBy?: FrameOrderByWithRelationInput | FrameOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FrameWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Frames from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Frames.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Frames
+    **/
+    _count?: true | FrameCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: FrameAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: FrameSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FrameMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FrameMaxAggregateInputType
+  }
+
+  export type GetFrameAggregateType<T extends FrameAggregateArgs> = {
+        [P in keyof T & keyof AggregateFrame]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFrame[P]>
+      : GetScalarType<T[P], AggregateFrame[P]>
+  }
+
+
+
+
+  export type FrameGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FrameWhereInput
+    orderBy?: FrameOrderByWithAggregationInput | FrameOrderByWithAggregationInput[]
+    by: FrameScalarFieldEnum[] | FrameScalarFieldEnum
+    having?: FrameScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FrameCountAggregateInputType | true
+    _avg?: FrameAvgAggregateInputType
+    _sum?: FrameSumAggregateInputType
+    _min?: FrameMinAggregateInputType
+    _max?: FrameMaxAggregateInputType
+  }
+
+  export type FrameGroupByOutputType = {
+    id: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerId: string | null
+    homePlayerHandicapId: string | null
+    awayPlayerId: string | null
+    awayPlayerHandicapId: string | null
+    homeScore: number
+    awayScore: number
+    winnerId: string | null
+    status: string
+    notes: string | null
+    createdAt: Date
+    updatedAt: Date | null
+    _count: FrameCountAggregateOutputType | null
+    _avg: FrameAvgAggregateOutputType | null
+    _sum: FrameSumAggregateOutputType | null
+    _min: FrameMinAggregateOutputType | null
+    _max: FrameMaxAggregateOutputType | null
+  }
+
+  type GetFrameGroupByPayload<T extends FrameGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FrameGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FrameGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FrameGroupByOutputType[P]>
+            : GetScalarType<T[P], FrameGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FrameSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fixtureId?: boolean
+    frameNumber?: boolean
+    homePlayerId?: boolean
+    homePlayerHandicapId?: boolean
+    awayPlayerId?: boolean
+    awayPlayerHandicapId?: boolean
+    homeScore?: boolean
+    awayScore?: boolean
+    winnerId?: boolean
+    status?: boolean
+    notes?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    fixture?: boolean | FixtureDefaultArgs<ExtArgs>
+    homePlayer?: boolean | Frame$homePlayerArgs<ExtArgs>
+    awayPlayer?: boolean | Frame$awayPlayerArgs<ExtArgs>
+    homePlayerHandicap?: boolean | Frame$homePlayerHandicapArgs<ExtArgs>
+    awayPlayerHandicap?: boolean | Frame$awayPlayerHandicapArgs<ExtArgs>
+    winner?: boolean | Frame$winnerArgs<ExtArgs>
+  }, ExtArgs["result"]["frame"]>
+
+  export type FrameSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fixtureId?: boolean
+    frameNumber?: boolean
+    homePlayerId?: boolean
+    homePlayerHandicapId?: boolean
+    awayPlayerId?: boolean
+    awayPlayerHandicapId?: boolean
+    homeScore?: boolean
+    awayScore?: boolean
+    winnerId?: boolean
+    status?: boolean
+    notes?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    fixture?: boolean | FixtureDefaultArgs<ExtArgs>
+    homePlayer?: boolean | Frame$homePlayerArgs<ExtArgs>
+    awayPlayer?: boolean | Frame$awayPlayerArgs<ExtArgs>
+    homePlayerHandicap?: boolean | Frame$homePlayerHandicapArgs<ExtArgs>
+    awayPlayerHandicap?: boolean | Frame$awayPlayerHandicapArgs<ExtArgs>
+    winner?: boolean | Frame$winnerArgs<ExtArgs>
+  }, ExtArgs["result"]["frame"]>
+
+  export type FrameSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fixtureId?: boolean
+    frameNumber?: boolean
+    homePlayerId?: boolean
+    homePlayerHandicapId?: boolean
+    awayPlayerId?: boolean
+    awayPlayerHandicapId?: boolean
+    homeScore?: boolean
+    awayScore?: boolean
+    winnerId?: boolean
+    status?: boolean
+    notes?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    fixture?: boolean | FixtureDefaultArgs<ExtArgs>
+    homePlayer?: boolean | Frame$homePlayerArgs<ExtArgs>
+    awayPlayer?: boolean | Frame$awayPlayerArgs<ExtArgs>
+    homePlayerHandicap?: boolean | Frame$homePlayerHandicapArgs<ExtArgs>
+    awayPlayerHandicap?: boolean | Frame$awayPlayerHandicapArgs<ExtArgs>
+    winner?: boolean | Frame$winnerArgs<ExtArgs>
+  }, ExtArgs["result"]["frame"]>
+
+  export type FrameSelectScalar = {
+    id?: boolean
+    fixtureId?: boolean
+    frameNumber?: boolean
+    homePlayerId?: boolean
+    homePlayerHandicapId?: boolean
+    awayPlayerId?: boolean
+    awayPlayerHandicapId?: boolean
+    homeScore?: boolean
+    awayScore?: boolean
+    winnerId?: boolean
+    status?: boolean
+    notes?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type FrameOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fixtureId" | "frameNumber" | "homePlayerId" | "homePlayerHandicapId" | "awayPlayerId" | "awayPlayerHandicapId" | "homeScore" | "awayScore" | "winnerId" | "status" | "notes" | "createdAt" | "updatedAt", ExtArgs["result"]["frame"]>
+  export type FrameInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fixture?: boolean | FixtureDefaultArgs<ExtArgs>
+    homePlayer?: boolean | Frame$homePlayerArgs<ExtArgs>
+    awayPlayer?: boolean | Frame$awayPlayerArgs<ExtArgs>
+    homePlayerHandicap?: boolean | Frame$homePlayerHandicapArgs<ExtArgs>
+    awayPlayerHandicap?: boolean | Frame$awayPlayerHandicapArgs<ExtArgs>
+    winner?: boolean | Frame$winnerArgs<ExtArgs>
+  }
+  export type FrameIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fixture?: boolean | FixtureDefaultArgs<ExtArgs>
+    homePlayer?: boolean | Frame$homePlayerArgs<ExtArgs>
+    awayPlayer?: boolean | Frame$awayPlayerArgs<ExtArgs>
+    homePlayerHandicap?: boolean | Frame$homePlayerHandicapArgs<ExtArgs>
+    awayPlayerHandicap?: boolean | Frame$awayPlayerHandicapArgs<ExtArgs>
+    winner?: boolean | Frame$winnerArgs<ExtArgs>
+  }
+  export type FrameIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fixture?: boolean | FixtureDefaultArgs<ExtArgs>
+    homePlayer?: boolean | Frame$homePlayerArgs<ExtArgs>
+    awayPlayer?: boolean | Frame$awayPlayerArgs<ExtArgs>
+    homePlayerHandicap?: boolean | Frame$homePlayerHandicapArgs<ExtArgs>
+    awayPlayerHandicap?: boolean | Frame$awayPlayerHandicapArgs<ExtArgs>
+    winner?: boolean | Frame$winnerArgs<ExtArgs>
+  }
+
+  export type $FramePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Frame"
+    objects: {
+      fixture: Prisma.$FixturePayload<ExtArgs>
+      homePlayer: Prisma.$CampaignPlayerPayload<ExtArgs> | null
+      awayPlayer: Prisma.$CampaignPlayerPayload<ExtArgs> | null
+      homePlayerHandicap: Prisma.$HandicapPayload<ExtArgs> | null
+      awayPlayerHandicap: Prisma.$HandicapPayload<ExtArgs> | null
+      winner: Prisma.$CampaignPlayerPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      fixtureId: string
+      frameNumber: number
+      homePlayerId: string | null
+      homePlayerHandicapId: string | null
+      awayPlayerId: string | null
+      awayPlayerHandicapId: string | null
+      homeScore: number
+      awayScore: number
+      winnerId: string | null
+      status: string
+      notes: string | null
+      createdAt: Date
+      updatedAt: Date | null
+    }, ExtArgs["result"]["frame"]>
+    composites: {}
+  }
+
+  type FrameGetPayload<S extends boolean | null | undefined | FrameDefaultArgs> = $Result.GetResult<Prisma.$FramePayload, S>
+
+  type FrameCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FrameFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FrameCountAggregateInputType | true
+    }
+
+  export interface FrameDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Frame'], meta: { name: 'Frame' } }
+    /**
+     * Find zero or one Frame that matches the filter.
+     * @param {FrameFindUniqueArgs} args - Arguments to find a Frame
+     * @example
+     * // Get one Frame
+     * const frame = await prisma.frame.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FrameFindUniqueArgs>(args: SelectSubset<T, FrameFindUniqueArgs<ExtArgs>>): Prisma__FrameClient<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Frame that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {FrameFindUniqueOrThrowArgs} args - Arguments to find a Frame
+     * @example
+     * // Get one Frame
+     * const frame = await prisma.frame.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FrameFindUniqueOrThrowArgs>(args: SelectSubset<T, FrameFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FrameClient<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Frame that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FrameFindFirstArgs} args - Arguments to find a Frame
+     * @example
+     * // Get one Frame
+     * const frame = await prisma.frame.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FrameFindFirstArgs>(args?: SelectSubset<T, FrameFindFirstArgs<ExtArgs>>): Prisma__FrameClient<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Frame that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FrameFindFirstOrThrowArgs} args - Arguments to find a Frame
+     * @example
+     * // Get one Frame
+     * const frame = await prisma.frame.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FrameFindFirstOrThrowArgs>(args?: SelectSubset<T, FrameFindFirstOrThrowArgs<ExtArgs>>): Prisma__FrameClient<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Frames that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FrameFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Frames
+     * const frames = await prisma.frame.findMany()
+     * 
+     * // Get first 10 Frames
+     * const frames = await prisma.frame.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const frameWithIdOnly = await prisma.frame.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends FrameFindManyArgs>(args?: SelectSubset<T, FrameFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Frame.
+     * @param {FrameCreateArgs} args - Arguments to create a Frame.
+     * @example
+     * // Create one Frame
+     * const Frame = await prisma.frame.create({
+     *   data: {
+     *     // ... data to create a Frame
+     *   }
+     * })
+     * 
+     */
+    create<T extends FrameCreateArgs>(args: SelectSubset<T, FrameCreateArgs<ExtArgs>>): Prisma__FrameClient<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Frames.
+     * @param {FrameCreateManyArgs} args - Arguments to create many Frames.
+     * @example
+     * // Create many Frames
+     * const frame = await prisma.frame.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FrameCreateManyArgs>(args?: SelectSubset<T, FrameCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Frames and returns the data saved in the database.
+     * @param {FrameCreateManyAndReturnArgs} args - Arguments to create many Frames.
+     * @example
+     * // Create many Frames
+     * const frame = await prisma.frame.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Frames and only return the `id`
+     * const frameWithIdOnly = await prisma.frame.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FrameCreateManyAndReturnArgs>(args?: SelectSubset<T, FrameCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Frame.
+     * @param {FrameDeleteArgs} args - Arguments to delete one Frame.
+     * @example
+     * // Delete one Frame
+     * const Frame = await prisma.frame.delete({
+     *   where: {
+     *     // ... filter to delete one Frame
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FrameDeleteArgs>(args: SelectSubset<T, FrameDeleteArgs<ExtArgs>>): Prisma__FrameClient<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Frame.
+     * @param {FrameUpdateArgs} args - Arguments to update one Frame.
+     * @example
+     * // Update one Frame
+     * const frame = await prisma.frame.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FrameUpdateArgs>(args: SelectSubset<T, FrameUpdateArgs<ExtArgs>>): Prisma__FrameClient<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Frames.
+     * @param {FrameDeleteManyArgs} args - Arguments to filter Frames to delete.
+     * @example
+     * // Delete a few Frames
+     * const { count } = await prisma.frame.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FrameDeleteManyArgs>(args?: SelectSubset<T, FrameDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Frames.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FrameUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Frames
+     * const frame = await prisma.frame.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FrameUpdateManyArgs>(args: SelectSubset<T, FrameUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Frames and returns the data updated in the database.
+     * @param {FrameUpdateManyAndReturnArgs} args - Arguments to update many Frames.
+     * @example
+     * // Update many Frames
+     * const frame = await prisma.frame.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Frames and only return the `id`
+     * const frameWithIdOnly = await prisma.frame.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends FrameUpdateManyAndReturnArgs>(args: SelectSubset<T, FrameUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Frame.
+     * @param {FrameUpsertArgs} args - Arguments to update or create a Frame.
+     * @example
+     * // Update or create a Frame
+     * const frame = await prisma.frame.upsert({
+     *   create: {
+     *     // ... data to create a Frame
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Frame we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FrameUpsertArgs>(args: SelectSubset<T, FrameUpsertArgs<ExtArgs>>): Prisma__FrameClient<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Frames.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FrameCountArgs} args - Arguments to filter Frames to count.
+     * @example
+     * // Count the number of Frames
+     * const count = await prisma.frame.count({
+     *   where: {
+     *     // ... the filter for the Frames we want to count
+     *   }
+     * })
+    **/
+    count<T extends FrameCountArgs>(
+      args?: Subset<T, FrameCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FrameCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Frame.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FrameAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FrameAggregateArgs>(args: Subset<T, FrameAggregateArgs>): Prisma.PrismaPromise<GetFrameAggregateType<T>>
+
+    /**
+     * Group by Frame.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FrameGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FrameGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FrameGroupByArgs['orderBy'] }
+        : { orderBy?: FrameGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FrameGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFrameGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Frame model
+   */
+  readonly fields: FrameFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Frame.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FrameClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    fixture<T extends FixtureDefaultArgs<ExtArgs> = {}>(args?: Subset<T, FixtureDefaultArgs<ExtArgs>>): Prisma__FixtureClient<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    homePlayer<T extends Frame$homePlayerArgs<ExtArgs> = {}>(args?: Subset<T, Frame$homePlayerArgs<ExtArgs>>): Prisma__CampaignPlayerClient<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    awayPlayer<T extends Frame$awayPlayerArgs<ExtArgs> = {}>(args?: Subset<T, Frame$awayPlayerArgs<ExtArgs>>): Prisma__CampaignPlayerClient<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    homePlayerHandicap<T extends Frame$homePlayerHandicapArgs<ExtArgs> = {}>(args?: Subset<T, Frame$homePlayerHandicapArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    awayPlayerHandicap<T extends Frame$awayPlayerHandicapArgs<ExtArgs> = {}>(args?: Subset<T, Frame$awayPlayerHandicapArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    winner<T extends Frame$winnerArgs<ExtArgs> = {}>(args?: Subset<T, Frame$winnerArgs<ExtArgs>>): Prisma__CampaignPlayerClient<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Frame model
+   */
+  interface FrameFieldRefs {
+    readonly id: FieldRef<"Frame", 'String'>
+    readonly fixtureId: FieldRef<"Frame", 'String'>
+    readonly frameNumber: FieldRef<"Frame", 'Int'>
+    readonly homePlayerId: FieldRef<"Frame", 'String'>
+    readonly homePlayerHandicapId: FieldRef<"Frame", 'String'>
+    readonly awayPlayerId: FieldRef<"Frame", 'String'>
+    readonly awayPlayerHandicapId: FieldRef<"Frame", 'String'>
+    readonly homeScore: FieldRef<"Frame", 'Int'>
+    readonly awayScore: FieldRef<"Frame", 'Int'>
+    readonly winnerId: FieldRef<"Frame", 'String'>
+    readonly status: FieldRef<"Frame", 'String'>
+    readonly notes: FieldRef<"Frame", 'String'>
+    readonly createdAt: FieldRef<"Frame", 'DateTime'>
+    readonly updatedAt: FieldRef<"Frame", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Frame findUnique
+   */
+  export type FrameFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    /**
+     * Filter, which Frame to fetch.
+     */
+    where: FrameWhereUniqueInput
+  }
+
+  /**
+   * Frame findUniqueOrThrow
+   */
+  export type FrameFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    /**
+     * Filter, which Frame to fetch.
+     */
+    where: FrameWhereUniqueInput
+  }
+
+  /**
+   * Frame findFirst
+   */
+  export type FrameFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    /**
+     * Filter, which Frame to fetch.
+     */
+    where?: FrameWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Frames to fetch.
+     */
+    orderBy?: FrameOrderByWithRelationInput | FrameOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Frames.
+     */
+    cursor?: FrameWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Frames from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Frames.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Frames.
+     */
+    distinct?: FrameScalarFieldEnum | FrameScalarFieldEnum[]
+  }
+
+  /**
+   * Frame findFirstOrThrow
+   */
+  export type FrameFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    /**
+     * Filter, which Frame to fetch.
+     */
+    where?: FrameWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Frames to fetch.
+     */
+    orderBy?: FrameOrderByWithRelationInput | FrameOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Frames.
+     */
+    cursor?: FrameWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Frames from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Frames.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Frames.
+     */
+    distinct?: FrameScalarFieldEnum | FrameScalarFieldEnum[]
+  }
+
+  /**
+   * Frame findMany
+   */
+  export type FrameFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    /**
+     * Filter, which Frames to fetch.
+     */
+    where?: FrameWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Frames to fetch.
+     */
+    orderBy?: FrameOrderByWithRelationInput | FrameOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Frames.
+     */
+    cursor?: FrameWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Frames from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Frames.
+     */
+    skip?: number
+    distinct?: FrameScalarFieldEnum | FrameScalarFieldEnum[]
+  }
+
+  /**
+   * Frame create
+   */
+  export type FrameCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Frame.
+     */
+    data: XOR<FrameCreateInput, FrameUncheckedCreateInput>
+  }
+
+  /**
+   * Frame createMany
+   */
+  export type FrameCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Frames.
+     */
+    data: FrameCreateManyInput | FrameCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Frame createManyAndReturn
+   */
+  export type FrameCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * The data used to create many Frames.
+     */
+    data: FrameCreateManyInput | FrameCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Frame update
+   */
+  export type FrameUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Frame.
+     */
+    data: XOR<FrameUpdateInput, FrameUncheckedUpdateInput>
+    /**
+     * Choose, which Frame to update.
+     */
+    where: FrameWhereUniqueInput
+  }
+
+  /**
+   * Frame updateMany
+   */
+  export type FrameUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Frames.
+     */
+    data: XOR<FrameUpdateManyMutationInput, FrameUncheckedUpdateManyInput>
+    /**
+     * Filter which Frames to update
+     */
+    where?: FrameWhereInput
+    /**
+     * Limit how many Frames to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Frame updateManyAndReturn
+   */
+  export type FrameUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * The data used to update Frames.
+     */
+    data: XOR<FrameUpdateManyMutationInput, FrameUncheckedUpdateManyInput>
+    /**
+     * Filter which Frames to update
+     */
+    where?: FrameWhereInput
+    /**
+     * Limit how many Frames to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Frame upsert
+   */
+  export type FrameUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Frame to update in case it exists.
+     */
+    where: FrameWhereUniqueInput
+    /**
+     * In case the Frame found by the `where` argument doesn't exist, create a new Frame with this data.
+     */
+    create: XOR<FrameCreateInput, FrameUncheckedCreateInput>
+    /**
+     * In case the Frame was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FrameUpdateInput, FrameUncheckedUpdateInput>
+  }
+
+  /**
+   * Frame delete
+   */
+  export type FrameDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    /**
+     * Filter which Frame to delete.
+     */
+    where: FrameWhereUniqueInput
+  }
+
+  /**
+   * Frame deleteMany
+   */
+  export type FrameDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Frames to delete
+     */
+    where?: FrameWhereInput
+    /**
+     * Limit how many Frames to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Frame.homePlayer
+   */
+  export type Frame$homePlayerArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerInclude<ExtArgs> | null
+    where?: CampaignPlayerWhereInput
+  }
+
+  /**
+   * Frame.awayPlayer
+   */
+  export type Frame$awayPlayerArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerInclude<ExtArgs> | null
+    where?: CampaignPlayerWhereInput
+  }
+
+  /**
+   * Frame.homePlayerHandicap
+   */
+  export type Frame$homePlayerHandicapArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    where?: HandicapWhereInput
+  }
+
+  /**
+   * Frame.awayPlayerHandicap
+   */
+  export type Frame$awayPlayerHandicapArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    where?: HandicapWhereInput
+  }
+
+  /**
+   * Frame.winner
+   */
+  export type Frame$winnerArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CampaignPlayer
+     */
+    select?: CampaignPlayerSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CampaignPlayer
+     */
+    omit?: CampaignPlayerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CampaignPlayerInclude<ExtArgs> | null
+    where?: CampaignPlayerWhereInput
+  }
+
+  /**
+   * Frame without action
+   */
+  export type FrameDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
   }
 
 
@@ -6621,6 +21032,7 @@ export namespace Prisma {
     email: 'email',
     emailVerified: 'emailVerified',
     image: 'image',
+    isAdmin: 'isAdmin',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -6670,11 +21082,165 @@ export namespace Prisma {
   export const CompetitionScalarFieldEnum: {
     id: 'id',
     name: 'name',
+    sortOrder: 'sortOrder',
+    collection: 'collection',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
 
   export type CompetitionScalarFieldEnum = (typeof CompetitionScalarFieldEnum)[keyof typeof CompetitionScalarFieldEnum]
+
+
+  export const SeasonScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    startDate: 'startDate',
+    endDate: 'endDate',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type SeasonScalarFieldEnum = (typeof SeasonScalarFieldEnum)[keyof typeof SeasonScalarFieldEnum]
+
+
+  export const CampaignScalarFieldEnum: {
+    id: 'id',
+    competitionId: 'competitionId',
+    seasonId: 'seasonId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type CampaignScalarFieldEnum = (typeof CampaignScalarFieldEnum)[keyof typeof CampaignScalarFieldEnum]
+
+
+  export const LeagueCampaignScalarFieldEnum: {
+    campaignId: 'campaignId',
+    played: 'played',
+    points: 'points',
+    pointsScoredFor: 'pointsScoredFor',
+    pointsScoredAgainst: 'pointsScoredAgainst',
+    framesPlayed: 'framesPlayed'
+  };
+
+  export type LeagueCampaignScalarFieldEnum = (typeof LeagueCampaignScalarFieldEnum)[keyof typeof LeagueCampaignScalarFieldEnum]
+
+
+  export const TeamScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type TeamScalarFieldEnum = (typeof TeamScalarFieldEnum)[keyof typeof TeamScalarFieldEnum]
+
+
+  export const TeamCampaignScalarFieldEnum: {
+    campaignId: 'campaignId',
+    teamId: 'teamId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type TeamCampaignScalarFieldEnum = (typeof TeamCampaignScalarFieldEnum)[keyof typeof TeamCampaignScalarFieldEnum]
+
+
+  export const LeagueTableSnapshotScalarFieldEnum: {
+    id: 'id',
+    competitionId: 'competitionId',
+    seasonId: 'seasonId',
+    teamId: 'teamId',
+    position: 'position',
+    points: 'points',
+    played: 'played',
+    won: 'won',
+    lost: 'lost',
+    drawn: 'drawn',
+    framesFor: 'framesFor',
+    framesAgainst: 'framesAgainst',
+    frameDifference: 'frameDifference',
+    snapshotDate: 'snapshotDate',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type LeagueTableSnapshotScalarFieldEnum = (typeof LeagueTableSnapshotScalarFieldEnum)[keyof typeof LeagueTableSnapshotScalarFieldEnum]
+
+
+  export const TeamCampaignPlayerScalarFieldEnum: {
+    campaignPlayerId: 'campaignPlayerId',
+    isTeamCaptain: 'isTeamCaptain',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type TeamCampaignPlayerScalarFieldEnum = (typeof TeamCampaignPlayerScalarFieldEnum)[keyof typeof TeamCampaignPlayerScalarFieldEnum]
+
+
+  export const CampaignPlayerScalarFieldEnum: {
+    id: 'id',
+    campaignId: 'campaignId',
+    userId: 'userId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type CampaignPlayerScalarFieldEnum = (typeof CampaignPlayerScalarFieldEnum)[keyof typeof CampaignPlayerScalarFieldEnum]
+
+
+  export const HandicapScalarFieldEnum: {
+    id: 'id',
+    value: 'value',
+    campaignPlayerId: 'campaignPlayerId',
+    createdAt: 'createdAt'
+  };
+
+  export type HandicapScalarFieldEnum = (typeof HandicapScalarFieldEnum)[keyof typeof HandicapScalarFieldEnum]
+
+
+  export const FixtureScalarFieldEnum: {
+    id: 'id',
+    competitionId: 'competitionId',
+    seasonId: 'seasonId',
+    homeCampaignId: 'homeCampaignId',
+    awayCampaignId: 'awayCampaignId',
+    scheduledDate: 'scheduledDate',
+    actualDate: 'actualDate',
+    homeScore: 'homeScore',
+    awayScore: 'awayScore',
+    status: 'status',
+    venue: 'venue',
+    notes: 'notes',
+    totalFrames: 'totalFrames',
+    isCompleted: 'isCompleted',
+    completedAt: 'completedAt',
+    isLive: 'isLive',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type FixtureScalarFieldEnum = (typeof FixtureScalarFieldEnum)[keyof typeof FixtureScalarFieldEnum]
+
+
+  export const FrameScalarFieldEnum: {
+    id: 'id',
+    fixtureId: 'fixtureId',
+    frameNumber: 'frameNumber',
+    homePlayerId: 'homePlayerId',
+    homePlayerHandicapId: 'homePlayerHandicapId',
+    awayPlayerId: 'awayPlayerId',
+    awayPlayerHandicapId: 'awayPlayerHandicapId',
+    homeScore: 'homeScore',
+    awayScore: 'awayScore',
+    winnerId: 'winnerId',
+    status: 'status',
+    notes: 'notes',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type FrameScalarFieldEnum = (typeof FrameScalarFieldEnum)[keyof typeof FrameScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -6735,6 +21301,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+  /**
    * Reference to a field of type 'Int'
    */
   export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
@@ -6774,10 +21347,12 @@ export namespace Prisma {
     email?: StringFilter<"User"> | string
     emailVerified?: DateTimeNullableFilter<"User"> | Date | string | null
     image?: StringNullableFilter<"User"> | string | null
+    isAdmin?: BoolFilter<"User"> | boolean
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
     accounts?: AccountListRelationFilter
     sessions?: SessionListRelationFilter
+    campaigns?: CampaignPlayerListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -6786,10 +21361,12 @@ export namespace Prisma {
     email?: SortOrder
     emailVerified?: SortOrderInput | SortOrder
     image?: SortOrderInput | SortOrder
+    isAdmin?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     accounts?: AccountOrderByRelationAggregateInput
     sessions?: SessionOrderByRelationAggregateInput
+    campaigns?: CampaignPlayerOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -6801,10 +21378,12 @@ export namespace Prisma {
     name?: StringNullableFilter<"User"> | string | null
     emailVerified?: DateTimeNullableFilter<"User"> | Date | string | null
     image?: StringNullableFilter<"User"> | string | null
+    isAdmin?: BoolFilter<"User"> | boolean
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
     accounts?: AccountListRelationFilter
     sessions?: SessionListRelationFilter
+    campaigns?: CampaignPlayerListRelationFilter
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
@@ -6813,6 +21392,7 @@ export namespace Prisma {
     email?: SortOrder
     emailVerified?: SortOrderInput | SortOrder
     image?: SortOrderInput | SortOrder
+    isAdmin?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: UserCountOrderByAggregateInput
@@ -6829,6 +21409,7 @@ export namespace Prisma {
     email?: StringWithAggregatesFilter<"User"> | string
     emailVerified?: DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
     image?: StringNullableWithAggregatesFilter<"User"> | string | null
+    isAdmin?: BoolWithAggregatesFilter<"User"> | boolean
     createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
   }
@@ -7035,15 +21616,25 @@ export namespace Prisma {
     NOT?: CompetitionWhereInput | CompetitionWhereInput[]
     id?: StringFilter<"Competition"> | string
     name?: StringFilter<"Competition"> | string
+    sortOrder?: IntFilter<"Competition"> | number
+    collection?: StringFilter<"Competition"> | string
     createdAt?: DateTimeFilter<"Competition"> | Date | string
     updatedAt?: DateTimeNullableFilter<"Competition"> | Date | string | null
+    campaigns?: CampaignListRelationFilter
+    fixtures?: FixtureListRelationFilter
+    leagueSnapshots?: LeagueTableSnapshotListRelationFilter
   }
 
   export type CompetitionOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
+    sortOrder?: SortOrder
+    collection?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrderInput | SortOrder
+    campaigns?: CampaignOrderByRelationAggregateInput
+    fixtures?: FixtureOrderByRelationAggregateInput
+    leagueSnapshots?: LeagueTableSnapshotOrderByRelationAggregateInput
   }
 
   export type CompetitionWhereUniqueInput = Prisma.AtLeast<{
@@ -7052,18 +21643,27 @@ export namespace Prisma {
     OR?: CompetitionWhereInput[]
     NOT?: CompetitionWhereInput | CompetitionWhereInput[]
     name?: StringFilter<"Competition"> | string
+    sortOrder?: IntFilter<"Competition"> | number
+    collection?: StringFilter<"Competition"> | string
     createdAt?: DateTimeFilter<"Competition"> | Date | string
     updatedAt?: DateTimeNullableFilter<"Competition"> | Date | string | null
+    campaigns?: CampaignListRelationFilter
+    fixtures?: FixtureListRelationFilter
+    leagueSnapshots?: LeagueTableSnapshotListRelationFilter
   }, "id">
 
   export type CompetitionOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
+    sortOrder?: SortOrder
+    collection?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrderInput | SortOrder
     _count?: CompetitionCountOrderByAggregateInput
+    _avg?: CompetitionAvgOrderByAggregateInput
     _max?: CompetitionMaxOrderByAggregateInput
     _min?: CompetitionMinOrderByAggregateInput
+    _sum?: CompetitionSumOrderByAggregateInput
   }
 
   export type CompetitionScalarWhereWithAggregatesInput = {
@@ -7072,8 +21672,863 @@ export namespace Prisma {
     NOT?: CompetitionScalarWhereWithAggregatesInput | CompetitionScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Competition"> | string
     name?: StringWithAggregatesFilter<"Competition"> | string
+    sortOrder?: IntWithAggregatesFilter<"Competition"> | number
+    collection?: StringWithAggregatesFilter<"Competition"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Competition"> | Date | string
     updatedAt?: DateTimeNullableWithAggregatesFilter<"Competition"> | Date | string | null
+  }
+
+  export type SeasonWhereInput = {
+    AND?: SeasonWhereInput | SeasonWhereInput[]
+    OR?: SeasonWhereInput[]
+    NOT?: SeasonWhereInput | SeasonWhereInput[]
+    id?: StringFilter<"Season"> | string
+    name?: StringFilter<"Season"> | string
+    startDate?: DateTimeNullableFilter<"Season"> | Date | string | null
+    endDate?: DateTimeNullableFilter<"Season"> | Date | string | null
+    createdAt?: DateTimeFilter<"Season"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"Season"> | Date | string | null
+    campaigns?: CampaignListRelationFilter
+    fixtures?: FixtureListRelationFilter
+    leagueSnapshots?: LeagueTableSnapshotListRelationFilter
+  }
+
+  export type SeasonOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    startDate?: SortOrderInput | SortOrder
+    endDate?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    campaigns?: CampaignOrderByRelationAggregateInput
+    fixtures?: FixtureOrderByRelationAggregateInput
+    leagueSnapshots?: LeagueTableSnapshotOrderByRelationAggregateInput
+  }
+
+  export type SeasonWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: SeasonWhereInput | SeasonWhereInput[]
+    OR?: SeasonWhereInput[]
+    NOT?: SeasonWhereInput | SeasonWhereInput[]
+    name?: StringFilter<"Season"> | string
+    startDate?: DateTimeNullableFilter<"Season"> | Date | string | null
+    endDate?: DateTimeNullableFilter<"Season"> | Date | string | null
+    createdAt?: DateTimeFilter<"Season"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"Season"> | Date | string | null
+    campaigns?: CampaignListRelationFilter
+    fixtures?: FixtureListRelationFilter
+    leagueSnapshots?: LeagueTableSnapshotListRelationFilter
+  }, "id">
+
+  export type SeasonOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    startDate?: SortOrderInput | SortOrder
+    endDate?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    _count?: SeasonCountOrderByAggregateInput
+    _max?: SeasonMaxOrderByAggregateInput
+    _min?: SeasonMinOrderByAggregateInput
+  }
+
+  export type SeasonScalarWhereWithAggregatesInput = {
+    AND?: SeasonScalarWhereWithAggregatesInput | SeasonScalarWhereWithAggregatesInput[]
+    OR?: SeasonScalarWhereWithAggregatesInput[]
+    NOT?: SeasonScalarWhereWithAggregatesInput | SeasonScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Season"> | string
+    name?: StringWithAggregatesFilter<"Season"> | string
+    startDate?: DateTimeNullableWithAggregatesFilter<"Season"> | Date | string | null
+    endDate?: DateTimeNullableWithAggregatesFilter<"Season"> | Date | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"Season"> | Date | string
+    updatedAt?: DateTimeNullableWithAggregatesFilter<"Season"> | Date | string | null
+  }
+
+  export type CampaignWhereInput = {
+    AND?: CampaignWhereInput | CampaignWhereInput[]
+    OR?: CampaignWhereInput[]
+    NOT?: CampaignWhereInput | CampaignWhereInput[]
+    id?: StringFilter<"Campaign"> | string
+    competitionId?: StringFilter<"Campaign"> | string
+    seasonId?: StringFilter<"Campaign"> | string
+    createdAt?: DateTimeFilter<"Campaign"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"Campaign"> | Date | string | null
+    teamCampaign?: XOR<TeamCampaignNullableScalarRelationFilter, TeamCampaignWhereInput> | null
+    leagueCampaign?: XOR<LeagueCampaignNullableScalarRelationFilter, LeagueCampaignWhereInput> | null
+    players?: CampaignPlayerListRelationFilter
+    homeFixtures?: FixtureListRelationFilter
+    awayFixtures?: FixtureListRelationFilter
+    competition?: XOR<CompetitionScalarRelationFilter, CompetitionWhereInput>
+    season?: XOR<SeasonScalarRelationFilter, SeasonWhereInput>
+  }
+
+  export type CampaignOrderByWithRelationInput = {
+    id?: SortOrder
+    competitionId?: SortOrder
+    seasonId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    teamCampaign?: TeamCampaignOrderByWithRelationInput
+    leagueCampaign?: LeagueCampaignOrderByWithRelationInput
+    players?: CampaignPlayerOrderByRelationAggregateInput
+    homeFixtures?: FixtureOrderByRelationAggregateInput
+    awayFixtures?: FixtureOrderByRelationAggregateInput
+    competition?: CompetitionOrderByWithRelationInput
+    season?: SeasonOrderByWithRelationInput
+  }
+
+  export type CampaignWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: CampaignWhereInput | CampaignWhereInput[]
+    OR?: CampaignWhereInput[]
+    NOT?: CampaignWhereInput | CampaignWhereInput[]
+    competitionId?: StringFilter<"Campaign"> | string
+    seasonId?: StringFilter<"Campaign"> | string
+    createdAt?: DateTimeFilter<"Campaign"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"Campaign"> | Date | string | null
+    teamCampaign?: XOR<TeamCampaignNullableScalarRelationFilter, TeamCampaignWhereInput> | null
+    leagueCampaign?: XOR<LeagueCampaignNullableScalarRelationFilter, LeagueCampaignWhereInput> | null
+    players?: CampaignPlayerListRelationFilter
+    homeFixtures?: FixtureListRelationFilter
+    awayFixtures?: FixtureListRelationFilter
+    competition?: XOR<CompetitionScalarRelationFilter, CompetitionWhereInput>
+    season?: XOR<SeasonScalarRelationFilter, SeasonWhereInput>
+  }, "id">
+
+  export type CampaignOrderByWithAggregationInput = {
+    id?: SortOrder
+    competitionId?: SortOrder
+    seasonId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    _count?: CampaignCountOrderByAggregateInput
+    _max?: CampaignMaxOrderByAggregateInput
+    _min?: CampaignMinOrderByAggregateInput
+  }
+
+  export type CampaignScalarWhereWithAggregatesInput = {
+    AND?: CampaignScalarWhereWithAggregatesInput | CampaignScalarWhereWithAggregatesInput[]
+    OR?: CampaignScalarWhereWithAggregatesInput[]
+    NOT?: CampaignScalarWhereWithAggregatesInput | CampaignScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Campaign"> | string
+    competitionId?: StringWithAggregatesFilter<"Campaign"> | string
+    seasonId?: StringWithAggregatesFilter<"Campaign"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Campaign"> | Date | string
+    updatedAt?: DateTimeNullableWithAggregatesFilter<"Campaign"> | Date | string | null
+  }
+
+  export type LeagueCampaignWhereInput = {
+    AND?: LeagueCampaignWhereInput | LeagueCampaignWhereInput[]
+    OR?: LeagueCampaignWhereInput[]
+    NOT?: LeagueCampaignWhereInput | LeagueCampaignWhereInput[]
+    campaignId?: StringFilter<"LeagueCampaign"> | string
+    played?: IntFilter<"LeagueCampaign"> | number
+    points?: FloatFilter<"LeagueCampaign"> | number
+    pointsScoredFor?: IntFilter<"LeagueCampaign"> | number
+    pointsScoredAgainst?: IntFilter<"LeagueCampaign"> | number
+    framesPlayed?: IntFilter<"LeagueCampaign"> | number
+    campaign?: XOR<CampaignScalarRelationFilter, CampaignWhereInput>
+  }
+
+  export type LeagueCampaignOrderByWithRelationInput = {
+    campaignId?: SortOrder
+    played?: SortOrder
+    points?: SortOrder
+    pointsScoredFor?: SortOrder
+    pointsScoredAgainst?: SortOrder
+    framesPlayed?: SortOrder
+    campaign?: CampaignOrderByWithRelationInput
+  }
+
+  export type LeagueCampaignWhereUniqueInput = Prisma.AtLeast<{
+    campaignId?: string
+    AND?: LeagueCampaignWhereInput | LeagueCampaignWhereInput[]
+    OR?: LeagueCampaignWhereInput[]
+    NOT?: LeagueCampaignWhereInput | LeagueCampaignWhereInput[]
+    played?: IntFilter<"LeagueCampaign"> | number
+    points?: FloatFilter<"LeagueCampaign"> | number
+    pointsScoredFor?: IntFilter<"LeagueCampaign"> | number
+    pointsScoredAgainst?: IntFilter<"LeagueCampaign"> | number
+    framesPlayed?: IntFilter<"LeagueCampaign"> | number
+    campaign?: XOR<CampaignScalarRelationFilter, CampaignWhereInput>
+  }, "campaignId">
+
+  export type LeagueCampaignOrderByWithAggregationInput = {
+    campaignId?: SortOrder
+    played?: SortOrder
+    points?: SortOrder
+    pointsScoredFor?: SortOrder
+    pointsScoredAgainst?: SortOrder
+    framesPlayed?: SortOrder
+    _count?: LeagueCampaignCountOrderByAggregateInput
+    _avg?: LeagueCampaignAvgOrderByAggregateInput
+    _max?: LeagueCampaignMaxOrderByAggregateInput
+    _min?: LeagueCampaignMinOrderByAggregateInput
+    _sum?: LeagueCampaignSumOrderByAggregateInput
+  }
+
+  export type LeagueCampaignScalarWhereWithAggregatesInput = {
+    AND?: LeagueCampaignScalarWhereWithAggregatesInput | LeagueCampaignScalarWhereWithAggregatesInput[]
+    OR?: LeagueCampaignScalarWhereWithAggregatesInput[]
+    NOT?: LeagueCampaignScalarWhereWithAggregatesInput | LeagueCampaignScalarWhereWithAggregatesInput[]
+    campaignId?: StringWithAggregatesFilter<"LeagueCampaign"> | string
+    played?: IntWithAggregatesFilter<"LeagueCampaign"> | number
+    points?: FloatWithAggregatesFilter<"LeagueCampaign"> | number
+    pointsScoredFor?: IntWithAggregatesFilter<"LeagueCampaign"> | number
+    pointsScoredAgainst?: IntWithAggregatesFilter<"LeagueCampaign"> | number
+    framesPlayed?: IntWithAggregatesFilter<"LeagueCampaign"> | number
+  }
+
+  export type TeamWhereInput = {
+    AND?: TeamWhereInput | TeamWhereInput[]
+    OR?: TeamWhereInput[]
+    NOT?: TeamWhereInput | TeamWhereInput[]
+    id?: StringFilter<"Team"> | string
+    name?: StringFilter<"Team"> | string
+    createdAt?: DateTimeFilter<"Team"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"Team"> | Date | string | null
+    campaigns?: TeamCampaignListRelationFilter
+    leagueSnapshots?: LeagueTableSnapshotListRelationFilter
+  }
+
+  export type TeamOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    campaigns?: TeamCampaignOrderByRelationAggregateInput
+    leagueSnapshots?: LeagueTableSnapshotOrderByRelationAggregateInput
+  }
+
+  export type TeamWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: TeamWhereInput | TeamWhereInput[]
+    OR?: TeamWhereInput[]
+    NOT?: TeamWhereInput | TeamWhereInput[]
+    name?: StringFilter<"Team"> | string
+    createdAt?: DateTimeFilter<"Team"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"Team"> | Date | string | null
+    campaigns?: TeamCampaignListRelationFilter
+    leagueSnapshots?: LeagueTableSnapshotListRelationFilter
+  }, "id">
+
+  export type TeamOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    _count?: TeamCountOrderByAggregateInput
+    _max?: TeamMaxOrderByAggregateInput
+    _min?: TeamMinOrderByAggregateInput
+  }
+
+  export type TeamScalarWhereWithAggregatesInput = {
+    AND?: TeamScalarWhereWithAggregatesInput | TeamScalarWhereWithAggregatesInput[]
+    OR?: TeamScalarWhereWithAggregatesInput[]
+    NOT?: TeamScalarWhereWithAggregatesInput | TeamScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Team"> | string
+    name?: StringWithAggregatesFilter<"Team"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Team"> | Date | string
+    updatedAt?: DateTimeNullableWithAggregatesFilter<"Team"> | Date | string | null
+  }
+
+  export type TeamCampaignWhereInput = {
+    AND?: TeamCampaignWhereInput | TeamCampaignWhereInput[]
+    OR?: TeamCampaignWhereInput[]
+    NOT?: TeamCampaignWhereInput | TeamCampaignWhereInput[]
+    campaignId?: StringFilter<"TeamCampaign"> | string
+    teamId?: StringFilter<"TeamCampaign"> | string
+    createdAt?: DateTimeFilter<"TeamCampaign"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"TeamCampaign"> | Date | string | null
+    team?: XOR<TeamScalarRelationFilter, TeamWhereInput>
+    campaign?: XOR<CampaignScalarRelationFilter, CampaignWhereInput>
+  }
+
+  export type TeamCampaignOrderByWithRelationInput = {
+    campaignId?: SortOrder
+    teamId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    team?: TeamOrderByWithRelationInput
+    campaign?: CampaignOrderByWithRelationInput
+  }
+
+  export type TeamCampaignWhereUniqueInput = Prisma.AtLeast<{
+    campaignId?: string
+    AND?: TeamCampaignWhereInput | TeamCampaignWhereInput[]
+    OR?: TeamCampaignWhereInput[]
+    NOT?: TeamCampaignWhereInput | TeamCampaignWhereInput[]
+    teamId?: StringFilter<"TeamCampaign"> | string
+    createdAt?: DateTimeFilter<"TeamCampaign"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"TeamCampaign"> | Date | string | null
+    team?: XOR<TeamScalarRelationFilter, TeamWhereInput>
+    campaign?: XOR<CampaignScalarRelationFilter, CampaignWhereInput>
+  }, "campaignId">
+
+  export type TeamCampaignOrderByWithAggregationInput = {
+    campaignId?: SortOrder
+    teamId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    _count?: TeamCampaignCountOrderByAggregateInput
+    _max?: TeamCampaignMaxOrderByAggregateInput
+    _min?: TeamCampaignMinOrderByAggregateInput
+  }
+
+  export type TeamCampaignScalarWhereWithAggregatesInput = {
+    AND?: TeamCampaignScalarWhereWithAggregatesInput | TeamCampaignScalarWhereWithAggregatesInput[]
+    OR?: TeamCampaignScalarWhereWithAggregatesInput[]
+    NOT?: TeamCampaignScalarWhereWithAggregatesInput | TeamCampaignScalarWhereWithAggregatesInput[]
+    campaignId?: StringWithAggregatesFilter<"TeamCampaign"> | string
+    teamId?: StringWithAggregatesFilter<"TeamCampaign"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"TeamCampaign"> | Date | string
+    updatedAt?: DateTimeNullableWithAggregatesFilter<"TeamCampaign"> | Date | string | null
+  }
+
+  export type LeagueTableSnapshotWhereInput = {
+    AND?: LeagueTableSnapshotWhereInput | LeagueTableSnapshotWhereInput[]
+    OR?: LeagueTableSnapshotWhereInput[]
+    NOT?: LeagueTableSnapshotWhereInput | LeagueTableSnapshotWhereInput[]
+    id?: StringFilter<"LeagueTableSnapshot"> | string
+    competitionId?: StringFilter<"LeagueTableSnapshot"> | string
+    seasonId?: StringFilter<"LeagueTableSnapshot"> | string
+    teamId?: StringFilter<"LeagueTableSnapshot"> | string
+    position?: IntFilter<"LeagueTableSnapshot"> | number
+    points?: FloatFilter<"LeagueTableSnapshot"> | number
+    played?: IntFilter<"LeagueTableSnapshot"> | number
+    won?: IntFilter<"LeagueTableSnapshot"> | number
+    lost?: IntFilter<"LeagueTableSnapshot"> | number
+    drawn?: IntFilter<"LeagueTableSnapshot"> | number
+    framesFor?: IntFilter<"LeagueTableSnapshot"> | number
+    framesAgainst?: IntFilter<"LeagueTableSnapshot"> | number
+    frameDifference?: IntFilter<"LeagueTableSnapshot"> | number
+    snapshotDate?: DateTimeFilter<"LeagueTableSnapshot"> | Date | string
+    createdAt?: DateTimeFilter<"LeagueTableSnapshot"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"LeagueTableSnapshot"> | Date | string | null
+    competition?: XOR<CompetitionScalarRelationFilter, CompetitionWhereInput>
+    season?: XOR<SeasonScalarRelationFilter, SeasonWhereInput>
+    team?: XOR<TeamScalarRelationFilter, TeamWhereInput>
+  }
+
+  export type LeagueTableSnapshotOrderByWithRelationInput = {
+    id?: SortOrder
+    competitionId?: SortOrder
+    seasonId?: SortOrder
+    teamId?: SortOrder
+    position?: SortOrder
+    points?: SortOrder
+    played?: SortOrder
+    won?: SortOrder
+    lost?: SortOrder
+    drawn?: SortOrder
+    framesFor?: SortOrder
+    framesAgainst?: SortOrder
+    frameDifference?: SortOrder
+    snapshotDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    competition?: CompetitionOrderByWithRelationInput
+    season?: SeasonOrderByWithRelationInput
+    team?: TeamOrderByWithRelationInput
+  }
+
+  export type LeagueTableSnapshotWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    competitionId_seasonId_teamId_snapshotDate?: LeagueTableSnapshotCompetitionIdSeasonIdTeamIdSnapshotDateCompoundUniqueInput
+    AND?: LeagueTableSnapshotWhereInput | LeagueTableSnapshotWhereInput[]
+    OR?: LeagueTableSnapshotWhereInput[]
+    NOT?: LeagueTableSnapshotWhereInput | LeagueTableSnapshotWhereInput[]
+    competitionId?: StringFilter<"LeagueTableSnapshot"> | string
+    seasonId?: StringFilter<"LeagueTableSnapshot"> | string
+    teamId?: StringFilter<"LeagueTableSnapshot"> | string
+    position?: IntFilter<"LeagueTableSnapshot"> | number
+    points?: FloatFilter<"LeagueTableSnapshot"> | number
+    played?: IntFilter<"LeagueTableSnapshot"> | number
+    won?: IntFilter<"LeagueTableSnapshot"> | number
+    lost?: IntFilter<"LeagueTableSnapshot"> | number
+    drawn?: IntFilter<"LeagueTableSnapshot"> | number
+    framesFor?: IntFilter<"LeagueTableSnapshot"> | number
+    framesAgainst?: IntFilter<"LeagueTableSnapshot"> | number
+    frameDifference?: IntFilter<"LeagueTableSnapshot"> | number
+    snapshotDate?: DateTimeFilter<"LeagueTableSnapshot"> | Date | string
+    createdAt?: DateTimeFilter<"LeagueTableSnapshot"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"LeagueTableSnapshot"> | Date | string | null
+    competition?: XOR<CompetitionScalarRelationFilter, CompetitionWhereInput>
+    season?: XOR<SeasonScalarRelationFilter, SeasonWhereInput>
+    team?: XOR<TeamScalarRelationFilter, TeamWhereInput>
+  }, "id" | "competitionId_seasonId_teamId_snapshotDate">
+
+  export type LeagueTableSnapshotOrderByWithAggregationInput = {
+    id?: SortOrder
+    competitionId?: SortOrder
+    seasonId?: SortOrder
+    teamId?: SortOrder
+    position?: SortOrder
+    points?: SortOrder
+    played?: SortOrder
+    won?: SortOrder
+    lost?: SortOrder
+    drawn?: SortOrder
+    framesFor?: SortOrder
+    framesAgainst?: SortOrder
+    frameDifference?: SortOrder
+    snapshotDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    _count?: LeagueTableSnapshotCountOrderByAggregateInput
+    _avg?: LeagueTableSnapshotAvgOrderByAggregateInput
+    _max?: LeagueTableSnapshotMaxOrderByAggregateInput
+    _min?: LeagueTableSnapshotMinOrderByAggregateInput
+    _sum?: LeagueTableSnapshotSumOrderByAggregateInput
+  }
+
+  export type LeagueTableSnapshotScalarWhereWithAggregatesInput = {
+    AND?: LeagueTableSnapshotScalarWhereWithAggregatesInput | LeagueTableSnapshotScalarWhereWithAggregatesInput[]
+    OR?: LeagueTableSnapshotScalarWhereWithAggregatesInput[]
+    NOT?: LeagueTableSnapshotScalarWhereWithAggregatesInput | LeagueTableSnapshotScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"LeagueTableSnapshot"> | string
+    competitionId?: StringWithAggregatesFilter<"LeagueTableSnapshot"> | string
+    seasonId?: StringWithAggregatesFilter<"LeagueTableSnapshot"> | string
+    teamId?: StringWithAggregatesFilter<"LeagueTableSnapshot"> | string
+    position?: IntWithAggregatesFilter<"LeagueTableSnapshot"> | number
+    points?: FloatWithAggregatesFilter<"LeagueTableSnapshot"> | number
+    played?: IntWithAggregatesFilter<"LeagueTableSnapshot"> | number
+    won?: IntWithAggregatesFilter<"LeagueTableSnapshot"> | number
+    lost?: IntWithAggregatesFilter<"LeagueTableSnapshot"> | number
+    drawn?: IntWithAggregatesFilter<"LeagueTableSnapshot"> | number
+    framesFor?: IntWithAggregatesFilter<"LeagueTableSnapshot"> | number
+    framesAgainst?: IntWithAggregatesFilter<"LeagueTableSnapshot"> | number
+    frameDifference?: IntWithAggregatesFilter<"LeagueTableSnapshot"> | number
+    snapshotDate?: DateTimeWithAggregatesFilter<"LeagueTableSnapshot"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"LeagueTableSnapshot"> | Date | string
+    updatedAt?: DateTimeNullableWithAggregatesFilter<"LeagueTableSnapshot"> | Date | string | null
+  }
+
+  export type TeamCampaignPlayerWhereInput = {
+    AND?: TeamCampaignPlayerWhereInput | TeamCampaignPlayerWhereInput[]
+    OR?: TeamCampaignPlayerWhereInput[]
+    NOT?: TeamCampaignPlayerWhereInput | TeamCampaignPlayerWhereInput[]
+    campaignPlayerId?: StringFilter<"TeamCampaignPlayer"> | string
+    isTeamCaptain?: BoolFilter<"TeamCampaignPlayer"> | boolean
+    createdAt?: DateTimeFilter<"TeamCampaignPlayer"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"TeamCampaignPlayer"> | Date | string | null
+  }
+
+  export type TeamCampaignPlayerOrderByWithRelationInput = {
+    campaignPlayerId?: SortOrder
+    isTeamCaptain?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+  }
+
+  export type TeamCampaignPlayerWhereUniqueInput = Prisma.AtLeast<{
+    campaignPlayerId?: string
+    AND?: TeamCampaignPlayerWhereInput | TeamCampaignPlayerWhereInput[]
+    OR?: TeamCampaignPlayerWhereInput[]
+    NOT?: TeamCampaignPlayerWhereInput | TeamCampaignPlayerWhereInput[]
+    isTeamCaptain?: BoolFilter<"TeamCampaignPlayer"> | boolean
+    createdAt?: DateTimeFilter<"TeamCampaignPlayer"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"TeamCampaignPlayer"> | Date | string | null
+  }, "campaignPlayerId">
+
+  export type TeamCampaignPlayerOrderByWithAggregationInput = {
+    campaignPlayerId?: SortOrder
+    isTeamCaptain?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    _count?: TeamCampaignPlayerCountOrderByAggregateInput
+    _max?: TeamCampaignPlayerMaxOrderByAggregateInput
+    _min?: TeamCampaignPlayerMinOrderByAggregateInput
+  }
+
+  export type TeamCampaignPlayerScalarWhereWithAggregatesInput = {
+    AND?: TeamCampaignPlayerScalarWhereWithAggregatesInput | TeamCampaignPlayerScalarWhereWithAggregatesInput[]
+    OR?: TeamCampaignPlayerScalarWhereWithAggregatesInput[]
+    NOT?: TeamCampaignPlayerScalarWhereWithAggregatesInput | TeamCampaignPlayerScalarWhereWithAggregatesInput[]
+    campaignPlayerId?: StringWithAggregatesFilter<"TeamCampaignPlayer"> | string
+    isTeamCaptain?: BoolWithAggregatesFilter<"TeamCampaignPlayer"> | boolean
+    createdAt?: DateTimeWithAggregatesFilter<"TeamCampaignPlayer"> | Date | string
+    updatedAt?: DateTimeNullableWithAggregatesFilter<"TeamCampaignPlayer"> | Date | string | null
+  }
+
+  export type CampaignPlayerWhereInput = {
+    AND?: CampaignPlayerWhereInput | CampaignPlayerWhereInput[]
+    OR?: CampaignPlayerWhereInput[]
+    NOT?: CampaignPlayerWhereInput | CampaignPlayerWhereInput[]
+    id?: StringFilter<"CampaignPlayer"> | string
+    campaignId?: StringFilter<"CampaignPlayer"> | string
+    userId?: StringFilter<"CampaignPlayer"> | string
+    createdAt?: DateTimeFilter<"CampaignPlayer"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"CampaignPlayer"> | Date | string | null
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    campaign?: XOR<CampaignScalarRelationFilter, CampaignWhereInput>
+    homeFrames?: FrameListRelationFilter
+    awayFrames?: FrameListRelationFilter
+    wonFrames?: FrameListRelationFilter
+    handicaps?: HandicapListRelationFilter
+  }
+
+  export type CampaignPlayerOrderByWithRelationInput = {
+    id?: SortOrder
+    campaignId?: SortOrder
+    userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    user?: UserOrderByWithRelationInput
+    campaign?: CampaignOrderByWithRelationInput
+    homeFrames?: FrameOrderByRelationAggregateInput
+    awayFrames?: FrameOrderByRelationAggregateInput
+    wonFrames?: FrameOrderByRelationAggregateInput
+    handicaps?: HandicapOrderByRelationAggregateInput
+  }
+
+  export type CampaignPlayerWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: CampaignPlayerWhereInput | CampaignPlayerWhereInput[]
+    OR?: CampaignPlayerWhereInput[]
+    NOT?: CampaignPlayerWhereInput | CampaignPlayerWhereInput[]
+    campaignId?: StringFilter<"CampaignPlayer"> | string
+    userId?: StringFilter<"CampaignPlayer"> | string
+    createdAt?: DateTimeFilter<"CampaignPlayer"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"CampaignPlayer"> | Date | string | null
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    campaign?: XOR<CampaignScalarRelationFilter, CampaignWhereInput>
+    homeFrames?: FrameListRelationFilter
+    awayFrames?: FrameListRelationFilter
+    wonFrames?: FrameListRelationFilter
+    handicaps?: HandicapListRelationFilter
+  }, "id">
+
+  export type CampaignPlayerOrderByWithAggregationInput = {
+    id?: SortOrder
+    campaignId?: SortOrder
+    userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    _count?: CampaignPlayerCountOrderByAggregateInput
+    _max?: CampaignPlayerMaxOrderByAggregateInput
+    _min?: CampaignPlayerMinOrderByAggregateInput
+  }
+
+  export type CampaignPlayerScalarWhereWithAggregatesInput = {
+    AND?: CampaignPlayerScalarWhereWithAggregatesInput | CampaignPlayerScalarWhereWithAggregatesInput[]
+    OR?: CampaignPlayerScalarWhereWithAggregatesInput[]
+    NOT?: CampaignPlayerScalarWhereWithAggregatesInput | CampaignPlayerScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"CampaignPlayer"> | string
+    campaignId?: StringWithAggregatesFilter<"CampaignPlayer"> | string
+    userId?: StringWithAggregatesFilter<"CampaignPlayer"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"CampaignPlayer"> | Date | string
+    updatedAt?: DateTimeNullableWithAggregatesFilter<"CampaignPlayer"> | Date | string | null
+  }
+
+  export type HandicapWhereInput = {
+    AND?: HandicapWhereInput | HandicapWhereInput[]
+    OR?: HandicapWhereInput[]
+    NOT?: HandicapWhereInput | HandicapWhereInput[]
+    id?: StringFilter<"Handicap"> | string
+    value?: IntFilter<"Handicap"> | number
+    campaignPlayerId?: StringFilter<"Handicap"> | string
+    createdAt?: DateTimeFilter<"Handicap"> | Date | string
+    homeFrames?: FrameListRelationFilter
+    awayFrames?: FrameListRelationFilter
+    campaignPlayer?: XOR<CampaignPlayerScalarRelationFilter, CampaignPlayerWhereInput>
+  }
+
+  export type HandicapOrderByWithRelationInput = {
+    id?: SortOrder
+    value?: SortOrder
+    campaignPlayerId?: SortOrder
+    createdAt?: SortOrder
+    homeFrames?: FrameOrderByRelationAggregateInput
+    awayFrames?: FrameOrderByRelationAggregateInput
+    campaignPlayer?: CampaignPlayerOrderByWithRelationInput
+  }
+
+  export type HandicapWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: HandicapWhereInput | HandicapWhereInput[]
+    OR?: HandicapWhereInput[]
+    NOT?: HandicapWhereInput | HandicapWhereInput[]
+    value?: IntFilter<"Handicap"> | number
+    campaignPlayerId?: StringFilter<"Handicap"> | string
+    createdAt?: DateTimeFilter<"Handicap"> | Date | string
+    homeFrames?: FrameListRelationFilter
+    awayFrames?: FrameListRelationFilter
+    campaignPlayer?: XOR<CampaignPlayerScalarRelationFilter, CampaignPlayerWhereInput>
+  }, "id">
+
+  export type HandicapOrderByWithAggregationInput = {
+    id?: SortOrder
+    value?: SortOrder
+    campaignPlayerId?: SortOrder
+    createdAt?: SortOrder
+    _count?: HandicapCountOrderByAggregateInput
+    _avg?: HandicapAvgOrderByAggregateInput
+    _max?: HandicapMaxOrderByAggregateInput
+    _min?: HandicapMinOrderByAggregateInput
+    _sum?: HandicapSumOrderByAggregateInput
+  }
+
+  export type HandicapScalarWhereWithAggregatesInput = {
+    AND?: HandicapScalarWhereWithAggregatesInput | HandicapScalarWhereWithAggregatesInput[]
+    OR?: HandicapScalarWhereWithAggregatesInput[]
+    NOT?: HandicapScalarWhereWithAggregatesInput | HandicapScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Handicap"> | string
+    value?: IntWithAggregatesFilter<"Handicap"> | number
+    campaignPlayerId?: StringWithAggregatesFilter<"Handicap"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Handicap"> | Date | string
+  }
+
+  export type FixtureWhereInput = {
+    AND?: FixtureWhereInput | FixtureWhereInput[]
+    OR?: FixtureWhereInput[]
+    NOT?: FixtureWhereInput | FixtureWhereInput[]
+    id?: StringFilter<"Fixture"> | string
+    competitionId?: StringFilter<"Fixture"> | string
+    seasonId?: StringFilter<"Fixture"> | string
+    homeCampaignId?: StringFilter<"Fixture"> | string
+    awayCampaignId?: StringFilter<"Fixture"> | string
+    scheduledDate?: DateTimeNullableFilter<"Fixture"> | Date | string | null
+    actualDate?: DateTimeNullableFilter<"Fixture"> | Date | string | null
+    homeScore?: IntFilter<"Fixture"> | number
+    awayScore?: IntFilter<"Fixture"> | number
+    status?: StringFilter<"Fixture"> | string
+    venue?: StringNullableFilter<"Fixture"> | string | null
+    notes?: StringNullableFilter<"Fixture"> | string | null
+    totalFrames?: IntFilter<"Fixture"> | number
+    isCompleted?: BoolFilter<"Fixture"> | boolean
+    completedAt?: DateTimeNullableFilter<"Fixture"> | Date | string | null
+    isLive?: BoolFilter<"Fixture"> | boolean
+    createdAt?: DateTimeFilter<"Fixture"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"Fixture"> | Date | string | null
+    competition?: XOR<CompetitionScalarRelationFilter, CompetitionWhereInput>
+    season?: XOR<SeasonScalarRelationFilter, SeasonWhereInput>
+    homeCampaign?: XOR<CampaignScalarRelationFilter, CampaignWhereInput>
+    awayCampaign?: XOR<CampaignScalarRelationFilter, CampaignWhereInput>
+    frames?: FrameListRelationFilter
+  }
+
+  export type FixtureOrderByWithRelationInput = {
+    id?: SortOrder
+    competitionId?: SortOrder
+    seasonId?: SortOrder
+    homeCampaignId?: SortOrder
+    awayCampaignId?: SortOrder
+    scheduledDate?: SortOrderInput | SortOrder
+    actualDate?: SortOrderInput | SortOrder
+    homeScore?: SortOrder
+    awayScore?: SortOrder
+    status?: SortOrder
+    venue?: SortOrderInput | SortOrder
+    notes?: SortOrderInput | SortOrder
+    totalFrames?: SortOrder
+    isCompleted?: SortOrder
+    completedAt?: SortOrderInput | SortOrder
+    isLive?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    competition?: CompetitionOrderByWithRelationInput
+    season?: SeasonOrderByWithRelationInput
+    homeCampaign?: CampaignOrderByWithRelationInput
+    awayCampaign?: CampaignOrderByWithRelationInput
+    frames?: FrameOrderByRelationAggregateInput
+  }
+
+  export type FixtureWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: FixtureWhereInput | FixtureWhereInput[]
+    OR?: FixtureWhereInput[]
+    NOT?: FixtureWhereInput | FixtureWhereInput[]
+    competitionId?: StringFilter<"Fixture"> | string
+    seasonId?: StringFilter<"Fixture"> | string
+    homeCampaignId?: StringFilter<"Fixture"> | string
+    awayCampaignId?: StringFilter<"Fixture"> | string
+    scheduledDate?: DateTimeNullableFilter<"Fixture"> | Date | string | null
+    actualDate?: DateTimeNullableFilter<"Fixture"> | Date | string | null
+    homeScore?: IntFilter<"Fixture"> | number
+    awayScore?: IntFilter<"Fixture"> | number
+    status?: StringFilter<"Fixture"> | string
+    venue?: StringNullableFilter<"Fixture"> | string | null
+    notes?: StringNullableFilter<"Fixture"> | string | null
+    totalFrames?: IntFilter<"Fixture"> | number
+    isCompleted?: BoolFilter<"Fixture"> | boolean
+    completedAt?: DateTimeNullableFilter<"Fixture"> | Date | string | null
+    isLive?: BoolFilter<"Fixture"> | boolean
+    createdAt?: DateTimeFilter<"Fixture"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"Fixture"> | Date | string | null
+    competition?: XOR<CompetitionScalarRelationFilter, CompetitionWhereInput>
+    season?: XOR<SeasonScalarRelationFilter, SeasonWhereInput>
+    homeCampaign?: XOR<CampaignScalarRelationFilter, CampaignWhereInput>
+    awayCampaign?: XOR<CampaignScalarRelationFilter, CampaignWhereInput>
+    frames?: FrameListRelationFilter
+  }, "id">
+
+  export type FixtureOrderByWithAggregationInput = {
+    id?: SortOrder
+    competitionId?: SortOrder
+    seasonId?: SortOrder
+    homeCampaignId?: SortOrder
+    awayCampaignId?: SortOrder
+    scheduledDate?: SortOrderInput | SortOrder
+    actualDate?: SortOrderInput | SortOrder
+    homeScore?: SortOrder
+    awayScore?: SortOrder
+    status?: SortOrder
+    venue?: SortOrderInput | SortOrder
+    notes?: SortOrderInput | SortOrder
+    totalFrames?: SortOrder
+    isCompleted?: SortOrder
+    completedAt?: SortOrderInput | SortOrder
+    isLive?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    _count?: FixtureCountOrderByAggregateInput
+    _avg?: FixtureAvgOrderByAggregateInput
+    _max?: FixtureMaxOrderByAggregateInput
+    _min?: FixtureMinOrderByAggregateInput
+    _sum?: FixtureSumOrderByAggregateInput
+  }
+
+  export type FixtureScalarWhereWithAggregatesInput = {
+    AND?: FixtureScalarWhereWithAggregatesInput | FixtureScalarWhereWithAggregatesInput[]
+    OR?: FixtureScalarWhereWithAggregatesInput[]
+    NOT?: FixtureScalarWhereWithAggregatesInput | FixtureScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Fixture"> | string
+    competitionId?: StringWithAggregatesFilter<"Fixture"> | string
+    seasonId?: StringWithAggregatesFilter<"Fixture"> | string
+    homeCampaignId?: StringWithAggregatesFilter<"Fixture"> | string
+    awayCampaignId?: StringWithAggregatesFilter<"Fixture"> | string
+    scheduledDate?: DateTimeNullableWithAggregatesFilter<"Fixture"> | Date | string | null
+    actualDate?: DateTimeNullableWithAggregatesFilter<"Fixture"> | Date | string | null
+    homeScore?: IntWithAggregatesFilter<"Fixture"> | number
+    awayScore?: IntWithAggregatesFilter<"Fixture"> | number
+    status?: StringWithAggregatesFilter<"Fixture"> | string
+    venue?: StringNullableWithAggregatesFilter<"Fixture"> | string | null
+    notes?: StringNullableWithAggregatesFilter<"Fixture"> | string | null
+    totalFrames?: IntWithAggregatesFilter<"Fixture"> | number
+    isCompleted?: BoolWithAggregatesFilter<"Fixture"> | boolean
+    completedAt?: DateTimeNullableWithAggregatesFilter<"Fixture"> | Date | string | null
+    isLive?: BoolWithAggregatesFilter<"Fixture"> | boolean
+    createdAt?: DateTimeWithAggregatesFilter<"Fixture"> | Date | string
+    updatedAt?: DateTimeNullableWithAggregatesFilter<"Fixture"> | Date | string | null
+  }
+
+  export type FrameWhereInput = {
+    AND?: FrameWhereInput | FrameWhereInput[]
+    OR?: FrameWhereInput[]
+    NOT?: FrameWhereInput | FrameWhereInput[]
+    id?: StringFilter<"Frame"> | string
+    fixtureId?: StringFilter<"Frame"> | string
+    frameNumber?: IntFilter<"Frame"> | number
+    homePlayerId?: StringNullableFilter<"Frame"> | string | null
+    homePlayerHandicapId?: StringNullableFilter<"Frame"> | string | null
+    awayPlayerId?: StringNullableFilter<"Frame"> | string | null
+    awayPlayerHandicapId?: StringNullableFilter<"Frame"> | string | null
+    homeScore?: IntFilter<"Frame"> | number
+    awayScore?: IntFilter<"Frame"> | number
+    winnerId?: StringNullableFilter<"Frame"> | string | null
+    status?: StringFilter<"Frame"> | string
+    notes?: StringNullableFilter<"Frame"> | string | null
+    createdAt?: DateTimeFilter<"Frame"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"Frame"> | Date | string | null
+    fixture?: XOR<FixtureScalarRelationFilter, FixtureWhereInput>
+    homePlayer?: XOR<CampaignPlayerNullableScalarRelationFilter, CampaignPlayerWhereInput> | null
+    awayPlayer?: XOR<CampaignPlayerNullableScalarRelationFilter, CampaignPlayerWhereInput> | null
+    homePlayerHandicap?: XOR<HandicapNullableScalarRelationFilter, HandicapWhereInput> | null
+    awayPlayerHandicap?: XOR<HandicapNullableScalarRelationFilter, HandicapWhereInput> | null
+    winner?: XOR<CampaignPlayerNullableScalarRelationFilter, CampaignPlayerWhereInput> | null
+  }
+
+  export type FrameOrderByWithRelationInput = {
+    id?: SortOrder
+    fixtureId?: SortOrder
+    frameNumber?: SortOrder
+    homePlayerId?: SortOrderInput | SortOrder
+    homePlayerHandicapId?: SortOrderInput | SortOrder
+    awayPlayerId?: SortOrderInput | SortOrder
+    awayPlayerHandicapId?: SortOrderInput | SortOrder
+    homeScore?: SortOrder
+    awayScore?: SortOrder
+    winnerId?: SortOrderInput | SortOrder
+    status?: SortOrder
+    notes?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    fixture?: FixtureOrderByWithRelationInput
+    homePlayer?: CampaignPlayerOrderByWithRelationInput
+    awayPlayer?: CampaignPlayerOrderByWithRelationInput
+    homePlayerHandicap?: HandicapOrderByWithRelationInput
+    awayPlayerHandicap?: HandicapOrderByWithRelationInput
+    winner?: CampaignPlayerOrderByWithRelationInput
+  }
+
+  export type FrameWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    fixtureId_frameNumber?: FrameFixtureIdFrameNumberCompoundUniqueInput
+    AND?: FrameWhereInput | FrameWhereInput[]
+    OR?: FrameWhereInput[]
+    NOT?: FrameWhereInput | FrameWhereInput[]
+    fixtureId?: StringFilter<"Frame"> | string
+    frameNumber?: IntFilter<"Frame"> | number
+    homePlayerId?: StringNullableFilter<"Frame"> | string | null
+    homePlayerHandicapId?: StringNullableFilter<"Frame"> | string | null
+    awayPlayerId?: StringNullableFilter<"Frame"> | string | null
+    awayPlayerHandicapId?: StringNullableFilter<"Frame"> | string | null
+    homeScore?: IntFilter<"Frame"> | number
+    awayScore?: IntFilter<"Frame"> | number
+    winnerId?: StringNullableFilter<"Frame"> | string | null
+    status?: StringFilter<"Frame"> | string
+    notes?: StringNullableFilter<"Frame"> | string | null
+    createdAt?: DateTimeFilter<"Frame"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"Frame"> | Date | string | null
+    fixture?: XOR<FixtureScalarRelationFilter, FixtureWhereInput>
+    homePlayer?: XOR<CampaignPlayerNullableScalarRelationFilter, CampaignPlayerWhereInput> | null
+    awayPlayer?: XOR<CampaignPlayerNullableScalarRelationFilter, CampaignPlayerWhereInput> | null
+    homePlayerHandicap?: XOR<HandicapNullableScalarRelationFilter, HandicapWhereInput> | null
+    awayPlayerHandicap?: XOR<HandicapNullableScalarRelationFilter, HandicapWhereInput> | null
+    winner?: XOR<CampaignPlayerNullableScalarRelationFilter, CampaignPlayerWhereInput> | null
+  }, "id" | "fixtureId_frameNumber">
+
+  export type FrameOrderByWithAggregationInput = {
+    id?: SortOrder
+    fixtureId?: SortOrder
+    frameNumber?: SortOrder
+    homePlayerId?: SortOrderInput | SortOrder
+    homePlayerHandicapId?: SortOrderInput | SortOrder
+    awayPlayerId?: SortOrderInput | SortOrder
+    awayPlayerHandicapId?: SortOrderInput | SortOrder
+    homeScore?: SortOrder
+    awayScore?: SortOrder
+    winnerId?: SortOrderInput | SortOrder
+    status?: SortOrder
+    notes?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
+    _count?: FrameCountOrderByAggregateInput
+    _avg?: FrameAvgOrderByAggregateInput
+    _max?: FrameMaxOrderByAggregateInput
+    _min?: FrameMinOrderByAggregateInput
+    _sum?: FrameSumOrderByAggregateInput
+  }
+
+  export type FrameScalarWhereWithAggregatesInput = {
+    AND?: FrameScalarWhereWithAggregatesInput | FrameScalarWhereWithAggregatesInput[]
+    OR?: FrameScalarWhereWithAggregatesInput[]
+    NOT?: FrameScalarWhereWithAggregatesInput | FrameScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Frame"> | string
+    fixtureId?: StringWithAggregatesFilter<"Frame"> | string
+    frameNumber?: IntWithAggregatesFilter<"Frame"> | number
+    homePlayerId?: StringNullableWithAggregatesFilter<"Frame"> | string | null
+    homePlayerHandicapId?: StringNullableWithAggregatesFilter<"Frame"> | string | null
+    awayPlayerId?: StringNullableWithAggregatesFilter<"Frame"> | string | null
+    awayPlayerHandicapId?: StringNullableWithAggregatesFilter<"Frame"> | string | null
+    homeScore?: IntWithAggregatesFilter<"Frame"> | number
+    awayScore?: IntWithAggregatesFilter<"Frame"> | number
+    winnerId?: StringNullableWithAggregatesFilter<"Frame"> | string | null
+    status?: StringWithAggregatesFilter<"Frame"> | string
+    notes?: StringNullableWithAggregatesFilter<"Frame"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"Frame"> | Date | string
+    updatedAt?: DateTimeNullableWithAggregatesFilter<"Frame"> | Date | string | null
   }
 
   export type UserCreateInput = {
@@ -7082,10 +22537,12 @@ export namespace Prisma {
     email: string
     emailVerified?: Date | string | null
     image?: string | null
+    isAdmin?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     accounts?: AccountCreateNestedManyWithoutUserInput
     sessions?: SessionCreateNestedManyWithoutUserInput
+    campaigns?: CampaignPlayerCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -7094,10 +22551,12 @@ export namespace Prisma {
     email: string
     emailVerified?: Date | string | null
     image?: string | null
+    isAdmin?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+    campaigns?: CampaignPlayerUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
@@ -7106,10 +22565,12 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
+    isAdmin?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accounts?: AccountUpdateManyWithoutUserNestedInput
     sessions?: SessionUpdateManyWithoutUserNestedInput
+    campaigns?: CampaignPlayerUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -7118,10 +22579,12 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
+    isAdmin?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+    campaigns?: CampaignPlayerUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -7130,6 +22593,7 @@ export namespace Prisma {
     email: string
     emailVerified?: Date | string | null
     image?: string | null
+    isAdmin?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -7140,6 +22604,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
+    isAdmin?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -7150,6 +22615,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
+    isAdmin?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -7365,34 +22831,56 @@ export namespace Prisma {
   export type CompetitionCreateInput = {
     id?: string
     name: string
+    sortOrder?: number
+    collection?: string
     createdAt?: Date | string
     updatedAt?: Date | string | null
+    campaigns?: CampaignCreateNestedManyWithoutCompetitionInput
+    fixtures?: FixtureCreateNestedManyWithoutCompetitionInput
+    leagueSnapshots?: LeagueTableSnapshotCreateNestedManyWithoutCompetitionInput
   }
 
   export type CompetitionUncheckedCreateInput = {
     id?: string
     name: string
+    sortOrder?: number
+    collection?: string
     createdAt?: Date | string
     updatedAt?: Date | string | null
+    campaigns?: CampaignUncheckedCreateNestedManyWithoutCompetitionInput
+    fixtures?: FixtureUncheckedCreateNestedManyWithoutCompetitionInput
+    leagueSnapshots?: LeagueTableSnapshotUncheckedCreateNestedManyWithoutCompetitionInput
   }
 
   export type CompetitionUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    sortOrder?: IntFieldUpdateOperationsInput | number
+    collection?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaigns?: CampaignUpdateManyWithoutCompetitionNestedInput
+    fixtures?: FixtureUpdateManyWithoutCompetitionNestedInput
+    leagueSnapshots?: LeagueTableSnapshotUpdateManyWithoutCompetitionNestedInput
   }
 
   export type CompetitionUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    sortOrder?: IntFieldUpdateOperationsInput | number
+    collection?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaigns?: CampaignUncheckedUpdateManyWithoutCompetitionNestedInput
+    fixtures?: FixtureUncheckedUpdateManyWithoutCompetitionNestedInput
+    leagueSnapshots?: LeagueTableSnapshotUncheckedUpdateManyWithoutCompetitionNestedInput
   }
 
   export type CompetitionCreateManyInput = {
     id?: string
     name: string
+    sortOrder?: number
+    collection?: string
     createdAt?: Date | string
     updatedAt?: Date | string | null
   }
@@ -7400,6 +22888,8 @@ export namespace Prisma {
   export type CompetitionUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    sortOrder?: IntFieldUpdateOperationsInput | number
+    collection?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
@@ -7407,6 +22897,888 @@ export namespace Prisma {
   export type CompetitionUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    sortOrder?: IntFieldUpdateOperationsInput | number
+    collection?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type SeasonCreateInput = {
+    id?: string
+    name: string
+    startDate?: Date | string | null
+    endDate?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    campaigns?: CampaignCreateNestedManyWithoutSeasonInput
+    fixtures?: FixtureCreateNestedManyWithoutSeasonInput
+    leagueSnapshots?: LeagueTableSnapshotCreateNestedManyWithoutSeasonInput
+  }
+
+  export type SeasonUncheckedCreateInput = {
+    id?: string
+    name: string
+    startDate?: Date | string | null
+    endDate?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    campaigns?: CampaignUncheckedCreateNestedManyWithoutSeasonInput
+    fixtures?: FixtureUncheckedCreateNestedManyWithoutSeasonInput
+    leagueSnapshots?: LeagueTableSnapshotUncheckedCreateNestedManyWithoutSeasonInput
+  }
+
+  export type SeasonUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaigns?: CampaignUpdateManyWithoutSeasonNestedInput
+    fixtures?: FixtureUpdateManyWithoutSeasonNestedInput
+    leagueSnapshots?: LeagueTableSnapshotUpdateManyWithoutSeasonNestedInput
+  }
+
+  export type SeasonUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaigns?: CampaignUncheckedUpdateManyWithoutSeasonNestedInput
+    fixtures?: FixtureUncheckedUpdateManyWithoutSeasonNestedInput
+    leagueSnapshots?: LeagueTableSnapshotUncheckedUpdateManyWithoutSeasonNestedInput
+  }
+
+  export type SeasonCreateManyInput = {
+    id?: string
+    name: string
+    startDate?: Date | string | null
+    endDate?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type SeasonUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type SeasonUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type CampaignCreateInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    teamCampaign?: TeamCampaignCreateNestedOneWithoutCampaignInput
+    leagueCampaign?: LeagueCampaignCreateNestedOneWithoutCampaignInput
+    players?: CampaignPlayerCreateNestedManyWithoutCampaignInput
+    homeFixtures?: FixtureCreateNestedManyWithoutHomeCampaignInput
+    awayFixtures?: FixtureCreateNestedManyWithoutAwayCampaignInput
+    competition: CompetitionCreateNestedOneWithoutCampaignsInput
+    season: SeasonCreateNestedOneWithoutCampaignsInput
+  }
+
+  export type CampaignUncheckedCreateInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    teamCampaign?: TeamCampaignUncheckedCreateNestedOneWithoutCampaignInput
+    leagueCampaign?: LeagueCampaignUncheckedCreateNestedOneWithoutCampaignInput
+    players?: CampaignPlayerUncheckedCreateNestedManyWithoutCampaignInput
+    homeFixtures?: FixtureUncheckedCreateNestedManyWithoutHomeCampaignInput
+    awayFixtures?: FixtureUncheckedCreateNestedManyWithoutAwayCampaignInput
+  }
+
+  export type CampaignUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    teamCampaign?: TeamCampaignUpdateOneWithoutCampaignNestedInput
+    leagueCampaign?: LeagueCampaignUpdateOneWithoutCampaignNestedInput
+    players?: CampaignPlayerUpdateManyWithoutCampaignNestedInput
+    homeFixtures?: FixtureUpdateManyWithoutHomeCampaignNestedInput
+    awayFixtures?: FixtureUpdateManyWithoutAwayCampaignNestedInput
+    competition?: CompetitionUpdateOneRequiredWithoutCampaignsNestedInput
+    season?: SeasonUpdateOneRequiredWithoutCampaignsNestedInput
+  }
+
+  export type CampaignUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    teamCampaign?: TeamCampaignUncheckedUpdateOneWithoutCampaignNestedInput
+    leagueCampaign?: LeagueCampaignUncheckedUpdateOneWithoutCampaignNestedInput
+    players?: CampaignPlayerUncheckedUpdateManyWithoutCampaignNestedInput
+    homeFixtures?: FixtureUncheckedUpdateManyWithoutHomeCampaignNestedInput
+    awayFixtures?: FixtureUncheckedUpdateManyWithoutAwayCampaignNestedInput
+  }
+
+  export type CampaignCreateManyInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type CampaignUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type CampaignUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type LeagueCampaignCreateInput = {
+    played?: number
+    points?: number
+    pointsScoredFor?: number
+    pointsScoredAgainst?: number
+    framesPlayed?: number
+    campaign: CampaignCreateNestedOneWithoutLeagueCampaignInput
+  }
+
+  export type LeagueCampaignUncheckedCreateInput = {
+    campaignId: string
+    played?: number
+    points?: number
+    pointsScoredFor?: number
+    pointsScoredAgainst?: number
+    framesPlayed?: number
+  }
+
+  export type LeagueCampaignUpdateInput = {
+    played?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    pointsScoredFor?: IntFieldUpdateOperationsInput | number
+    pointsScoredAgainst?: IntFieldUpdateOperationsInput | number
+    framesPlayed?: IntFieldUpdateOperationsInput | number
+    campaign?: CampaignUpdateOneRequiredWithoutLeagueCampaignNestedInput
+  }
+
+  export type LeagueCampaignUncheckedUpdateInput = {
+    campaignId?: StringFieldUpdateOperationsInput | string
+    played?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    pointsScoredFor?: IntFieldUpdateOperationsInput | number
+    pointsScoredAgainst?: IntFieldUpdateOperationsInput | number
+    framesPlayed?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type LeagueCampaignCreateManyInput = {
+    campaignId: string
+    played?: number
+    points?: number
+    pointsScoredFor?: number
+    pointsScoredAgainst?: number
+    framesPlayed?: number
+  }
+
+  export type LeagueCampaignUpdateManyMutationInput = {
+    played?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    pointsScoredFor?: IntFieldUpdateOperationsInput | number
+    pointsScoredAgainst?: IntFieldUpdateOperationsInput | number
+    framesPlayed?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type LeagueCampaignUncheckedUpdateManyInput = {
+    campaignId?: StringFieldUpdateOperationsInput | string
+    played?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    pointsScoredFor?: IntFieldUpdateOperationsInput | number
+    pointsScoredAgainst?: IntFieldUpdateOperationsInput | number
+    framesPlayed?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type TeamCreateInput = {
+    id?: string
+    name: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    campaigns?: TeamCampaignCreateNestedManyWithoutTeamInput
+    leagueSnapshots?: LeagueTableSnapshotCreateNestedManyWithoutTeamInput
+  }
+
+  export type TeamUncheckedCreateInput = {
+    id?: string
+    name: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    campaigns?: TeamCampaignUncheckedCreateNestedManyWithoutTeamInput
+    leagueSnapshots?: LeagueTableSnapshotUncheckedCreateNestedManyWithoutTeamInput
+  }
+
+  export type TeamUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaigns?: TeamCampaignUpdateManyWithoutTeamNestedInput
+    leagueSnapshots?: LeagueTableSnapshotUpdateManyWithoutTeamNestedInput
+  }
+
+  export type TeamUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaigns?: TeamCampaignUncheckedUpdateManyWithoutTeamNestedInput
+    leagueSnapshots?: LeagueTableSnapshotUncheckedUpdateManyWithoutTeamNestedInput
+  }
+
+  export type TeamCreateManyInput = {
+    id?: string
+    name: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type TeamUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TeamUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TeamCampaignCreateInput = {
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    team: TeamCreateNestedOneWithoutCampaignsInput
+    campaign: CampaignCreateNestedOneWithoutTeamCampaignInput
+  }
+
+  export type TeamCampaignUncheckedCreateInput = {
+    campaignId: string
+    teamId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type TeamCampaignUpdateInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    team?: TeamUpdateOneRequiredWithoutCampaignsNestedInput
+    campaign?: CampaignUpdateOneRequiredWithoutTeamCampaignNestedInput
+  }
+
+  export type TeamCampaignUncheckedUpdateInput = {
+    campaignId?: StringFieldUpdateOperationsInput | string
+    teamId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TeamCampaignCreateManyInput = {
+    campaignId: string
+    teamId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type TeamCampaignUpdateManyMutationInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TeamCampaignUncheckedUpdateManyInput = {
+    campaignId?: StringFieldUpdateOperationsInput | string
+    teamId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type LeagueTableSnapshotCreateInput = {
+    id?: string
+    position: number
+    points?: number
+    played?: number
+    won?: number
+    lost?: number
+    drawn?: number
+    framesFor?: number
+    framesAgainst?: number
+    frameDifference?: number
+    snapshotDate?: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    competition: CompetitionCreateNestedOneWithoutLeagueSnapshotsInput
+    season: SeasonCreateNestedOneWithoutLeagueSnapshotsInput
+    team: TeamCreateNestedOneWithoutLeagueSnapshotsInput
+  }
+
+  export type LeagueTableSnapshotUncheckedCreateInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    teamId: string
+    position: number
+    points?: number
+    played?: number
+    won?: number
+    lost?: number
+    drawn?: number
+    framesFor?: number
+    framesAgainst?: number
+    frameDifference?: number
+    snapshotDate?: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type LeagueTableSnapshotUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    played?: IntFieldUpdateOperationsInput | number
+    won?: IntFieldUpdateOperationsInput | number
+    lost?: IntFieldUpdateOperationsInput | number
+    drawn?: IntFieldUpdateOperationsInput | number
+    framesFor?: IntFieldUpdateOperationsInput | number
+    framesAgainst?: IntFieldUpdateOperationsInput | number
+    frameDifference?: IntFieldUpdateOperationsInput | number
+    snapshotDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    competition?: CompetitionUpdateOneRequiredWithoutLeagueSnapshotsNestedInput
+    season?: SeasonUpdateOneRequiredWithoutLeagueSnapshotsNestedInput
+    team?: TeamUpdateOneRequiredWithoutLeagueSnapshotsNestedInput
+  }
+
+  export type LeagueTableSnapshotUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    teamId?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    played?: IntFieldUpdateOperationsInput | number
+    won?: IntFieldUpdateOperationsInput | number
+    lost?: IntFieldUpdateOperationsInput | number
+    drawn?: IntFieldUpdateOperationsInput | number
+    framesFor?: IntFieldUpdateOperationsInput | number
+    framesAgainst?: IntFieldUpdateOperationsInput | number
+    frameDifference?: IntFieldUpdateOperationsInput | number
+    snapshotDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type LeagueTableSnapshotCreateManyInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    teamId: string
+    position: number
+    points?: number
+    played?: number
+    won?: number
+    lost?: number
+    drawn?: number
+    framesFor?: number
+    framesAgainst?: number
+    frameDifference?: number
+    snapshotDate?: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type LeagueTableSnapshotUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    played?: IntFieldUpdateOperationsInput | number
+    won?: IntFieldUpdateOperationsInput | number
+    lost?: IntFieldUpdateOperationsInput | number
+    drawn?: IntFieldUpdateOperationsInput | number
+    framesFor?: IntFieldUpdateOperationsInput | number
+    framesAgainst?: IntFieldUpdateOperationsInput | number
+    frameDifference?: IntFieldUpdateOperationsInput | number
+    snapshotDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type LeagueTableSnapshotUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    teamId?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    played?: IntFieldUpdateOperationsInput | number
+    won?: IntFieldUpdateOperationsInput | number
+    lost?: IntFieldUpdateOperationsInput | number
+    drawn?: IntFieldUpdateOperationsInput | number
+    framesFor?: IntFieldUpdateOperationsInput | number
+    framesAgainst?: IntFieldUpdateOperationsInput | number
+    frameDifference?: IntFieldUpdateOperationsInput | number
+    snapshotDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TeamCampaignPlayerCreateInput = {
+    campaignPlayerId: string
+    isTeamCaptain: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type TeamCampaignPlayerUncheckedCreateInput = {
+    campaignPlayerId: string
+    isTeamCaptain: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type TeamCampaignPlayerUpdateInput = {
+    campaignPlayerId?: StringFieldUpdateOperationsInput | string
+    isTeamCaptain?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TeamCampaignPlayerUncheckedUpdateInput = {
+    campaignPlayerId?: StringFieldUpdateOperationsInput | string
+    isTeamCaptain?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TeamCampaignPlayerCreateManyInput = {
+    campaignPlayerId: string
+    isTeamCaptain: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type TeamCampaignPlayerUpdateManyMutationInput = {
+    campaignPlayerId?: StringFieldUpdateOperationsInput | string
+    isTeamCaptain?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TeamCampaignPlayerUncheckedUpdateManyInput = {
+    campaignPlayerId?: StringFieldUpdateOperationsInput | string
+    isTeamCaptain?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type CampaignPlayerCreateInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    user: UserCreateNestedOneWithoutCampaignsInput
+    campaign: CampaignCreateNestedOneWithoutPlayersInput
+    homeFrames?: FrameCreateNestedManyWithoutHomePlayerInput
+    awayFrames?: FrameCreateNestedManyWithoutAwayPlayerInput
+    wonFrames?: FrameCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapCreateNestedManyWithoutCampaignPlayerInput
+  }
+
+  export type CampaignPlayerUncheckedCreateInput = {
+    id?: string
+    campaignId: string
+    userId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerInput
+    awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerInput
+    wonFrames?: FrameUncheckedCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapUncheckedCreateNestedManyWithoutCampaignPlayerInput
+  }
+
+  export type CampaignPlayerUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user?: UserUpdateOneRequiredWithoutCampaignsNestedInput
+    campaign?: CampaignUpdateOneRequiredWithoutPlayersNestedInput
+    homeFrames?: FrameUpdateManyWithoutHomePlayerNestedInput
+    awayFrames?: FrameUpdateManyWithoutAwayPlayerNestedInput
+    wonFrames?: FrameUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUpdateManyWithoutCampaignPlayerNestedInput
+  }
+
+  export type CampaignPlayerUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    campaignId?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerNestedInput
+    awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerNestedInput
+    wonFrames?: FrameUncheckedUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUncheckedUpdateManyWithoutCampaignPlayerNestedInput
+  }
+
+  export type CampaignPlayerCreateManyInput = {
+    id?: string
+    campaignId: string
+    userId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type CampaignPlayerUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type CampaignPlayerUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    campaignId?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type HandicapCreateInput = {
+    id?: string
+    value?: number
+    createdAt?: Date | string
+    homeFrames?: FrameCreateNestedManyWithoutHomePlayerHandicapInput
+    awayFrames?: FrameCreateNestedManyWithoutAwayPlayerHandicapInput
+    campaignPlayer: CampaignPlayerCreateNestedOneWithoutHandicapsInput
+  }
+
+  export type HandicapUncheckedCreateInput = {
+    id?: string
+    value?: number
+    campaignPlayerId: string
+    createdAt?: Date | string
+    homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerHandicapInput
+    awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerHandicapInput
+  }
+
+  export type HandicapUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    homeFrames?: FrameUpdateManyWithoutHomePlayerHandicapNestedInput
+    awayFrames?: FrameUpdateManyWithoutAwayPlayerHandicapNestedInput
+    campaignPlayer?: CampaignPlayerUpdateOneRequiredWithoutHandicapsNestedInput
+  }
+
+  export type HandicapUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    campaignPlayerId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerHandicapNestedInput
+    awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerHandicapNestedInput
+  }
+
+  export type HandicapCreateManyInput = {
+    id?: string
+    value?: number
+    campaignPlayerId: string
+    createdAt?: Date | string
+  }
+
+  export type HandicapUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HandicapUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    campaignPlayerId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FixtureCreateInput = {
+    id?: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    competition: CompetitionCreateNestedOneWithoutFixturesInput
+    season: SeasonCreateNestedOneWithoutFixturesInput
+    homeCampaign: CampaignCreateNestedOneWithoutHomeFixturesInput
+    awayCampaign: CampaignCreateNestedOneWithoutAwayFixturesInput
+    frames?: FrameCreateNestedManyWithoutFixtureInput
+  }
+
+  export type FixtureUncheckedCreateInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    homeCampaignId: string
+    awayCampaignId: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    frames?: FrameUncheckedCreateNestedManyWithoutFixtureInput
+  }
+
+  export type FixtureUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    competition?: CompetitionUpdateOneRequiredWithoutFixturesNestedInput
+    season?: SeasonUpdateOneRequiredWithoutFixturesNestedInput
+    homeCampaign?: CampaignUpdateOneRequiredWithoutHomeFixturesNestedInput
+    awayCampaign?: CampaignUpdateOneRequiredWithoutAwayFixturesNestedInput
+    frames?: FrameUpdateManyWithoutFixtureNestedInput
+  }
+
+  export type FixtureUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    homeCampaignId?: StringFieldUpdateOperationsInput | string
+    awayCampaignId?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    frames?: FrameUncheckedUpdateManyWithoutFixtureNestedInput
+  }
+
+  export type FixtureCreateManyInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    homeCampaignId: string
+    awayCampaignId: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FixtureUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FixtureUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    homeCampaignId?: StringFieldUpdateOperationsInput | string
+    awayCampaignId?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameCreateInput = {
+    id?: string
+    frameNumber: number
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    fixture: FixtureCreateNestedOneWithoutFramesInput
+    homePlayer?: CampaignPlayerCreateNestedOneWithoutHomeFramesInput
+    awayPlayer?: CampaignPlayerCreateNestedOneWithoutAwayFramesInput
+    homePlayerHandicap?: HandicapCreateNestedOneWithoutHomeFramesInput
+    awayPlayerHandicap?: HandicapCreateNestedOneWithoutAwayFramesInput
+    winner?: CampaignPlayerCreateNestedOneWithoutWonFramesInput
+  }
+
+  export type FrameUncheckedCreateInput = {
+    id?: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
+    awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
+    homeScore?: number
+    awayScore?: number
+    winnerId?: string | null
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    fixture?: FixtureUpdateOneRequiredWithoutFramesNestedInput
+    homePlayer?: CampaignPlayerUpdateOneWithoutHomeFramesNestedInput
+    awayPlayer?: CampaignPlayerUpdateOneWithoutAwayFramesNestedInput
+    homePlayerHandicap?: HandicapUpdateOneWithoutHomeFramesNestedInput
+    awayPlayerHandicap?: HandicapUpdateOneWithoutAwayFramesNestedInput
+    winner?: CampaignPlayerUpdateOneWithoutWonFramesNestedInput
+  }
+
+  export type FrameUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fixtureId?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    winnerId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameCreateManyInput = {
+    id?: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
+    awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
+    homeScore?: number
+    awayScore?: number
+    winnerId?: string | null
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fixtureId?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    winnerId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
@@ -7452,6 +23824,11 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -7475,6 +23852,12 @@ export namespace Prisma {
     none?: SessionWhereInput
   }
 
+  export type CampaignPlayerListRelationFilter = {
+    every?: CampaignPlayerWhereInput
+    some?: CampaignPlayerWhereInput
+    none?: CampaignPlayerWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -7488,12 +23871,17 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
+  export type CampaignPlayerOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
   export type UserCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
     emailVerified?: SortOrder
     image?: SortOrder
+    isAdmin?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -7504,6 +23892,7 @@ export namespace Prisma {
     email?: SortOrder
     emailVerified?: SortOrder
     image?: SortOrder
+    isAdmin?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -7514,6 +23903,7 @@ export namespace Prisma {
     email?: SortOrder
     emailVerified?: SortOrder
     image?: SortOrder
+    isAdmin?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -7566,6 +23956,14 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedDateTimeNullableFilter<$PrismaModel>
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -7722,16 +24120,65 @@ export namespace Prisma {
     expires?: SortOrder
   }
 
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type CampaignListRelationFilter = {
+    every?: CampaignWhereInput
+    some?: CampaignWhereInput
+    none?: CampaignWhereInput
+  }
+
+  export type FixtureListRelationFilter = {
+    every?: FixtureWhereInput
+    some?: FixtureWhereInput
+    none?: FixtureWhereInput
+  }
+
+  export type LeagueTableSnapshotListRelationFilter = {
+    every?: LeagueTableSnapshotWhereInput
+    some?: LeagueTableSnapshotWhereInput
+    none?: LeagueTableSnapshotWhereInput
+  }
+
+  export type CampaignOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type FixtureOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type LeagueTableSnapshotOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
   export type CompetitionCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    sortOrder?: SortOrder
+    collection?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+  }
+
+  export type CompetitionAvgOrderByAggregateInput = {
+    sortOrder?: SortOrder
   }
 
   export type CompetitionMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    sortOrder?: SortOrder
+    collection?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -7739,8 +24186,578 @@ export namespace Prisma {
   export type CompetitionMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    sortOrder?: SortOrder
+    collection?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+  }
+
+  export type CompetitionSumOrderByAggregateInput = {
+    sortOrder?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type SeasonCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    startDate?: SortOrder
+    endDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SeasonMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    startDate?: SortOrder
+    endDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type SeasonMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    startDate?: SortOrder
+    endDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type TeamCampaignNullableScalarRelationFilter = {
+    is?: TeamCampaignWhereInput | null
+    isNot?: TeamCampaignWhereInput | null
+  }
+
+  export type LeagueCampaignNullableScalarRelationFilter = {
+    is?: LeagueCampaignWhereInput | null
+    isNot?: LeagueCampaignWhereInput | null
+  }
+
+  export type CompetitionScalarRelationFilter = {
+    is?: CompetitionWhereInput
+    isNot?: CompetitionWhereInput
+  }
+
+  export type SeasonScalarRelationFilter = {
+    is?: SeasonWhereInput
+    isNot?: SeasonWhereInput
+  }
+
+  export type CampaignCountOrderByAggregateInput = {
+    id?: SortOrder
+    competitionId?: SortOrder
+    seasonId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CampaignMaxOrderByAggregateInput = {
+    id?: SortOrder
+    competitionId?: SortOrder
+    seasonId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CampaignMinOrderByAggregateInput = {
+    id?: SortOrder
+    competitionId?: SortOrder
+    seasonId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type FloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type CampaignScalarRelationFilter = {
+    is?: CampaignWhereInput
+    isNot?: CampaignWhereInput
+  }
+
+  export type LeagueCampaignCountOrderByAggregateInput = {
+    campaignId?: SortOrder
+    played?: SortOrder
+    points?: SortOrder
+    pointsScoredFor?: SortOrder
+    pointsScoredAgainst?: SortOrder
+    framesPlayed?: SortOrder
+  }
+
+  export type LeagueCampaignAvgOrderByAggregateInput = {
+    played?: SortOrder
+    points?: SortOrder
+    pointsScoredFor?: SortOrder
+    pointsScoredAgainst?: SortOrder
+    framesPlayed?: SortOrder
+  }
+
+  export type LeagueCampaignMaxOrderByAggregateInput = {
+    campaignId?: SortOrder
+    played?: SortOrder
+    points?: SortOrder
+    pointsScoredFor?: SortOrder
+    pointsScoredAgainst?: SortOrder
+    framesPlayed?: SortOrder
+  }
+
+  export type LeagueCampaignMinOrderByAggregateInput = {
+    campaignId?: SortOrder
+    played?: SortOrder
+    points?: SortOrder
+    pointsScoredFor?: SortOrder
+    pointsScoredAgainst?: SortOrder
+    framesPlayed?: SortOrder
+  }
+
+  export type LeagueCampaignSumOrderByAggregateInput = {
+    played?: SortOrder
+    points?: SortOrder
+    pointsScoredFor?: SortOrder
+    pointsScoredAgainst?: SortOrder
+    framesPlayed?: SortOrder
+  }
+
+  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
+  }
+
+  export type TeamCampaignListRelationFilter = {
+    every?: TeamCampaignWhereInput
+    some?: TeamCampaignWhereInput
+    none?: TeamCampaignWhereInput
+  }
+
+  export type TeamCampaignOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type TeamCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type TeamMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type TeamMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type TeamScalarRelationFilter = {
+    is?: TeamWhereInput
+    isNot?: TeamWhereInput
+  }
+
+  export type TeamCampaignCountOrderByAggregateInput = {
+    campaignId?: SortOrder
+    teamId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type TeamCampaignMaxOrderByAggregateInput = {
+    campaignId?: SortOrder
+    teamId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type TeamCampaignMinOrderByAggregateInput = {
+    campaignId?: SortOrder
+    teamId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type LeagueTableSnapshotCompetitionIdSeasonIdTeamIdSnapshotDateCompoundUniqueInput = {
+    competitionId: string
+    seasonId: string
+    teamId: string
+    snapshotDate: Date | string
+  }
+
+  export type LeagueTableSnapshotCountOrderByAggregateInput = {
+    id?: SortOrder
+    competitionId?: SortOrder
+    seasonId?: SortOrder
+    teamId?: SortOrder
+    position?: SortOrder
+    points?: SortOrder
+    played?: SortOrder
+    won?: SortOrder
+    lost?: SortOrder
+    drawn?: SortOrder
+    framesFor?: SortOrder
+    framesAgainst?: SortOrder
+    frameDifference?: SortOrder
+    snapshotDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type LeagueTableSnapshotAvgOrderByAggregateInput = {
+    position?: SortOrder
+    points?: SortOrder
+    played?: SortOrder
+    won?: SortOrder
+    lost?: SortOrder
+    drawn?: SortOrder
+    framesFor?: SortOrder
+    framesAgainst?: SortOrder
+    frameDifference?: SortOrder
+  }
+
+  export type LeagueTableSnapshotMaxOrderByAggregateInput = {
+    id?: SortOrder
+    competitionId?: SortOrder
+    seasonId?: SortOrder
+    teamId?: SortOrder
+    position?: SortOrder
+    points?: SortOrder
+    played?: SortOrder
+    won?: SortOrder
+    lost?: SortOrder
+    drawn?: SortOrder
+    framesFor?: SortOrder
+    framesAgainst?: SortOrder
+    frameDifference?: SortOrder
+    snapshotDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type LeagueTableSnapshotMinOrderByAggregateInput = {
+    id?: SortOrder
+    competitionId?: SortOrder
+    seasonId?: SortOrder
+    teamId?: SortOrder
+    position?: SortOrder
+    points?: SortOrder
+    played?: SortOrder
+    won?: SortOrder
+    lost?: SortOrder
+    drawn?: SortOrder
+    framesFor?: SortOrder
+    framesAgainst?: SortOrder
+    frameDifference?: SortOrder
+    snapshotDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type LeagueTableSnapshotSumOrderByAggregateInput = {
+    position?: SortOrder
+    points?: SortOrder
+    played?: SortOrder
+    won?: SortOrder
+    lost?: SortOrder
+    drawn?: SortOrder
+    framesFor?: SortOrder
+    framesAgainst?: SortOrder
+    frameDifference?: SortOrder
+  }
+
+  export type TeamCampaignPlayerCountOrderByAggregateInput = {
+    campaignPlayerId?: SortOrder
+    isTeamCaptain?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type TeamCampaignPlayerMaxOrderByAggregateInput = {
+    campaignPlayerId?: SortOrder
+    isTeamCaptain?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type TeamCampaignPlayerMinOrderByAggregateInput = {
+    campaignPlayerId?: SortOrder
+    isTeamCaptain?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type FrameListRelationFilter = {
+    every?: FrameWhereInput
+    some?: FrameWhereInput
+    none?: FrameWhereInput
+  }
+
+  export type HandicapListRelationFilter = {
+    every?: HandicapWhereInput
+    some?: HandicapWhereInput
+    none?: HandicapWhereInput
+  }
+
+  export type FrameOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type HandicapOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type CampaignPlayerCountOrderByAggregateInput = {
+    id?: SortOrder
+    campaignId?: SortOrder
+    userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CampaignPlayerMaxOrderByAggregateInput = {
+    id?: SortOrder
+    campaignId?: SortOrder
+    userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CampaignPlayerMinOrderByAggregateInput = {
+    id?: SortOrder
+    campaignId?: SortOrder
+    userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CampaignPlayerScalarRelationFilter = {
+    is?: CampaignPlayerWhereInput
+    isNot?: CampaignPlayerWhereInput
+  }
+
+  export type HandicapCountOrderByAggregateInput = {
+    id?: SortOrder
+    value?: SortOrder
+    campaignPlayerId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type HandicapAvgOrderByAggregateInput = {
+    value?: SortOrder
+  }
+
+  export type HandicapMaxOrderByAggregateInput = {
+    id?: SortOrder
+    value?: SortOrder
+    campaignPlayerId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type HandicapMinOrderByAggregateInput = {
+    id?: SortOrder
+    value?: SortOrder
+    campaignPlayerId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type HandicapSumOrderByAggregateInput = {
+    value?: SortOrder
+  }
+
+  export type FixtureCountOrderByAggregateInput = {
+    id?: SortOrder
+    competitionId?: SortOrder
+    seasonId?: SortOrder
+    homeCampaignId?: SortOrder
+    awayCampaignId?: SortOrder
+    scheduledDate?: SortOrder
+    actualDate?: SortOrder
+    homeScore?: SortOrder
+    awayScore?: SortOrder
+    status?: SortOrder
+    venue?: SortOrder
+    notes?: SortOrder
+    totalFrames?: SortOrder
+    isCompleted?: SortOrder
+    completedAt?: SortOrder
+    isLive?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type FixtureAvgOrderByAggregateInput = {
+    homeScore?: SortOrder
+    awayScore?: SortOrder
+    totalFrames?: SortOrder
+  }
+
+  export type FixtureMaxOrderByAggregateInput = {
+    id?: SortOrder
+    competitionId?: SortOrder
+    seasonId?: SortOrder
+    homeCampaignId?: SortOrder
+    awayCampaignId?: SortOrder
+    scheduledDate?: SortOrder
+    actualDate?: SortOrder
+    homeScore?: SortOrder
+    awayScore?: SortOrder
+    status?: SortOrder
+    venue?: SortOrder
+    notes?: SortOrder
+    totalFrames?: SortOrder
+    isCompleted?: SortOrder
+    completedAt?: SortOrder
+    isLive?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type FixtureMinOrderByAggregateInput = {
+    id?: SortOrder
+    competitionId?: SortOrder
+    seasonId?: SortOrder
+    homeCampaignId?: SortOrder
+    awayCampaignId?: SortOrder
+    scheduledDate?: SortOrder
+    actualDate?: SortOrder
+    homeScore?: SortOrder
+    awayScore?: SortOrder
+    status?: SortOrder
+    venue?: SortOrder
+    notes?: SortOrder
+    totalFrames?: SortOrder
+    isCompleted?: SortOrder
+    completedAt?: SortOrder
+    isLive?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type FixtureSumOrderByAggregateInput = {
+    homeScore?: SortOrder
+    awayScore?: SortOrder
+    totalFrames?: SortOrder
+  }
+
+  export type FixtureScalarRelationFilter = {
+    is?: FixtureWhereInput
+    isNot?: FixtureWhereInput
+  }
+
+  export type CampaignPlayerNullableScalarRelationFilter = {
+    is?: CampaignPlayerWhereInput | null
+    isNot?: CampaignPlayerWhereInput | null
+  }
+
+  export type HandicapNullableScalarRelationFilter = {
+    is?: HandicapWhereInput | null
+    isNot?: HandicapWhereInput | null
+  }
+
+  export type FrameFixtureIdFrameNumberCompoundUniqueInput = {
+    fixtureId: string
+    frameNumber: number
+  }
+
+  export type FrameCountOrderByAggregateInput = {
+    id?: SortOrder
+    fixtureId?: SortOrder
+    frameNumber?: SortOrder
+    homePlayerId?: SortOrder
+    homePlayerHandicapId?: SortOrder
+    awayPlayerId?: SortOrder
+    awayPlayerHandicapId?: SortOrder
+    homeScore?: SortOrder
+    awayScore?: SortOrder
+    winnerId?: SortOrder
+    status?: SortOrder
+    notes?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type FrameAvgOrderByAggregateInput = {
+    frameNumber?: SortOrder
+    homeScore?: SortOrder
+    awayScore?: SortOrder
+  }
+
+  export type FrameMaxOrderByAggregateInput = {
+    id?: SortOrder
+    fixtureId?: SortOrder
+    frameNumber?: SortOrder
+    homePlayerId?: SortOrder
+    homePlayerHandicapId?: SortOrder
+    awayPlayerId?: SortOrder
+    awayPlayerHandicapId?: SortOrder
+    homeScore?: SortOrder
+    awayScore?: SortOrder
+    winnerId?: SortOrder
+    status?: SortOrder
+    notes?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type FrameMinOrderByAggregateInput = {
+    id?: SortOrder
+    fixtureId?: SortOrder
+    frameNumber?: SortOrder
+    homePlayerId?: SortOrder
+    homePlayerHandicapId?: SortOrder
+    awayPlayerId?: SortOrder
+    awayPlayerHandicapId?: SortOrder
+    homeScore?: SortOrder
+    awayScore?: SortOrder
+    winnerId?: SortOrder
+    status?: SortOrder
+    notes?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type FrameSumOrderByAggregateInput = {
+    frameNumber?: SortOrder
+    homeScore?: SortOrder
+    awayScore?: SortOrder
   }
 
   export type AccountCreateNestedManyWithoutUserInput = {
@@ -7757,6 +24774,13 @@ export namespace Prisma {
     connect?: SessionWhereUniqueInput | SessionWhereUniqueInput[]
   }
 
+  export type CampaignPlayerCreateNestedManyWithoutUserInput = {
+    create?: XOR<CampaignPlayerCreateWithoutUserInput, CampaignPlayerUncheckedCreateWithoutUserInput> | CampaignPlayerCreateWithoutUserInput[] | CampaignPlayerUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutUserInput | CampaignPlayerCreateOrConnectWithoutUserInput[]
+    createMany?: CampaignPlayerCreateManyUserInputEnvelope
+    connect?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+  }
+
   export type AccountUncheckedCreateNestedManyWithoutUserInput = {
     create?: XOR<AccountCreateWithoutUserInput, AccountUncheckedCreateWithoutUserInput> | AccountCreateWithoutUserInput[] | AccountUncheckedCreateWithoutUserInput[]
     connectOrCreate?: AccountCreateOrConnectWithoutUserInput | AccountCreateOrConnectWithoutUserInput[]
@@ -7771,6 +24795,13 @@ export namespace Prisma {
     connect?: SessionWhereUniqueInput | SessionWhereUniqueInput[]
   }
 
+  export type CampaignPlayerUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<CampaignPlayerCreateWithoutUserInput, CampaignPlayerUncheckedCreateWithoutUserInput> | CampaignPlayerCreateWithoutUserInput[] | CampaignPlayerUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutUserInput | CampaignPlayerCreateOrConnectWithoutUserInput[]
+    createMany?: CampaignPlayerCreateManyUserInputEnvelope
+    connect?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
@@ -7781,6 +24812,10 @@ export namespace Prisma {
 
   export type NullableDateTimeFieldUpdateOperationsInput = {
     set?: Date | string | null
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
@@ -7815,6 +24850,20 @@ export namespace Prisma {
     deleteMany?: SessionScalarWhereInput | SessionScalarWhereInput[]
   }
 
+  export type CampaignPlayerUpdateManyWithoutUserNestedInput = {
+    create?: XOR<CampaignPlayerCreateWithoutUserInput, CampaignPlayerUncheckedCreateWithoutUserInput> | CampaignPlayerCreateWithoutUserInput[] | CampaignPlayerUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutUserInput | CampaignPlayerCreateOrConnectWithoutUserInput[]
+    upsert?: CampaignPlayerUpsertWithWhereUniqueWithoutUserInput | CampaignPlayerUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: CampaignPlayerCreateManyUserInputEnvelope
+    set?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+    disconnect?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+    delete?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+    connect?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+    update?: CampaignPlayerUpdateWithWhereUniqueWithoutUserInput | CampaignPlayerUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: CampaignPlayerUpdateManyWithWhereWithoutUserInput | CampaignPlayerUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: CampaignPlayerScalarWhereInput | CampaignPlayerScalarWhereInput[]
+  }
+
   export type AccountUncheckedUpdateManyWithoutUserNestedInput = {
     create?: XOR<AccountCreateWithoutUserInput, AccountUncheckedCreateWithoutUserInput> | AccountCreateWithoutUserInput[] | AccountUncheckedCreateWithoutUserInput[]
     connectOrCreate?: AccountCreateOrConnectWithoutUserInput | AccountCreateOrConnectWithoutUserInput[]
@@ -7841,6 +24890,20 @@ export namespace Prisma {
     update?: SessionUpdateWithWhereUniqueWithoutUserInput | SessionUpdateWithWhereUniqueWithoutUserInput[]
     updateMany?: SessionUpdateManyWithWhereWithoutUserInput | SessionUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: SessionScalarWhereInput | SessionScalarWhereInput[]
+  }
+
+  export type CampaignPlayerUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<CampaignPlayerCreateWithoutUserInput, CampaignPlayerUncheckedCreateWithoutUserInput> | CampaignPlayerCreateWithoutUserInput[] | CampaignPlayerUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutUserInput | CampaignPlayerCreateOrConnectWithoutUserInput[]
+    upsert?: CampaignPlayerUpsertWithWhereUniqueWithoutUserInput | CampaignPlayerUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: CampaignPlayerCreateManyUserInputEnvelope
+    set?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+    disconnect?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+    delete?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+    connect?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+    update?: CampaignPlayerUpdateWithWhereUniqueWithoutUserInput | CampaignPlayerUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: CampaignPlayerUpdateManyWithWhereWithoutUserInput | CampaignPlayerUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: CampaignPlayerScalarWhereInput | CampaignPlayerScalarWhereInput[]
   }
 
   export type UserCreateNestedOneWithoutAccountsInput = {
@@ -7877,6 +24940,1146 @@ export namespace Prisma {
     upsert?: UserUpsertWithoutSessionsInput
     connect?: UserWhereUniqueInput
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutSessionsInput, UserUpdateWithoutSessionsInput>, UserUncheckedUpdateWithoutSessionsInput>
+  }
+
+  export type CampaignCreateNestedManyWithoutCompetitionInput = {
+    create?: XOR<CampaignCreateWithoutCompetitionInput, CampaignUncheckedCreateWithoutCompetitionInput> | CampaignCreateWithoutCompetitionInput[] | CampaignUncheckedCreateWithoutCompetitionInput[]
+    connectOrCreate?: CampaignCreateOrConnectWithoutCompetitionInput | CampaignCreateOrConnectWithoutCompetitionInput[]
+    createMany?: CampaignCreateManyCompetitionInputEnvelope
+    connect?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+  }
+
+  export type FixtureCreateNestedManyWithoutCompetitionInput = {
+    create?: XOR<FixtureCreateWithoutCompetitionInput, FixtureUncheckedCreateWithoutCompetitionInput> | FixtureCreateWithoutCompetitionInput[] | FixtureUncheckedCreateWithoutCompetitionInput[]
+    connectOrCreate?: FixtureCreateOrConnectWithoutCompetitionInput | FixtureCreateOrConnectWithoutCompetitionInput[]
+    createMany?: FixtureCreateManyCompetitionInputEnvelope
+    connect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+  }
+
+  export type LeagueTableSnapshotCreateNestedManyWithoutCompetitionInput = {
+    create?: XOR<LeagueTableSnapshotCreateWithoutCompetitionInput, LeagueTableSnapshotUncheckedCreateWithoutCompetitionInput> | LeagueTableSnapshotCreateWithoutCompetitionInput[] | LeagueTableSnapshotUncheckedCreateWithoutCompetitionInput[]
+    connectOrCreate?: LeagueTableSnapshotCreateOrConnectWithoutCompetitionInput | LeagueTableSnapshotCreateOrConnectWithoutCompetitionInput[]
+    createMany?: LeagueTableSnapshotCreateManyCompetitionInputEnvelope
+    connect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+  }
+
+  export type CampaignUncheckedCreateNestedManyWithoutCompetitionInput = {
+    create?: XOR<CampaignCreateWithoutCompetitionInput, CampaignUncheckedCreateWithoutCompetitionInput> | CampaignCreateWithoutCompetitionInput[] | CampaignUncheckedCreateWithoutCompetitionInput[]
+    connectOrCreate?: CampaignCreateOrConnectWithoutCompetitionInput | CampaignCreateOrConnectWithoutCompetitionInput[]
+    createMany?: CampaignCreateManyCompetitionInputEnvelope
+    connect?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+  }
+
+  export type FixtureUncheckedCreateNestedManyWithoutCompetitionInput = {
+    create?: XOR<FixtureCreateWithoutCompetitionInput, FixtureUncheckedCreateWithoutCompetitionInput> | FixtureCreateWithoutCompetitionInput[] | FixtureUncheckedCreateWithoutCompetitionInput[]
+    connectOrCreate?: FixtureCreateOrConnectWithoutCompetitionInput | FixtureCreateOrConnectWithoutCompetitionInput[]
+    createMany?: FixtureCreateManyCompetitionInputEnvelope
+    connect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+  }
+
+  export type LeagueTableSnapshotUncheckedCreateNestedManyWithoutCompetitionInput = {
+    create?: XOR<LeagueTableSnapshotCreateWithoutCompetitionInput, LeagueTableSnapshotUncheckedCreateWithoutCompetitionInput> | LeagueTableSnapshotCreateWithoutCompetitionInput[] | LeagueTableSnapshotUncheckedCreateWithoutCompetitionInput[]
+    connectOrCreate?: LeagueTableSnapshotCreateOrConnectWithoutCompetitionInput | LeagueTableSnapshotCreateOrConnectWithoutCompetitionInput[]
+    createMany?: LeagueTableSnapshotCreateManyCompetitionInputEnvelope
+    connect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type CampaignUpdateManyWithoutCompetitionNestedInput = {
+    create?: XOR<CampaignCreateWithoutCompetitionInput, CampaignUncheckedCreateWithoutCompetitionInput> | CampaignCreateWithoutCompetitionInput[] | CampaignUncheckedCreateWithoutCompetitionInput[]
+    connectOrCreate?: CampaignCreateOrConnectWithoutCompetitionInput | CampaignCreateOrConnectWithoutCompetitionInput[]
+    upsert?: CampaignUpsertWithWhereUniqueWithoutCompetitionInput | CampaignUpsertWithWhereUniqueWithoutCompetitionInput[]
+    createMany?: CampaignCreateManyCompetitionInputEnvelope
+    set?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+    disconnect?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+    delete?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+    connect?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+    update?: CampaignUpdateWithWhereUniqueWithoutCompetitionInput | CampaignUpdateWithWhereUniqueWithoutCompetitionInput[]
+    updateMany?: CampaignUpdateManyWithWhereWithoutCompetitionInput | CampaignUpdateManyWithWhereWithoutCompetitionInput[]
+    deleteMany?: CampaignScalarWhereInput | CampaignScalarWhereInput[]
+  }
+
+  export type FixtureUpdateManyWithoutCompetitionNestedInput = {
+    create?: XOR<FixtureCreateWithoutCompetitionInput, FixtureUncheckedCreateWithoutCompetitionInput> | FixtureCreateWithoutCompetitionInput[] | FixtureUncheckedCreateWithoutCompetitionInput[]
+    connectOrCreate?: FixtureCreateOrConnectWithoutCompetitionInput | FixtureCreateOrConnectWithoutCompetitionInput[]
+    upsert?: FixtureUpsertWithWhereUniqueWithoutCompetitionInput | FixtureUpsertWithWhereUniqueWithoutCompetitionInput[]
+    createMany?: FixtureCreateManyCompetitionInputEnvelope
+    set?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    disconnect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    delete?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    connect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    update?: FixtureUpdateWithWhereUniqueWithoutCompetitionInput | FixtureUpdateWithWhereUniqueWithoutCompetitionInput[]
+    updateMany?: FixtureUpdateManyWithWhereWithoutCompetitionInput | FixtureUpdateManyWithWhereWithoutCompetitionInput[]
+    deleteMany?: FixtureScalarWhereInput | FixtureScalarWhereInput[]
+  }
+
+  export type LeagueTableSnapshotUpdateManyWithoutCompetitionNestedInput = {
+    create?: XOR<LeagueTableSnapshotCreateWithoutCompetitionInput, LeagueTableSnapshotUncheckedCreateWithoutCompetitionInput> | LeagueTableSnapshotCreateWithoutCompetitionInput[] | LeagueTableSnapshotUncheckedCreateWithoutCompetitionInput[]
+    connectOrCreate?: LeagueTableSnapshotCreateOrConnectWithoutCompetitionInput | LeagueTableSnapshotCreateOrConnectWithoutCompetitionInput[]
+    upsert?: LeagueTableSnapshotUpsertWithWhereUniqueWithoutCompetitionInput | LeagueTableSnapshotUpsertWithWhereUniqueWithoutCompetitionInput[]
+    createMany?: LeagueTableSnapshotCreateManyCompetitionInputEnvelope
+    set?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    disconnect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    delete?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    connect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    update?: LeagueTableSnapshotUpdateWithWhereUniqueWithoutCompetitionInput | LeagueTableSnapshotUpdateWithWhereUniqueWithoutCompetitionInput[]
+    updateMany?: LeagueTableSnapshotUpdateManyWithWhereWithoutCompetitionInput | LeagueTableSnapshotUpdateManyWithWhereWithoutCompetitionInput[]
+    deleteMany?: LeagueTableSnapshotScalarWhereInput | LeagueTableSnapshotScalarWhereInput[]
+  }
+
+  export type CampaignUncheckedUpdateManyWithoutCompetitionNestedInput = {
+    create?: XOR<CampaignCreateWithoutCompetitionInput, CampaignUncheckedCreateWithoutCompetitionInput> | CampaignCreateWithoutCompetitionInput[] | CampaignUncheckedCreateWithoutCompetitionInput[]
+    connectOrCreate?: CampaignCreateOrConnectWithoutCompetitionInput | CampaignCreateOrConnectWithoutCompetitionInput[]
+    upsert?: CampaignUpsertWithWhereUniqueWithoutCompetitionInput | CampaignUpsertWithWhereUniqueWithoutCompetitionInput[]
+    createMany?: CampaignCreateManyCompetitionInputEnvelope
+    set?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+    disconnect?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+    delete?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+    connect?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+    update?: CampaignUpdateWithWhereUniqueWithoutCompetitionInput | CampaignUpdateWithWhereUniqueWithoutCompetitionInput[]
+    updateMany?: CampaignUpdateManyWithWhereWithoutCompetitionInput | CampaignUpdateManyWithWhereWithoutCompetitionInput[]
+    deleteMany?: CampaignScalarWhereInput | CampaignScalarWhereInput[]
+  }
+
+  export type FixtureUncheckedUpdateManyWithoutCompetitionNestedInput = {
+    create?: XOR<FixtureCreateWithoutCompetitionInput, FixtureUncheckedCreateWithoutCompetitionInput> | FixtureCreateWithoutCompetitionInput[] | FixtureUncheckedCreateWithoutCompetitionInput[]
+    connectOrCreate?: FixtureCreateOrConnectWithoutCompetitionInput | FixtureCreateOrConnectWithoutCompetitionInput[]
+    upsert?: FixtureUpsertWithWhereUniqueWithoutCompetitionInput | FixtureUpsertWithWhereUniqueWithoutCompetitionInput[]
+    createMany?: FixtureCreateManyCompetitionInputEnvelope
+    set?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    disconnect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    delete?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    connect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    update?: FixtureUpdateWithWhereUniqueWithoutCompetitionInput | FixtureUpdateWithWhereUniqueWithoutCompetitionInput[]
+    updateMany?: FixtureUpdateManyWithWhereWithoutCompetitionInput | FixtureUpdateManyWithWhereWithoutCompetitionInput[]
+    deleteMany?: FixtureScalarWhereInput | FixtureScalarWhereInput[]
+  }
+
+  export type LeagueTableSnapshotUncheckedUpdateManyWithoutCompetitionNestedInput = {
+    create?: XOR<LeagueTableSnapshotCreateWithoutCompetitionInput, LeagueTableSnapshotUncheckedCreateWithoutCompetitionInput> | LeagueTableSnapshotCreateWithoutCompetitionInput[] | LeagueTableSnapshotUncheckedCreateWithoutCompetitionInput[]
+    connectOrCreate?: LeagueTableSnapshotCreateOrConnectWithoutCompetitionInput | LeagueTableSnapshotCreateOrConnectWithoutCompetitionInput[]
+    upsert?: LeagueTableSnapshotUpsertWithWhereUniqueWithoutCompetitionInput | LeagueTableSnapshotUpsertWithWhereUniqueWithoutCompetitionInput[]
+    createMany?: LeagueTableSnapshotCreateManyCompetitionInputEnvelope
+    set?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    disconnect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    delete?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    connect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    update?: LeagueTableSnapshotUpdateWithWhereUniqueWithoutCompetitionInput | LeagueTableSnapshotUpdateWithWhereUniqueWithoutCompetitionInput[]
+    updateMany?: LeagueTableSnapshotUpdateManyWithWhereWithoutCompetitionInput | LeagueTableSnapshotUpdateManyWithWhereWithoutCompetitionInput[]
+    deleteMany?: LeagueTableSnapshotScalarWhereInput | LeagueTableSnapshotScalarWhereInput[]
+  }
+
+  export type CampaignCreateNestedManyWithoutSeasonInput = {
+    create?: XOR<CampaignCreateWithoutSeasonInput, CampaignUncheckedCreateWithoutSeasonInput> | CampaignCreateWithoutSeasonInput[] | CampaignUncheckedCreateWithoutSeasonInput[]
+    connectOrCreate?: CampaignCreateOrConnectWithoutSeasonInput | CampaignCreateOrConnectWithoutSeasonInput[]
+    createMany?: CampaignCreateManySeasonInputEnvelope
+    connect?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+  }
+
+  export type FixtureCreateNestedManyWithoutSeasonInput = {
+    create?: XOR<FixtureCreateWithoutSeasonInput, FixtureUncheckedCreateWithoutSeasonInput> | FixtureCreateWithoutSeasonInput[] | FixtureUncheckedCreateWithoutSeasonInput[]
+    connectOrCreate?: FixtureCreateOrConnectWithoutSeasonInput | FixtureCreateOrConnectWithoutSeasonInput[]
+    createMany?: FixtureCreateManySeasonInputEnvelope
+    connect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+  }
+
+  export type LeagueTableSnapshotCreateNestedManyWithoutSeasonInput = {
+    create?: XOR<LeagueTableSnapshotCreateWithoutSeasonInput, LeagueTableSnapshotUncheckedCreateWithoutSeasonInput> | LeagueTableSnapshotCreateWithoutSeasonInput[] | LeagueTableSnapshotUncheckedCreateWithoutSeasonInput[]
+    connectOrCreate?: LeagueTableSnapshotCreateOrConnectWithoutSeasonInput | LeagueTableSnapshotCreateOrConnectWithoutSeasonInput[]
+    createMany?: LeagueTableSnapshotCreateManySeasonInputEnvelope
+    connect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+  }
+
+  export type CampaignUncheckedCreateNestedManyWithoutSeasonInput = {
+    create?: XOR<CampaignCreateWithoutSeasonInput, CampaignUncheckedCreateWithoutSeasonInput> | CampaignCreateWithoutSeasonInput[] | CampaignUncheckedCreateWithoutSeasonInput[]
+    connectOrCreate?: CampaignCreateOrConnectWithoutSeasonInput | CampaignCreateOrConnectWithoutSeasonInput[]
+    createMany?: CampaignCreateManySeasonInputEnvelope
+    connect?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+  }
+
+  export type FixtureUncheckedCreateNestedManyWithoutSeasonInput = {
+    create?: XOR<FixtureCreateWithoutSeasonInput, FixtureUncheckedCreateWithoutSeasonInput> | FixtureCreateWithoutSeasonInput[] | FixtureUncheckedCreateWithoutSeasonInput[]
+    connectOrCreate?: FixtureCreateOrConnectWithoutSeasonInput | FixtureCreateOrConnectWithoutSeasonInput[]
+    createMany?: FixtureCreateManySeasonInputEnvelope
+    connect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+  }
+
+  export type LeagueTableSnapshotUncheckedCreateNestedManyWithoutSeasonInput = {
+    create?: XOR<LeagueTableSnapshotCreateWithoutSeasonInput, LeagueTableSnapshotUncheckedCreateWithoutSeasonInput> | LeagueTableSnapshotCreateWithoutSeasonInput[] | LeagueTableSnapshotUncheckedCreateWithoutSeasonInput[]
+    connectOrCreate?: LeagueTableSnapshotCreateOrConnectWithoutSeasonInput | LeagueTableSnapshotCreateOrConnectWithoutSeasonInput[]
+    createMany?: LeagueTableSnapshotCreateManySeasonInputEnvelope
+    connect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+  }
+
+  export type CampaignUpdateManyWithoutSeasonNestedInput = {
+    create?: XOR<CampaignCreateWithoutSeasonInput, CampaignUncheckedCreateWithoutSeasonInput> | CampaignCreateWithoutSeasonInput[] | CampaignUncheckedCreateWithoutSeasonInput[]
+    connectOrCreate?: CampaignCreateOrConnectWithoutSeasonInput | CampaignCreateOrConnectWithoutSeasonInput[]
+    upsert?: CampaignUpsertWithWhereUniqueWithoutSeasonInput | CampaignUpsertWithWhereUniqueWithoutSeasonInput[]
+    createMany?: CampaignCreateManySeasonInputEnvelope
+    set?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+    disconnect?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+    delete?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+    connect?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+    update?: CampaignUpdateWithWhereUniqueWithoutSeasonInput | CampaignUpdateWithWhereUniqueWithoutSeasonInput[]
+    updateMany?: CampaignUpdateManyWithWhereWithoutSeasonInput | CampaignUpdateManyWithWhereWithoutSeasonInput[]
+    deleteMany?: CampaignScalarWhereInput | CampaignScalarWhereInput[]
+  }
+
+  export type FixtureUpdateManyWithoutSeasonNestedInput = {
+    create?: XOR<FixtureCreateWithoutSeasonInput, FixtureUncheckedCreateWithoutSeasonInput> | FixtureCreateWithoutSeasonInput[] | FixtureUncheckedCreateWithoutSeasonInput[]
+    connectOrCreate?: FixtureCreateOrConnectWithoutSeasonInput | FixtureCreateOrConnectWithoutSeasonInput[]
+    upsert?: FixtureUpsertWithWhereUniqueWithoutSeasonInput | FixtureUpsertWithWhereUniqueWithoutSeasonInput[]
+    createMany?: FixtureCreateManySeasonInputEnvelope
+    set?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    disconnect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    delete?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    connect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    update?: FixtureUpdateWithWhereUniqueWithoutSeasonInput | FixtureUpdateWithWhereUniqueWithoutSeasonInput[]
+    updateMany?: FixtureUpdateManyWithWhereWithoutSeasonInput | FixtureUpdateManyWithWhereWithoutSeasonInput[]
+    deleteMany?: FixtureScalarWhereInput | FixtureScalarWhereInput[]
+  }
+
+  export type LeagueTableSnapshotUpdateManyWithoutSeasonNestedInput = {
+    create?: XOR<LeagueTableSnapshotCreateWithoutSeasonInput, LeagueTableSnapshotUncheckedCreateWithoutSeasonInput> | LeagueTableSnapshotCreateWithoutSeasonInput[] | LeagueTableSnapshotUncheckedCreateWithoutSeasonInput[]
+    connectOrCreate?: LeagueTableSnapshotCreateOrConnectWithoutSeasonInput | LeagueTableSnapshotCreateOrConnectWithoutSeasonInput[]
+    upsert?: LeagueTableSnapshotUpsertWithWhereUniqueWithoutSeasonInput | LeagueTableSnapshotUpsertWithWhereUniqueWithoutSeasonInput[]
+    createMany?: LeagueTableSnapshotCreateManySeasonInputEnvelope
+    set?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    disconnect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    delete?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    connect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    update?: LeagueTableSnapshotUpdateWithWhereUniqueWithoutSeasonInput | LeagueTableSnapshotUpdateWithWhereUniqueWithoutSeasonInput[]
+    updateMany?: LeagueTableSnapshotUpdateManyWithWhereWithoutSeasonInput | LeagueTableSnapshotUpdateManyWithWhereWithoutSeasonInput[]
+    deleteMany?: LeagueTableSnapshotScalarWhereInput | LeagueTableSnapshotScalarWhereInput[]
+  }
+
+  export type CampaignUncheckedUpdateManyWithoutSeasonNestedInput = {
+    create?: XOR<CampaignCreateWithoutSeasonInput, CampaignUncheckedCreateWithoutSeasonInput> | CampaignCreateWithoutSeasonInput[] | CampaignUncheckedCreateWithoutSeasonInput[]
+    connectOrCreate?: CampaignCreateOrConnectWithoutSeasonInput | CampaignCreateOrConnectWithoutSeasonInput[]
+    upsert?: CampaignUpsertWithWhereUniqueWithoutSeasonInput | CampaignUpsertWithWhereUniqueWithoutSeasonInput[]
+    createMany?: CampaignCreateManySeasonInputEnvelope
+    set?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+    disconnect?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+    delete?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+    connect?: CampaignWhereUniqueInput | CampaignWhereUniqueInput[]
+    update?: CampaignUpdateWithWhereUniqueWithoutSeasonInput | CampaignUpdateWithWhereUniqueWithoutSeasonInput[]
+    updateMany?: CampaignUpdateManyWithWhereWithoutSeasonInput | CampaignUpdateManyWithWhereWithoutSeasonInput[]
+    deleteMany?: CampaignScalarWhereInput | CampaignScalarWhereInput[]
+  }
+
+  export type FixtureUncheckedUpdateManyWithoutSeasonNestedInput = {
+    create?: XOR<FixtureCreateWithoutSeasonInput, FixtureUncheckedCreateWithoutSeasonInput> | FixtureCreateWithoutSeasonInput[] | FixtureUncheckedCreateWithoutSeasonInput[]
+    connectOrCreate?: FixtureCreateOrConnectWithoutSeasonInput | FixtureCreateOrConnectWithoutSeasonInput[]
+    upsert?: FixtureUpsertWithWhereUniqueWithoutSeasonInput | FixtureUpsertWithWhereUniqueWithoutSeasonInput[]
+    createMany?: FixtureCreateManySeasonInputEnvelope
+    set?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    disconnect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    delete?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    connect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    update?: FixtureUpdateWithWhereUniqueWithoutSeasonInput | FixtureUpdateWithWhereUniqueWithoutSeasonInput[]
+    updateMany?: FixtureUpdateManyWithWhereWithoutSeasonInput | FixtureUpdateManyWithWhereWithoutSeasonInput[]
+    deleteMany?: FixtureScalarWhereInput | FixtureScalarWhereInput[]
+  }
+
+  export type LeagueTableSnapshotUncheckedUpdateManyWithoutSeasonNestedInput = {
+    create?: XOR<LeagueTableSnapshotCreateWithoutSeasonInput, LeagueTableSnapshotUncheckedCreateWithoutSeasonInput> | LeagueTableSnapshotCreateWithoutSeasonInput[] | LeagueTableSnapshotUncheckedCreateWithoutSeasonInput[]
+    connectOrCreate?: LeagueTableSnapshotCreateOrConnectWithoutSeasonInput | LeagueTableSnapshotCreateOrConnectWithoutSeasonInput[]
+    upsert?: LeagueTableSnapshotUpsertWithWhereUniqueWithoutSeasonInput | LeagueTableSnapshotUpsertWithWhereUniqueWithoutSeasonInput[]
+    createMany?: LeagueTableSnapshotCreateManySeasonInputEnvelope
+    set?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    disconnect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    delete?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    connect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    update?: LeagueTableSnapshotUpdateWithWhereUniqueWithoutSeasonInput | LeagueTableSnapshotUpdateWithWhereUniqueWithoutSeasonInput[]
+    updateMany?: LeagueTableSnapshotUpdateManyWithWhereWithoutSeasonInput | LeagueTableSnapshotUpdateManyWithWhereWithoutSeasonInput[]
+    deleteMany?: LeagueTableSnapshotScalarWhereInput | LeagueTableSnapshotScalarWhereInput[]
+  }
+
+  export type TeamCampaignCreateNestedOneWithoutCampaignInput = {
+    create?: XOR<TeamCampaignCreateWithoutCampaignInput, TeamCampaignUncheckedCreateWithoutCampaignInput>
+    connectOrCreate?: TeamCampaignCreateOrConnectWithoutCampaignInput
+    connect?: TeamCampaignWhereUniqueInput
+  }
+
+  export type LeagueCampaignCreateNestedOneWithoutCampaignInput = {
+    create?: XOR<LeagueCampaignCreateWithoutCampaignInput, LeagueCampaignUncheckedCreateWithoutCampaignInput>
+    connectOrCreate?: LeagueCampaignCreateOrConnectWithoutCampaignInput
+    connect?: LeagueCampaignWhereUniqueInput
+  }
+
+  export type CampaignPlayerCreateNestedManyWithoutCampaignInput = {
+    create?: XOR<CampaignPlayerCreateWithoutCampaignInput, CampaignPlayerUncheckedCreateWithoutCampaignInput> | CampaignPlayerCreateWithoutCampaignInput[] | CampaignPlayerUncheckedCreateWithoutCampaignInput[]
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutCampaignInput | CampaignPlayerCreateOrConnectWithoutCampaignInput[]
+    createMany?: CampaignPlayerCreateManyCampaignInputEnvelope
+    connect?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+  }
+
+  export type FixtureCreateNestedManyWithoutHomeCampaignInput = {
+    create?: XOR<FixtureCreateWithoutHomeCampaignInput, FixtureUncheckedCreateWithoutHomeCampaignInput> | FixtureCreateWithoutHomeCampaignInput[] | FixtureUncheckedCreateWithoutHomeCampaignInput[]
+    connectOrCreate?: FixtureCreateOrConnectWithoutHomeCampaignInput | FixtureCreateOrConnectWithoutHomeCampaignInput[]
+    createMany?: FixtureCreateManyHomeCampaignInputEnvelope
+    connect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+  }
+
+  export type FixtureCreateNestedManyWithoutAwayCampaignInput = {
+    create?: XOR<FixtureCreateWithoutAwayCampaignInput, FixtureUncheckedCreateWithoutAwayCampaignInput> | FixtureCreateWithoutAwayCampaignInput[] | FixtureUncheckedCreateWithoutAwayCampaignInput[]
+    connectOrCreate?: FixtureCreateOrConnectWithoutAwayCampaignInput | FixtureCreateOrConnectWithoutAwayCampaignInput[]
+    createMany?: FixtureCreateManyAwayCampaignInputEnvelope
+    connect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+  }
+
+  export type CompetitionCreateNestedOneWithoutCampaignsInput = {
+    create?: XOR<CompetitionCreateWithoutCampaignsInput, CompetitionUncheckedCreateWithoutCampaignsInput>
+    connectOrCreate?: CompetitionCreateOrConnectWithoutCampaignsInput
+    connect?: CompetitionWhereUniqueInput
+  }
+
+  export type SeasonCreateNestedOneWithoutCampaignsInput = {
+    create?: XOR<SeasonCreateWithoutCampaignsInput, SeasonUncheckedCreateWithoutCampaignsInput>
+    connectOrCreate?: SeasonCreateOrConnectWithoutCampaignsInput
+    connect?: SeasonWhereUniqueInput
+  }
+
+  export type TeamCampaignUncheckedCreateNestedOneWithoutCampaignInput = {
+    create?: XOR<TeamCampaignCreateWithoutCampaignInput, TeamCampaignUncheckedCreateWithoutCampaignInput>
+    connectOrCreate?: TeamCampaignCreateOrConnectWithoutCampaignInput
+    connect?: TeamCampaignWhereUniqueInput
+  }
+
+  export type LeagueCampaignUncheckedCreateNestedOneWithoutCampaignInput = {
+    create?: XOR<LeagueCampaignCreateWithoutCampaignInput, LeagueCampaignUncheckedCreateWithoutCampaignInput>
+    connectOrCreate?: LeagueCampaignCreateOrConnectWithoutCampaignInput
+    connect?: LeagueCampaignWhereUniqueInput
+  }
+
+  export type CampaignPlayerUncheckedCreateNestedManyWithoutCampaignInput = {
+    create?: XOR<CampaignPlayerCreateWithoutCampaignInput, CampaignPlayerUncheckedCreateWithoutCampaignInput> | CampaignPlayerCreateWithoutCampaignInput[] | CampaignPlayerUncheckedCreateWithoutCampaignInput[]
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutCampaignInput | CampaignPlayerCreateOrConnectWithoutCampaignInput[]
+    createMany?: CampaignPlayerCreateManyCampaignInputEnvelope
+    connect?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+  }
+
+  export type FixtureUncheckedCreateNestedManyWithoutHomeCampaignInput = {
+    create?: XOR<FixtureCreateWithoutHomeCampaignInput, FixtureUncheckedCreateWithoutHomeCampaignInput> | FixtureCreateWithoutHomeCampaignInput[] | FixtureUncheckedCreateWithoutHomeCampaignInput[]
+    connectOrCreate?: FixtureCreateOrConnectWithoutHomeCampaignInput | FixtureCreateOrConnectWithoutHomeCampaignInput[]
+    createMany?: FixtureCreateManyHomeCampaignInputEnvelope
+    connect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+  }
+
+  export type FixtureUncheckedCreateNestedManyWithoutAwayCampaignInput = {
+    create?: XOR<FixtureCreateWithoutAwayCampaignInput, FixtureUncheckedCreateWithoutAwayCampaignInput> | FixtureCreateWithoutAwayCampaignInput[] | FixtureUncheckedCreateWithoutAwayCampaignInput[]
+    connectOrCreate?: FixtureCreateOrConnectWithoutAwayCampaignInput | FixtureCreateOrConnectWithoutAwayCampaignInput[]
+    createMany?: FixtureCreateManyAwayCampaignInputEnvelope
+    connect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+  }
+
+  export type TeamCampaignUpdateOneWithoutCampaignNestedInput = {
+    create?: XOR<TeamCampaignCreateWithoutCampaignInput, TeamCampaignUncheckedCreateWithoutCampaignInput>
+    connectOrCreate?: TeamCampaignCreateOrConnectWithoutCampaignInput
+    upsert?: TeamCampaignUpsertWithoutCampaignInput
+    disconnect?: TeamCampaignWhereInput | boolean
+    delete?: TeamCampaignWhereInput | boolean
+    connect?: TeamCampaignWhereUniqueInput
+    update?: XOR<XOR<TeamCampaignUpdateToOneWithWhereWithoutCampaignInput, TeamCampaignUpdateWithoutCampaignInput>, TeamCampaignUncheckedUpdateWithoutCampaignInput>
+  }
+
+  export type LeagueCampaignUpdateOneWithoutCampaignNestedInput = {
+    create?: XOR<LeagueCampaignCreateWithoutCampaignInput, LeagueCampaignUncheckedCreateWithoutCampaignInput>
+    connectOrCreate?: LeagueCampaignCreateOrConnectWithoutCampaignInput
+    upsert?: LeagueCampaignUpsertWithoutCampaignInput
+    disconnect?: LeagueCampaignWhereInput | boolean
+    delete?: LeagueCampaignWhereInput | boolean
+    connect?: LeagueCampaignWhereUniqueInput
+    update?: XOR<XOR<LeagueCampaignUpdateToOneWithWhereWithoutCampaignInput, LeagueCampaignUpdateWithoutCampaignInput>, LeagueCampaignUncheckedUpdateWithoutCampaignInput>
+  }
+
+  export type CampaignPlayerUpdateManyWithoutCampaignNestedInput = {
+    create?: XOR<CampaignPlayerCreateWithoutCampaignInput, CampaignPlayerUncheckedCreateWithoutCampaignInput> | CampaignPlayerCreateWithoutCampaignInput[] | CampaignPlayerUncheckedCreateWithoutCampaignInput[]
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutCampaignInput | CampaignPlayerCreateOrConnectWithoutCampaignInput[]
+    upsert?: CampaignPlayerUpsertWithWhereUniqueWithoutCampaignInput | CampaignPlayerUpsertWithWhereUniqueWithoutCampaignInput[]
+    createMany?: CampaignPlayerCreateManyCampaignInputEnvelope
+    set?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+    disconnect?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+    delete?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+    connect?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+    update?: CampaignPlayerUpdateWithWhereUniqueWithoutCampaignInput | CampaignPlayerUpdateWithWhereUniqueWithoutCampaignInput[]
+    updateMany?: CampaignPlayerUpdateManyWithWhereWithoutCampaignInput | CampaignPlayerUpdateManyWithWhereWithoutCampaignInput[]
+    deleteMany?: CampaignPlayerScalarWhereInput | CampaignPlayerScalarWhereInput[]
+  }
+
+  export type FixtureUpdateManyWithoutHomeCampaignNestedInput = {
+    create?: XOR<FixtureCreateWithoutHomeCampaignInput, FixtureUncheckedCreateWithoutHomeCampaignInput> | FixtureCreateWithoutHomeCampaignInput[] | FixtureUncheckedCreateWithoutHomeCampaignInput[]
+    connectOrCreate?: FixtureCreateOrConnectWithoutHomeCampaignInput | FixtureCreateOrConnectWithoutHomeCampaignInput[]
+    upsert?: FixtureUpsertWithWhereUniqueWithoutHomeCampaignInput | FixtureUpsertWithWhereUniqueWithoutHomeCampaignInput[]
+    createMany?: FixtureCreateManyHomeCampaignInputEnvelope
+    set?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    disconnect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    delete?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    connect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    update?: FixtureUpdateWithWhereUniqueWithoutHomeCampaignInput | FixtureUpdateWithWhereUniqueWithoutHomeCampaignInput[]
+    updateMany?: FixtureUpdateManyWithWhereWithoutHomeCampaignInput | FixtureUpdateManyWithWhereWithoutHomeCampaignInput[]
+    deleteMany?: FixtureScalarWhereInput | FixtureScalarWhereInput[]
+  }
+
+  export type FixtureUpdateManyWithoutAwayCampaignNestedInput = {
+    create?: XOR<FixtureCreateWithoutAwayCampaignInput, FixtureUncheckedCreateWithoutAwayCampaignInput> | FixtureCreateWithoutAwayCampaignInput[] | FixtureUncheckedCreateWithoutAwayCampaignInput[]
+    connectOrCreate?: FixtureCreateOrConnectWithoutAwayCampaignInput | FixtureCreateOrConnectWithoutAwayCampaignInput[]
+    upsert?: FixtureUpsertWithWhereUniqueWithoutAwayCampaignInput | FixtureUpsertWithWhereUniqueWithoutAwayCampaignInput[]
+    createMany?: FixtureCreateManyAwayCampaignInputEnvelope
+    set?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    disconnect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    delete?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    connect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    update?: FixtureUpdateWithWhereUniqueWithoutAwayCampaignInput | FixtureUpdateWithWhereUniqueWithoutAwayCampaignInput[]
+    updateMany?: FixtureUpdateManyWithWhereWithoutAwayCampaignInput | FixtureUpdateManyWithWhereWithoutAwayCampaignInput[]
+    deleteMany?: FixtureScalarWhereInput | FixtureScalarWhereInput[]
+  }
+
+  export type CompetitionUpdateOneRequiredWithoutCampaignsNestedInput = {
+    create?: XOR<CompetitionCreateWithoutCampaignsInput, CompetitionUncheckedCreateWithoutCampaignsInput>
+    connectOrCreate?: CompetitionCreateOrConnectWithoutCampaignsInput
+    upsert?: CompetitionUpsertWithoutCampaignsInput
+    connect?: CompetitionWhereUniqueInput
+    update?: XOR<XOR<CompetitionUpdateToOneWithWhereWithoutCampaignsInput, CompetitionUpdateWithoutCampaignsInput>, CompetitionUncheckedUpdateWithoutCampaignsInput>
+  }
+
+  export type SeasonUpdateOneRequiredWithoutCampaignsNestedInput = {
+    create?: XOR<SeasonCreateWithoutCampaignsInput, SeasonUncheckedCreateWithoutCampaignsInput>
+    connectOrCreate?: SeasonCreateOrConnectWithoutCampaignsInput
+    upsert?: SeasonUpsertWithoutCampaignsInput
+    connect?: SeasonWhereUniqueInput
+    update?: XOR<XOR<SeasonUpdateToOneWithWhereWithoutCampaignsInput, SeasonUpdateWithoutCampaignsInput>, SeasonUncheckedUpdateWithoutCampaignsInput>
+  }
+
+  export type TeamCampaignUncheckedUpdateOneWithoutCampaignNestedInput = {
+    create?: XOR<TeamCampaignCreateWithoutCampaignInput, TeamCampaignUncheckedCreateWithoutCampaignInput>
+    connectOrCreate?: TeamCampaignCreateOrConnectWithoutCampaignInput
+    upsert?: TeamCampaignUpsertWithoutCampaignInput
+    disconnect?: TeamCampaignWhereInput | boolean
+    delete?: TeamCampaignWhereInput | boolean
+    connect?: TeamCampaignWhereUniqueInput
+    update?: XOR<XOR<TeamCampaignUpdateToOneWithWhereWithoutCampaignInput, TeamCampaignUpdateWithoutCampaignInput>, TeamCampaignUncheckedUpdateWithoutCampaignInput>
+  }
+
+  export type LeagueCampaignUncheckedUpdateOneWithoutCampaignNestedInput = {
+    create?: XOR<LeagueCampaignCreateWithoutCampaignInput, LeagueCampaignUncheckedCreateWithoutCampaignInput>
+    connectOrCreate?: LeagueCampaignCreateOrConnectWithoutCampaignInput
+    upsert?: LeagueCampaignUpsertWithoutCampaignInput
+    disconnect?: LeagueCampaignWhereInput | boolean
+    delete?: LeagueCampaignWhereInput | boolean
+    connect?: LeagueCampaignWhereUniqueInput
+    update?: XOR<XOR<LeagueCampaignUpdateToOneWithWhereWithoutCampaignInput, LeagueCampaignUpdateWithoutCampaignInput>, LeagueCampaignUncheckedUpdateWithoutCampaignInput>
+  }
+
+  export type CampaignPlayerUncheckedUpdateManyWithoutCampaignNestedInput = {
+    create?: XOR<CampaignPlayerCreateWithoutCampaignInput, CampaignPlayerUncheckedCreateWithoutCampaignInput> | CampaignPlayerCreateWithoutCampaignInput[] | CampaignPlayerUncheckedCreateWithoutCampaignInput[]
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutCampaignInput | CampaignPlayerCreateOrConnectWithoutCampaignInput[]
+    upsert?: CampaignPlayerUpsertWithWhereUniqueWithoutCampaignInput | CampaignPlayerUpsertWithWhereUniqueWithoutCampaignInput[]
+    createMany?: CampaignPlayerCreateManyCampaignInputEnvelope
+    set?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+    disconnect?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+    delete?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+    connect?: CampaignPlayerWhereUniqueInput | CampaignPlayerWhereUniqueInput[]
+    update?: CampaignPlayerUpdateWithWhereUniqueWithoutCampaignInput | CampaignPlayerUpdateWithWhereUniqueWithoutCampaignInput[]
+    updateMany?: CampaignPlayerUpdateManyWithWhereWithoutCampaignInput | CampaignPlayerUpdateManyWithWhereWithoutCampaignInput[]
+    deleteMany?: CampaignPlayerScalarWhereInput | CampaignPlayerScalarWhereInput[]
+  }
+
+  export type FixtureUncheckedUpdateManyWithoutHomeCampaignNestedInput = {
+    create?: XOR<FixtureCreateWithoutHomeCampaignInput, FixtureUncheckedCreateWithoutHomeCampaignInput> | FixtureCreateWithoutHomeCampaignInput[] | FixtureUncheckedCreateWithoutHomeCampaignInput[]
+    connectOrCreate?: FixtureCreateOrConnectWithoutHomeCampaignInput | FixtureCreateOrConnectWithoutHomeCampaignInput[]
+    upsert?: FixtureUpsertWithWhereUniqueWithoutHomeCampaignInput | FixtureUpsertWithWhereUniqueWithoutHomeCampaignInput[]
+    createMany?: FixtureCreateManyHomeCampaignInputEnvelope
+    set?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    disconnect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    delete?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    connect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    update?: FixtureUpdateWithWhereUniqueWithoutHomeCampaignInput | FixtureUpdateWithWhereUniqueWithoutHomeCampaignInput[]
+    updateMany?: FixtureUpdateManyWithWhereWithoutHomeCampaignInput | FixtureUpdateManyWithWhereWithoutHomeCampaignInput[]
+    deleteMany?: FixtureScalarWhereInput | FixtureScalarWhereInput[]
+  }
+
+  export type FixtureUncheckedUpdateManyWithoutAwayCampaignNestedInput = {
+    create?: XOR<FixtureCreateWithoutAwayCampaignInput, FixtureUncheckedCreateWithoutAwayCampaignInput> | FixtureCreateWithoutAwayCampaignInput[] | FixtureUncheckedCreateWithoutAwayCampaignInput[]
+    connectOrCreate?: FixtureCreateOrConnectWithoutAwayCampaignInput | FixtureCreateOrConnectWithoutAwayCampaignInput[]
+    upsert?: FixtureUpsertWithWhereUniqueWithoutAwayCampaignInput | FixtureUpsertWithWhereUniqueWithoutAwayCampaignInput[]
+    createMany?: FixtureCreateManyAwayCampaignInputEnvelope
+    set?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    disconnect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    delete?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    connect?: FixtureWhereUniqueInput | FixtureWhereUniqueInput[]
+    update?: FixtureUpdateWithWhereUniqueWithoutAwayCampaignInput | FixtureUpdateWithWhereUniqueWithoutAwayCampaignInput[]
+    updateMany?: FixtureUpdateManyWithWhereWithoutAwayCampaignInput | FixtureUpdateManyWithWhereWithoutAwayCampaignInput[]
+    deleteMany?: FixtureScalarWhereInput | FixtureScalarWhereInput[]
+  }
+
+  export type CampaignCreateNestedOneWithoutLeagueCampaignInput = {
+    create?: XOR<CampaignCreateWithoutLeagueCampaignInput, CampaignUncheckedCreateWithoutLeagueCampaignInput>
+    connectOrCreate?: CampaignCreateOrConnectWithoutLeagueCampaignInput
+    connect?: CampaignWhereUniqueInput
+  }
+
+  export type FloatFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type CampaignUpdateOneRequiredWithoutLeagueCampaignNestedInput = {
+    create?: XOR<CampaignCreateWithoutLeagueCampaignInput, CampaignUncheckedCreateWithoutLeagueCampaignInput>
+    connectOrCreate?: CampaignCreateOrConnectWithoutLeagueCampaignInput
+    upsert?: CampaignUpsertWithoutLeagueCampaignInput
+    connect?: CampaignWhereUniqueInput
+    update?: XOR<XOR<CampaignUpdateToOneWithWhereWithoutLeagueCampaignInput, CampaignUpdateWithoutLeagueCampaignInput>, CampaignUncheckedUpdateWithoutLeagueCampaignInput>
+  }
+
+  export type TeamCampaignCreateNestedManyWithoutTeamInput = {
+    create?: XOR<TeamCampaignCreateWithoutTeamInput, TeamCampaignUncheckedCreateWithoutTeamInput> | TeamCampaignCreateWithoutTeamInput[] | TeamCampaignUncheckedCreateWithoutTeamInput[]
+    connectOrCreate?: TeamCampaignCreateOrConnectWithoutTeamInput | TeamCampaignCreateOrConnectWithoutTeamInput[]
+    createMany?: TeamCampaignCreateManyTeamInputEnvelope
+    connect?: TeamCampaignWhereUniqueInput | TeamCampaignWhereUniqueInput[]
+  }
+
+  export type LeagueTableSnapshotCreateNestedManyWithoutTeamInput = {
+    create?: XOR<LeagueTableSnapshotCreateWithoutTeamInput, LeagueTableSnapshotUncheckedCreateWithoutTeamInput> | LeagueTableSnapshotCreateWithoutTeamInput[] | LeagueTableSnapshotUncheckedCreateWithoutTeamInput[]
+    connectOrCreate?: LeagueTableSnapshotCreateOrConnectWithoutTeamInput | LeagueTableSnapshotCreateOrConnectWithoutTeamInput[]
+    createMany?: LeagueTableSnapshotCreateManyTeamInputEnvelope
+    connect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+  }
+
+  export type TeamCampaignUncheckedCreateNestedManyWithoutTeamInput = {
+    create?: XOR<TeamCampaignCreateWithoutTeamInput, TeamCampaignUncheckedCreateWithoutTeamInput> | TeamCampaignCreateWithoutTeamInput[] | TeamCampaignUncheckedCreateWithoutTeamInput[]
+    connectOrCreate?: TeamCampaignCreateOrConnectWithoutTeamInput | TeamCampaignCreateOrConnectWithoutTeamInput[]
+    createMany?: TeamCampaignCreateManyTeamInputEnvelope
+    connect?: TeamCampaignWhereUniqueInput | TeamCampaignWhereUniqueInput[]
+  }
+
+  export type LeagueTableSnapshotUncheckedCreateNestedManyWithoutTeamInput = {
+    create?: XOR<LeagueTableSnapshotCreateWithoutTeamInput, LeagueTableSnapshotUncheckedCreateWithoutTeamInput> | LeagueTableSnapshotCreateWithoutTeamInput[] | LeagueTableSnapshotUncheckedCreateWithoutTeamInput[]
+    connectOrCreate?: LeagueTableSnapshotCreateOrConnectWithoutTeamInput | LeagueTableSnapshotCreateOrConnectWithoutTeamInput[]
+    createMany?: LeagueTableSnapshotCreateManyTeamInputEnvelope
+    connect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+  }
+
+  export type TeamCampaignUpdateManyWithoutTeamNestedInput = {
+    create?: XOR<TeamCampaignCreateWithoutTeamInput, TeamCampaignUncheckedCreateWithoutTeamInput> | TeamCampaignCreateWithoutTeamInput[] | TeamCampaignUncheckedCreateWithoutTeamInput[]
+    connectOrCreate?: TeamCampaignCreateOrConnectWithoutTeamInput | TeamCampaignCreateOrConnectWithoutTeamInput[]
+    upsert?: TeamCampaignUpsertWithWhereUniqueWithoutTeamInput | TeamCampaignUpsertWithWhereUniqueWithoutTeamInput[]
+    createMany?: TeamCampaignCreateManyTeamInputEnvelope
+    set?: TeamCampaignWhereUniqueInput | TeamCampaignWhereUniqueInput[]
+    disconnect?: TeamCampaignWhereUniqueInput | TeamCampaignWhereUniqueInput[]
+    delete?: TeamCampaignWhereUniqueInput | TeamCampaignWhereUniqueInput[]
+    connect?: TeamCampaignWhereUniqueInput | TeamCampaignWhereUniqueInput[]
+    update?: TeamCampaignUpdateWithWhereUniqueWithoutTeamInput | TeamCampaignUpdateWithWhereUniqueWithoutTeamInput[]
+    updateMany?: TeamCampaignUpdateManyWithWhereWithoutTeamInput | TeamCampaignUpdateManyWithWhereWithoutTeamInput[]
+    deleteMany?: TeamCampaignScalarWhereInput | TeamCampaignScalarWhereInput[]
+  }
+
+  export type LeagueTableSnapshotUpdateManyWithoutTeamNestedInput = {
+    create?: XOR<LeagueTableSnapshotCreateWithoutTeamInput, LeagueTableSnapshotUncheckedCreateWithoutTeamInput> | LeagueTableSnapshotCreateWithoutTeamInput[] | LeagueTableSnapshotUncheckedCreateWithoutTeamInput[]
+    connectOrCreate?: LeagueTableSnapshotCreateOrConnectWithoutTeamInput | LeagueTableSnapshotCreateOrConnectWithoutTeamInput[]
+    upsert?: LeagueTableSnapshotUpsertWithWhereUniqueWithoutTeamInput | LeagueTableSnapshotUpsertWithWhereUniqueWithoutTeamInput[]
+    createMany?: LeagueTableSnapshotCreateManyTeamInputEnvelope
+    set?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    disconnect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    delete?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    connect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    update?: LeagueTableSnapshotUpdateWithWhereUniqueWithoutTeamInput | LeagueTableSnapshotUpdateWithWhereUniqueWithoutTeamInput[]
+    updateMany?: LeagueTableSnapshotUpdateManyWithWhereWithoutTeamInput | LeagueTableSnapshotUpdateManyWithWhereWithoutTeamInput[]
+    deleteMany?: LeagueTableSnapshotScalarWhereInput | LeagueTableSnapshotScalarWhereInput[]
+  }
+
+  export type TeamCampaignUncheckedUpdateManyWithoutTeamNestedInput = {
+    create?: XOR<TeamCampaignCreateWithoutTeamInput, TeamCampaignUncheckedCreateWithoutTeamInput> | TeamCampaignCreateWithoutTeamInput[] | TeamCampaignUncheckedCreateWithoutTeamInput[]
+    connectOrCreate?: TeamCampaignCreateOrConnectWithoutTeamInput | TeamCampaignCreateOrConnectWithoutTeamInput[]
+    upsert?: TeamCampaignUpsertWithWhereUniqueWithoutTeamInput | TeamCampaignUpsertWithWhereUniqueWithoutTeamInput[]
+    createMany?: TeamCampaignCreateManyTeamInputEnvelope
+    set?: TeamCampaignWhereUniqueInput | TeamCampaignWhereUniqueInput[]
+    disconnect?: TeamCampaignWhereUniqueInput | TeamCampaignWhereUniqueInput[]
+    delete?: TeamCampaignWhereUniqueInput | TeamCampaignWhereUniqueInput[]
+    connect?: TeamCampaignWhereUniqueInput | TeamCampaignWhereUniqueInput[]
+    update?: TeamCampaignUpdateWithWhereUniqueWithoutTeamInput | TeamCampaignUpdateWithWhereUniqueWithoutTeamInput[]
+    updateMany?: TeamCampaignUpdateManyWithWhereWithoutTeamInput | TeamCampaignUpdateManyWithWhereWithoutTeamInput[]
+    deleteMany?: TeamCampaignScalarWhereInput | TeamCampaignScalarWhereInput[]
+  }
+
+  export type LeagueTableSnapshotUncheckedUpdateManyWithoutTeamNestedInput = {
+    create?: XOR<LeagueTableSnapshotCreateWithoutTeamInput, LeagueTableSnapshotUncheckedCreateWithoutTeamInput> | LeagueTableSnapshotCreateWithoutTeamInput[] | LeagueTableSnapshotUncheckedCreateWithoutTeamInput[]
+    connectOrCreate?: LeagueTableSnapshotCreateOrConnectWithoutTeamInput | LeagueTableSnapshotCreateOrConnectWithoutTeamInput[]
+    upsert?: LeagueTableSnapshotUpsertWithWhereUniqueWithoutTeamInput | LeagueTableSnapshotUpsertWithWhereUniqueWithoutTeamInput[]
+    createMany?: LeagueTableSnapshotCreateManyTeamInputEnvelope
+    set?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    disconnect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    delete?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    connect?: LeagueTableSnapshotWhereUniqueInput | LeagueTableSnapshotWhereUniqueInput[]
+    update?: LeagueTableSnapshotUpdateWithWhereUniqueWithoutTeamInput | LeagueTableSnapshotUpdateWithWhereUniqueWithoutTeamInput[]
+    updateMany?: LeagueTableSnapshotUpdateManyWithWhereWithoutTeamInput | LeagueTableSnapshotUpdateManyWithWhereWithoutTeamInput[]
+    deleteMany?: LeagueTableSnapshotScalarWhereInput | LeagueTableSnapshotScalarWhereInput[]
+  }
+
+  export type TeamCreateNestedOneWithoutCampaignsInput = {
+    create?: XOR<TeamCreateWithoutCampaignsInput, TeamUncheckedCreateWithoutCampaignsInput>
+    connectOrCreate?: TeamCreateOrConnectWithoutCampaignsInput
+    connect?: TeamWhereUniqueInput
+  }
+
+  export type CampaignCreateNestedOneWithoutTeamCampaignInput = {
+    create?: XOR<CampaignCreateWithoutTeamCampaignInput, CampaignUncheckedCreateWithoutTeamCampaignInput>
+    connectOrCreate?: CampaignCreateOrConnectWithoutTeamCampaignInput
+    connect?: CampaignWhereUniqueInput
+  }
+
+  export type TeamUpdateOneRequiredWithoutCampaignsNestedInput = {
+    create?: XOR<TeamCreateWithoutCampaignsInput, TeamUncheckedCreateWithoutCampaignsInput>
+    connectOrCreate?: TeamCreateOrConnectWithoutCampaignsInput
+    upsert?: TeamUpsertWithoutCampaignsInput
+    connect?: TeamWhereUniqueInput
+    update?: XOR<XOR<TeamUpdateToOneWithWhereWithoutCampaignsInput, TeamUpdateWithoutCampaignsInput>, TeamUncheckedUpdateWithoutCampaignsInput>
+  }
+
+  export type CampaignUpdateOneRequiredWithoutTeamCampaignNestedInput = {
+    create?: XOR<CampaignCreateWithoutTeamCampaignInput, CampaignUncheckedCreateWithoutTeamCampaignInput>
+    connectOrCreate?: CampaignCreateOrConnectWithoutTeamCampaignInput
+    upsert?: CampaignUpsertWithoutTeamCampaignInput
+    connect?: CampaignWhereUniqueInput
+    update?: XOR<XOR<CampaignUpdateToOneWithWhereWithoutTeamCampaignInput, CampaignUpdateWithoutTeamCampaignInput>, CampaignUncheckedUpdateWithoutTeamCampaignInput>
+  }
+
+  export type CompetitionCreateNestedOneWithoutLeagueSnapshotsInput = {
+    create?: XOR<CompetitionCreateWithoutLeagueSnapshotsInput, CompetitionUncheckedCreateWithoutLeagueSnapshotsInput>
+    connectOrCreate?: CompetitionCreateOrConnectWithoutLeagueSnapshotsInput
+    connect?: CompetitionWhereUniqueInput
+  }
+
+  export type SeasonCreateNestedOneWithoutLeagueSnapshotsInput = {
+    create?: XOR<SeasonCreateWithoutLeagueSnapshotsInput, SeasonUncheckedCreateWithoutLeagueSnapshotsInput>
+    connectOrCreate?: SeasonCreateOrConnectWithoutLeagueSnapshotsInput
+    connect?: SeasonWhereUniqueInput
+  }
+
+  export type TeamCreateNestedOneWithoutLeagueSnapshotsInput = {
+    create?: XOR<TeamCreateWithoutLeagueSnapshotsInput, TeamUncheckedCreateWithoutLeagueSnapshotsInput>
+    connectOrCreate?: TeamCreateOrConnectWithoutLeagueSnapshotsInput
+    connect?: TeamWhereUniqueInput
+  }
+
+  export type CompetitionUpdateOneRequiredWithoutLeagueSnapshotsNestedInput = {
+    create?: XOR<CompetitionCreateWithoutLeagueSnapshotsInput, CompetitionUncheckedCreateWithoutLeagueSnapshotsInput>
+    connectOrCreate?: CompetitionCreateOrConnectWithoutLeagueSnapshotsInput
+    upsert?: CompetitionUpsertWithoutLeagueSnapshotsInput
+    connect?: CompetitionWhereUniqueInput
+    update?: XOR<XOR<CompetitionUpdateToOneWithWhereWithoutLeagueSnapshotsInput, CompetitionUpdateWithoutLeagueSnapshotsInput>, CompetitionUncheckedUpdateWithoutLeagueSnapshotsInput>
+  }
+
+  export type SeasonUpdateOneRequiredWithoutLeagueSnapshotsNestedInput = {
+    create?: XOR<SeasonCreateWithoutLeagueSnapshotsInput, SeasonUncheckedCreateWithoutLeagueSnapshotsInput>
+    connectOrCreate?: SeasonCreateOrConnectWithoutLeagueSnapshotsInput
+    upsert?: SeasonUpsertWithoutLeagueSnapshotsInput
+    connect?: SeasonWhereUniqueInput
+    update?: XOR<XOR<SeasonUpdateToOneWithWhereWithoutLeagueSnapshotsInput, SeasonUpdateWithoutLeagueSnapshotsInput>, SeasonUncheckedUpdateWithoutLeagueSnapshotsInput>
+  }
+
+  export type TeamUpdateOneRequiredWithoutLeagueSnapshotsNestedInput = {
+    create?: XOR<TeamCreateWithoutLeagueSnapshotsInput, TeamUncheckedCreateWithoutLeagueSnapshotsInput>
+    connectOrCreate?: TeamCreateOrConnectWithoutLeagueSnapshotsInput
+    upsert?: TeamUpsertWithoutLeagueSnapshotsInput
+    connect?: TeamWhereUniqueInput
+    update?: XOR<XOR<TeamUpdateToOneWithWhereWithoutLeagueSnapshotsInput, TeamUpdateWithoutLeagueSnapshotsInput>, TeamUncheckedUpdateWithoutLeagueSnapshotsInput>
+  }
+
+  export type UserCreateNestedOneWithoutCampaignsInput = {
+    create?: XOR<UserCreateWithoutCampaignsInput, UserUncheckedCreateWithoutCampaignsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutCampaignsInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type CampaignCreateNestedOneWithoutPlayersInput = {
+    create?: XOR<CampaignCreateWithoutPlayersInput, CampaignUncheckedCreateWithoutPlayersInput>
+    connectOrCreate?: CampaignCreateOrConnectWithoutPlayersInput
+    connect?: CampaignWhereUniqueInput
+  }
+
+  export type FrameCreateNestedManyWithoutHomePlayerInput = {
+    create?: XOR<FrameCreateWithoutHomePlayerInput, FrameUncheckedCreateWithoutHomePlayerInput> | FrameCreateWithoutHomePlayerInput[] | FrameUncheckedCreateWithoutHomePlayerInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutHomePlayerInput | FrameCreateOrConnectWithoutHomePlayerInput[]
+    createMany?: FrameCreateManyHomePlayerInputEnvelope
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type FrameCreateNestedManyWithoutAwayPlayerInput = {
+    create?: XOR<FrameCreateWithoutAwayPlayerInput, FrameUncheckedCreateWithoutAwayPlayerInput> | FrameCreateWithoutAwayPlayerInput[] | FrameUncheckedCreateWithoutAwayPlayerInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutAwayPlayerInput | FrameCreateOrConnectWithoutAwayPlayerInput[]
+    createMany?: FrameCreateManyAwayPlayerInputEnvelope
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type FrameCreateNestedManyWithoutWinnerInput = {
+    create?: XOR<FrameCreateWithoutWinnerInput, FrameUncheckedCreateWithoutWinnerInput> | FrameCreateWithoutWinnerInput[] | FrameUncheckedCreateWithoutWinnerInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutWinnerInput | FrameCreateOrConnectWithoutWinnerInput[]
+    createMany?: FrameCreateManyWinnerInputEnvelope
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type HandicapCreateNestedManyWithoutCampaignPlayerInput = {
+    create?: XOR<HandicapCreateWithoutCampaignPlayerInput, HandicapUncheckedCreateWithoutCampaignPlayerInput> | HandicapCreateWithoutCampaignPlayerInput[] | HandicapUncheckedCreateWithoutCampaignPlayerInput[]
+    connectOrCreate?: HandicapCreateOrConnectWithoutCampaignPlayerInput | HandicapCreateOrConnectWithoutCampaignPlayerInput[]
+    createMany?: HandicapCreateManyCampaignPlayerInputEnvelope
+    connect?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+  }
+
+  export type FrameUncheckedCreateNestedManyWithoutHomePlayerInput = {
+    create?: XOR<FrameCreateWithoutHomePlayerInput, FrameUncheckedCreateWithoutHomePlayerInput> | FrameCreateWithoutHomePlayerInput[] | FrameUncheckedCreateWithoutHomePlayerInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutHomePlayerInput | FrameCreateOrConnectWithoutHomePlayerInput[]
+    createMany?: FrameCreateManyHomePlayerInputEnvelope
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type FrameUncheckedCreateNestedManyWithoutAwayPlayerInput = {
+    create?: XOR<FrameCreateWithoutAwayPlayerInput, FrameUncheckedCreateWithoutAwayPlayerInput> | FrameCreateWithoutAwayPlayerInput[] | FrameUncheckedCreateWithoutAwayPlayerInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutAwayPlayerInput | FrameCreateOrConnectWithoutAwayPlayerInput[]
+    createMany?: FrameCreateManyAwayPlayerInputEnvelope
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type FrameUncheckedCreateNestedManyWithoutWinnerInput = {
+    create?: XOR<FrameCreateWithoutWinnerInput, FrameUncheckedCreateWithoutWinnerInput> | FrameCreateWithoutWinnerInput[] | FrameUncheckedCreateWithoutWinnerInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutWinnerInput | FrameCreateOrConnectWithoutWinnerInput[]
+    createMany?: FrameCreateManyWinnerInputEnvelope
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type HandicapUncheckedCreateNestedManyWithoutCampaignPlayerInput = {
+    create?: XOR<HandicapCreateWithoutCampaignPlayerInput, HandicapUncheckedCreateWithoutCampaignPlayerInput> | HandicapCreateWithoutCampaignPlayerInput[] | HandicapUncheckedCreateWithoutCampaignPlayerInput[]
+    connectOrCreate?: HandicapCreateOrConnectWithoutCampaignPlayerInput | HandicapCreateOrConnectWithoutCampaignPlayerInput[]
+    createMany?: HandicapCreateManyCampaignPlayerInputEnvelope
+    connect?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+  }
+
+  export type UserUpdateOneRequiredWithoutCampaignsNestedInput = {
+    create?: XOR<UserCreateWithoutCampaignsInput, UserUncheckedCreateWithoutCampaignsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutCampaignsInput
+    upsert?: UserUpsertWithoutCampaignsInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutCampaignsInput, UserUpdateWithoutCampaignsInput>, UserUncheckedUpdateWithoutCampaignsInput>
+  }
+
+  export type CampaignUpdateOneRequiredWithoutPlayersNestedInput = {
+    create?: XOR<CampaignCreateWithoutPlayersInput, CampaignUncheckedCreateWithoutPlayersInput>
+    connectOrCreate?: CampaignCreateOrConnectWithoutPlayersInput
+    upsert?: CampaignUpsertWithoutPlayersInput
+    connect?: CampaignWhereUniqueInput
+    update?: XOR<XOR<CampaignUpdateToOneWithWhereWithoutPlayersInput, CampaignUpdateWithoutPlayersInput>, CampaignUncheckedUpdateWithoutPlayersInput>
+  }
+
+  export type FrameUpdateManyWithoutHomePlayerNestedInput = {
+    create?: XOR<FrameCreateWithoutHomePlayerInput, FrameUncheckedCreateWithoutHomePlayerInput> | FrameCreateWithoutHomePlayerInput[] | FrameUncheckedCreateWithoutHomePlayerInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutHomePlayerInput | FrameCreateOrConnectWithoutHomePlayerInput[]
+    upsert?: FrameUpsertWithWhereUniqueWithoutHomePlayerInput | FrameUpsertWithWhereUniqueWithoutHomePlayerInput[]
+    createMany?: FrameCreateManyHomePlayerInputEnvelope
+    set?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    disconnect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    delete?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    update?: FrameUpdateWithWhereUniqueWithoutHomePlayerInput | FrameUpdateWithWhereUniqueWithoutHomePlayerInput[]
+    updateMany?: FrameUpdateManyWithWhereWithoutHomePlayerInput | FrameUpdateManyWithWhereWithoutHomePlayerInput[]
+    deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
+  }
+
+  export type FrameUpdateManyWithoutAwayPlayerNestedInput = {
+    create?: XOR<FrameCreateWithoutAwayPlayerInput, FrameUncheckedCreateWithoutAwayPlayerInput> | FrameCreateWithoutAwayPlayerInput[] | FrameUncheckedCreateWithoutAwayPlayerInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutAwayPlayerInput | FrameCreateOrConnectWithoutAwayPlayerInput[]
+    upsert?: FrameUpsertWithWhereUniqueWithoutAwayPlayerInput | FrameUpsertWithWhereUniqueWithoutAwayPlayerInput[]
+    createMany?: FrameCreateManyAwayPlayerInputEnvelope
+    set?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    disconnect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    delete?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    update?: FrameUpdateWithWhereUniqueWithoutAwayPlayerInput | FrameUpdateWithWhereUniqueWithoutAwayPlayerInput[]
+    updateMany?: FrameUpdateManyWithWhereWithoutAwayPlayerInput | FrameUpdateManyWithWhereWithoutAwayPlayerInput[]
+    deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
+  }
+
+  export type FrameUpdateManyWithoutWinnerNestedInput = {
+    create?: XOR<FrameCreateWithoutWinnerInput, FrameUncheckedCreateWithoutWinnerInput> | FrameCreateWithoutWinnerInput[] | FrameUncheckedCreateWithoutWinnerInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutWinnerInput | FrameCreateOrConnectWithoutWinnerInput[]
+    upsert?: FrameUpsertWithWhereUniqueWithoutWinnerInput | FrameUpsertWithWhereUniqueWithoutWinnerInput[]
+    createMany?: FrameCreateManyWinnerInputEnvelope
+    set?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    disconnect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    delete?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    update?: FrameUpdateWithWhereUniqueWithoutWinnerInput | FrameUpdateWithWhereUniqueWithoutWinnerInput[]
+    updateMany?: FrameUpdateManyWithWhereWithoutWinnerInput | FrameUpdateManyWithWhereWithoutWinnerInput[]
+    deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
+  }
+
+  export type HandicapUpdateManyWithoutCampaignPlayerNestedInput = {
+    create?: XOR<HandicapCreateWithoutCampaignPlayerInput, HandicapUncheckedCreateWithoutCampaignPlayerInput> | HandicapCreateWithoutCampaignPlayerInput[] | HandicapUncheckedCreateWithoutCampaignPlayerInput[]
+    connectOrCreate?: HandicapCreateOrConnectWithoutCampaignPlayerInput | HandicapCreateOrConnectWithoutCampaignPlayerInput[]
+    upsert?: HandicapUpsertWithWhereUniqueWithoutCampaignPlayerInput | HandicapUpsertWithWhereUniqueWithoutCampaignPlayerInput[]
+    createMany?: HandicapCreateManyCampaignPlayerInputEnvelope
+    set?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+    disconnect?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+    delete?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+    connect?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+    update?: HandicapUpdateWithWhereUniqueWithoutCampaignPlayerInput | HandicapUpdateWithWhereUniqueWithoutCampaignPlayerInput[]
+    updateMany?: HandicapUpdateManyWithWhereWithoutCampaignPlayerInput | HandicapUpdateManyWithWhereWithoutCampaignPlayerInput[]
+    deleteMany?: HandicapScalarWhereInput | HandicapScalarWhereInput[]
+  }
+
+  export type FrameUncheckedUpdateManyWithoutHomePlayerNestedInput = {
+    create?: XOR<FrameCreateWithoutHomePlayerInput, FrameUncheckedCreateWithoutHomePlayerInput> | FrameCreateWithoutHomePlayerInput[] | FrameUncheckedCreateWithoutHomePlayerInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutHomePlayerInput | FrameCreateOrConnectWithoutHomePlayerInput[]
+    upsert?: FrameUpsertWithWhereUniqueWithoutHomePlayerInput | FrameUpsertWithWhereUniqueWithoutHomePlayerInput[]
+    createMany?: FrameCreateManyHomePlayerInputEnvelope
+    set?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    disconnect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    delete?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    update?: FrameUpdateWithWhereUniqueWithoutHomePlayerInput | FrameUpdateWithWhereUniqueWithoutHomePlayerInput[]
+    updateMany?: FrameUpdateManyWithWhereWithoutHomePlayerInput | FrameUpdateManyWithWhereWithoutHomePlayerInput[]
+    deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
+  }
+
+  export type FrameUncheckedUpdateManyWithoutAwayPlayerNestedInput = {
+    create?: XOR<FrameCreateWithoutAwayPlayerInput, FrameUncheckedCreateWithoutAwayPlayerInput> | FrameCreateWithoutAwayPlayerInput[] | FrameUncheckedCreateWithoutAwayPlayerInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutAwayPlayerInput | FrameCreateOrConnectWithoutAwayPlayerInput[]
+    upsert?: FrameUpsertWithWhereUniqueWithoutAwayPlayerInput | FrameUpsertWithWhereUniqueWithoutAwayPlayerInput[]
+    createMany?: FrameCreateManyAwayPlayerInputEnvelope
+    set?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    disconnect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    delete?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    update?: FrameUpdateWithWhereUniqueWithoutAwayPlayerInput | FrameUpdateWithWhereUniqueWithoutAwayPlayerInput[]
+    updateMany?: FrameUpdateManyWithWhereWithoutAwayPlayerInput | FrameUpdateManyWithWhereWithoutAwayPlayerInput[]
+    deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
+  }
+
+  export type FrameUncheckedUpdateManyWithoutWinnerNestedInput = {
+    create?: XOR<FrameCreateWithoutWinnerInput, FrameUncheckedCreateWithoutWinnerInput> | FrameCreateWithoutWinnerInput[] | FrameUncheckedCreateWithoutWinnerInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutWinnerInput | FrameCreateOrConnectWithoutWinnerInput[]
+    upsert?: FrameUpsertWithWhereUniqueWithoutWinnerInput | FrameUpsertWithWhereUniqueWithoutWinnerInput[]
+    createMany?: FrameCreateManyWinnerInputEnvelope
+    set?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    disconnect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    delete?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    update?: FrameUpdateWithWhereUniqueWithoutWinnerInput | FrameUpdateWithWhereUniqueWithoutWinnerInput[]
+    updateMany?: FrameUpdateManyWithWhereWithoutWinnerInput | FrameUpdateManyWithWhereWithoutWinnerInput[]
+    deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
+  }
+
+  export type HandicapUncheckedUpdateManyWithoutCampaignPlayerNestedInput = {
+    create?: XOR<HandicapCreateWithoutCampaignPlayerInput, HandicapUncheckedCreateWithoutCampaignPlayerInput> | HandicapCreateWithoutCampaignPlayerInput[] | HandicapUncheckedCreateWithoutCampaignPlayerInput[]
+    connectOrCreate?: HandicapCreateOrConnectWithoutCampaignPlayerInput | HandicapCreateOrConnectWithoutCampaignPlayerInput[]
+    upsert?: HandicapUpsertWithWhereUniqueWithoutCampaignPlayerInput | HandicapUpsertWithWhereUniqueWithoutCampaignPlayerInput[]
+    createMany?: HandicapCreateManyCampaignPlayerInputEnvelope
+    set?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+    disconnect?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+    delete?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+    connect?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+    update?: HandicapUpdateWithWhereUniqueWithoutCampaignPlayerInput | HandicapUpdateWithWhereUniqueWithoutCampaignPlayerInput[]
+    updateMany?: HandicapUpdateManyWithWhereWithoutCampaignPlayerInput | HandicapUpdateManyWithWhereWithoutCampaignPlayerInput[]
+    deleteMany?: HandicapScalarWhereInput | HandicapScalarWhereInput[]
+  }
+
+  export type FrameCreateNestedManyWithoutHomePlayerHandicapInput = {
+    create?: XOR<FrameCreateWithoutHomePlayerHandicapInput, FrameUncheckedCreateWithoutHomePlayerHandicapInput> | FrameCreateWithoutHomePlayerHandicapInput[] | FrameUncheckedCreateWithoutHomePlayerHandicapInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutHomePlayerHandicapInput | FrameCreateOrConnectWithoutHomePlayerHandicapInput[]
+    createMany?: FrameCreateManyHomePlayerHandicapInputEnvelope
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type FrameCreateNestedManyWithoutAwayPlayerHandicapInput = {
+    create?: XOR<FrameCreateWithoutAwayPlayerHandicapInput, FrameUncheckedCreateWithoutAwayPlayerHandicapInput> | FrameCreateWithoutAwayPlayerHandicapInput[] | FrameUncheckedCreateWithoutAwayPlayerHandicapInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutAwayPlayerHandicapInput | FrameCreateOrConnectWithoutAwayPlayerHandicapInput[]
+    createMany?: FrameCreateManyAwayPlayerHandicapInputEnvelope
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type CampaignPlayerCreateNestedOneWithoutHandicapsInput = {
+    create?: XOR<CampaignPlayerCreateWithoutHandicapsInput, CampaignPlayerUncheckedCreateWithoutHandicapsInput>
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutHandicapsInput
+    connect?: CampaignPlayerWhereUniqueInput
+  }
+
+  export type FrameUncheckedCreateNestedManyWithoutHomePlayerHandicapInput = {
+    create?: XOR<FrameCreateWithoutHomePlayerHandicapInput, FrameUncheckedCreateWithoutHomePlayerHandicapInput> | FrameCreateWithoutHomePlayerHandicapInput[] | FrameUncheckedCreateWithoutHomePlayerHandicapInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutHomePlayerHandicapInput | FrameCreateOrConnectWithoutHomePlayerHandicapInput[]
+    createMany?: FrameCreateManyHomePlayerHandicapInputEnvelope
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type FrameUncheckedCreateNestedManyWithoutAwayPlayerHandicapInput = {
+    create?: XOR<FrameCreateWithoutAwayPlayerHandicapInput, FrameUncheckedCreateWithoutAwayPlayerHandicapInput> | FrameCreateWithoutAwayPlayerHandicapInput[] | FrameUncheckedCreateWithoutAwayPlayerHandicapInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutAwayPlayerHandicapInput | FrameCreateOrConnectWithoutAwayPlayerHandicapInput[]
+    createMany?: FrameCreateManyAwayPlayerHandicapInputEnvelope
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type FrameUpdateManyWithoutHomePlayerHandicapNestedInput = {
+    create?: XOR<FrameCreateWithoutHomePlayerHandicapInput, FrameUncheckedCreateWithoutHomePlayerHandicapInput> | FrameCreateWithoutHomePlayerHandicapInput[] | FrameUncheckedCreateWithoutHomePlayerHandicapInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutHomePlayerHandicapInput | FrameCreateOrConnectWithoutHomePlayerHandicapInput[]
+    upsert?: FrameUpsertWithWhereUniqueWithoutHomePlayerHandicapInput | FrameUpsertWithWhereUniqueWithoutHomePlayerHandicapInput[]
+    createMany?: FrameCreateManyHomePlayerHandicapInputEnvelope
+    set?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    disconnect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    delete?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    update?: FrameUpdateWithWhereUniqueWithoutHomePlayerHandicapInput | FrameUpdateWithWhereUniqueWithoutHomePlayerHandicapInput[]
+    updateMany?: FrameUpdateManyWithWhereWithoutHomePlayerHandicapInput | FrameUpdateManyWithWhereWithoutHomePlayerHandicapInput[]
+    deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
+  }
+
+  export type FrameUpdateManyWithoutAwayPlayerHandicapNestedInput = {
+    create?: XOR<FrameCreateWithoutAwayPlayerHandicapInput, FrameUncheckedCreateWithoutAwayPlayerHandicapInput> | FrameCreateWithoutAwayPlayerHandicapInput[] | FrameUncheckedCreateWithoutAwayPlayerHandicapInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutAwayPlayerHandicapInput | FrameCreateOrConnectWithoutAwayPlayerHandicapInput[]
+    upsert?: FrameUpsertWithWhereUniqueWithoutAwayPlayerHandicapInput | FrameUpsertWithWhereUniqueWithoutAwayPlayerHandicapInput[]
+    createMany?: FrameCreateManyAwayPlayerHandicapInputEnvelope
+    set?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    disconnect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    delete?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    update?: FrameUpdateWithWhereUniqueWithoutAwayPlayerHandicapInput | FrameUpdateWithWhereUniqueWithoutAwayPlayerHandicapInput[]
+    updateMany?: FrameUpdateManyWithWhereWithoutAwayPlayerHandicapInput | FrameUpdateManyWithWhereWithoutAwayPlayerHandicapInput[]
+    deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
+  }
+
+  export type CampaignPlayerUpdateOneRequiredWithoutHandicapsNestedInput = {
+    create?: XOR<CampaignPlayerCreateWithoutHandicapsInput, CampaignPlayerUncheckedCreateWithoutHandicapsInput>
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutHandicapsInput
+    upsert?: CampaignPlayerUpsertWithoutHandicapsInput
+    connect?: CampaignPlayerWhereUniqueInput
+    update?: XOR<XOR<CampaignPlayerUpdateToOneWithWhereWithoutHandicapsInput, CampaignPlayerUpdateWithoutHandicapsInput>, CampaignPlayerUncheckedUpdateWithoutHandicapsInput>
+  }
+
+  export type FrameUncheckedUpdateManyWithoutHomePlayerHandicapNestedInput = {
+    create?: XOR<FrameCreateWithoutHomePlayerHandicapInput, FrameUncheckedCreateWithoutHomePlayerHandicapInput> | FrameCreateWithoutHomePlayerHandicapInput[] | FrameUncheckedCreateWithoutHomePlayerHandicapInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutHomePlayerHandicapInput | FrameCreateOrConnectWithoutHomePlayerHandicapInput[]
+    upsert?: FrameUpsertWithWhereUniqueWithoutHomePlayerHandicapInput | FrameUpsertWithWhereUniqueWithoutHomePlayerHandicapInput[]
+    createMany?: FrameCreateManyHomePlayerHandicapInputEnvelope
+    set?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    disconnect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    delete?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    update?: FrameUpdateWithWhereUniqueWithoutHomePlayerHandicapInput | FrameUpdateWithWhereUniqueWithoutHomePlayerHandicapInput[]
+    updateMany?: FrameUpdateManyWithWhereWithoutHomePlayerHandicapInput | FrameUpdateManyWithWhereWithoutHomePlayerHandicapInput[]
+    deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
+  }
+
+  export type FrameUncheckedUpdateManyWithoutAwayPlayerHandicapNestedInput = {
+    create?: XOR<FrameCreateWithoutAwayPlayerHandicapInput, FrameUncheckedCreateWithoutAwayPlayerHandicapInput> | FrameCreateWithoutAwayPlayerHandicapInput[] | FrameUncheckedCreateWithoutAwayPlayerHandicapInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutAwayPlayerHandicapInput | FrameCreateOrConnectWithoutAwayPlayerHandicapInput[]
+    upsert?: FrameUpsertWithWhereUniqueWithoutAwayPlayerHandicapInput | FrameUpsertWithWhereUniqueWithoutAwayPlayerHandicapInput[]
+    createMany?: FrameCreateManyAwayPlayerHandicapInputEnvelope
+    set?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    disconnect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    delete?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    update?: FrameUpdateWithWhereUniqueWithoutAwayPlayerHandicapInput | FrameUpdateWithWhereUniqueWithoutAwayPlayerHandicapInput[]
+    updateMany?: FrameUpdateManyWithWhereWithoutAwayPlayerHandicapInput | FrameUpdateManyWithWhereWithoutAwayPlayerHandicapInput[]
+    deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
+  }
+
+  export type CompetitionCreateNestedOneWithoutFixturesInput = {
+    create?: XOR<CompetitionCreateWithoutFixturesInput, CompetitionUncheckedCreateWithoutFixturesInput>
+    connectOrCreate?: CompetitionCreateOrConnectWithoutFixturesInput
+    connect?: CompetitionWhereUniqueInput
+  }
+
+  export type SeasonCreateNestedOneWithoutFixturesInput = {
+    create?: XOR<SeasonCreateWithoutFixturesInput, SeasonUncheckedCreateWithoutFixturesInput>
+    connectOrCreate?: SeasonCreateOrConnectWithoutFixturesInput
+    connect?: SeasonWhereUniqueInput
+  }
+
+  export type CampaignCreateNestedOneWithoutHomeFixturesInput = {
+    create?: XOR<CampaignCreateWithoutHomeFixturesInput, CampaignUncheckedCreateWithoutHomeFixturesInput>
+    connectOrCreate?: CampaignCreateOrConnectWithoutHomeFixturesInput
+    connect?: CampaignWhereUniqueInput
+  }
+
+  export type CampaignCreateNestedOneWithoutAwayFixturesInput = {
+    create?: XOR<CampaignCreateWithoutAwayFixturesInput, CampaignUncheckedCreateWithoutAwayFixturesInput>
+    connectOrCreate?: CampaignCreateOrConnectWithoutAwayFixturesInput
+    connect?: CampaignWhereUniqueInput
+  }
+
+  export type FrameCreateNestedManyWithoutFixtureInput = {
+    create?: XOR<FrameCreateWithoutFixtureInput, FrameUncheckedCreateWithoutFixtureInput> | FrameCreateWithoutFixtureInput[] | FrameUncheckedCreateWithoutFixtureInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutFixtureInput | FrameCreateOrConnectWithoutFixtureInput[]
+    createMany?: FrameCreateManyFixtureInputEnvelope
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type FrameUncheckedCreateNestedManyWithoutFixtureInput = {
+    create?: XOR<FrameCreateWithoutFixtureInput, FrameUncheckedCreateWithoutFixtureInput> | FrameCreateWithoutFixtureInput[] | FrameUncheckedCreateWithoutFixtureInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutFixtureInput | FrameCreateOrConnectWithoutFixtureInput[]
+    createMany?: FrameCreateManyFixtureInputEnvelope
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type CompetitionUpdateOneRequiredWithoutFixturesNestedInput = {
+    create?: XOR<CompetitionCreateWithoutFixturesInput, CompetitionUncheckedCreateWithoutFixturesInput>
+    connectOrCreate?: CompetitionCreateOrConnectWithoutFixturesInput
+    upsert?: CompetitionUpsertWithoutFixturesInput
+    connect?: CompetitionWhereUniqueInput
+    update?: XOR<XOR<CompetitionUpdateToOneWithWhereWithoutFixturesInput, CompetitionUpdateWithoutFixturesInput>, CompetitionUncheckedUpdateWithoutFixturesInput>
+  }
+
+  export type SeasonUpdateOneRequiredWithoutFixturesNestedInput = {
+    create?: XOR<SeasonCreateWithoutFixturesInput, SeasonUncheckedCreateWithoutFixturesInput>
+    connectOrCreate?: SeasonCreateOrConnectWithoutFixturesInput
+    upsert?: SeasonUpsertWithoutFixturesInput
+    connect?: SeasonWhereUniqueInput
+    update?: XOR<XOR<SeasonUpdateToOneWithWhereWithoutFixturesInput, SeasonUpdateWithoutFixturesInput>, SeasonUncheckedUpdateWithoutFixturesInput>
+  }
+
+  export type CampaignUpdateOneRequiredWithoutHomeFixturesNestedInput = {
+    create?: XOR<CampaignCreateWithoutHomeFixturesInput, CampaignUncheckedCreateWithoutHomeFixturesInput>
+    connectOrCreate?: CampaignCreateOrConnectWithoutHomeFixturesInput
+    upsert?: CampaignUpsertWithoutHomeFixturesInput
+    connect?: CampaignWhereUniqueInput
+    update?: XOR<XOR<CampaignUpdateToOneWithWhereWithoutHomeFixturesInput, CampaignUpdateWithoutHomeFixturesInput>, CampaignUncheckedUpdateWithoutHomeFixturesInput>
+  }
+
+  export type CampaignUpdateOneRequiredWithoutAwayFixturesNestedInput = {
+    create?: XOR<CampaignCreateWithoutAwayFixturesInput, CampaignUncheckedCreateWithoutAwayFixturesInput>
+    connectOrCreate?: CampaignCreateOrConnectWithoutAwayFixturesInput
+    upsert?: CampaignUpsertWithoutAwayFixturesInput
+    connect?: CampaignWhereUniqueInput
+    update?: XOR<XOR<CampaignUpdateToOneWithWhereWithoutAwayFixturesInput, CampaignUpdateWithoutAwayFixturesInput>, CampaignUncheckedUpdateWithoutAwayFixturesInput>
+  }
+
+  export type FrameUpdateManyWithoutFixtureNestedInput = {
+    create?: XOR<FrameCreateWithoutFixtureInput, FrameUncheckedCreateWithoutFixtureInput> | FrameCreateWithoutFixtureInput[] | FrameUncheckedCreateWithoutFixtureInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutFixtureInput | FrameCreateOrConnectWithoutFixtureInput[]
+    upsert?: FrameUpsertWithWhereUniqueWithoutFixtureInput | FrameUpsertWithWhereUniqueWithoutFixtureInput[]
+    createMany?: FrameCreateManyFixtureInputEnvelope
+    set?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    disconnect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    delete?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    update?: FrameUpdateWithWhereUniqueWithoutFixtureInput | FrameUpdateWithWhereUniqueWithoutFixtureInput[]
+    updateMany?: FrameUpdateManyWithWhereWithoutFixtureInput | FrameUpdateManyWithWhereWithoutFixtureInput[]
+    deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
+  }
+
+  export type FrameUncheckedUpdateManyWithoutFixtureNestedInput = {
+    create?: XOR<FrameCreateWithoutFixtureInput, FrameUncheckedCreateWithoutFixtureInput> | FrameCreateWithoutFixtureInput[] | FrameUncheckedCreateWithoutFixtureInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutFixtureInput | FrameCreateOrConnectWithoutFixtureInput[]
+    upsert?: FrameUpsertWithWhereUniqueWithoutFixtureInput | FrameUpsertWithWhereUniqueWithoutFixtureInput[]
+    createMany?: FrameCreateManyFixtureInputEnvelope
+    set?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    disconnect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    delete?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    update?: FrameUpdateWithWhereUniqueWithoutFixtureInput | FrameUpdateWithWhereUniqueWithoutFixtureInput[]
+    updateMany?: FrameUpdateManyWithWhereWithoutFixtureInput | FrameUpdateManyWithWhereWithoutFixtureInput[]
+    deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
+  }
+
+  export type FixtureCreateNestedOneWithoutFramesInput = {
+    create?: XOR<FixtureCreateWithoutFramesInput, FixtureUncheckedCreateWithoutFramesInput>
+    connectOrCreate?: FixtureCreateOrConnectWithoutFramesInput
+    connect?: FixtureWhereUniqueInput
+  }
+
+  export type CampaignPlayerCreateNestedOneWithoutHomeFramesInput = {
+    create?: XOR<CampaignPlayerCreateWithoutHomeFramesInput, CampaignPlayerUncheckedCreateWithoutHomeFramesInput>
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutHomeFramesInput
+    connect?: CampaignPlayerWhereUniqueInput
+  }
+
+  export type CampaignPlayerCreateNestedOneWithoutAwayFramesInput = {
+    create?: XOR<CampaignPlayerCreateWithoutAwayFramesInput, CampaignPlayerUncheckedCreateWithoutAwayFramesInput>
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutAwayFramesInput
+    connect?: CampaignPlayerWhereUniqueInput
+  }
+
+  export type HandicapCreateNestedOneWithoutHomeFramesInput = {
+    create?: XOR<HandicapCreateWithoutHomeFramesInput, HandicapUncheckedCreateWithoutHomeFramesInput>
+    connectOrCreate?: HandicapCreateOrConnectWithoutHomeFramesInput
+    connect?: HandicapWhereUniqueInput
+  }
+
+  export type HandicapCreateNestedOneWithoutAwayFramesInput = {
+    create?: XOR<HandicapCreateWithoutAwayFramesInput, HandicapUncheckedCreateWithoutAwayFramesInput>
+    connectOrCreate?: HandicapCreateOrConnectWithoutAwayFramesInput
+    connect?: HandicapWhereUniqueInput
+  }
+
+  export type CampaignPlayerCreateNestedOneWithoutWonFramesInput = {
+    create?: XOR<CampaignPlayerCreateWithoutWonFramesInput, CampaignPlayerUncheckedCreateWithoutWonFramesInput>
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutWonFramesInput
+    connect?: CampaignPlayerWhereUniqueInput
+  }
+
+  export type FixtureUpdateOneRequiredWithoutFramesNestedInput = {
+    create?: XOR<FixtureCreateWithoutFramesInput, FixtureUncheckedCreateWithoutFramesInput>
+    connectOrCreate?: FixtureCreateOrConnectWithoutFramesInput
+    upsert?: FixtureUpsertWithoutFramesInput
+    connect?: FixtureWhereUniqueInput
+    update?: XOR<XOR<FixtureUpdateToOneWithWhereWithoutFramesInput, FixtureUpdateWithoutFramesInput>, FixtureUncheckedUpdateWithoutFramesInput>
+  }
+
+  export type CampaignPlayerUpdateOneWithoutHomeFramesNestedInput = {
+    create?: XOR<CampaignPlayerCreateWithoutHomeFramesInput, CampaignPlayerUncheckedCreateWithoutHomeFramesInput>
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutHomeFramesInput
+    upsert?: CampaignPlayerUpsertWithoutHomeFramesInput
+    disconnect?: CampaignPlayerWhereInput | boolean
+    delete?: CampaignPlayerWhereInput | boolean
+    connect?: CampaignPlayerWhereUniqueInput
+    update?: XOR<XOR<CampaignPlayerUpdateToOneWithWhereWithoutHomeFramesInput, CampaignPlayerUpdateWithoutHomeFramesInput>, CampaignPlayerUncheckedUpdateWithoutHomeFramesInput>
+  }
+
+  export type CampaignPlayerUpdateOneWithoutAwayFramesNestedInput = {
+    create?: XOR<CampaignPlayerCreateWithoutAwayFramesInput, CampaignPlayerUncheckedCreateWithoutAwayFramesInput>
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutAwayFramesInput
+    upsert?: CampaignPlayerUpsertWithoutAwayFramesInput
+    disconnect?: CampaignPlayerWhereInput | boolean
+    delete?: CampaignPlayerWhereInput | boolean
+    connect?: CampaignPlayerWhereUniqueInput
+    update?: XOR<XOR<CampaignPlayerUpdateToOneWithWhereWithoutAwayFramesInput, CampaignPlayerUpdateWithoutAwayFramesInput>, CampaignPlayerUncheckedUpdateWithoutAwayFramesInput>
+  }
+
+  export type HandicapUpdateOneWithoutHomeFramesNestedInput = {
+    create?: XOR<HandicapCreateWithoutHomeFramesInput, HandicapUncheckedCreateWithoutHomeFramesInput>
+    connectOrCreate?: HandicapCreateOrConnectWithoutHomeFramesInput
+    upsert?: HandicapUpsertWithoutHomeFramesInput
+    disconnect?: HandicapWhereInput | boolean
+    delete?: HandicapWhereInput | boolean
+    connect?: HandicapWhereUniqueInput
+    update?: XOR<XOR<HandicapUpdateToOneWithWhereWithoutHomeFramesInput, HandicapUpdateWithoutHomeFramesInput>, HandicapUncheckedUpdateWithoutHomeFramesInput>
+  }
+
+  export type HandicapUpdateOneWithoutAwayFramesNestedInput = {
+    create?: XOR<HandicapCreateWithoutAwayFramesInput, HandicapUncheckedCreateWithoutAwayFramesInput>
+    connectOrCreate?: HandicapCreateOrConnectWithoutAwayFramesInput
+    upsert?: HandicapUpsertWithoutAwayFramesInput
+    disconnect?: HandicapWhereInput | boolean
+    delete?: HandicapWhereInput | boolean
+    connect?: HandicapWhereUniqueInput
+    update?: XOR<XOR<HandicapUpdateToOneWithWhereWithoutAwayFramesInput, HandicapUpdateWithoutAwayFramesInput>, HandicapUncheckedUpdateWithoutAwayFramesInput>
+  }
+
+  export type CampaignPlayerUpdateOneWithoutWonFramesNestedInput = {
+    create?: XOR<CampaignPlayerCreateWithoutWonFramesInput, CampaignPlayerUncheckedCreateWithoutWonFramesInput>
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutWonFramesInput
+    upsert?: CampaignPlayerUpsertWithoutWonFramesInput
+    disconnect?: CampaignPlayerWhereInput | boolean
+    delete?: CampaignPlayerWhereInput | boolean
+    connect?: CampaignPlayerWhereUniqueInput
+    update?: XOR<XOR<CampaignPlayerUpdateToOneWithWhereWithoutWonFramesInput, CampaignPlayerUpdateWithoutWonFramesInput>, CampaignPlayerUncheckedUpdateWithoutWonFramesInput>
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -7916,6 +26119,11 @@ export namespace Prisma {
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
   export type NestedDateTimeFilter<$PrismaModel = never> = {
@@ -7999,6 +26207,14 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -8038,6 +26254,49 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
   }
 
   export type AccountCreateWithoutUserInput = {
@@ -8104,6 +26363,38 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type CampaignPlayerCreateWithoutUserInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    campaign: CampaignCreateNestedOneWithoutPlayersInput
+    homeFrames?: FrameCreateNestedManyWithoutHomePlayerInput
+    awayFrames?: FrameCreateNestedManyWithoutAwayPlayerInput
+    wonFrames?: FrameCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapCreateNestedManyWithoutCampaignPlayerInput
+  }
+
+  export type CampaignPlayerUncheckedCreateWithoutUserInput = {
+    id?: string
+    campaignId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerInput
+    awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerInput
+    wonFrames?: FrameUncheckedCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapUncheckedCreateNestedManyWithoutCampaignPlayerInput
+  }
+
+  export type CampaignPlayerCreateOrConnectWithoutUserInput = {
+    where: CampaignPlayerWhereUniqueInput
+    create: XOR<CampaignPlayerCreateWithoutUserInput, CampaignPlayerUncheckedCreateWithoutUserInput>
+  }
+
+  export type CampaignPlayerCreateManyUserInputEnvelope = {
+    data: CampaignPlayerCreateManyUserInput | CampaignPlayerCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
   export type AccountUpsertWithWhereUniqueWithoutUserInput = {
     where: AccountWhereUniqueInput
     update: XOR<AccountUpdateWithoutUserInput, AccountUncheckedUpdateWithoutUserInput>
@@ -8166,15 +26457,44 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Session"> | Date | string
   }
 
+  export type CampaignPlayerUpsertWithWhereUniqueWithoutUserInput = {
+    where: CampaignPlayerWhereUniqueInput
+    update: XOR<CampaignPlayerUpdateWithoutUserInput, CampaignPlayerUncheckedUpdateWithoutUserInput>
+    create: XOR<CampaignPlayerCreateWithoutUserInput, CampaignPlayerUncheckedCreateWithoutUserInput>
+  }
+
+  export type CampaignPlayerUpdateWithWhereUniqueWithoutUserInput = {
+    where: CampaignPlayerWhereUniqueInput
+    data: XOR<CampaignPlayerUpdateWithoutUserInput, CampaignPlayerUncheckedUpdateWithoutUserInput>
+  }
+
+  export type CampaignPlayerUpdateManyWithWhereWithoutUserInput = {
+    where: CampaignPlayerScalarWhereInput
+    data: XOR<CampaignPlayerUpdateManyMutationInput, CampaignPlayerUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type CampaignPlayerScalarWhereInput = {
+    AND?: CampaignPlayerScalarWhereInput | CampaignPlayerScalarWhereInput[]
+    OR?: CampaignPlayerScalarWhereInput[]
+    NOT?: CampaignPlayerScalarWhereInput | CampaignPlayerScalarWhereInput[]
+    id?: StringFilter<"CampaignPlayer"> | string
+    campaignId?: StringFilter<"CampaignPlayer"> | string
+    userId?: StringFilter<"CampaignPlayer"> | string
+    createdAt?: DateTimeFilter<"CampaignPlayer"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"CampaignPlayer"> | Date | string | null
+  }
+
   export type UserCreateWithoutAccountsInput = {
     id?: string
     name?: string | null
     email: string
     emailVerified?: Date | string | null
     image?: string | null
+    isAdmin?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     sessions?: SessionCreateNestedManyWithoutUserInput
+    campaigns?: CampaignPlayerCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutAccountsInput = {
@@ -8183,9 +26503,11 @@ export namespace Prisma {
     email: string
     emailVerified?: Date | string | null
     image?: string | null
+    isAdmin?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+    campaigns?: CampaignPlayerUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutAccountsInput = {
@@ -8210,9 +26532,11 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
+    isAdmin?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sessions?: SessionUpdateManyWithoutUserNestedInput
+    campaigns?: CampaignPlayerUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutAccountsInput = {
@@ -8221,9 +26545,11 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
+    isAdmin?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+    campaigns?: CampaignPlayerUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutSessionsInput = {
@@ -8232,9 +26558,11 @@ export namespace Prisma {
     email: string
     emailVerified?: Date | string | null
     image?: string | null
+    isAdmin?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     accounts?: AccountCreateNestedManyWithoutUserInput
+    campaigns?: CampaignPlayerCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutSessionsInput = {
@@ -8243,9 +26571,11 @@ export namespace Prisma {
     email: string
     emailVerified?: Date | string | null
     image?: string | null
+    isAdmin?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
+    campaigns?: CampaignPlayerUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutSessionsInput = {
@@ -8270,9 +26600,11 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
+    isAdmin?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accounts?: AccountUpdateManyWithoutUserNestedInput
+    campaigns?: CampaignPlayerUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -8281,9 +26613,2510 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
+    isAdmin?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
+    campaigns?: CampaignPlayerUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type CampaignCreateWithoutCompetitionInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    teamCampaign?: TeamCampaignCreateNestedOneWithoutCampaignInput
+    leagueCampaign?: LeagueCampaignCreateNestedOneWithoutCampaignInput
+    players?: CampaignPlayerCreateNestedManyWithoutCampaignInput
+    homeFixtures?: FixtureCreateNestedManyWithoutHomeCampaignInput
+    awayFixtures?: FixtureCreateNestedManyWithoutAwayCampaignInput
+    season: SeasonCreateNestedOneWithoutCampaignsInput
+  }
+
+  export type CampaignUncheckedCreateWithoutCompetitionInput = {
+    id?: string
+    seasonId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    teamCampaign?: TeamCampaignUncheckedCreateNestedOneWithoutCampaignInput
+    leagueCampaign?: LeagueCampaignUncheckedCreateNestedOneWithoutCampaignInput
+    players?: CampaignPlayerUncheckedCreateNestedManyWithoutCampaignInput
+    homeFixtures?: FixtureUncheckedCreateNestedManyWithoutHomeCampaignInput
+    awayFixtures?: FixtureUncheckedCreateNestedManyWithoutAwayCampaignInput
+  }
+
+  export type CampaignCreateOrConnectWithoutCompetitionInput = {
+    where: CampaignWhereUniqueInput
+    create: XOR<CampaignCreateWithoutCompetitionInput, CampaignUncheckedCreateWithoutCompetitionInput>
+  }
+
+  export type CampaignCreateManyCompetitionInputEnvelope = {
+    data: CampaignCreateManyCompetitionInput | CampaignCreateManyCompetitionInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type FixtureCreateWithoutCompetitionInput = {
+    id?: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    season: SeasonCreateNestedOneWithoutFixturesInput
+    homeCampaign: CampaignCreateNestedOneWithoutHomeFixturesInput
+    awayCampaign: CampaignCreateNestedOneWithoutAwayFixturesInput
+    frames?: FrameCreateNestedManyWithoutFixtureInput
+  }
+
+  export type FixtureUncheckedCreateWithoutCompetitionInput = {
+    id?: string
+    seasonId: string
+    homeCampaignId: string
+    awayCampaignId: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    frames?: FrameUncheckedCreateNestedManyWithoutFixtureInput
+  }
+
+  export type FixtureCreateOrConnectWithoutCompetitionInput = {
+    where: FixtureWhereUniqueInput
+    create: XOR<FixtureCreateWithoutCompetitionInput, FixtureUncheckedCreateWithoutCompetitionInput>
+  }
+
+  export type FixtureCreateManyCompetitionInputEnvelope = {
+    data: FixtureCreateManyCompetitionInput | FixtureCreateManyCompetitionInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type LeagueTableSnapshotCreateWithoutCompetitionInput = {
+    id?: string
+    position: number
+    points?: number
+    played?: number
+    won?: number
+    lost?: number
+    drawn?: number
+    framesFor?: number
+    framesAgainst?: number
+    frameDifference?: number
+    snapshotDate?: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    season: SeasonCreateNestedOneWithoutLeagueSnapshotsInput
+    team: TeamCreateNestedOneWithoutLeagueSnapshotsInput
+  }
+
+  export type LeagueTableSnapshotUncheckedCreateWithoutCompetitionInput = {
+    id?: string
+    seasonId: string
+    teamId: string
+    position: number
+    points?: number
+    played?: number
+    won?: number
+    lost?: number
+    drawn?: number
+    framesFor?: number
+    framesAgainst?: number
+    frameDifference?: number
+    snapshotDate?: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type LeagueTableSnapshotCreateOrConnectWithoutCompetitionInput = {
+    where: LeagueTableSnapshotWhereUniqueInput
+    create: XOR<LeagueTableSnapshotCreateWithoutCompetitionInput, LeagueTableSnapshotUncheckedCreateWithoutCompetitionInput>
+  }
+
+  export type LeagueTableSnapshotCreateManyCompetitionInputEnvelope = {
+    data: LeagueTableSnapshotCreateManyCompetitionInput | LeagueTableSnapshotCreateManyCompetitionInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type CampaignUpsertWithWhereUniqueWithoutCompetitionInput = {
+    where: CampaignWhereUniqueInput
+    update: XOR<CampaignUpdateWithoutCompetitionInput, CampaignUncheckedUpdateWithoutCompetitionInput>
+    create: XOR<CampaignCreateWithoutCompetitionInput, CampaignUncheckedCreateWithoutCompetitionInput>
+  }
+
+  export type CampaignUpdateWithWhereUniqueWithoutCompetitionInput = {
+    where: CampaignWhereUniqueInput
+    data: XOR<CampaignUpdateWithoutCompetitionInput, CampaignUncheckedUpdateWithoutCompetitionInput>
+  }
+
+  export type CampaignUpdateManyWithWhereWithoutCompetitionInput = {
+    where: CampaignScalarWhereInput
+    data: XOR<CampaignUpdateManyMutationInput, CampaignUncheckedUpdateManyWithoutCompetitionInput>
+  }
+
+  export type CampaignScalarWhereInput = {
+    AND?: CampaignScalarWhereInput | CampaignScalarWhereInput[]
+    OR?: CampaignScalarWhereInput[]
+    NOT?: CampaignScalarWhereInput | CampaignScalarWhereInput[]
+    id?: StringFilter<"Campaign"> | string
+    competitionId?: StringFilter<"Campaign"> | string
+    seasonId?: StringFilter<"Campaign"> | string
+    createdAt?: DateTimeFilter<"Campaign"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"Campaign"> | Date | string | null
+  }
+
+  export type FixtureUpsertWithWhereUniqueWithoutCompetitionInput = {
+    where: FixtureWhereUniqueInput
+    update: XOR<FixtureUpdateWithoutCompetitionInput, FixtureUncheckedUpdateWithoutCompetitionInput>
+    create: XOR<FixtureCreateWithoutCompetitionInput, FixtureUncheckedCreateWithoutCompetitionInput>
+  }
+
+  export type FixtureUpdateWithWhereUniqueWithoutCompetitionInput = {
+    where: FixtureWhereUniqueInput
+    data: XOR<FixtureUpdateWithoutCompetitionInput, FixtureUncheckedUpdateWithoutCompetitionInput>
+  }
+
+  export type FixtureUpdateManyWithWhereWithoutCompetitionInput = {
+    where: FixtureScalarWhereInput
+    data: XOR<FixtureUpdateManyMutationInput, FixtureUncheckedUpdateManyWithoutCompetitionInput>
+  }
+
+  export type FixtureScalarWhereInput = {
+    AND?: FixtureScalarWhereInput | FixtureScalarWhereInput[]
+    OR?: FixtureScalarWhereInput[]
+    NOT?: FixtureScalarWhereInput | FixtureScalarWhereInput[]
+    id?: StringFilter<"Fixture"> | string
+    competitionId?: StringFilter<"Fixture"> | string
+    seasonId?: StringFilter<"Fixture"> | string
+    homeCampaignId?: StringFilter<"Fixture"> | string
+    awayCampaignId?: StringFilter<"Fixture"> | string
+    scheduledDate?: DateTimeNullableFilter<"Fixture"> | Date | string | null
+    actualDate?: DateTimeNullableFilter<"Fixture"> | Date | string | null
+    homeScore?: IntFilter<"Fixture"> | number
+    awayScore?: IntFilter<"Fixture"> | number
+    status?: StringFilter<"Fixture"> | string
+    venue?: StringNullableFilter<"Fixture"> | string | null
+    notes?: StringNullableFilter<"Fixture"> | string | null
+    totalFrames?: IntFilter<"Fixture"> | number
+    isCompleted?: BoolFilter<"Fixture"> | boolean
+    completedAt?: DateTimeNullableFilter<"Fixture"> | Date | string | null
+    isLive?: BoolFilter<"Fixture"> | boolean
+    createdAt?: DateTimeFilter<"Fixture"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"Fixture"> | Date | string | null
+  }
+
+  export type LeagueTableSnapshotUpsertWithWhereUniqueWithoutCompetitionInput = {
+    where: LeagueTableSnapshotWhereUniqueInput
+    update: XOR<LeagueTableSnapshotUpdateWithoutCompetitionInput, LeagueTableSnapshotUncheckedUpdateWithoutCompetitionInput>
+    create: XOR<LeagueTableSnapshotCreateWithoutCompetitionInput, LeagueTableSnapshotUncheckedCreateWithoutCompetitionInput>
+  }
+
+  export type LeagueTableSnapshotUpdateWithWhereUniqueWithoutCompetitionInput = {
+    where: LeagueTableSnapshotWhereUniqueInput
+    data: XOR<LeagueTableSnapshotUpdateWithoutCompetitionInput, LeagueTableSnapshotUncheckedUpdateWithoutCompetitionInput>
+  }
+
+  export type LeagueTableSnapshotUpdateManyWithWhereWithoutCompetitionInput = {
+    where: LeagueTableSnapshotScalarWhereInput
+    data: XOR<LeagueTableSnapshotUpdateManyMutationInput, LeagueTableSnapshotUncheckedUpdateManyWithoutCompetitionInput>
+  }
+
+  export type LeagueTableSnapshotScalarWhereInput = {
+    AND?: LeagueTableSnapshotScalarWhereInput | LeagueTableSnapshotScalarWhereInput[]
+    OR?: LeagueTableSnapshotScalarWhereInput[]
+    NOT?: LeagueTableSnapshotScalarWhereInput | LeagueTableSnapshotScalarWhereInput[]
+    id?: StringFilter<"LeagueTableSnapshot"> | string
+    competitionId?: StringFilter<"LeagueTableSnapshot"> | string
+    seasonId?: StringFilter<"LeagueTableSnapshot"> | string
+    teamId?: StringFilter<"LeagueTableSnapshot"> | string
+    position?: IntFilter<"LeagueTableSnapshot"> | number
+    points?: FloatFilter<"LeagueTableSnapshot"> | number
+    played?: IntFilter<"LeagueTableSnapshot"> | number
+    won?: IntFilter<"LeagueTableSnapshot"> | number
+    lost?: IntFilter<"LeagueTableSnapshot"> | number
+    drawn?: IntFilter<"LeagueTableSnapshot"> | number
+    framesFor?: IntFilter<"LeagueTableSnapshot"> | number
+    framesAgainst?: IntFilter<"LeagueTableSnapshot"> | number
+    frameDifference?: IntFilter<"LeagueTableSnapshot"> | number
+    snapshotDate?: DateTimeFilter<"LeagueTableSnapshot"> | Date | string
+    createdAt?: DateTimeFilter<"LeagueTableSnapshot"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"LeagueTableSnapshot"> | Date | string | null
+  }
+
+  export type CampaignCreateWithoutSeasonInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    teamCampaign?: TeamCampaignCreateNestedOneWithoutCampaignInput
+    leagueCampaign?: LeagueCampaignCreateNestedOneWithoutCampaignInput
+    players?: CampaignPlayerCreateNestedManyWithoutCampaignInput
+    homeFixtures?: FixtureCreateNestedManyWithoutHomeCampaignInput
+    awayFixtures?: FixtureCreateNestedManyWithoutAwayCampaignInput
+    competition: CompetitionCreateNestedOneWithoutCampaignsInput
+  }
+
+  export type CampaignUncheckedCreateWithoutSeasonInput = {
+    id?: string
+    competitionId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    teamCampaign?: TeamCampaignUncheckedCreateNestedOneWithoutCampaignInput
+    leagueCampaign?: LeagueCampaignUncheckedCreateNestedOneWithoutCampaignInput
+    players?: CampaignPlayerUncheckedCreateNestedManyWithoutCampaignInput
+    homeFixtures?: FixtureUncheckedCreateNestedManyWithoutHomeCampaignInput
+    awayFixtures?: FixtureUncheckedCreateNestedManyWithoutAwayCampaignInput
+  }
+
+  export type CampaignCreateOrConnectWithoutSeasonInput = {
+    where: CampaignWhereUniqueInput
+    create: XOR<CampaignCreateWithoutSeasonInput, CampaignUncheckedCreateWithoutSeasonInput>
+  }
+
+  export type CampaignCreateManySeasonInputEnvelope = {
+    data: CampaignCreateManySeasonInput | CampaignCreateManySeasonInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type FixtureCreateWithoutSeasonInput = {
+    id?: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    competition: CompetitionCreateNestedOneWithoutFixturesInput
+    homeCampaign: CampaignCreateNestedOneWithoutHomeFixturesInput
+    awayCampaign: CampaignCreateNestedOneWithoutAwayFixturesInput
+    frames?: FrameCreateNestedManyWithoutFixtureInput
+  }
+
+  export type FixtureUncheckedCreateWithoutSeasonInput = {
+    id?: string
+    competitionId: string
+    homeCampaignId: string
+    awayCampaignId: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    frames?: FrameUncheckedCreateNestedManyWithoutFixtureInput
+  }
+
+  export type FixtureCreateOrConnectWithoutSeasonInput = {
+    where: FixtureWhereUniqueInput
+    create: XOR<FixtureCreateWithoutSeasonInput, FixtureUncheckedCreateWithoutSeasonInput>
+  }
+
+  export type FixtureCreateManySeasonInputEnvelope = {
+    data: FixtureCreateManySeasonInput | FixtureCreateManySeasonInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type LeagueTableSnapshotCreateWithoutSeasonInput = {
+    id?: string
+    position: number
+    points?: number
+    played?: number
+    won?: number
+    lost?: number
+    drawn?: number
+    framesFor?: number
+    framesAgainst?: number
+    frameDifference?: number
+    snapshotDate?: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    competition: CompetitionCreateNestedOneWithoutLeagueSnapshotsInput
+    team: TeamCreateNestedOneWithoutLeagueSnapshotsInput
+  }
+
+  export type LeagueTableSnapshotUncheckedCreateWithoutSeasonInput = {
+    id?: string
+    competitionId: string
+    teamId: string
+    position: number
+    points?: number
+    played?: number
+    won?: number
+    lost?: number
+    drawn?: number
+    framesFor?: number
+    framesAgainst?: number
+    frameDifference?: number
+    snapshotDate?: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type LeagueTableSnapshotCreateOrConnectWithoutSeasonInput = {
+    where: LeagueTableSnapshotWhereUniqueInput
+    create: XOR<LeagueTableSnapshotCreateWithoutSeasonInput, LeagueTableSnapshotUncheckedCreateWithoutSeasonInput>
+  }
+
+  export type LeagueTableSnapshotCreateManySeasonInputEnvelope = {
+    data: LeagueTableSnapshotCreateManySeasonInput | LeagueTableSnapshotCreateManySeasonInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type CampaignUpsertWithWhereUniqueWithoutSeasonInput = {
+    where: CampaignWhereUniqueInput
+    update: XOR<CampaignUpdateWithoutSeasonInput, CampaignUncheckedUpdateWithoutSeasonInput>
+    create: XOR<CampaignCreateWithoutSeasonInput, CampaignUncheckedCreateWithoutSeasonInput>
+  }
+
+  export type CampaignUpdateWithWhereUniqueWithoutSeasonInput = {
+    where: CampaignWhereUniqueInput
+    data: XOR<CampaignUpdateWithoutSeasonInput, CampaignUncheckedUpdateWithoutSeasonInput>
+  }
+
+  export type CampaignUpdateManyWithWhereWithoutSeasonInput = {
+    where: CampaignScalarWhereInput
+    data: XOR<CampaignUpdateManyMutationInput, CampaignUncheckedUpdateManyWithoutSeasonInput>
+  }
+
+  export type FixtureUpsertWithWhereUniqueWithoutSeasonInput = {
+    where: FixtureWhereUniqueInput
+    update: XOR<FixtureUpdateWithoutSeasonInput, FixtureUncheckedUpdateWithoutSeasonInput>
+    create: XOR<FixtureCreateWithoutSeasonInput, FixtureUncheckedCreateWithoutSeasonInput>
+  }
+
+  export type FixtureUpdateWithWhereUniqueWithoutSeasonInput = {
+    where: FixtureWhereUniqueInput
+    data: XOR<FixtureUpdateWithoutSeasonInput, FixtureUncheckedUpdateWithoutSeasonInput>
+  }
+
+  export type FixtureUpdateManyWithWhereWithoutSeasonInput = {
+    where: FixtureScalarWhereInput
+    data: XOR<FixtureUpdateManyMutationInput, FixtureUncheckedUpdateManyWithoutSeasonInput>
+  }
+
+  export type LeagueTableSnapshotUpsertWithWhereUniqueWithoutSeasonInput = {
+    where: LeagueTableSnapshotWhereUniqueInput
+    update: XOR<LeagueTableSnapshotUpdateWithoutSeasonInput, LeagueTableSnapshotUncheckedUpdateWithoutSeasonInput>
+    create: XOR<LeagueTableSnapshotCreateWithoutSeasonInput, LeagueTableSnapshotUncheckedCreateWithoutSeasonInput>
+  }
+
+  export type LeagueTableSnapshotUpdateWithWhereUniqueWithoutSeasonInput = {
+    where: LeagueTableSnapshotWhereUniqueInput
+    data: XOR<LeagueTableSnapshotUpdateWithoutSeasonInput, LeagueTableSnapshotUncheckedUpdateWithoutSeasonInput>
+  }
+
+  export type LeagueTableSnapshotUpdateManyWithWhereWithoutSeasonInput = {
+    where: LeagueTableSnapshotScalarWhereInput
+    data: XOR<LeagueTableSnapshotUpdateManyMutationInput, LeagueTableSnapshotUncheckedUpdateManyWithoutSeasonInput>
+  }
+
+  export type TeamCampaignCreateWithoutCampaignInput = {
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    team: TeamCreateNestedOneWithoutCampaignsInput
+  }
+
+  export type TeamCampaignUncheckedCreateWithoutCampaignInput = {
+    teamId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type TeamCampaignCreateOrConnectWithoutCampaignInput = {
+    where: TeamCampaignWhereUniqueInput
+    create: XOR<TeamCampaignCreateWithoutCampaignInput, TeamCampaignUncheckedCreateWithoutCampaignInput>
+  }
+
+  export type LeagueCampaignCreateWithoutCampaignInput = {
+    played?: number
+    points?: number
+    pointsScoredFor?: number
+    pointsScoredAgainst?: number
+    framesPlayed?: number
+  }
+
+  export type LeagueCampaignUncheckedCreateWithoutCampaignInput = {
+    played?: number
+    points?: number
+    pointsScoredFor?: number
+    pointsScoredAgainst?: number
+    framesPlayed?: number
+  }
+
+  export type LeagueCampaignCreateOrConnectWithoutCampaignInput = {
+    where: LeagueCampaignWhereUniqueInput
+    create: XOR<LeagueCampaignCreateWithoutCampaignInput, LeagueCampaignUncheckedCreateWithoutCampaignInput>
+  }
+
+  export type CampaignPlayerCreateWithoutCampaignInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    user: UserCreateNestedOneWithoutCampaignsInput
+    homeFrames?: FrameCreateNestedManyWithoutHomePlayerInput
+    awayFrames?: FrameCreateNestedManyWithoutAwayPlayerInput
+    wonFrames?: FrameCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapCreateNestedManyWithoutCampaignPlayerInput
+  }
+
+  export type CampaignPlayerUncheckedCreateWithoutCampaignInput = {
+    id?: string
+    userId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerInput
+    awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerInput
+    wonFrames?: FrameUncheckedCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapUncheckedCreateNestedManyWithoutCampaignPlayerInput
+  }
+
+  export type CampaignPlayerCreateOrConnectWithoutCampaignInput = {
+    where: CampaignPlayerWhereUniqueInput
+    create: XOR<CampaignPlayerCreateWithoutCampaignInput, CampaignPlayerUncheckedCreateWithoutCampaignInput>
+  }
+
+  export type CampaignPlayerCreateManyCampaignInputEnvelope = {
+    data: CampaignPlayerCreateManyCampaignInput | CampaignPlayerCreateManyCampaignInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type FixtureCreateWithoutHomeCampaignInput = {
+    id?: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    competition: CompetitionCreateNestedOneWithoutFixturesInput
+    season: SeasonCreateNestedOneWithoutFixturesInput
+    awayCampaign: CampaignCreateNestedOneWithoutAwayFixturesInput
+    frames?: FrameCreateNestedManyWithoutFixtureInput
+  }
+
+  export type FixtureUncheckedCreateWithoutHomeCampaignInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    awayCampaignId: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    frames?: FrameUncheckedCreateNestedManyWithoutFixtureInput
+  }
+
+  export type FixtureCreateOrConnectWithoutHomeCampaignInput = {
+    where: FixtureWhereUniqueInput
+    create: XOR<FixtureCreateWithoutHomeCampaignInput, FixtureUncheckedCreateWithoutHomeCampaignInput>
+  }
+
+  export type FixtureCreateManyHomeCampaignInputEnvelope = {
+    data: FixtureCreateManyHomeCampaignInput | FixtureCreateManyHomeCampaignInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type FixtureCreateWithoutAwayCampaignInput = {
+    id?: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    competition: CompetitionCreateNestedOneWithoutFixturesInput
+    season: SeasonCreateNestedOneWithoutFixturesInput
+    homeCampaign: CampaignCreateNestedOneWithoutHomeFixturesInput
+    frames?: FrameCreateNestedManyWithoutFixtureInput
+  }
+
+  export type FixtureUncheckedCreateWithoutAwayCampaignInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    homeCampaignId: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    frames?: FrameUncheckedCreateNestedManyWithoutFixtureInput
+  }
+
+  export type FixtureCreateOrConnectWithoutAwayCampaignInput = {
+    where: FixtureWhereUniqueInput
+    create: XOR<FixtureCreateWithoutAwayCampaignInput, FixtureUncheckedCreateWithoutAwayCampaignInput>
+  }
+
+  export type FixtureCreateManyAwayCampaignInputEnvelope = {
+    data: FixtureCreateManyAwayCampaignInput | FixtureCreateManyAwayCampaignInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type CompetitionCreateWithoutCampaignsInput = {
+    id?: string
+    name: string
+    sortOrder?: number
+    collection?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    fixtures?: FixtureCreateNestedManyWithoutCompetitionInput
+    leagueSnapshots?: LeagueTableSnapshotCreateNestedManyWithoutCompetitionInput
+  }
+
+  export type CompetitionUncheckedCreateWithoutCampaignsInput = {
+    id?: string
+    name: string
+    sortOrder?: number
+    collection?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    fixtures?: FixtureUncheckedCreateNestedManyWithoutCompetitionInput
+    leagueSnapshots?: LeagueTableSnapshotUncheckedCreateNestedManyWithoutCompetitionInput
+  }
+
+  export type CompetitionCreateOrConnectWithoutCampaignsInput = {
+    where: CompetitionWhereUniqueInput
+    create: XOR<CompetitionCreateWithoutCampaignsInput, CompetitionUncheckedCreateWithoutCampaignsInput>
+  }
+
+  export type SeasonCreateWithoutCampaignsInput = {
+    id?: string
+    name: string
+    startDate?: Date | string | null
+    endDate?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    fixtures?: FixtureCreateNestedManyWithoutSeasonInput
+    leagueSnapshots?: LeagueTableSnapshotCreateNestedManyWithoutSeasonInput
+  }
+
+  export type SeasonUncheckedCreateWithoutCampaignsInput = {
+    id?: string
+    name: string
+    startDate?: Date | string | null
+    endDate?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    fixtures?: FixtureUncheckedCreateNestedManyWithoutSeasonInput
+    leagueSnapshots?: LeagueTableSnapshotUncheckedCreateNestedManyWithoutSeasonInput
+  }
+
+  export type SeasonCreateOrConnectWithoutCampaignsInput = {
+    where: SeasonWhereUniqueInput
+    create: XOR<SeasonCreateWithoutCampaignsInput, SeasonUncheckedCreateWithoutCampaignsInput>
+  }
+
+  export type TeamCampaignUpsertWithoutCampaignInput = {
+    update: XOR<TeamCampaignUpdateWithoutCampaignInput, TeamCampaignUncheckedUpdateWithoutCampaignInput>
+    create: XOR<TeamCampaignCreateWithoutCampaignInput, TeamCampaignUncheckedCreateWithoutCampaignInput>
+    where?: TeamCampaignWhereInput
+  }
+
+  export type TeamCampaignUpdateToOneWithWhereWithoutCampaignInput = {
+    where?: TeamCampaignWhereInput
+    data: XOR<TeamCampaignUpdateWithoutCampaignInput, TeamCampaignUncheckedUpdateWithoutCampaignInput>
+  }
+
+  export type TeamCampaignUpdateWithoutCampaignInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    team?: TeamUpdateOneRequiredWithoutCampaignsNestedInput
+  }
+
+  export type TeamCampaignUncheckedUpdateWithoutCampaignInput = {
+    teamId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type LeagueCampaignUpsertWithoutCampaignInput = {
+    update: XOR<LeagueCampaignUpdateWithoutCampaignInput, LeagueCampaignUncheckedUpdateWithoutCampaignInput>
+    create: XOR<LeagueCampaignCreateWithoutCampaignInput, LeagueCampaignUncheckedCreateWithoutCampaignInput>
+    where?: LeagueCampaignWhereInput
+  }
+
+  export type LeagueCampaignUpdateToOneWithWhereWithoutCampaignInput = {
+    where?: LeagueCampaignWhereInput
+    data: XOR<LeagueCampaignUpdateWithoutCampaignInput, LeagueCampaignUncheckedUpdateWithoutCampaignInput>
+  }
+
+  export type LeagueCampaignUpdateWithoutCampaignInput = {
+    played?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    pointsScoredFor?: IntFieldUpdateOperationsInput | number
+    pointsScoredAgainst?: IntFieldUpdateOperationsInput | number
+    framesPlayed?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type LeagueCampaignUncheckedUpdateWithoutCampaignInput = {
+    played?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    pointsScoredFor?: IntFieldUpdateOperationsInput | number
+    pointsScoredAgainst?: IntFieldUpdateOperationsInput | number
+    framesPlayed?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type CampaignPlayerUpsertWithWhereUniqueWithoutCampaignInput = {
+    where: CampaignPlayerWhereUniqueInput
+    update: XOR<CampaignPlayerUpdateWithoutCampaignInput, CampaignPlayerUncheckedUpdateWithoutCampaignInput>
+    create: XOR<CampaignPlayerCreateWithoutCampaignInput, CampaignPlayerUncheckedCreateWithoutCampaignInput>
+  }
+
+  export type CampaignPlayerUpdateWithWhereUniqueWithoutCampaignInput = {
+    where: CampaignPlayerWhereUniqueInput
+    data: XOR<CampaignPlayerUpdateWithoutCampaignInput, CampaignPlayerUncheckedUpdateWithoutCampaignInput>
+  }
+
+  export type CampaignPlayerUpdateManyWithWhereWithoutCampaignInput = {
+    where: CampaignPlayerScalarWhereInput
+    data: XOR<CampaignPlayerUpdateManyMutationInput, CampaignPlayerUncheckedUpdateManyWithoutCampaignInput>
+  }
+
+  export type FixtureUpsertWithWhereUniqueWithoutHomeCampaignInput = {
+    where: FixtureWhereUniqueInput
+    update: XOR<FixtureUpdateWithoutHomeCampaignInput, FixtureUncheckedUpdateWithoutHomeCampaignInput>
+    create: XOR<FixtureCreateWithoutHomeCampaignInput, FixtureUncheckedCreateWithoutHomeCampaignInput>
+  }
+
+  export type FixtureUpdateWithWhereUniqueWithoutHomeCampaignInput = {
+    where: FixtureWhereUniqueInput
+    data: XOR<FixtureUpdateWithoutHomeCampaignInput, FixtureUncheckedUpdateWithoutHomeCampaignInput>
+  }
+
+  export type FixtureUpdateManyWithWhereWithoutHomeCampaignInput = {
+    where: FixtureScalarWhereInput
+    data: XOR<FixtureUpdateManyMutationInput, FixtureUncheckedUpdateManyWithoutHomeCampaignInput>
+  }
+
+  export type FixtureUpsertWithWhereUniqueWithoutAwayCampaignInput = {
+    where: FixtureWhereUniqueInput
+    update: XOR<FixtureUpdateWithoutAwayCampaignInput, FixtureUncheckedUpdateWithoutAwayCampaignInput>
+    create: XOR<FixtureCreateWithoutAwayCampaignInput, FixtureUncheckedCreateWithoutAwayCampaignInput>
+  }
+
+  export type FixtureUpdateWithWhereUniqueWithoutAwayCampaignInput = {
+    where: FixtureWhereUniqueInput
+    data: XOR<FixtureUpdateWithoutAwayCampaignInput, FixtureUncheckedUpdateWithoutAwayCampaignInput>
+  }
+
+  export type FixtureUpdateManyWithWhereWithoutAwayCampaignInput = {
+    where: FixtureScalarWhereInput
+    data: XOR<FixtureUpdateManyMutationInput, FixtureUncheckedUpdateManyWithoutAwayCampaignInput>
+  }
+
+  export type CompetitionUpsertWithoutCampaignsInput = {
+    update: XOR<CompetitionUpdateWithoutCampaignsInput, CompetitionUncheckedUpdateWithoutCampaignsInput>
+    create: XOR<CompetitionCreateWithoutCampaignsInput, CompetitionUncheckedCreateWithoutCampaignsInput>
+    where?: CompetitionWhereInput
+  }
+
+  export type CompetitionUpdateToOneWithWhereWithoutCampaignsInput = {
+    where?: CompetitionWhereInput
+    data: XOR<CompetitionUpdateWithoutCampaignsInput, CompetitionUncheckedUpdateWithoutCampaignsInput>
+  }
+
+  export type CompetitionUpdateWithoutCampaignsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    sortOrder?: IntFieldUpdateOperationsInput | number
+    collection?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    fixtures?: FixtureUpdateManyWithoutCompetitionNestedInput
+    leagueSnapshots?: LeagueTableSnapshotUpdateManyWithoutCompetitionNestedInput
+  }
+
+  export type CompetitionUncheckedUpdateWithoutCampaignsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    sortOrder?: IntFieldUpdateOperationsInput | number
+    collection?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    fixtures?: FixtureUncheckedUpdateManyWithoutCompetitionNestedInput
+    leagueSnapshots?: LeagueTableSnapshotUncheckedUpdateManyWithoutCompetitionNestedInput
+  }
+
+  export type SeasonUpsertWithoutCampaignsInput = {
+    update: XOR<SeasonUpdateWithoutCampaignsInput, SeasonUncheckedUpdateWithoutCampaignsInput>
+    create: XOR<SeasonCreateWithoutCampaignsInput, SeasonUncheckedCreateWithoutCampaignsInput>
+    where?: SeasonWhereInput
+  }
+
+  export type SeasonUpdateToOneWithWhereWithoutCampaignsInput = {
+    where?: SeasonWhereInput
+    data: XOR<SeasonUpdateWithoutCampaignsInput, SeasonUncheckedUpdateWithoutCampaignsInput>
+  }
+
+  export type SeasonUpdateWithoutCampaignsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    fixtures?: FixtureUpdateManyWithoutSeasonNestedInput
+    leagueSnapshots?: LeagueTableSnapshotUpdateManyWithoutSeasonNestedInput
+  }
+
+  export type SeasonUncheckedUpdateWithoutCampaignsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    fixtures?: FixtureUncheckedUpdateManyWithoutSeasonNestedInput
+    leagueSnapshots?: LeagueTableSnapshotUncheckedUpdateManyWithoutSeasonNestedInput
+  }
+
+  export type CampaignCreateWithoutLeagueCampaignInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    teamCampaign?: TeamCampaignCreateNestedOneWithoutCampaignInput
+    players?: CampaignPlayerCreateNestedManyWithoutCampaignInput
+    homeFixtures?: FixtureCreateNestedManyWithoutHomeCampaignInput
+    awayFixtures?: FixtureCreateNestedManyWithoutAwayCampaignInput
+    competition: CompetitionCreateNestedOneWithoutCampaignsInput
+    season: SeasonCreateNestedOneWithoutCampaignsInput
+  }
+
+  export type CampaignUncheckedCreateWithoutLeagueCampaignInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    teamCampaign?: TeamCampaignUncheckedCreateNestedOneWithoutCampaignInput
+    players?: CampaignPlayerUncheckedCreateNestedManyWithoutCampaignInput
+    homeFixtures?: FixtureUncheckedCreateNestedManyWithoutHomeCampaignInput
+    awayFixtures?: FixtureUncheckedCreateNestedManyWithoutAwayCampaignInput
+  }
+
+  export type CampaignCreateOrConnectWithoutLeagueCampaignInput = {
+    where: CampaignWhereUniqueInput
+    create: XOR<CampaignCreateWithoutLeagueCampaignInput, CampaignUncheckedCreateWithoutLeagueCampaignInput>
+  }
+
+  export type CampaignUpsertWithoutLeagueCampaignInput = {
+    update: XOR<CampaignUpdateWithoutLeagueCampaignInput, CampaignUncheckedUpdateWithoutLeagueCampaignInput>
+    create: XOR<CampaignCreateWithoutLeagueCampaignInput, CampaignUncheckedCreateWithoutLeagueCampaignInput>
+    where?: CampaignWhereInput
+  }
+
+  export type CampaignUpdateToOneWithWhereWithoutLeagueCampaignInput = {
+    where?: CampaignWhereInput
+    data: XOR<CampaignUpdateWithoutLeagueCampaignInput, CampaignUncheckedUpdateWithoutLeagueCampaignInput>
+  }
+
+  export type CampaignUpdateWithoutLeagueCampaignInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    teamCampaign?: TeamCampaignUpdateOneWithoutCampaignNestedInput
+    players?: CampaignPlayerUpdateManyWithoutCampaignNestedInput
+    homeFixtures?: FixtureUpdateManyWithoutHomeCampaignNestedInput
+    awayFixtures?: FixtureUpdateManyWithoutAwayCampaignNestedInput
+    competition?: CompetitionUpdateOneRequiredWithoutCampaignsNestedInput
+    season?: SeasonUpdateOneRequiredWithoutCampaignsNestedInput
+  }
+
+  export type CampaignUncheckedUpdateWithoutLeagueCampaignInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    teamCampaign?: TeamCampaignUncheckedUpdateOneWithoutCampaignNestedInput
+    players?: CampaignPlayerUncheckedUpdateManyWithoutCampaignNestedInput
+    homeFixtures?: FixtureUncheckedUpdateManyWithoutHomeCampaignNestedInput
+    awayFixtures?: FixtureUncheckedUpdateManyWithoutAwayCampaignNestedInput
+  }
+
+  export type TeamCampaignCreateWithoutTeamInput = {
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    campaign: CampaignCreateNestedOneWithoutTeamCampaignInput
+  }
+
+  export type TeamCampaignUncheckedCreateWithoutTeamInput = {
+    campaignId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type TeamCampaignCreateOrConnectWithoutTeamInput = {
+    where: TeamCampaignWhereUniqueInput
+    create: XOR<TeamCampaignCreateWithoutTeamInput, TeamCampaignUncheckedCreateWithoutTeamInput>
+  }
+
+  export type TeamCampaignCreateManyTeamInputEnvelope = {
+    data: TeamCampaignCreateManyTeamInput | TeamCampaignCreateManyTeamInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type LeagueTableSnapshotCreateWithoutTeamInput = {
+    id?: string
+    position: number
+    points?: number
+    played?: number
+    won?: number
+    lost?: number
+    drawn?: number
+    framesFor?: number
+    framesAgainst?: number
+    frameDifference?: number
+    snapshotDate?: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    competition: CompetitionCreateNestedOneWithoutLeagueSnapshotsInput
+    season: SeasonCreateNestedOneWithoutLeagueSnapshotsInput
+  }
+
+  export type LeagueTableSnapshotUncheckedCreateWithoutTeamInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    position: number
+    points?: number
+    played?: number
+    won?: number
+    lost?: number
+    drawn?: number
+    framesFor?: number
+    framesAgainst?: number
+    frameDifference?: number
+    snapshotDate?: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type LeagueTableSnapshotCreateOrConnectWithoutTeamInput = {
+    where: LeagueTableSnapshotWhereUniqueInput
+    create: XOR<LeagueTableSnapshotCreateWithoutTeamInput, LeagueTableSnapshotUncheckedCreateWithoutTeamInput>
+  }
+
+  export type LeagueTableSnapshotCreateManyTeamInputEnvelope = {
+    data: LeagueTableSnapshotCreateManyTeamInput | LeagueTableSnapshotCreateManyTeamInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type TeamCampaignUpsertWithWhereUniqueWithoutTeamInput = {
+    where: TeamCampaignWhereUniqueInput
+    update: XOR<TeamCampaignUpdateWithoutTeamInput, TeamCampaignUncheckedUpdateWithoutTeamInput>
+    create: XOR<TeamCampaignCreateWithoutTeamInput, TeamCampaignUncheckedCreateWithoutTeamInput>
+  }
+
+  export type TeamCampaignUpdateWithWhereUniqueWithoutTeamInput = {
+    where: TeamCampaignWhereUniqueInput
+    data: XOR<TeamCampaignUpdateWithoutTeamInput, TeamCampaignUncheckedUpdateWithoutTeamInput>
+  }
+
+  export type TeamCampaignUpdateManyWithWhereWithoutTeamInput = {
+    where: TeamCampaignScalarWhereInput
+    data: XOR<TeamCampaignUpdateManyMutationInput, TeamCampaignUncheckedUpdateManyWithoutTeamInput>
+  }
+
+  export type TeamCampaignScalarWhereInput = {
+    AND?: TeamCampaignScalarWhereInput | TeamCampaignScalarWhereInput[]
+    OR?: TeamCampaignScalarWhereInput[]
+    NOT?: TeamCampaignScalarWhereInput | TeamCampaignScalarWhereInput[]
+    campaignId?: StringFilter<"TeamCampaign"> | string
+    teamId?: StringFilter<"TeamCampaign"> | string
+    createdAt?: DateTimeFilter<"TeamCampaign"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"TeamCampaign"> | Date | string | null
+  }
+
+  export type LeagueTableSnapshotUpsertWithWhereUniqueWithoutTeamInput = {
+    where: LeagueTableSnapshotWhereUniqueInput
+    update: XOR<LeagueTableSnapshotUpdateWithoutTeamInput, LeagueTableSnapshotUncheckedUpdateWithoutTeamInput>
+    create: XOR<LeagueTableSnapshotCreateWithoutTeamInput, LeagueTableSnapshotUncheckedCreateWithoutTeamInput>
+  }
+
+  export type LeagueTableSnapshotUpdateWithWhereUniqueWithoutTeamInput = {
+    where: LeagueTableSnapshotWhereUniqueInput
+    data: XOR<LeagueTableSnapshotUpdateWithoutTeamInput, LeagueTableSnapshotUncheckedUpdateWithoutTeamInput>
+  }
+
+  export type LeagueTableSnapshotUpdateManyWithWhereWithoutTeamInput = {
+    where: LeagueTableSnapshotScalarWhereInput
+    data: XOR<LeagueTableSnapshotUpdateManyMutationInput, LeagueTableSnapshotUncheckedUpdateManyWithoutTeamInput>
+  }
+
+  export type TeamCreateWithoutCampaignsInput = {
+    id?: string
+    name: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    leagueSnapshots?: LeagueTableSnapshotCreateNestedManyWithoutTeamInput
+  }
+
+  export type TeamUncheckedCreateWithoutCampaignsInput = {
+    id?: string
+    name: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    leagueSnapshots?: LeagueTableSnapshotUncheckedCreateNestedManyWithoutTeamInput
+  }
+
+  export type TeamCreateOrConnectWithoutCampaignsInput = {
+    where: TeamWhereUniqueInput
+    create: XOR<TeamCreateWithoutCampaignsInput, TeamUncheckedCreateWithoutCampaignsInput>
+  }
+
+  export type CampaignCreateWithoutTeamCampaignInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    leagueCampaign?: LeagueCampaignCreateNestedOneWithoutCampaignInput
+    players?: CampaignPlayerCreateNestedManyWithoutCampaignInput
+    homeFixtures?: FixtureCreateNestedManyWithoutHomeCampaignInput
+    awayFixtures?: FixtureCreateNestedManyWithoutAwayCampaignInput
+    competition: CompetitionCreateNestedOneWithoutCampaignsInput
+    season: SeasonCreateNestedOneWithoutCampaignsInput
+  }
+
+  export type CampaignUncheckedCreateWithoutTeamCampaignInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    leagueCampaign?: LeagueCampaignUncheckedCreateNestedOneWithoutCampaignInput
+    players?: CampaignPlayerUncheckedCreateNestedManyWithoutCampaignInput
+    homeFixtures?: FixtureUncheckedCreateNestedManyWithoutHomeCampaignInput
+    awayFixtures?: FixtureUncheckedCreateNestedManyWithoutAwayCampaignInput
+  }
+
+  export type CampaignCreateOrConnectWithoutTeamCampaignInput = {
+    where: CampaignWhereUniqueInput
+    create: XOR<CampaignCreateWithoutTeamCampaignInput, CampaignUncheckedCreateWithoutTeamCampaignInput>
+  }
+
+  export type TeamUpsertWithoutCampaignsInput = {
+    update: XOR<TeamUpdateWithoutCampaignsInput, TeamUncheckedUpdateWithoutCampaignsInput>
+    create: XOR<TeamCreateWithoutCampaignsInput, TeamUncheckedCreateWithoutCampaignsInput>
+    where?: TeamWhereInput
+  }
+
+  export type TeamUpdateToOneWithWhereWithoutCampaignsInput = {
+    where?: TeamWhereInput
+    data: XOR<TeamUpdateWithoutCampaignsInput, TeamUncheckedUpdateWithoutCampaignsInput>
+  }
+
+  export type TeamUpdateWithoutCampaignsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    leagueSnapshots?: LeagueTableSnapshotUpdateManyWithoutTeamNestedInput
+  }
+
+  export type TeamUncheckedUpdateWithoutCampaignsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    leagueSnapshots?: LeagueTableSnapshotUncheckedUpdateManyWithoutTeamNestedInput
+  }
+
+  export type CampaignUpsertWithoutTeamCampaignInput = {
+    update: XOR<CampaignUpdateWithoutTeamCampaignInput, CampaignUncheckedUpdateWithoutTeamCampaignInput>
+    create: XOR<CampaignCreateWithoutTeamCampaignInput, CampaignUncheckedCreateWithoutTeamCampaignInput>
+    where?: CampaignWhereInput
+  }
+
+  export type CampaignUpdateToOneWithWhereWithoutTeamCampaignInput = {
+    where?: CampaignWhereInput
+    data: XOR<CampaignUpdateWithoutTeamCampaignInput, CampaignUncheckedUpdateWithoutTeamCampaignInput>
+  }
+
+  export type CampaignUpdateWithoutTeamCampaignInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    leagueCampaign?: LeagueCampaignUpdateOneWithoutCampaignNestedInput
+    players?: CampaignPlayerUpdateManyWithoutCampaignNestedInput
+    homeFixtures?: FixtureUpdateManyWithoutHomeCampaignNestedInput
+    awayFixtures?: FixtureUpdateManyWithoutAwayCampaignNestedInput
+    competition?: CompetitionUpdateOneRequiredWithoutCampaignsNestedInput
+    season?: SeasonUpdateOneRequiredWithoutCampaignsNestedInput
+  }
+
+  export type CampaignUncheckedUpdateWithoutTeamCampaignInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    leagueCampaign?: LeagueCampaignUncheckedUpdateOneWithoutCampaignNestedInput
+    players?: CampaignPlayerUncheckedUpdateManyWithoutCampaignNestedInput
+    homeFixtures?: FixtureUncheckedUpdateManyWithoutHomeCampaignNestedInput
+    awayFixtures?: FixtureUncheckedUpdateManyWithoutAwayCampaignNestedInput
+  }
+
+  export type CompetitionCreateWithoutLeagueSnapshotsInput = {
+    id?: string
+    name: string
+    sortOrder?: number
+    collection?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    campaigns?: CampaignCreateNestedManyWithoutCompetitionInput
+    fixtures?: FixtureCreateNestedManyWithoutCompetitionInput
+  }
+
+  export type CompetitionUncheckedCreateWithoutLeagueSnapshotsInput = {
+    id?: string
+    name: string
+    sortOrder?: number
+    collection?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    campaigns?: CampaignUncheckedCreateNestedManyWithoutCompetitionInput
+    fixtures?: FixtureUncheckedCreateNestedManyWithoutCompetitionInput
+  }
+
+  export type CompetitionCreateOrConnectWithoutLeagueSnapshotsInput = {
+    where: CompetitionWhereUniqueInput
+    create: XOR<CompetitionCreateWithoutLeagueSnapshotsInput, CompetitionUncheckedCreateWithoutLeagueSnapshotsInput>
+  }
+
+  export type SeasonCreateWithoutLeagueSnapshotsInput = {
+    id?: string
+    name: string
+    startDate?: Date | string | null
+    endDate?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    campaigns?: CampaignCreateNestedManyWithoutSeasonInput
+    fixtures?: FixtureCreateNestedManyWithoutSeasonInput
+  }
+
+  export type SeasonUncheckedCreateWithoutLeagueSnapshotsInput = {
+    id?: string
+    name: string
+    startDate?: Date | string | null
+    endDate?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    campaigns?: CampaignUncheckedCreateNestedManyWithoutSeasonInput
+    fixtures?: FixtureUncheckedCreateNestedManyWithoutSeasonInput
+  }
+
+  export type SeasonCreateOrConnectWithoutLeagueSnapshotsInput = {
+    where: SeasonWhereUniqueInput
+    create: XOR<SeasonCreateWithoutLeagueSnapshotsInput, SeasonUncheckedCreateWithoutLeagueSnapshotsInput>
+  }
+
+  export type TeamCreateWithoutLeagueSnapshotsInput = {
+    id?: string
+    name: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    campaigns?: TeamCampaignCreateNestedManyWithoutTeamInput
+  }
+
+  export type TeamUncheckedCreateWithoutLeagueSnapshotsInput = {
+    id?: string
+    name: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    campaigns?: TeamCampaignUncheckedCreateNestedManyWithoutTeamInput
+  }
+
+  export type TeamCreateOrConnectWithoutLeagueSnapshotsInput = {
+    where: TeamWhereUniqueInput
+    create: XOR<TeamCreateWithoutLeagueSnapshotsInput, TeamUncheckedCreateWithoutLeagueSnapshotsInput>
+  }
+
+  export type CompetitionUpsertWithoutLeagueSnapshotsInput = {
+    update: XOR<CompetitionUpdateWithoutLeagueSnapshotsInput, CompetitionUncheckedUpdateWithoutLeagueSnapshotsInput>
+    create: XOR<CompetitionCreateWithoutLeagueSnapshotsInput, CompetitionUncheckedCreateWithoutLeagueSnapshotsInput>
+    where?: CompetitionWhereInput
+  }
+
+  export type CompetitionUpdateToOneWithWhereWithoutLeagueSnapshotsInput = {
+    where?: CompetitionWhereInput
+    data: XOR<CompetitionUpdateWithoutLeagueSnapshotsInput, CompetitionUncheckedUpdateWithoutLeagueSnapshotsInput>
+  }
+
+  export type CompetitionUpdateWithoutLeagueSnapshotsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    sortOrder?: IntFieldUpdateOperationsInput | number
+    collection?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaigns?: CampaignUpdateManyWithoutCompetitionNestedInput
+    fixtures?: FixtureUpdateManyWithoutCompetitionNestedInput
+  }
+
+  export type CompetitionUncheckedUpdateWithoutLeagueSnapshotsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    sortOrder?: IntFieldUpdateOperationsInput | number
+    collection?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaigns?: CampaignUncheckedUpdateManyWithoutCompetitionNestedInput
+    fixtures?: FixtureUncheckedUpdateManyWithoutCompetitionNestedInput
+  }
+
+  export type SeasonUpsertWithoutLeagueSnapshotsInput = {
+    update: XOR<SeasonUpdateWithoutLeagueSnapshotsInput, SeasonUncheckedUpdateWithoutLeagueSnapshotsInput>
+    create: XOR<SeasonCreateWithoutLeagueSnapshotsInput, SeasonUncheckedCreateWithoutLeagueSnapshotsInput>
+    where?: SeasonWhereInput
+  }
+
+  export type SeasonUpdateToOneWithWhereWithoutLeagueSnapshotsInput = {
+    where?: SeasonWhereInput
+    data: XOR<SeasonUpdateWithoutLeagueSnapshotsInput, SeasonUncheckedUpdateWithoutLeagueSnapshotsInput>
+  }
+
+  export type SeasonUpdateWithoutLeagueSnapshotsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaigns?: CampaignUpdateManyWithoutSeasonNestedInput
+    fixtures?: FixtureUpdateManyWithoutSeasonNestedInput
+  }
+
+  export type SeasonUncheckedUpdateWithoutLeagueSnapshotsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaigns?: CampaignUncheckedUpdateManyWithoutSeasonNestedInput
+    fixtures?: FixtureUncheckedUpdateManyWithoutSeasonNestedInput
+  }
+
+  export type TeamUpsertWithoutLeagueSnapshotsInput = {
+    update: XOR<TeamUpdateWithoutLeagueSnapshotsInput, TeamUncheckedUpdateWithoutLeagueSnapshotsInput>
+    create: XOR<TeamCreateWithoutLeagueSnapshotsInput, TeamUncheckedCreateWithoutLeagueSnapshotsInput>
+    where?: TeamWhereInput
+  }
+
+  export type TeamUpdateToOneWithWhereWithoutLeagueSnapshotsInput = {
+    where?: TeamWhereInput
+    data: XOR<TeamUpdateWithoutLeagueSnapshotsInput, TeamUncheckedUpdateWithoutLeagueSnapshotsInput>
+  }
+
+  export type TeamUpdateWithoutLeagueSnapshotsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaigns?: TeamCampaignUpdateManyWithoutTeamNestedInput
+  }
+
+  export type TeamUncheckedUpdateWithoutLeagueSnapshotsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaigns?: TeamCampaignUncheckedUpdateManyWithoutTeamNestedInput
+  }
+
+  export type UserCreateWithoutCampaignsInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    image?: string | null
+    isAdmin?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    accounts?: AccountCreateNestedManyWithoutUserInput
+    sessions?: SessionCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutCampaignsInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    image?: string | null
+    isAdmin?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
+    sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutCampaignsInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutCampaignsInput, UserUncheckedCreateWithoutCampaignsInput>
+  }
+
+  export type CampaignCreateWithoutPlayersInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    teamCampaign?: TeamCampaignCreateNestedOneWithoutCampaignInput
+    leagueCampaign?: LeagueCampaignCreateNestedOneWithoutCampaignInput
+    homeFixtures?: FixtureCreateNestedManyWithoutHomeCampaignInput
+    awayFixtures?: FixtureCreateNestedManyWithoutAwayCampaignInput
+    competition: CompetitionCreateNestedOneWithoutCampaignsInput
+    season: SeasonCreateNestedOneWithoutCampaignsInput
+  }
+
+  export type CampaignUncheckedCreateWithoutPlayersInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    teamCampaign?: TeamCampaignUncheckedCreateNestedOneWithoutCampaignInput
+    leagueCampaign?: LeagueCampaignUncheckedCreateNestedOneWithoutCampaignInput
+    homeFixtures?: FixtureUncheckedCreateNestedManyWithoutHomeCampaignInput
+    awayFixtures?: FixtureUncheckedCreateNestedManyWithoutAwayCampaignInput
+  }
+
+  export type CampaignCreateOrConnectWithoutPlayersInput = {
+    where: CampaignWhereUniqueInput
+    create: XOR<CampaignCreateWithoutPlayersInput, CampaignUncheckedCreateWithoutPlayersInput>
+  }
+
+  export type FrameCreateWithoutHomePlayerInput = {
+    id?: string
+    frameNumber: number
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    fixture: FixtureCreateNestedOneWithoutFramesInput
+    awayPlayer?: CampaignPlayerCreateNestedOneWithoutAwayFramesInput
+    homePlayerHandicap?: HandicapCreateNestedOneWithoutHomeFramesInput
+    awayPlayerHandicap?: HandicapCreateNestedOneWithoutAwayFramesInput
+    winner?: CampaignPlayerCreateNestedOneWithoutWonFramesInput
+  }
+
+  export type FrameUncheckedCreateWithoutHomePlayerInput = {
+    id?: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerHandicapId?: string | null
+    awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
+    homeScore?: number
+    awayScore?: number
+    winnerId?: string | null
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameCreateOrConnectWithoutHomePlayerInput = {
+    where: FrameWhereUniqueInput
+    create: XOR<FrameCreateWithoutHomePlayerInput, FrameUncheckedCreateWithoutHomePlayerInput>
+  }
+
+  export type FrameCreateManyHomePlayerInputEnvelope = {
+    data: FrameCreateManyHomePlayerInput | FrameCreateManyHomePlayerInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type FrameCreateWithoutAwayPlayerInput = {
+    id?: string
+    frameNumber: number
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    fixture: FixtureCreateNestedOneWithoutFramesInput
+    homePlayer?: CampaignPlayerCreateNestedOneWithoutHomeFramesInput
+    homePlayerHandicap?: HandicapCreateNestedOneWithoutHomeFramesInput
+    awayPlayerHandicap?: HandicapCreateNestedOneWithoutAwayFramesInput
+    winner?: CampaignPlayerCreateNestedOneWithoutWonFramesInput
+  }
+
+  export type FrameUncheckedCreateWithoutAwayPlayerInput = {
+    id?: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
+    awayPlayerHandicapId?: string | null
+    homeScore?: number
+    awayScore?: number
+    winnerId?: string | null
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameCreateOrConnectWithoutAwayPlayerInput = {
+    where: FrameWhereUniqueInput
+    create: XOR<FrameCreateWithoutAwayPlayerInput, FrameUncheckedCreateWithoutAwayPlayerInput>
+  }
+
+  export type FrameCreateManyAwayPlayerInputEnvelope = {
+    data: FrameCreateManyAwayPlayerInput | FrameCreateManyAwayPlayerInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type FrameCreateWithoutWinnerInput = {
+    id?: string
+    frameNumber: number
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    fixture: FixtureCreateNestedOneWithoutFramesInput
+    homePlayer?: CampaignPlayerCreateNestedOneWithoutHomeFramesInput
+    awayPlayer?: CampaignPlayerCreateNestedOneWithoutAwayFramesInput
+    homePlayerHandicap?: HandicapCreateNestedOneWithoutHomeFramesInput
+    awayPlayerHandicap?: HandicapCreateNestedOneWithoutAwayFramesInput
+  }
+
+  export type FrameUncheckedCreateWithoutWinnerInput = {
+    id?: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
+    awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameCreateOrConnectWithoutWinnerInput = {
+    where: FrameWhereUniqueInput
+    create: XOR<FrameCreateWithoutWinnerInput, FrameUncheckedCreateWithoutWinnerInput>
+  }
+
+  export type FrameCreateManyWinnerInputEnvelope = {
+    data: FrameCreateManyWinnerInput | FrameCreateManyWinnerInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type HandicapCreateWithoutCampaignPlayerInput = {
+    id?: string
+    value?: number
+    createdAt?: Date | string
+    homeFrames?: FrameCreateNestedManyWithoutHomePlayerHandicapInput
+    awayFrames?: FrameCreateNestedManyWithoutAwayPlayerHandicapInput
+  }
+
+  export type HandicapUncheckedCreateWithoutCampaignPlayerInput = {
+    id?: string
+    value?: number
+    createdAt?: Date | string
+    homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerHandicapInput
+    awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerHandicapInput
+  }
+
+  export type HandicapCreateOrConnectWithoutCampaignPlayerInput = {
+    where: HandicapWhereUniqueInput
+    create: XOR<HandicapCreateWithoutCampaignPlayerInput, HandicapUncheckedCreateWithoutCampaignPlayerInput>
+  }
+
+  export type HandicapCreateManyCampaignPlayerInputEnvelope = {
+    data: HandicapCreateManyCampaignPlayerInput | HandicapCreateManyCampaignPlayerInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type UserUpsertWithoutCampaignsInput = {
+    update: XOR<UserUpdateWithoutCampaignsInput, UserUncheckedUpdateWithoutCampaignsInput>
+    create: XOR<UserCreateWithoutCampaignsInput, UserUncheckedCreateWithoutCampaignsInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutCampaignsInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutCampaignsInput, UserUncheckedUpdateWithoutCampaignsInput>
+  }
+
+  export type UserUpdateWithoutCampaignsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    isAdmin?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    accounts?: AccountUpdateManyWithoutUserNestedInput
+    sessions?: SessionUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutCampaignsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    isAdmin?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
+    sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type CampaignUpsertWithoutPlayersInput = {
+    update: XOR<CampaignUpdateWithoutPlayersInput, CampaignUncheckedUpdateWithoutPlayersInput>
+    create: XOR<CampaignCreateWithoutPlayersInput, CampaignUncheckedCreateWithoutPlayersInput>
+    where?: CampaignWhereInput
+  }
+
+  export type CampaignUpdateToOneWithWhereWithoutPlayersInput = {
+    where?: CampaignWhereInput
+    data: XOR<CampaignUpdateWithoutPlayersInput, CampaignUncheckedUpdateWithoutPlayersInput>
+  }
+
+  export type CampaignUpdateWithoutPlayersInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    teamCampaign?: TeamCampaignUpdateOneWithoutCampaignNestedInput
+    leagueCampaign?: LeagueCampaignUpdateOneWithoutCampaignNestedInput
+    homeFixtures?: FixtureUpdateManyWithoutHomeCampaignNestedInput
+    awayFixtures?: FixtureUpdateManyWithoutAwayCampaignNestedInput
+    competition?: CompetitionUpdateOneRequiredWithoutCampaignsNestedInput
+    season?: SeasonUpdateOneRequiredWithoutCampaignsNestedInput
+  }
+
+  export type CampaignUncheckedUpdateWithoutPlayersInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    teamCampaign?: TeamCampaignUncheckedUpdateOneWithoutCampaignNestedInput
+    leagueCampaign?: LeagueCampaignUncheckedUpdateOneWithoutCampaignNestedInput
+    homeFixtures?: FixtureUncheckedUpdateManyWithoutHomeCampaignNestedInput
+    awayFixtures?: FixtureUncheckedUpdateManyWithoutAwayCampaignNestedInput
+  }
+
+  export type FrameUpsertWithWhereUniqueWithoutHomePlayerInput = {
+    where: FrameWhereUniqueInput
+    update: XOR<FrameUpdateWithoutHomePlayerInput, FrameUncheckedUpdateWithoutHomePlayerInput>
+    create: XOR<FrameCreateWithoutHomePlayerInput, FrameUncheckedCreateWithoutHomePlayerInput>
+  }
+
+  export type FrameUpdateWithWhereUniqueWithoutHomePlayerInput = {
+    where: FrameWhereUniqueInput
+    data: XOR<FrameUpdateWithoutHomePlayerInput, FrameUncheckedUpdateWithoutHomePlayerInput>
+  }
+
+  export type FrameUpdateManyWithWhereWithoutHomePlayerInput = {
+    where: FrameScalarWhereInput
+    data: XOR<FrameUpdateManyMutationInput, FrameUncheckedUpdateManyWithoutHomePlayerInput>
+  }
+
+  export type FrameScalarWhereInput = {
+    AND?: FrameScalarWhereInput | FrameScalarWhereInput[]
+    OR?: FrameScalarWhereInput[]
+    NOT?: FrameScalarWhereInput | FrameScalarWhereInput[]
+    id?: StringFilter<"Frame"> | string
+    fixtureId?: StringFilter<"Frame"> | string
+    frameNumber?: IntFilter<"Frame"> | number
+    homePlayerId?: StringNullableFilter<"Frame"> | string | null
+    homePlayerHandicapId?: StringNullableFilter<"Frame"> | string | null
+    awayPlayerId?: StringNullableFilter<"Frame"> | string | null
+    awayPlayerHandicapId?: StringNullableFilter<"Frame"> | string | null
+    homeScore?: IntFilter<"Frame"> | number
+    awayScore?: IntFilter<"Frame"> | number
+    winnerId?: StringNullableFilter<"Frame"> | string | null
+    status?: StringFilter<"Frame"> | string
+    notes?: StringNullableFilter<"Frame"> | string | null
+    createdAt?: DateTimeFilter<"Frame"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"Frame"> | Date | string | null
+  }
+
+  export type FrameUpsertWithWhereUniqueWithoutAwayPlayerInput = {
+    where: FrameWhereUniqueInput
+    update: XOR<FrameUpdateWithoutAwayPlayerInput, FrameUncheckedUpdateWithoutAwayPlayerInput>
+    create: XOR<FrameCreateWithoutAwayPlayerInput, FrameUncheckedCreateWithoutAwayPlayerInput>
+  }
+
+  export type FrameUpdateWithWhereUniqueWithoutAwayPlayerInput = {
+    where: FrameWhereUniqueInput
+    data: XOR<FrameUpdateWithoutAwayPlayerInput, FrameUncheckedUpdateWithoutAwayPlayerInput>
+  }
+
+  export type FrameUpdateManyWithWhereWithoutAwayPlayerInput = {
+    where: FrameScalarWhereInput
+    data: XOR<FrameUpdateManyMutationInput, FrameUncheckedUpdateManyWithoutAwayPlayerInput>
+  }
+
+  export type FrameUpsertWithWhereUniqueWithoutWinnerInput = {
+    where: FrameWhereUniqueInput
+    update: XOR<FrameUpdateWithoutWinnerInput, FrameUncheckedUpdateWithoutWinnerInput>
+    create: XOR<FrameCreateWithoutWinnerInput, FrameUncheckedCreateWithoutWinnerInput>
+  }
+
+  export type FrameUpdateWithWhereUniqueWithoutWinnerInput = {
+    where: FrameWhereUniqueInput
+    data: XOR<FrameUpdateWithoutWinnerInput, FrameUncheckedUpdateWithoutWinnerInput>
+  }
+
+  export type FrameUpdateManyWithWhereWithoutWinnerInput = {
+    where: FrameScalarWhereInput
+    data: XOR<FrameUpdateManyMutationInput, FrameUncheckedUpdateManyWithoutWinnerInput>
+  }
+
+  export type HandicapUpsertWithWhereUniqueWithoutCampaignPlayerInput = {
+    where: HandicapWhereUniqueInput
+    update: XOR<HandicapUpdateWithoutCampaignPlayerInput, HandicapUncheckedUpdateWithoutCampaignPlayerInput>
+    create: XOR<HandicapCreateWithoutCampaignPlayerInput, HandicapUncheckedCreateWithoutCampaignPlayerInput>
+  }
+
+  export type HandicapUpdateWithWhereUniqueWithoutCampaignPlayerInput = {
+    where: HandicapWhereUniqueInput
+    data: XOR<HandicapUpdateWithoutCampaignPlayerInput, HandicapUncheckedUpdateWithoutCampaignPlayerInput>
+  }
+
+  export type HandicapUpdateManyWithWhereWithoutCampaignPlayerInput = {
+    where: HandicapScalarWhereInput
+    data: XOR<HandicapUpdateManyMutationInput, HandicapUncheckedUpdateManyWithoutCampaignPlayerInput>
+  }
+
+  export type HandicapScalarWhereInput = {
+    AND?: HandicapScalarWhereInput | HandicapScalarWhereInput[]
+    OR?: HandicapScalarWhereInput[]
+    NOT?: HandicapScalarWhereInput | HandicapScalarWhereInput[]
+    id?: StringFilter<"Handicap"> | string
+    value?: IntFilter<"Handicap"> | number
+    campaignPlayerId?: StringFilter<"Handicap"> | string
+    createdAt?: DateTimeFilter<"Handicap"> | Date | string
+  }
+
+  export type FrameCreateWithoutHomePlayerHandicapInput = {
+    id?: string
+    frameNumber: number
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    fixture: FixtureCreateNestedOneWithoutFramesInput
+    homePlayer?: CampaignPlayerCreateNestedOneWithoutHomeFramesInput
+    awayPlayer?: CampaignPlayerCreateNestedOneWithoutAwayFramesInput
+    awayPlayerHandicap?: HandicapCreateNestedOneWithoutAwayFramesInput
+    winner?: CampaignPlayerCreateNestedOneWithoutWonFramesInput
+  }
+
+  export type FrameUncheckedCreateWithoutHomePlayerHandicapInput = {
+    id?: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerId?: string | null
+    awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
+    homeScore?: number
+    awayScore?: number
+    winnerId?: string | null
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameCreateOrConnectWithoutHomePlayerHandicapInput = {
+    where: FrameWhereUniqueInput
+    create: XOR<FrameCreateWithoutHomePlayerHandicapInput, FrameUncheckedCreateWithoutHomePlayerHandicapInput>
+  }
+
+  export type FrameCreateManyHomePlayerHandicapInputEnvelope = {
+    data: FrameCreateManyHomePlayerHandicapInput | FrameCreateManyHomePlayerHandicapInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type FrameCreateWithoutAwayPlayerHandicapInput = {
+    id?: string
+    frameNumber: number
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    fixture: FixtureCreateNestedOneWithoutFramesInput
+    homePlayer?: CampaignPlayerCreateNestedOneWithoutHomeFramesInput
+    awayPlayer?: CampaignPlayerCreateNestedOneWithoutAwayFramesInput
+    homePlayerHandicap?: HandicapCreateNestedOneWithoutHomeFramesInput
+    winner?: CampaignPlayerCreateNestedOneWithoutWonFramesInput
+  }
+
+  export type FrameUncheckedCreateWithoutAwayPlayerHandicapInput = {
+    id?: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
+    awayPlayerId?: string | null
+    homeScore?: number
+    awayScore?: number
+    winnerId?: string | null
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameCreateOrConnectWithoutAwayPlayerHandicapInput = {
+    where: FrameWhereUniqueInput
+    create: XOR<FrameCreateWithoutAwayPlayerHandicapInput, FrameUncheckedCreateWithoutAwayPlayerHandicapInput>
+  }
+
+  export type FrameCreateManyAwayPlayerHandicapInputEnvelope = {
+    data: FrameCreateManyAwayPlayerHandicapInput | FrameCreateManyAwayPlayerHandicapInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type CampaignPlayerCreateWithoutHandicapsInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    user: UserCreateNestedOneWithoutCampaignsInput
+    campaign: CampaignCreateNestedOneWithoutPlayersInput
+    homeFrames?: FrameCreateNestedManyWithoutHomePlayerInput
+    awayFrames?: FrameCreateNestedManyWithoutAwayPlayerInput
+    wonFrames?: FrameCreateNestedManyWithoutWinnerInput
+  }
+
+  export type CampaignPlayerUncheckedCreateWithoutHandicapsInput = {
+    id?: string
+    campaignId: string
+    userId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerInput
+    awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerInput
+    wonFrames?: FrameUncheckedCreateNestedManyWithoutWinnerInput
+  }
+
+  export type CampaignPlayerCreateOrConnectWithoutHandicapsInput = {
+    where: CampaignPlayerWhereUniqueInput
+    create: XOR<CampaignPlayerCreateWithoutHandicapsInput, CampaignPlayerUncheckedCreateWithoutHandicapsInput>
+  }
+
+  export type FrameUpsertWithWhereUniqueWithoutHomePlayerHandicapInput = {
+    where: FrameWhereUniqueInput
+    update: XOR<FrameUpdateWithoutHomePlayerHandicapInput, FrameUncheckedUpdateWithoutHomePlayerHandicapInput>
+    create: XOR<FrameCreateWithoutHomePlayerHandicapInput, FrameUncheckedCreateWithoutHomePlayerHandicapInput>
+  }
+
+  export type FrameUpdateWithWhereUniqueWithoutHomePlayerHandicapInput = {
+    where: FrameWhereUniqueInput
+    data: XOR<FrameUpdateWithoutHomePlayerHandicapInput, FrameUncheckedUpdateWithoutHomePlayerHandicapInput>
+  }
+
+  export type FrameUpdateManyWithWhereWithoutHomePlayerHandicapInput = {
+    where: FrameScalarWhereInput
+    data: XOR<FrameUpdateManyMutationInput, FrameUncheckedUpdateManyWithoutHomePlayerHandicapInput>
+  }
+
+  export type FrameUpsertWithWhereUniqueWithoutAwayPlayerHandicapInput = {
+    where: FrameWhereUniqueInput
+    update: XOR<FrameUpdateWithoutAwayPlayerHandicapInput, FrameUncheckedUpdateWithoutAwayPlayerHandicapInput>
+    create: XOR<FrameCreateWithoutAwayPlayerHandicapInput, FrameUncheckedCreateWithoutAwayPlayerHandicapInput>
+  }
+
+  export type FrameUpdateWithWhereUniqueWithoutAwayPlayerHandicapInput = {
+    where: FrameWhereUniqueInput
+    data: XOR<FrameUpdateWithoutAwayPlayerHandicapInput, FrameUncheckedUpdateWithoutAwayPlayerHandicapInput>
+  }
+
+  export type FrameUpdateManyWithWhereWithoutAwayPlayerHandicapInput = {
+    where: FrameScalarWhereInput
+    data: XOR<FrameUpdateManyMutationInput, FrameUncheckedUpdateManyWithoutAwayPlayerHandicapInput>
+  }
+
+  export type CampaignPlayerUpsertWithoutHandicapsInput = {
+    update: XOR<CampaignPlayerUpdateWithoutHandicapsInput, CampaignPlayerUncheckedUpdateWithoutHandicapsInput>
+    create: XOR<CampaignPlayerCreateWithoutHandicapsInput, CampaignPlayerUncheckedCreateWithoutHandicapsInput>
+    where?: CampaignPlayerWhereInput
+  }
+
+  export type CampaignPlayerUpdateToOneWithWhereWithoutHandicapsInput = {
+    where?: CampaignPlayerWhereInput
+    data: XOR<CampaignPlayerUpdateWithoutHandicapsInput, CampaignPlayerUncheckedUpdateWithoutHandicapsInput>
+  }
+
+  export type CampaignPlayerUpdateWithoutHandicapsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user?: UserUpdateOneRequiredWithoutCampaignsNestedInput
+    campaign?: CampaignUpdateOneRequiredWithoutPlayersNestedInput
+    homeFrames?: FrameUpdateManyWithoutHomePlayerNestedInput
+    awayFrames?: FrameUpdateManyWithoutAwayPlayerNestedInput
+    wonFrames?: FrameUpdateManyWithoutWinnerNestedInput
+  }
+
+  export type CampaignPlayerUncheckedUpdateWithoutHandicapsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    campaignId?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerNestedInput
+    awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerNestedInput
+    wonFrames?: FrameUncheckedUpdateManyWithoutWinnerNestedInput
+  }
+
+  export type CompetitionCreateWithoutFixturesInput = {
+    id?: string
+    name: string
+    sortOrder?: number
+    collection?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    campaigns?: CampaignCreateNestedManyWithoutCompetitionInput
+    leagueSnapshots?: LeagueTableSnapshotCreateNestedManyWithoutCompetitionInput
+  }
+
+  export type CompetitionUncheckedCreateWithoutFixturesInput = {
+    id?: string
+    name: string
+    sortOrder?: number
+    collection?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    campaigns?: CampaignUncheckedCreateNestedManyWithoutCompetitionInput
+    leagueSnapshots?: LeagueTableSnapshotUncheckedCreateNestedManyWithoutCompetitionInput
+  }
+
+  export type CompetitionCreateOrConnectWithoutFixturesInput = {
+    where: CompetitionWhereUniqueInput
+    create: XOR<CompetitionCreateWithoutFixturesInput, CompetitionUncheckedCreateWithoutFixturesInput>
+  }
+
+  export type SeasonCreateWithoutFixturesInput = {
+    id?: string
+    name: string
+    startDate?: Date | string | null
+    endDate?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    campaigns?: CampaignCreateNestedManyWithoutSeasonInput
+    leagueSnapshots?: LeagueTableSnapshotCreateNestedManyWithoutSeasonInput
+  }
+
+  export type SeasonUncheckedCreateWithoutFixturesInput = {
+    id?: string
+    name: string
+    startDate?: Date | string | null
+    endDate?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    campaigns?: CampaignUncheckedCreateNestedManyWithoutSeasonInput
+    leagueSnapshots?: LeagueTableSnapshotUncheckedCreateNestedManyWithoutSeasonInput
+  }
+
+  export type SeasonCreateOrConnectWithoutFixturesInput = {
+    where: SeasonWhereUniqueInput
+    create: XOR<SeasonCreateWithoutFixturesInput, SeasonUncheckedCreateWithoutFixturesInput>
+  }
+
+  export type CampaignCreateWithoutHomeFixturesInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    teamCampaign?: TeamCampaignCreateNestedOneWithoutCampaignInput
+    leagueCampaign?: LeagueCampaignCreateNestedOneWithoutCampaignInput
+    players?: CampaignPlayerCreateNestedManyWithoutCampaignInput
+    awayFixtures?: FixtureCreateNestedManyWithoutAwayCampaignInput
+    competition: CompetitionCreateNestedOneWithoutCampaignsInput
+    season: SeasonCreateNestedOneWithoutCampaignsInput
+  }
+
+  export type CampaignUncheckedCreateWithoutHomeFixturesInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    teamCampaign?: TeamCampaignUncheckedCreateNestedOneWithoutCampaignInput
+    leagueCampaign?: LeagueCampaignUncheckedCreateNestedOneWithoutCampaignInput
+    players?: CampaignPlayerUncheckedCreateNestedManyWithoutCampaignInput
+    awayFixtures?: FixtureUncheckedCreateNestedManyWithoutAwayCampaignInput
+  }
+
+  export type CampaignCreateOrConnectWithoutHomeFixturesInput = {
+    where: CampaignWhereUniqueInput
+    create: XOR<CampaignCreateWithoutHomeFixturesInput, CampaignUncheckedCreateWithoutHomeFixturesInput>
+  }
+
+  export type CampaignCreateWithoutAwayFixturesInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    teamCampaign?: TeamCampaignCreateNestedOneWithoutCampaignInput
+    leagueCampaign?: LeagueCampaignCreateNestedOneWithoutCampaignInput
+    players?: CampaignPlayerCreateNestedManyWithoutCampaignInput
+    homeFixtures?: FixtureCreateNestedManyWithoutHomeCampaignInput
+    competition: CompetitionCreateNestedOneWithoutCampaignsInput
+    season: SeasonCreateNestedOneWithoutCampaignsInput
+  }
+
+  export type CampaignUncheckedCreateWithoutAwayFixturesInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    teamCampaign?: TeamCampaignUncheckedCreateNestedOneWithoutCampaignInput
+    leagueCampaign?: LeagueCampaignUncheckedCreateNestedOneWithoutCampaignInput
+    players?: CampaignPlayerUncheckedCreateNestedManyWithoutCampaignInput
+    homeFixtures?: FixtureUncheckedCreateNestedManyWithoutHomeCampaignInput
+  }
+
+  export type CampaignCreateOrConnectWithoutAwayFixturesInput = {
+    where: CampaignWhereUniqueInput
+    create: XOR<CampaignCreateWithoutAwayFixturesInput, CampaignUncheckedCreateWithoutAwayFixturesInput>
+  }
+
+  export type FrameCreateWithoutFixtureInput = {
+    id?: string
+    frameNumber: number
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    homePlayer?: CampaignPlayerCreateNestedOneWithoutHomeFramesInput
+    awayPlayer?: CampaignPlayerCreateNestedOneWithoutAwayFramesInput
+    homePlayerHandicap?: HandicapCreateNestedOneWithoutHomeFramesInput
+    awayPlayerHandicap?: HandicapCreateNestedOneWithoutAwayFramesInput
+    winner?: CampaignPlayerCreateNestedOneWithoutWonFramesInput
+  }
+
+  export type FrameUncheckedCreateWithoutFixtureInput = {
+    id?: string
+    frameNumber: number
+    homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
+    awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
+    homeScore?: number
+    awayScore?: number
+    winnerId?: string | null
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameCreateOrConnectWithoutFixtureInput = {
+    where: FrameWhereUniqueInput
+    create: XOR<FrameCreateWithoutFixtureInput, FrameUncheckedCreateWithoutFixtureInput>
+  }
+
+  export type FrameCreateManyFixtureInputEnvelope = {
+    data: FrameCreateManyFixtureInput | FrameCreateManyFixtureInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type CompetitionUpsertWithoutFixturesInput = {
+    update: XOR<CompetitionUpdateWithoutFixturesInput, CompetitionUncheckedUpdateWithoutFixturesInput>
+    create: XOR<CompetitionCreateWithoutFixturesInput, CompetitionUncheckedCreateWithoutFixturesInput>
+    where?: CompetitionWhereInput
+  }
+
+  export type CompetitionUpdateToOneWithWhereWithoutFixturesInput = {
+    where?: CompetitionWhereInput
+    data: XOR<CompetitionUpdateWithoutFixturesInput, CompetitionUncheckedUpdateWithoutFixturesInput>
+  }
+
+  export type CompetitionUpdateWithoutFixturesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    sortOrder?: IntFieldUpdateOperationsInput | number
+    collection?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaigns?: CampaignUpdateManyWithoutCompetitionNestedInput
+    leagueSnapshots?: LeagueTableSnapshotUpdateManyWithoutCompetitionNestedInput
+  }
+
+  export type CompetitionUncheckedUpdateWithoutFixturesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    sortOrder?: IntFieldUpdateOperationsInput | number
+    collection?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaigns?: CampaignUncheckedUpdateManyWithoutCompetitionNestedInput
+    leagueSnapshots?: LeagueTableSnapshotUncheckedUpdateManyWithoutCompetitionNestedInput
+  }
+
+  export type SeasonUpsertWithoutFixturesInput = {
+    update: XOR<SeasonUpdateWithoutFixturesInput, SeasonUncheckedUpdateWithoutFixturesInput>
+    create: XOR<SeasonCreateWithoutFixturesInput, SeasonUncheckedCreateWithoutFixturesInput>
+    where?: SeasonWhereInput
+  }
+
+  export type SeasonUpdateToOneWithWhereWithoutFixturesInput = {
+    where?: SeasonWhereInput
+    data: XOR<SeasonUpdateWithoutFixturesInput, SeasonUncheckedUpdateWithoutFixturesInput>
+  }
+
+  export type SeasonUpdateWithoutFixturesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaigns?: CampaignUpdateManyWithoutSeasonNestedInput
+    leagueSnapshots?: LeagueTableSnapshotUpdateManyWithoutSeasonNestedInput
+  }
+
+  export type SeasonUncheckedUpdateWithoutFixturesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaigns?: CampaignUncheckedUpdateManyWithoutSeasonNestedInput
+    leagueSnapshots?: LeagueTableSnapshotUncheckedUpdateManyWithoutSeasonNestedInput
+  }
+
+  export type CampaignUpsertWithoutHomeFixturesInput = {
+    update: XOR<CampaignUpdateWithoutHomeFixturesInput, CampaignUncheckedUpdateWithoutHomeFixturesInput>
+    create: XOR<CampaignCreateWithoutHomeFixturesInput, CampaignUncheckedCreateWithoutHomeFixturesInput>
+    where?: CampaignWhereInput
+  }
+
+  export type CampaignUpdateToOneWithWhereWithoutHomeFixturesInput = {
+    where?: CampaignWhereInput
+    data: XOR<CampaignUpdateWithoutHomeFixturesInput, CampaignUncheckedUpdateWithoutHomeFixturesInput>
+  }
+
+  export type CampaignUpdateWithoutHomeFixturesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    teamCampaign?: TeamCampaignUpdateOneWithoutCampaignNestedInput
+    leagueCampaign?: LeagueCampaignUpdateOneWithoutCampaignNestedInput
+    players?: CampaignPlayerUpdateManyWithoutCampaignNestedInput
+    awayFixtures?: FixtureUpdateManyWithoutAwayCampaignNestedInput
+    competition?: CompetitionUpdateOneRequiredWithoutCampaignsNestedInput
+    season?: SeasonUpdateOneRequiredWithoutCampaignsNestedInput
+  }
+
+  export type CampaignUncheckedUpdateWithoutHomeFixturesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    teamCampaign?: TeamCampaignUncheckedUpdateOneWithoutCampaignNestedInput
+    leagueCampaign?: LeagueCampaignUncheckedUpdateOneWithoutCampaignNestedInput
+    players?: CampaignPlayerUncheckedUpdateManyWithoutCampaignNestedInput
+    awayFixtures?: FixtureUncheckedUpdateManyWithoutAwayCampaignNestedInput
+  }
+
+  export type CampaignUpsertWithoutAwayFixturesInput = {
+    update: XOR<CampaignUpdateWithoutAwayFixturesInput, CampaignUncheckedUpdateWithoutAwayFixturesInput>
+    create: XOR<CampaignCreateWithoutAwayFixturesInput, CampaignUncheckedCreateWithoutAwayFixturesInput>
+    where?: CampaignWhereInput
+  }
+
+  export type CampaignUpdateToOneWithWhereWithoutAwayFixturesInput = {
+    where?: CampaignWhereInput
+    data: XOR<CampaignUpdateWithoutAwayFixturesInput, CampaignUncheckedUpdateWithoutAwayFixturesInput>
+  }
+
+  export type CampaignUpdateWithoutAwayFixturesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    teamCampaign?: TeamCampaignUpdateOneWithoutCampaignNestedInput
+    leagueCampaign?: LeagueCampaignUpdateOneWithoutCampaignNestedInput
+    players?: CampaignPlayerUpdateManyWithoutCampaignNestedInput
+    homeFixtures?: FixtureUpdateManyWithoutHomeCampaignNestedInput
+    competition?: CompetitionUpdateOneRequiredWithoutCampaignsNestedInput
+    season?: SeasonUpdateOneRequiredWithoutCampaignsNestedInput
+  }
+
+  export type CampaignUncheckedUpdateWithoutAwayFixturesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    teamCampaign?: TeamCampaignUncheckedUpdateOneWithoutCampaignNestedInput
+    leagueCampaign?: LeagueCampaignUncheckedUpdateOneWithoutCampaignNestedInput
+    players?: CampaignPlayerUncheckedUpdateManyWithoutCampaignNestedInput
+    homeFixtures?: FixtureUncheckedUpdateManyWithoutHomeCampaignNestedInput
+  }
+
+  export type FrameUpsertWithWhereUniqueWithoutFixtureInput = {
+    where: FrameWhereUniqueInput
+    update: XOR<FrameUpdateWithoutFixtureInput, FrameUncheckedUpdateWithoutFixtureInput>
+    create: XOR<FrameCreateWithoutFixtureInput, FrameUncheckedCreateWithoutFixtureInput>
+  }
+
+  export type FrameUpdateWithWhereUniqueWithoutFixtureInput = {
+    where: FrameWhereUniqueInput
+    data: XOR<FrameUpdateWithoutFixtureInput, FrameUncheckedUpdateWithoutFixtureInput>
+  }
+
+  export type FrameUpdateManyWithWhereWithoutFixtureInput = {
+    where: FrameScalarWhereInput
+    data: XOR<FrameUpdateManyMutationInput, FrameUncheckedUpdateManyWithoutFixtureInput>
+  }
+
+  export type FixtureCreateWithoutFramesInput = {
+    id?: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    competition: CompetitionCreateNestedOneWithoutFixturesInput
+    season: SeasonCreateNestedOneWithoutFixturesInput
+    homeCampaign: CampaignCreateNestedOneWithoutHomeFixturesInput
+    awayCampaign: CampaignCreateNestedOneWithoutAwayFixturesInput
+  }
+
+  export type FixtureUncheckedCreateWithoutFramesInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    homeCampaignId: string
+    awayCampaignId: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FixtureCreateOrConnectWithoutFramesInput = {
+    where: FixtureWhereUniqueInput
+    create: XOR<FixtureCreateWithoutFramesInput, FixtureUncheckedCreateWithoutFramesInput>
+  }
+
+  export type CampaignPlayerCreateWithoutHomeFramesInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    user: UserCreateNestedOneWithoutCampaignsInput
+    campaign: CampaignCreateNestedOneWithoutPlayersInput
+    awayFrames?: FrameCreateNestedManyWithoutAwayPlayerInput
+    wonFrames?: FrameCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapCreateNestedManyWithoutCampaignPlayerInput
+  }
+
+  export type CampaignPlayerUncheckedCreateWithoutHomeFramesInput = {
+    id?: string
+    campaignId: string
+    userId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerInput
+    wonFrames?: FrameUncheckedCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapUncheckedCreateNestedManyWithoutCampaignPlayerInput
+  }
+
+  export type CampaignPlayerCreateOrConnectWithoutHomeFramesInput = {
+    where: CampaignPlayerWhereUniqueInput
+    create: XOR<CampaignPlayerCreateWithoutHomeFramesInput, CampaignPlayerUncheckedCreateWithoutHomeFramesInput>
+  }
+
+  export type CampaignPlayerCreateWithoutAwayFramesInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    user: UserCreateNestedOneWithoutCampaignsInput
+    campaign: CampaignCreateNestedOneWithoutPlayersInput
+    homeFrames?: FrameCreateNestedManyWithoutHomePlayerInput
+    wonFrames?: FrameCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapCreateNestedManyWithoutCampaignPlayerInput
+  }
+
+  export type CampaignPlayerUncheckedCreateWithoutAwayFramesInput = {
+    id?: string
+    campaignId: string
+    userId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerInput
+    wonFrames?: FrameUncheckedCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapUncheckedCreateNestedManyWithoutCampaignPlayerInput
+  }
+
+  export type CampaignPlayerCreateOrConnectWithoutAwayFramesInput = {
+    where: CampaignPlayerWhereUniqueInput
+    create: XOR<CampaignPlayerCreateWithoutAwayFramesInput, CampaignPlayerUncheckedCreateWithoutAwayFramesInput>
+  }
+
+  export type HandicapCreateWithoutHomeFramesInput = {
+    id?: string
+    value?: number
+    createdAt?: Date | string
+    awayFrames?: FrameCreateNestedManyWithoutAwayPlayerHandicapInput
+    campaignPlayer: CampaignPlayerCreateNestedOneWithoutHandicapsInput
+  }
+
+  export type HandicapUncheckedCreateWithoutHomeFramesInput = {
+    id?: string
+    value?: number
+    campaignPlayerId: string
+    createdAt?: Date | string
+    awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerHandicapInput
+  }
+
+  export type HandicapCreateOrConnectWithoutHomeFramesInput = {
+    where: HandicapWhereUniqueInput
+    create: XOR<HandicapCreateWithoutHomeFramesInput, HandicapUncheckedCreateWithoutHomeFramesInput>
+  }
+
+  export type HandicapCreateWithoutAwayFramesInput = {
+    id?: string
+    value?: number
+    createdAt?: Date | string
+    homeFrames?: FrameCreateNestedManyWithoutHomePlayerHandicapInput
+    campaignPlayer: CampaignPlayerCreateNestedOneWithoutHandicapsInput
+  }
+
+  export type HandicapUncheckedCreateWithoutAwayFramesInput = {
+    id?: string
+    value?: number
+    campaignPlayerId: string
+    createdAt?: Date | string
+    homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerHandicapInput
+  }
+
+  export type HandicapCreateOrConnectWithoutAwayFramesInput = {
+    where: HandicapWhereUniqueInput
+    create: XOR<HandicapCreateWithoutAwayFramesInput, HandicapUncheckedCreateWithoutAwayFramesInput>
+  }
+
+  export type CampaignPlayerCreateWithoutWonFramesInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    user: UserCreateNestedOneWithoutCampaignsInput
+    campaign: CampaignCreateNestedOneWithoutPlayersInput
+    homeFrames?: FrameCreateNestedManyWithoutHomePlayerInput
+    awayFrames?: FrameCreateNestedManyWithoutAwayPlayerInput
+    handicaps?: HandicapCreateNestedManyWithoutCampaignPlayerInput
+  }
+
+  export type CampaignPlayerUncheckedCreateWithoutWonFramesInput = {
+    id?: string
+    campaignId: string
+    userId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerInput
+    awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerInput
+    handicaps?: HandicapUncheckedCreateNestedManyWithoutCampaignPlayerInput
+  }
+
+  export type CampaignPlayerCreateOrConnectWithoutWonFramesInput = {
+    where: CampaignPlayerWhereUniqueInput
+    create: XOR<CampaignPlayerCreateWithoutWonFramesInput, CampaignPlayerUncheckedCreateWithoutWonFramesInput>
+  }
+
+  export type FixtureUpsertWithoutFramesInput = {
+    update: XOR<FixtureUpdateWithoutFramesInput, FixtureUncheckedUpdateWithoutFramesInput>
+    create: XOR<FixtureCreateWithoutFramesInput, FixtureUncheckedCreateWithoutFramesInput>
+    where?: FixtureWhereInput
+  }
+
+  export type FixtureUpdateToOneWithWhereWithoutFramesInput = {
+    where?: FixtureWhereInput
+    data: XOR<FixtureUpdateWithoutFramesInput, FixtureUncheckedUpdateWithoutFramesInput>
+  }
+
+  export type FixtureUpdateWithoutFramesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    competition?: CompetitionUpdateOneRequiredWithoutFixturesNestedInput
+    season?: SeasonUpdateOneRequiredWithoutFixturesNestedInput
+    homeCampaign?: CampaignUpdateOneRequiredWithoutHomeFixturesNestedInput
+    awayCampaign?: CampaignUpdateOneRequiredWithoutAwayFixturesNestedInput
+  }
+
+  export type FixtureUncheckedUpdateWithoutFramesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    homeCampaignId?: StringFieldUpdateOperationsInput | string
+    awayCampaignId?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type CampaignPlayerUpsertWithoutHomeFramesInput = {
+    update: XOR<CampaignPlayerUpdateWithoutHomeFramesInput, CampaignPlayerUncheckedUpdateWithoutHomeFramesInput>
+    create: XOR<CampaignPlayerCreateWithoutHomeFramesInput, CampaignPlayerUncheckedCreateWithoutHomeFramesInput>
+    where?: CampaignPlayerWhereInput
+  }
+
+  export type CampaignPlayerUpdateToOneWithWhereWithoutHomeFramesInput = {
+    where?: CampaignPlayerWhereInput
+    data: XOR<CampaignPlayerUpdateWithoutHomeFramesInput, CampaignPlayerUncheckedUpdateWithoutHomeFramesInput>
+  }
+
+  export type CampaignPlayerUpdateWithoutHomeFramesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user?: UserUpdateOneRequiredWithoutCampaignsNestedInput
+    campaign?: CampaignUpdateOneRequiredWithoutPlayersNestedInput
+    awayFrames?: FrameUpdateManyWithoutAwayPlayerNestedInput
+    wonFrames?: FrameUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUpdateManyWithoutCampaignPlayerNestedInput
+  }
+
+  export type CampaignPlayerUncheckedUpdateWithoutHomeFramesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    campaignId?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerNestedInput
+    wonFrames?: FrameUncheckedUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUncheckedUpdateManyWithoutCampaignPlayerNestedInput
+  }
+
+  export type CampaignPlayerUpsertWithoutAwayFramesInput = {
+    update: XOR<CampaignPlayerUpdateWithoutAwayFramesInput, CampaignPlayerUncheckedUpdateWithoutAwayFramesInput>
+    create: XOR<CampaignPlayerCreateWithoutAwayFramesInput, CampaignPlayerUncheckedCreateWithoutAwayFramesInput>
+    where?: CampaignPlayerWhereInput
+  }
+
+  export type CampaignPlayerUpdateToOneWithWhereWithoutAwayFramesInput = {
+    where?: CampaignPlayerWhereInput
+    data: XOR<CampaignPlayerUpdateWithoutAwayFramesInput, CampaignPlayerUncheckedUpdateWithoutAwayFramesInput>
+  }
+
+  export type CampaignPlayerUpdateWithoutAwayFramesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user?: UserUpdateOneRequiredWithoutCampaignsNestedInput
+    campaign?: CampaignUpdateOneRequiredWithoutPlayersNestedInput
+    homeFrames?: FrameUpdateManyWithoutHomePlayerNestedInput
+    wonFrames?: FrameUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUpdateManyWithoutCampaignPlayerNestedInput
+  }
+
+  export type CampaignPlayerUncheckedUpdateWithoutAwayFramesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    campaignId?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerNestedInput
+    wonFrames?: FrameUncheckedUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUncheckedUpdateManyWithoutCampaignPlayerNestedInput
+  }
+
+  export type HandicapUpsertWithoutHomeFramesInput = {
+    update: XOR<HandicapUpdateWithoutHomeFramesInput, HandicapUncheckedUpdateWithoutHomeFramesInput>
+    create: XOR<HandicapCreateWithoutHomeFramesInput, HandicapUncheckedCreateWithoutHomeFramesInput>
+    where?: HandicapWhereInput
+  }
+
+  export type HandicapUpdateToOneWithWhereWithoutHomeFramesInput = {
+    where?: HandicapWhereInput
+    data: XOR<HandicapUpdateWithoutHomeFramesInput, HandicapUncheckedUpdateWithoutHomeFramesInput>
+  }
+
+  export type HandicapUpdateWithoutHomeFramesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    awayFrames?: FrameUpdateManyWithoutAwayPlayerHandicapNestedInput
+    campaignPlayer?: CampaignPlayerUpdateOneRequiredWithoutHandicapsNestedInput
+  }
+
+  export type HandicapUncheckedUpdateWithoutHomeFramesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    campaignPlayerId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerHandicapNestedInput
+  }
+
+  export type HandicapUpsertWithoutAwayFramesInput = {
+    update: XOR<HandicapUpdateWithoutAwayFramesInput, HandicapUncheckedUpdateWithoutAwayFramesInput>
+    create: XOR<HandicapCreateWithoutAwayFramesInput, HandicapUncheckedCreateWithoutAwayFramesInput>
+    where?: HandicapWhereInput
+  }
+
+  export type HandicapUpdateToOneWithWhereWithoutAwayFramesInput = {
+    where?: HandicapWhereInput
+    data: XOR<HandicapUpdateWithoutAwayFramesInput, HandicapUncheckedUpdateWithoutAwayFramesInput>
+  }
+
+  export type HandicapUpdateWithoutAwayFramesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    homeFrames?: FrameUpdateManyWithoutHomePlayerHandicapNestedInput
+    campaignPlayer?: CampaignPlayerUpdateOneRequiredWithoutHandicapsNestedInput
+  }
+
+  export type HandicapUncheckedUpdateWithoutAwayFramesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    campaignPlayerId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerHandicapNestedInput
+  }
+
+  export type CampaignPlayerUpsertWithoutWonFramesInput = {
+    update: XOR<CampaignPlayerUpdateWithoutWonFramesInput, CampaignPlayerUncheckedUpdateWithoutWonFramesInput>
+    create: XOR<CampaignPlayerCreateWithoutWonFramesInput, CampaignPlayerUncheckedCreateWithoutWonFramesInput>
+    where?: CampaignPlayerWhereInput
+  }
+
+  export type CampaignPlayerUpdateToOneWithWhereWithoutWonFramesInput = {
+    where?: CampaignPlayerWhereInput
+    data: XOR<CampaignPlayerUpdateWithoutWonFramesInput, CampaignPlayerUncheckedUpdateWithoutWonFramesInput>
+  }
+
+  export type CampaignPlayerUpdateWithoutWonFramesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user?: UserUpdateOneRequiredWithoutCampaignsNestedInput
+    campaign?: CampaignUpdateOneRequiredWithoutPlayersNestedInput
+    homeFrames?: FrameUpdateManyWithoutHomePlayerNestedInput
+    awayFrames?: FrameUpdateManyWithoutAwayPlayerNestedInput
+    handicaps?: HandicapUpdateManyWithoutCampaignPlayerNestedInput
+  }
+
+  export type CampaignPlayerUncheckedUpdateWithoutWonFramesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    campaignId?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerNestedInput
+    awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerNestedInput
+    handicaps?: HandicapUncheckedUpdateManyWithoutCampaignPlayerNestedInput
   }
 
   export type AccountCreateManyUserInput = {
@@ -8306,6 +29139,13 @@ export namespace Prisma {
     expires: Date | string
     createdAt?: Date | string
     updatedAt?: Date | string
+  }
+
+  export type CampaignPlayerCreateManyUserInput = {
+    id?: string
+    campaignId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
   }
 
   export type AccountUpdateWithoutUserInput = {
@@ -8372,6 +29212,1127 @@ export namespace Prisma {
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CampaignPlayerUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaign?: CampaignUpdateOneRequiredWithoutPlayersNestedInput
+    homeFrames?: FrameUpdateManyWithoutHomePlayerNestedInput
+    awayFrames?: FrameUpdateManyWithoutAwayPlayerNestedInput
+    wonFrames?: FrameUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUpdateManyWithoutCampaignPlayerNestedInput
+  }
+
+  export type CampaignPlayerUncheckedUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    campaignId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerNestedInput
+    awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerNestedInput
+    wonFrames?: FrameUncheckedUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUncheckedUpdateManyWithoutCampaignPlayerNestedInput
+  }
+
+  export type CampaignPlayerUncheckedUpdateManyWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    campaignId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type CampaignCreateManyCompetitionInput = {
+    id?: string
+    seasonId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FixtureCreateManyCompetitionInput = {
+    id?: string
+    seasonId: string
+    homeCampaignId: string
+    awayCampaignId: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type LeagueTableSnapshotCreateManyCompetitionInput = {
+    id?: string
+    seasonId: string
+    teamId: string
+    position: number
+    points?: number
+    played?: number
+    won?: number
+    lost?: number
+    drawn?: number
+    framesFor?: number
+    framesAgainst?: number
+    frameDifference?: number
+    snapshotDate?: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type CampaignUpdateWithoutCompetitionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    teamCampaign?: TeamCampaignUpdateOneWithoutCampaignNestedInput
+    leagueCampaign?: LeagueCampaignUpdateOneWithoutCampaignNestedInput
+    players?: CampaignPlayerUpdateManyWithoutCampaignNestedInput
+    homeFixtures?: FixtureUpdateManyWithoutHomeCampaignNestedInput
+    awayFixtures?: FixtureUpdateManyWithoutAwayCampaignNestedInput
+    season?: SeasonUpdateOneRequiredWithoutCampaignsNestedInput
+  }
+
+  export type CampaignUncheckedUpdateWithoutCompetitionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    teamCampaign?: TeamCampaignUncheckedUpdateOneWithoutCampaignNestedInput
+    leagueCampaign?: LeagueCampaignUncheckedUpdateOneWithoutCampaignNestedInput
+    players?: CampaignPlayerUncheckedUpdateManyWithoutCampaignNestedInput
+    homeFixtures?: FixtureUncheckedUpdateManyWithoutHomeCampaignNestedInput
+    awayFixtures?: FixtureUncheckedUpdateManyWithoutAwayCampaignNestedInput
+  }
+
+  export type CampaignUncheckedUpdateManyWithoutCompetitionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FixtureUpdateWithoutCompetitionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    season?: SeasonUpdateOneRequiredWithoutFixturesNestedInput
+    homeCampaign?: CampaignUpdateOneRequiredWithoutHomeFixturesNestedInput
+    awayCampaign?: CampaignUpdateOneRequiredWithoutAwayFixturesNestedInput
+    frames?: FrameUpdateManyWithoutFixtureNestedInput
+  }
+
+  export type FixtureUncheckedUpdateWithoutCompetitionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    homeCampaignId?: StringFieldUpdateOperationsInput | string
+    awayCampaignId?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    frames?: FrameUncheckedUpdateManyWithoutFixtureNestedInput
+  }
+
+  export type FixtureUncheckedUpdateManyWithoutCompetitionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    homeCampaignId?: StringFieldUpdateOperationsInput | string
+    awayCampaignId?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type LeagueTableSnapshotUpdateWithoutCompetitionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    played?: IntFieldUpdateOperationsInput | number
+    won?: IntFieldUpdateOperationsInput | number
+    lost?: IntFieldUpdateOperationsInput | number
+    drawn?: IntFieldUpdateOperationsInput | number
+    framesFor?: IntFieldUpdateOperationsInput | number
+    framesAgainst?: IntFieldUpdateOperationsInput | number
+    frameDifference?: IntFieldUpdateOperationsInput | number
+    snapshotDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    season?: SeasonUpdateOneRequiredWithoutLeagueSnapshotsNestedInput
+    team?: TeamUpdateOneRequiredWithoutLeagueSnapshotsNestedInput
+  }
+
+  export type LeagueTableSnapshotUncheckedUpdateWithoutCompetitionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    teamId?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    played?: IntFieldUpdateOperationsInput | number
+    won?: IntFieldUpdateOperationsInput | number
+    lost?: IntFieldUpdateOperationsInput | number
+    drawn?: IntFieldUpdateOperationsInput | number
+    framesFor?: IntFieldUpdateOperationsInput | number
+    framesAgainst?: IntFieldUpdateOperationsInput | number
+    frameDifference?: IntFieldUpdateOperationsInput | number
+    snapshotDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type LeagueTableSnapshotUncheckedUpdateManyWithoutCompetitionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    teamId?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    played?: IntFieldUpdateOperationsInput | number
+    won?: IntFieldUpdateOperationsInput | number
+    lost?: IntFieldUpdateOperationsInput | number
+    drawn?: IntFieldUpdateOperationsInput | number
+    framesFor?: IntFieldUpdateOperationsInput | number
+    framesAgainst?: IntFieldUpdateOperationsInput | number
+    frameDifference?: IntFieldUpdateOperationsInput | number
+    snapshotDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type CampaignCreateManySeasonInput = {
+    id?: string
+    competitionId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FixtureCreateManySeasonInput = {
+    id?: string
+    competitionId: string
+    homeCampaignId: string
+    awayCampaignId: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type LeagueTableSnapshotCreateManySeasonInput = {
+    id?: string
+    competitionId: string
+    teamId: string
+    position: number
+    points?: number
+    played?: number
+    won?: number
+    lost?: number
+    drawn?: number
+    framesFor?: number
+    framesAgainst?: number
+    frameDifference?: number
+    snapshotDate?: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type CampaignUpdateWithoutSeasonInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    teamCampaign?: TeamCampaignUpdateOneWithoutCampaignNestedInput
+    leagueCampaign?: LeagueCampaignUpdateOneWithoutCampaignNestedInput
+    players?: CampaignPlayerUpdateManyWithoutCampaignNestedInput
+    homeFixtures?: FixtureUpdateManyWithoutHomeCampaignNestedInput
+    awayFixtures?: FixtureUpdateManyWithoutAwayCampaignNestedInput
+    competition?: CompetitionUpdateOneRequiredWithoutCampaignsNestedInput
+  }
+
+  export type CampaignUncheckedUpdateWithoutSeasonInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    teamCampaign?: TeamCampaignUncheckedUpdateOneWithoutCampaignNestedInput
+    leagueCampaign?: LeagueCampaignUncheckedUpdateOneWithoutCampaignNestedInput
+    players?: CampaignPlayerUncheckedUpdateManyWithoutCampaignNestedInput
+    homeFixtures?: FixtureUncheckedUpdateManyWithoutHomeCampaignNestedInput
+    awayFixtures?: FixtureUncheckedUpdateManyWithoutAwayCampaignNestedInput
+  }
+
+  export type CampaignUncheckedUpdateManyWithoutSeasonInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FixtureUpdateWithoutSeasonInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    competition?: CompetitionUpdateOneRequiredWithoutFixturesNestedInput
+    homeCampaign?: CampaignUpdateOneRequiredWithoutHomeFixturesNestedInput
+    awayCampaign?: CampaignUpdateOneRequiredWithoutAwayFixturesNestedInput
+    frames?: FrameUpdateManyWithoutFixtureNestedInput
+  }
+
+  export type FixtureUncheckedUpdateWithoutSeasonInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    homeCampaignId?: StringFieldUpdateOperationsInput | string
+    awayCampaignId?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    frames?: FrameUncheckedUpdateManyWithoutFixtureNestedInput
+  }
+
+  export type FixtureUncheckedUpdateManyWithoutSeasonInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    homeCampaignId?: StringFieldUpdateOperationsInput | string
+    awayCampaignId?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type LeagueTableSnapshotUpdateWithoutSeasonInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    played?: IntFieldUpdateOperationsInput | number
+    won?: IntFieldUpdateOperationsInput | number
+    lost?: IntFieldUpdateOperationsInput | number
+    drawn?: IntFieldUpdateOperationsInput | number
+    framesFor?: IntFieldUpdateOperationsInput | number
+    framesAgainst?: IntFieldUpdateOperationsInput | number
+    frameDifference?: IntFieldUpdateOperationsInput | number
+    snapshotDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    competition?: CompetitionUpdateOneRequiredWithoutLeagueSnapshotsNestedInput
+    team?: TeamUpdateOneRequiredWithoutLeagueSnapshotsNestedInput
+  }
+
+  export type LeagueTableSnapshotUncheckedUpdateWithoutSeasonInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    teamId?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    played?: IntFieldUpdateOperationsInput | number
+    won?: IntFieldUpdateOperationsInput | number
+    lost?: IntFieldUpdateOperationsInput | number
+    drawn?: IntFieldUpdateOperationsInput | number
+    framesFor?: IntFieldUpdateOperationsInput | number
+    framesAgainst?: IntFieldUpdateOperationsInput | number
+    frameDifference?: IntFieldUpdateOperationsInput | number
+    snapshotDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type LeagueTableSnapshotUncheckedUpdateManyWithoutSeasonInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    teamId?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    played?: IntFieldUpdateOperationsInput | number
+    won?: IntFieldUpdateOperationsInput | number
+    lost?: IntFieldUpdateOperationsInput | number
+    drawn?: IntFieldUpdateOperationsInput | number
+    framesFor?: IntFieldUpdateOperationsInput | number
+    framesAgainst?: IntFieldUpdateOperationsInput | number
+    frameDifference?: IntFieldUpdateOperationsInput | number
+    snapshotDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type CampaignPlayerCreateManyCampaignInput = {
+    id?: string
+    userId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FixtureCreateManyHomeCampaignInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    awayCampaignId: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FixtureCreateManyAwayCampaignInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    homeCampaignId: string
+    scheduledDate?: Date | string | null
+    actualDate?: Date | string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    venue?: string | null
+    notes?: string | null
+    totalFrames?: number
+    isCompleted?: boolean
+    completedAt?: Date | string | null
+    isLive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type CampaignPlayerUpdateWithoutCampaignInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user?: UserUpdateOneRequiredWithoutCampaignsNestedInput
+    homeFrames?: FrameUpdateManyWithoutHomePlayerNestedInput
+    awayFrames?: FrameUpdateManyWithoutAwayPlayerNestedInput
+    wonFrames?: FrameUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUpdateManyWithoutCampaignPlayerNestedInput
+  }
+
+  export type CampaignPlayerUncheckedUpdateWithoutCampaignInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerNestedInput
+    awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerNestedInput
+    wonFrames?: FrameUncheckedUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUncheckedUpdateManyWithoutCampaignPlayerNestedInput
+  }
+
+  export type CampaignPlayerUncheckedUpdateManyWithoutCampaignInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FixtureUpdateWithoutHomeCampaignInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    competition?: CompetitionUpdateOneRequiredWithoutFixturesNestedInput
+    season?: SeasonUpdateOneRequiredWithoutFixturesNestedInput
+    awayCampaign?: CampaignUpdateOneRequiredWithoutAwayFixturesNestedInput
+    frames?: FrameUpdateManyWithoutFixtureNestedInput
+  }
+
+  export type FixtureUncheckedUpdateWithoutHomeCampaignInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    awayCampaignId?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    frames?: FrameUncheckedUpdateManyWithoutFixtureNestedInput
+  }
+
+  export type FixtureUncheckedUpdateManyWithoutHomeCampaignInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    awayCampaignId?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FixtureUpdateWithoutAwayCampaignInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    competition?: CompetitionUpdateOneRequiredWithoutFixturesNestedInput
+    season?: SeasonUpdateOneRequiredWithoutFixturesNestedInput
+    homeCampaign?: CampaignUpdateOneRequiredWithoutHomeFixturesNestedInput
+    frames?: FrameUpdateManyWithoutFixtureNestedInput
+  }
+
+  export type FixtureUncheckedUpdateWithoutAwayCampaignInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    homeCampaignId?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    frames?: FrameUncheckedUpdateManyWithoutFixtureNestedInput
+  }
+
+  export type FixtureUncheckedUpdateManyWithoutAwayCampaignInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    homeCampaignId?: StringFieldUpdateOperationsInput | string
+    scheduledDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    venue?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    totalFrames?: IntFieldUpdateOperationsInput | number
+    isCompleted?: BoolFieldUpdateOperationsInput | boolean
+    completedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TeamCampaignCreateManyTeamInput = {
+    campaignId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type LeagueTableSnapshotCreateManyTeamInput = {
+    id?: string
+    competitionId: string
+    seasonId: string
+    position: number
+    points?: number
+    played?: number
+    won?: number
+    lost?: number
+    drawn?: number
+    framesFor?: number
+    framesAgainst?: number
+    frameDifference?: number
+    snapshotDate?: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type TeamCampaignUpdateWithoutTeamInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    campaign?: CampaignUpdateOneRequiredWithoutTeamCampaignNestedInput
+  }
+
+  export type TeamCampaignUncheckedUpdateWithoutTeamInput = {
+    campaignId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type TeamCampaignUncheckedUpdateManyWithoutTeamInput = {
+    campaignId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type LeagueTableSnapshotUpdateWithoutTeamInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    played?: IntFieldUpdateOperationsInput | number
+    won?: IntFieldUpdateOperationsInput | number
+    lost?: IntFieldUpdateOperationsInput | number
+    drawn?: IntFieldUpdateOperationsInput | number
+    framesFor?: IntFieldUpdateOperationsInput | number
+    framesAgainst?: IntFieldUpdateOperationsInput | number
+    frameDifference?: IntFieldUpdateOperationsInput | number
+    snapshotDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    competition?: CompetitionUpdateOneRequiredWithoutLeagueSnapshotsNestedInput
+    season?: SeasonUpdateOneRequiredWithoutLeagueSnapshotsNestedInput
+  }
+
+  export type LeagueTableSnapshotUncheckedUpdateWithoutTeamInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    played?: IntFieldUpdateOperationsInput | number
+    won?: IntFieldUpdateOperationsInput | number
+    lost?: IntFieldUpdateOperationsInput | number
+    drawn?: IntFieldUpdateOperationsInput | number
+    framesFor?: IntFieldUpdateOperationsInput | number
+    framesAgainst?: IntFieldUpdateOperationsInput | number
+    frameDifference?: IntFieldUpdateOperationsInput | number
+    snapshotDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type LeagueTableSnapshotUncheckedUpdateManyWithoutTeamInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    competitionId?: StringFieldUpdateOperationsInput | string
+    seasonId?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    points?: FloatFieldUpdateOperationsInput | number
+    played?: IntFieldUpdateOperationsInput | number
+    won?: IntFieldUpdateOperationsInput | number
+    lost?: IntFieldUpdateOperationsInput | number
+    drawn?: IntFieldUpdateOperationsInput | number
+    framesFor?: IntFieldUpdateOperationsInput | number
+    framesAgainst?: IntFieldUpdateOperationsInput | number
+    frameDifference?: IntFieldUpdateOperationsInput | number
+    snapshotDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameCreateManyHomePlayerInput = {
+    id?: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerHandicapId?: string | null
+    awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
+    homeScore?: number
+    awayScore?: number
+    winnerId?: string | null
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameCreateManyAwayPlayerInput = {
+    id?: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
+    awayPlayerHandicapId?: string | null
+    homeScore?: number
+    awayScore?: number
+    winnerId?: string | null
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameCreateManyWinnerInput = {
+    id?: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
+    awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type HandicapCreateManyCampaignPlayerInput = {
+    id?: string
+    value?: number
+    createdAt?: Date | string
+  }
+
+  export type FrameUpdateWithoutHomePlayerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    fixture?: FixtureUpdateOneRequiredWithoutFramesNestedInput
+    awayPlayer?: CampaignPlayerUpdateOneWithoutAwayFramesNestedInput
+    homePlayerHandicap?: HandicapUpdateOneWithoutHomeFramesNestedInput
+    awayPlayerHandicap?: HandicapUpdateOneWithoutAwayFramesNestedInput
+    winner?: CampaignPlayerUpdateOneWithoutWonFramesNestedInput
+  }
+
+  export type FrameUncheckedUpdateWithoutHomePlayerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fixtureId?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    winnerId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameUncheckedUpdateManyWithoutHomePlayerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fixtureId?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    winnerId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameUpdateWithoutAwayPlayerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    fixture?: FixtureUpdateOneRequiredWithoutFramesNestedInput
+    homePlayer?: CampaignPlayerUpdateOneWithoutHomeFramesNestedInput
+    homePlayerHandicap?: HandicapUpdateOneWithoutHomeFramesNestedInput
+    awayPlayerHandicap?: HandicapUpdateOneWithoutAwayFramesNestedInput
+    winner?: CampaignPlayerUpdateOneWithoutWonFramesNestedInput
+  }
+
+  export type FrameUncheckedUpdateWithoutAwayPlayerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fixtureId?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    winnerId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameUncheckedUpdateManyWithoutAwayPlayerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fixtureId?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    winnerId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameUpdateWithoutWinnerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    fixture?: FixtureUpdateOneRequiredWithoutFramesNestedInput
+    homePlayer?: CampaignPlayerUpdateOneWithoutHomeFramesNestedInput
+    awayPlayer?: CampaignPlayerUpdateOneWithoutAwayFramesNestedInput
+    homePlayerHandicap?: HandicapUpdateOneWithoutHomeFramesNestedInput
+    awayPlayerHandicap?: HandicapUpdateOneWithoutAwayFramesNestedInput
+  }
+
+  export type FrameUncheckedUpdateWithoutWinnerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fixtureId?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameUncheckedUpdateManyWithoutWinnerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fixtureId?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type HandicapUpdateWithoutCampaignPlayerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    homeFrames?: FrameUpdateManyWithoutHomePlayerHandicapNestedInput
+    awayFrames?: FrameUpdateManyWithoutAwayPlayerHandicapNestedInput
+  }
+
+  export type HandicapUncheckedUpdateWithoutCampaignPlayerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerHandicapNestedInput
+    awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerHandicapNestedInput
+  }
+
+  export type HandicapUncheckedUpdateManyWithoutCampaignPlayerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FrameCreateManyHomePlayerHandicapInput = {
+    id?: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerId?: string | null
+    awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
+    homeScore?: number
+    awayScore?: number
+    winnerId?: string | null
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameCreateManyAwayPlayerHandicapInput = {
+    id?: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
+    awayPlayerId?: string | null
+    homeScore?: number
+    awayScore?: number
+    winnerId?: string | null
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameUpdateWithoutHomePlayerHandicapInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    fixture?: FixtureUpdateOneRequiredWithoutFramesNestedInput
+    homePlayer?: CampaignPlayerUpdateOneWithoutHomeFramesNestedInput
+    awayPlayer?: CampaignPlayerUpdateOneWithoutAwayFramesNestedInput
+    awayPlayerHandicap?: HandicapUpdateOneWithoutAwayFramesNestedInput
+    winner?: CampaignPlayerUpdateOneWithoutWonFramesNestedInput
+  }
+
+  export type FrameUncheckedUpdateWithoutHomePlayerHandicapInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fixtureId?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    winnerId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameUncheckedUpdateManyWithoutHomePlayerHandicapInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fixtureId?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    winnerId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameUpdateWithoutAwayPlayerHandicapInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    fixture?: FixtureUpdateOneRequiredWithoutFramesNestedInput
+    homePlayer?: CampaignPlayerUpdateOneWithoutHomeFramesNestedInput
+    awayPlayer?: CampaignPlayerUpdateOneWithoutAwayFramesNestedInput
+    homePlayerHandicap?: HandicapUpdateOneWithoutHomeFramesNestedInput
+    winner?: CampaignPlayerUpdateOneWithoutWonFramesNestedInput
+  }
+
+  export type FrameUncheckedUpdateWithoutAwayPlayerHandicapInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fixtureId?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    winnerId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameUncheckedUpdateManyWithoutAwayPlayerHandicapInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fixtureId?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    winnerId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameCreateManyFixtureInput = {
+    id?: string
+    frameNumber: number
+    homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
+    awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
+    homeScore?: number
+    awayScore?: number
+    winnerId?: string | null
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameUpdateWithoutFixtureInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homePlayer?: CampaignPlayerUpdateOneWithoutHomeFramesNestedInput
+    awayPlayer?: CampaignPlayerUpdateOneWithoutAwayFramesNestedInput
+    homePlayerHandicap?: HandicapUpdateOneWithoutHomeFramesNestedInput
+    awayPlayerHandicap?: HandicapUpdateOneWithoutAwayFramesNestedInput
+    winner?: CampaignPlayerUpdateOneWithoutWonFramesNestedInput
+  }
+
+  export type FrameUncheckedUpdateWithoutFixtureInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    winnerId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameUncheckedUpdateManyWithoutFixtureInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    winnerId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
 
