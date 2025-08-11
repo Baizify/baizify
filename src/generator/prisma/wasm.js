@@ -126,6 +126,7 @@ exports.Prisma.UserScalarFieldEnum = {
   email: 'email',
   emailVerified: 'emailVerified',
   image: 'image',
+  isAdmin: 'isAdmin',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -163,6 +164,8 @@ exports.Prisma.VerificationTokenScalarFieldEnum = {
 exports.Prisma.CompetitionScalarFieldEnum = {
   id: 'id',
   name: 'name',
+  sortOrder: 'sortOrder',
+  collection: 'collection',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -170,6 +173,8 @@ exports.Prisma.CompetitionScalarFieldEnum = {
 exports.Prisma.SeasonScalarFieldEnum = {
   id: 'id',
   name: 'name',
+  startDate: 'startDate',
+  endDate: 'endDate',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -205,6 +210,25 @@ exports.Prisma.TeamCampaignScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.LeagueTableSnapshotScalarFieldEnum = {
+  id: 'id',
+  competitionId: 'competitionId',
+  seasonId: 'seasonId',
+  teamId: 'teamId',
+  position: 'position',
+  points: 'points',
+  played: 'played',
+  won: 'won',
+  lost: 'lost',
+  drawn: 'drawn',
+  framesFor: 'framesFor',
+  framesAgainst: 'framesAgainst',
+  frameDifference: 'frameDifference',
+  snapshotDate: 'snapshotDate',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.TeamCampaignPlayerScalarFieldEnum = {
   campaignPlayerId: 'campaignPlayerId',
   isTeamCaptain: 'isTeamCaptain',
@@ -216,6 +240,42 @@ exports.Prisma.CampaignPlayerScalarFieldEnum = {
   id: 'id',
   campaignId: 'campaignId',
   userId: 'userId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.FixtureScalarFieldEnum = {
+  id: 'id',
+  competitionId: 'competitionId',
+  seasonId: 'seasonId',
+  homeCampaignId: 'homeCampaignId',
+  awayCampaignId: 'awayCampaignId',
+  scheduledDate: 'scheduledDate',
+  actualDate: 'actualDate',
+  homeScore: 'homeScore',
+  awayScore: 'awayScore',
+  status: 'status',
+  venue: 'venue',
+  notes: 'notes',
+  totalFrames: 'totalFrames',
+  isCompleted: 'isCompleted',
+  completedAt: 'completedAt',
+  isLive: 'isLive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.FrameScalarFieldEnum = {
+  id: 'id',
+  fixtureId: 'fixtureId',
+  frameNumber: 'frameNumber',
+  homePlayerId: 'homePlayerId',
+  awayPlayerId: 'awayPlayerId',
+  homeScore: 'homeScore',
+  awayScore: 'awayScore',
+  winnerId: 'winnerId',
+  status: 'status',
+  notes: 'notes',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -247,8 +307,11 @@ exports.Prisma.ModelName = {
   LeagueCampaign: 'LeagueCampaign',
   Team: 'Team',
   TeamCampaign: 'TeamCampaign',
+  LeagueTableSnapshot: 'LeagueTableSnapshot',
   TeamCampaignPlayer: 'TeamCampaignPlayer',
-  CampaignPlayer: 'CampaignPlayer'
+  CampaignPlayer: 'CampaignPlayer',
+  Fixture: 'Fixture',
+  Frame: 'Frame'
 };
 
 /**

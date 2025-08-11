@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npx prisma generate:*)",
       "Bash(npm i)",
-      "Bash(npm i:*)"
+      "Bash(npm i:*)",
+      "Bash(npx prisma migrate dev:*)"
     ],
     "deny": []
   }

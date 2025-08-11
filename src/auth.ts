@@ -21,6 +21,19 @@ export const authOptions: NextAuthConfig = {
     verifyRequest: "/auth/verify-request", // (used for check email message)
     newUser: "/auth/new-user", // New users will be directed here on first sign in (leave the property out if not of interest)
   },
+  callbacks: {
+    session: async function({ session, token }) {
+      try {
+        if (session.user) {
+          session.user.id = token.sub as string;
+        }
+      } catch (err) {
+        console.error(err);
+      } finally {
+        return session;
+      }
+    }
+  }
 };
 
 export const { handlers, auth, signIn, signOut } = NextAuth(authOptions);

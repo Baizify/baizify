@@ -16,6 +16,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  isAdmin       Boolean          @default(false)
   campaigns     CampaignPlayer[]
 
   createdAt DateTime @default(now())
@@ -66,6 +67,7 @@ model Competition {
   name String
 
   campaigns Campaign[]
+  fixtures  Fixture[]
 
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt
@@ -76,6 +78,7 @@ model Season {
   name String
 
   campaigns Campaign[]
+  fixtures  Fixture[]
 
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt
@@ -89,6 +92,8 @@ model Campaign {
   teamCampaign   TeamCampaign?
   leagueCampaign LeagueCampaign?
   players        CampaignPlayer[]
+  homeFixtures   Fixture[]        @relation("HomeFixtures")
+  awayFixtures   Fixture[]        @relation("AwayFixtures")
 
   competition Competition @relation(fields: [competitionId], references: [id])
   season      Season      @relation(fields: [seasonId], references: [id])
@@ -148,9 +153,59 @@ model CampaignPlayer {
   campaignId String
   userId     String
 
-  user     User     @relation(fields: [userId], references: [id])
-  campaign Campaign @relation(fields: [campaignId], references: [id])
+  user       User     @relation(fields: [userId], references: [id])
+  campaign   Campaign @relation(fields: [campaignId], references: [id])
+  homeFrames Frame[]  @relation("HomeFrames")
+  awayFrames Frame[]  @relation("AwayFrames")
+  wonFrames  Frame[]  @relation("WonFrames")
 
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt
+}
+
+model Fixture {
+  id             String    @id @default(cuid())
+  competitionId  String
+  seasonId       String
+  homeCampaignId String
+  awayCampaignId String
+  scheduledDate  DateTime?
+  actualDate     DateTime?
+  homeScore      Int       @default(0)
+  awayScore      Int       @default(0)
+  status         String    @default("scheduled") // scheduled, in_progress, completed, cancelled
+  venue          String?
+  notes          String?
+
+  competition  Competition @relation(fields: [competitionId], references: [id])
+  season       Season      @relation(fields: [seasonId], references: [id])
+  homeCampaign Campaign    @relation("HomeFixtures", fields: [homeCampaignId], references: [id])
+  awayCampaign Campaign    @relation("AwayFixtures", fields: [awayCampaignId], references: [id])
+  frames       Frame[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+}
+
+model Frame {
+  id           String  @id @default(cuid())
+  fixtureId    String
+  frameNumber  Int
+  homePlayerId String?
+  awayPlayerId String?
+  homeScore    Int     @default(0)
+  awayScore    Int     @default(0)
+  winnerId     String?
+  status       String  @default("not_started") // not_started, in_progress, completed
+  notes        String?
+
+  fixture    Fixture         @relation(fields: [fixtureId], references: [id], onDelete: Cascade)
+  homePlayer CampaignPlayer? @relation("HomeFrames", fields: [homePlayerId], references: [id])
+  awayPlayer CampaignPlayer? @relation("AwayFrames", fields: [awayPlayerId], references: [id])
+  winner     CampaignPlayer? @relation("WonFrames", fields: [winnerId], references: [id])
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+
+  @@unique([fixtureId, frameNumber])
 }

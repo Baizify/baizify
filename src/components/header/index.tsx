@@ -1,6 +1,7 @@
 import { auth } from "@/auth";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, Avatar } from "@heroui/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, Avatar, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@heroui/react";
 import { Session } from "next-auth";
+import { FaChevronRight } from "react-icons/fa6";
 
 const Logo = () => {
      return (
@@ -8,11 +9,11 @@ const Logo = () => {
 
                <polygon points="30,60 36,63 170,40 168,36" fill="#ffffff" />
 
-               <text x="50%" y="65" text-anchor="middle" font-family="Arial, sans-serif"
-                    font-size="40" font-weight="bold" fill="#ffffff">
+               <text x="50%" y="65" textAnchor="middle" fontFamily="Arial, sans-serif"
+                    fontSize="40" fontWeight="bold" fill="#ffffff">
                     ODSL
                </text>
-               </svg>
+          </svg>
 
      )
 }
@@ -22,9 +23,12 @@ export default async function Header() {
 
      return (
           <Navbar className="bg-teal-700 text-white">
-               <NavbarBrand>
-                    <Logo />
-               </NavbarBrand>
+               <NavbarContent>
+                    <NavbarMenuToggle className="sm:hidden" />
+                    <NavbarBrand>
+                         <Logo />
+                    </NavbarBrand>
+               </NavbarContent>
                <NavbarContent className="hidden sm:flex gap-4" justify="center">
                     <NavbarItem>
                          <Link className="text-white" href="/competitions">
@@ -42,12 +46,20 @@ export default async function Header() {
                     : (
                          <>
                               <NavbarItem>
-                                   <Button as={Link} color="primary" href="/auth/signin" variant="flat">
+                                   <Button as={Link} className="text-white" color="default" href="/auth/signin" variant="light">
                                         Login
                                    </Button>
                               </NavbarItem>
                          </>)}
                </NavbarContent>
+               <NavbarMenu>
+                    <NavbarMenuItem>
+                         <Link className="text-black text-lg py-2 flex flex-row justify-between items-center" href="/competitions">
+                              <span>Competitions</span>
+                              <FaChevronRight size={26} />
+                         </Link>
+                    </NavbarMenuItem>
+               </NavbarMenu>
           </Navbar>
      );
 }

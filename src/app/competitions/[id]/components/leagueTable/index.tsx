@@ -37,7 +37,7 @@ const LeagueTable = ({ campaigns = [], loading = false }) => {
                                    }
                               </TableCell>
                               <TableCell>
-                                   <Link href={`/teams/${campaign.teamCampaign?.team?.id}`}>
+                                   <Link href={`/campaigns/${campaign.id}`}>
                                         {campaign.teamCampaign?.team?.name}
                                    </Link>
                               </TableCell>
