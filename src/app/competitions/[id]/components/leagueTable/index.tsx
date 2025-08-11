@@ -1,8 +1,9 @@
 import { Link, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Spinner } from "@heroui/react";
 import Image from "next/image";
 import { FaShield } from "react-icons/fa6";
+import { Campaign, LeagueCampaign, Team, TeamCampaign } from "@/generator/prisma";
 
-const LeagueTable = ({ campaigns = [], loading = false }) => {
+const LeagueTable = ({ campaigns = [], loading = false }: { campaigns: (Campaign & { teamCampaign?: TeamCampaign & { team: Team }, leagueCampaign?: LeagueCampaign })[], loading: boolean }) => {
 
      if (loading) {
           return (
@@ -31,10 +32,7 @@ const LeagueTable = ({ campaigns = [], loading = false }) => {
                     {(campaign) => (
                          <TableRow key={campaign.id}>
                               <TableCell className="text-center">
-                                   {campaign.teamCampaign?.team?.badge ? 
-                                        <Image src={campaign.teamCampaign.team.badge} alt={"team badge"} width={24} height={24} /> : 
-                                        <FaShield width={24} height={24} />
-                                   }
+                                   <FaShield width={24} height={24} />
                               </TableCell>
                               <TableCell>
                                    <Link href={`/campaigns/${campaign.id}`}>

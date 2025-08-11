@@ -214,7 +214,7 @@ export async function PUT(
     await prisma.$disconnect();
     return NextResponse.json({ 
       error: 'Failed to update fixture',
-      details: error.message 
+      details: (error as { message: any }).message
     }, { status: 500 });
   }
 }

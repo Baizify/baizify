@@ -69,7 +69,7 @@ const CompetitionContainer = ({
                          </div>
                     </div>
 
-                    <div className="flex items-center gap-2 mt-4 md:mt-0">
+                    <div className="flex gap-2 mt-4 md:mt-0">
                          <Select 
                               variant="bordered" 
                               className="w-48" 

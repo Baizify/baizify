@@ -78,6 +78,29 @@ const CampaignContainer = ({
                     )}
                </div>
 
+               {campaign.leagueCampaign && (
+                    <div className="grid grid-cols-4 gap-4 mt-4 p-3 bg-gray-50 rounded-lg">
+                         <Card>
+                              <span className="text-sm font-medium text-gray-600">Games Played:</span>
+                              <p className="text-lg font-semibold">{(campaign.leagueCampaign as any)?.played || 0}</p>
+                         </Card>
+                         <Card>
+                              <span className="text-sm font-medium text-gray-600">Points:</span>
+                              <p className="text-lg font-semibold">{(campaign.leagueCampaign as any)?.points || 0}</p>
+                         </Card>
+                         <Card>
+                              <span className="text-sm font-medium text-gray-600">Frames Played:</span>
+                              <p className="text-lg font-semibold">{(campaign.leagueCampaign as any)?.framesPlayed || 0}</p>
+                         </Card>
+                         <Card>
+                              <span className="text-sm font-medium text-gray-600">Points Difference:</span>
+                              <p className="text-lg font-semibold">
+                                   {((campaign.leagueCampaign as any)?.pointsScoredFor || 0) - ((campaign.leagueCampaign as any)?.pointsScoredAgainst || 0)}
+                              </p>
+                         </Card>
+                    </div>
+               )}
+
                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Campaign Details */}
                     <Card>
@@ -112,28 +135,6 @@ const CampaignContainer = ({
                                                   >
                                                        View Team
                                                   </Button>
-                                             </div>
-                                        </div>
-                                   )}
-                                   {campaign.leagueCampaign && (
-                                        <div className="grid grid-cols-2 gap-4 mt-4 p-3 bg-gray-50 rounded-lg">
-                                             <div>
-                                                  <span className="text-sm font-medium text-gray-600">Games Played:</span>
-                                                  <p className="text-lg font-semibold">{(campaign.leagueCampaign as any)?.played || 0}</p>
-                                             </div>
-                                             <div>
-                                                  <span className="text-sm font-medium text-gray-600">Points:</span>
-                                                  <p className="text-lg font-semibold">{(campaign.leagueCampaign as any)?.points || 0}</p>
-                                             </div>
-                                             <div>
-                                                  <span className="text-sm font-medium text-gray-600">Frames Played:</span>
-                                                  <p className="text-lg font-semibold">{(campaign.leagueCampaign as any)?.framesPlayed || 0}</p>
-                                             </div>
-                                             <div>
-                                                  <span className="text-sm font-medium text-gray-600">Points Difference:</span>
-                                                  <p className="text-lg font-semibold">
-                                                       {((campaign.leagueCampaign as any)?.pointsScoredFor || 0) - ((campaign.leagueCampaign as any)?.pointsScoredAgainst || 0)}
-                                                  </p>
                                              </div>
                                         </div>
                                    )}

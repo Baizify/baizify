@@ -545,7 +545,7 @@ const FixtureList = ({
                                                   }}
                                              >
                                                   {seasons.map((season) => (
-                                                       <SelectItem key={season.id} value={season.id}>
+                                                       <SelectItem key={season.id}>
                                                             {season.name}
                                                        </SelectItem>
                                                   ))}
@@ -565,7 +565,7 @@ const FixtureList = ({
                                                   }}
                                              >
                                                   {campaigns.filter(c => c.id !== props.values.awayCampaignId).map((campaign) => (
-                                                       <SelectItem key={campaign.id} value={campaign.id}>
+                                                       <SelectItem key={campaign.id}>
                                                             {campaign.teamCampaign?.team?.name || `Campaign ${campaign.id.slice(-6)}`}
                                                        </SelectItem>
                                                   ))}
@@ -585,7 +585,7 @@ const FixtureList = ({
                                                   }}
                                              >
                                                   {campaigns.filter(c => c.id !== props.values.homeCampaignId).map((campaign) => (
-                                                       <SelectItem key={campaign.id} value={campaign.id}>
+                                                       <SelectItem key={campaign.id}>
                                                             {campaign.teamCampaign?.team?.name || `Campaign ${campaign.id.slice(-6)}`}
                                                        </SelectItem>
                                                   ))}
