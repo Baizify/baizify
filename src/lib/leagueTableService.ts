@@ -270,7 +270,7 @@ export async function getTeamLeagueHistory(teamId: string): Promise<{
   });
 
   // Group by competition and season
-  const grouped = snapshots.reduce((acc, snapshot) => {
+  const grouped = snapshots.reduce((acc, snapshot: any) => {
     const key = `${snapshot.competitionId}-${snapshot.seasonId}`;
     
     if (!acc[key]) {

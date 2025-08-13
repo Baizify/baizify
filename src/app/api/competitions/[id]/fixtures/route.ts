@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const { searchParams } = new URL(request.url);
   const seasonId = searchParams.get('seasonId');
@@ -11,7 +11,7 @@ export async function GET(
   try {
     const fixtures = await prisma.fixture.findMany({
       where: {
-        competitionId: params.id,
+        competitionId: (await params).id,
         ...(seasonId && { seasonId })
       },
       include: {
@@ -63,7 +63,7 @@ export async function GET(
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const data: {
@@ -77,7 +77,7 @@ export async function POST(
 
     const fixture = await prisma.fixture.create({
       data: {
-        competitionId: params.id,
+        competitionId: (await params).id,
         seasonId: data.seasonId,
         homeCampaignId: data.homeCampaignId,
         awayCampaignId: data.awayCampaignId,

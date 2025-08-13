@@ -3,10 +3,10 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const teamId = params.id;
+    const teamId = (await params).id;
 
     // Get basic team info
     const team = await prisma.team.findUnique({
@@ -29,7 +29,7 @@ export async function GET(
                     }
                   }
                 },
-                awayCampaigns: {
+                awayFixtures: {
                   include: {
                     frames: {
                       include: {
@@ -86,7 +86,7 @@ export async function GET(
 
       // Count fixtures where this team participated
       const homeFixtures = campaign.homeFixtures || [];
-      const awayFixtures = campaign.awayCampaigns || [];
+      const awayFixtures = campaign.awayFixtures || [];
       const allFixtures = [...homeFixtures, ...awayFixtures];
       
       stats.totalFixtures += allFixtures.length;
@@ -135,7 +135,6 @@ export async function GET(
 
     const response = {
       teamName: team.name,
-      currentSeasons: Array.from(stats.currentSeasons),
       ...stats,
       frameWinPercentage: stats.totalFrames > 0 ? Math.round((stats.framesWon / stats.totalFrames) * 100) : 0
     };
@@ -147,7 +146,7 @@ export async function GET(
     await prisma.$disconnect();
     return NextResponse.json({ 
       error: 'Failed to fetch team statistics',
-      details: error.message 
+      details: error instanceof Error ? error.message : String(error) 
     }, { status: 500 });
   }
 }

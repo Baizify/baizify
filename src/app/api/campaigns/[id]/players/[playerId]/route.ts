@@ -3,15 +3,17 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string, playerId: string } }
+  { params }: { params: Promise<{ id: string, playerId: string }> }
 ) {
      try {
+          const { playerId }: { id: string, playerId: string } = await params;
+
           const data: { isTeamCaptain: boolean } = await request.json();
 
           // Check if TeamCampaignPlayer record exists
           const existingTeamCampaignPlayer = await prisma.teamCampaignPlayer.findUnique({
                where: {
-                    campaignPlayerId: params.playerId
+                    campaignPlayerId: playerId
                }
           });
 
@@ -20,7 +22,7 @@ export async function PUT(
                     // Update existing record
                     await prisma.teamCampaignPlayer.update({
                          where: {
-                              campaignPlayerId: params.playerId
+                              campaignPlayerId: playerId
                          },
                          data: {
                               isTeamCaptain: true
@@ -30,7 +32,7 @@ export async function PUT(
                     // Create new record
                     await prisma.teamCampaignPlayer.create({
                          data: {
-                              campaignPlayerId: params.playerId,
+                              campaignPlayerId: playerId,
                               isTeamCaptain: true
                          }
                     });
@@ -40,7 +42,7 @@ export async function PUT(
                if (existingTeamCampaignPlayer) {
                     await prisma.teamCampaignPlayer.delete({
                          where: {
-                              campaignPlayerId: params.playerId
+                              campaignPlayerId: playerId
                          }
                     });
                }
@@ -57,20 +59,22 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string, playerId: string } }
+  { params }: { params: Promise<{ id: string, playerId: string }> }
 ) {
      try {
+          const { playerId }: { id: string, playerId: string } = await params;
+
           // Delete TeamCampaignPlayer record first (if exists)
           await prisma.teamCampaignPlayer.deleteMany({
                where: {
-                    campaignPlayerId: params.playerId
+                    campaignPlayerId: playerId
                }
           });
 
           // Delete CampaignPlayer record
           await prisma.campaignPlayer.delete({
                where: {
-                    id: params.playerId
+                    id: playerId
                }
           });
 

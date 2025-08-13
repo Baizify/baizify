@@ -43,14 +43,6 @@ interface FixtureResult {
   awayAggregateScore: number; // Sum of all frame scores for away team
 }
 
-interface CampaignUpdate {
-  played?: number;
-  points?: number;
-  pointsScoredFor?: number;
-  pointsScoredAgainst?: number;
-  framesPlayed?: number;
-}
-
 /**
  * Calculate fixture result based on current frames with new scoring system:
  * - Each frame win = 2 points for the team
@@ -152,7 +144,6 @@ export async function updateCampaignStats(
 
   // Calculate fixture points earned by this campaign
   const fixturePointsEarned = isHome ? fixtureResult.homeFixturePoints : fixtureResult.awayFixturePoints;
-  const fixturePointsAgainst = isHome ? fixtureResult.awayFixturePoints : fixtureResult.homeFixturePoints;
   
   // Calculate aggregate score for this campaign
   const aggregateScoreFor = isHome ? fixtureResult.homeAggregateScore : fixtureResult.awayAggregateScore;

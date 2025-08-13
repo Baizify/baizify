@@ -3,7 +3,7 @@ import prisma from '@/providers/prisma'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const { searchParams } = new URL(request.url)
   const seasonId = searchParams.get('seasonId')
@@ -11,7 +11,7 @@ export async function GET(
   try {
     const campaigns = await prisma.campaign.findMany({
       where: {
-        competitionId: params.id,
+        competitionId: (await params).id,
         ...(seasonId && { seasonId })
       },
       include: {
@@ -37,14 +37,14 @@ export async function GET(
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const data: { seasonId: string, campaignType: 'team' | 'league', teamId?: string } = await request.json()
 
     const campaign = await prisma.campaign.create({
       data: {
-        competitionId: params.id,
+        competitionId: (await params).id,
         seasonId: data.seasonId
       }
     })

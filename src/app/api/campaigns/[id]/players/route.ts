@@ -3,12 +3,12 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
      try {
           const campaignPlayers = await prisma.campaignPlayer.findMany({
                where: {
-                    campaignId: params.id
+                    campaignId: (await params).id
                },
                include: {
                     user: {
@@ -47,7 +47,7 @@ export async function GET(
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
      try {
           const data: { userId: string, isTeamCaptain: boolean } = await request.json();
@@ -55,7 +55,7 @@ export async function POST(
           // Create campaign player
           const campaignPlayer = await prisma.campaignPlayer.create({
                data: {
-                    campaignId: params.id,
+                    campaignId: (await params).id,
                     userId: data.userId
                }
           });

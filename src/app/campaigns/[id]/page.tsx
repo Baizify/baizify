@@ -62,12 +62,12 @@ const CampaignPage = async ({
           return (
                <div className="flex flex-col items-center justify-center min-h-[400px]">
                     <h1 className="text-2xl font-bold text-gray-800 mb-2">Campaign Not Found</h1>
-                    <p className="text-gray-600">The campaign you're looking for doesn't exist.</p>
+                    <p className="text-gray-600">The campaign youre looking for doesnt exist.</p>
                </div>
           );
      }
 
-     return <CampaignContainer campaign={campaign} isUserAdmin={profile ? profile.isAdmin : false} />;
+     return <CampaignContainer campaign={campaign as any} isUserAdmin={profile ? profile.isAdmin : false} />;
 };
 
 export default CampaignPage;

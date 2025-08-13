@@ -40,7 +40,7 @@ interface CampaignWithRelations extends Campaign {
 interface CampaignFormValues {
      seasonId: string;
      campaignType: 'team' | 'league';
-     teamId?: string;
+     teamId: string;
 }
 
 const CampaignsManager = ({
@@ -114,7 +114,7 @@ const CampaignsManager = ({
                     headers: {
                          'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(values)
+                    body: JSON.stringify({ ...values, competitionId })
                });
 
                if (response.ok) {
@@ -253,7 +253,7 @@ const CampaignsManager = ({
                                                   }}
                                              >
                                                   {seasons.map((season) => (
-                                                       <SelectItem key={season.id} value={season.id}>
+                                                       <SelectItem key={season.id}>
                                                             {season.name}
                                                        </SelectItem>
                                                   ))}
@@ -288,7 +288,7 @@ const CampaignsManager = ({
                                                        }}
                                                   >
                                                        {teams.map((team) => (
-                                                            <SelectItem key={team.id} value={team.id}>
+                                                            <SelectItem key={team.id}>
                                                                  {team.name}
                                                             </SelectItem>
                                                        ))}

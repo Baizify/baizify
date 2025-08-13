@@ -3,10 +3,10 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const teamId = params.id;
+    const teamId = (await params).id;
     const currentYear = new Date().getFullYear();
 
     const currentCampaigns = await prisma.teamCampaign.findMany({
@@ -69,7 +69,7 @@ export async function GET(
       let wins = 0, losses = 0, draws = 0;
       let framesFor = 0, framesAgainst = 0;
 
-      completedFixtures.forEach(fixture => {
+      completedFixtures.forEach((fixture: any) => {
         const isHome = campaign.homeFixtures.includes(fixture);
         const teamScore = isHome ? fixture.homeScore : fixture.awayScore;
         const opponentScore = isHome ? fixture.awayScore : fixture.homeScore;
@@ -103,7 +103,7 @@ export async function GET(
         upcomingFixtures: allFixtures.filter(f => !f.isCompleted && f.status !== 'cancelled').length,
         recentForm: completedFixtures
           .slice(-5)
-          .map(fixture => {
+          .map((fixture: any) => {
             const isHome = campaign.homeFixtures.includes(fixture);
             const teamScore = isHome ? fixture.homeScore : fixture.awayScore;
             const opponentScore = isHome ? fixture.awayScore : fixture.homeScore;
@@ -123,7 +123,7 @@ export async function GET(
     await prisma.$disconnect();
     return NextResponse.json({ 
       error: 'Failed to fetch current campaigns',
-      details: error.message 
+      details: error instanceof Error ? error.message : String(error) 
     }, { status: 500 });
   }
 }

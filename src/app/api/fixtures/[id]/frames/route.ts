@@ -4,12 +4,12 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const frames = await prisma.frame.findMany({
       where: {
-        fixtureId: params.id
+        fixtureId: (await params).id
       },
       include: {
         homePlayer: {
@@ -67,7 +67,7 @@ export async function GET(
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const data: {
@@ -85,7 +85,7 @@ export async function POST(
 
     const frame = await prisma.frame.create({
       data: {
-        fixtureId: params.id,
+        fixtureId: (await params).id,
         frameNumber: data.frameNumber,
         homePlayerId: data.homePlayerId || null,
         homePlayerHandicapId: data.homePlayerHandicapId || null,
@@ -140,7 +140,7 @@ export async function POST(
     });
 
     // Process fixture completion after frame creation
-    await processFixtureCompletion(params.id);
+    await processFixtureCompletion((await params).id);
 
     await prisma.$disconnect();
     return NextResponse.json(frame);

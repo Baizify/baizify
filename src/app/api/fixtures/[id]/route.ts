@@ -3,11 +3,11 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const fixture = await prisma.fixture.findUnique({
-      where: { id: params.id },
+      where: { id: (await params).id },
       include: {
         competition: true,
         season: true,
@@ -115,7 +115,7 @@ export async function GET(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const data: {
@@ -131,7 +131,7 @@ export async function PUT(
 
     // Validate the fixture exists
     const existingFixture = await prisma.fixture.findUnique({
-      where: { id: params.id }
+      where: { id: (await params).id }
     });
 
     if (!existingFixture) {
@@ -177,7 +177,7 @@ export async function PUT(
     }
 
     const fixture = await prisma.fixture.update({
-      where: { id: params.id },
+      where: { id: (await params).id },
       data: updateData,
       include: {
         competition: true,
@@ -221,11 +221,11 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await prisma.fixture.delete({
-      where: { id: params.id }
+      where: { id: (await params).id }
     });
 
     await prisma.$disconnect();

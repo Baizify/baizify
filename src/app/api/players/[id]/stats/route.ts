@@ -43,7 +43,7 @@ export async function GET(
 
         // Group frames by fixture to calculate match results
         const fixtureGroups = new Map();
-        frames.forEach(frame => {
+        frames.forEach((frame: any) => {
             const fixtureId = frame.fixture.id;
             if (!fixtureGroups.has(fixtureId)) {
                 fixtureGroups.set(fixtureId, []);

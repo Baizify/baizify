@@ -271,8 +271,7 @@ const PlayersManager = ({
                                              >
                                                   {availableUsers.map((user) => (
                                                        <AutocompleteItem 
-                                                            key={user.id} 
-                                                            value={user.id}
+                                                            key={user.id}
                                                             startContent={
                                                                  <Avatar
                                                                       src={user.image || undefined}

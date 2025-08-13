@@ -4,10 +4,10 @@ import prisma from "@/providers/prisma";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const teamId = params.id;
+    const teamId = (await params).id;
 
     // Verify team exists
     const team = await prisma.team.findUnique({
@@ -47,7 +47,7 @@ export async function GET(
       
       // Find adjacent competitions for context lines
       const sameCollection = competitionHierarchy.filter(c => c.collection === competition.collection);
-      const currentIndex = sameCollection.findIndex(c => c.id === competition.id);
+      const currentIndex = sameCollection.findIndex(c => c.id === (competition as any).id);
       
       const divisionAbove = currentIndex > 0 ? sameCollection[currentIndex - 1] : null;
       const divisionBelow = currentIndex < sameCollection.length - 1 ? sameCollection[currentIndex + 1] : null;
@@ -125,7 +125,7 @@ export async function GET(
     await prisma.$disconnect();
     return NextResponse.json({ 
       error: 'Failed to fetch team league history',
-      details: error.message 
+      details: error instanceof Error ? error.message : String(error) 
     }, { status: 500 });
   }
 }

@@ -3,10 +3,10 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const teamId = params.id;
+    const teamId = (await params).id;
 
     // Get team campaigns to find all upcoming fixtures
     const teamCampaigns = await prisma.teamCampaign.findMany({
@@ -60,11 +60,11 @@ export async function GET(
     });
 
     // Combine and process fixtures
-    const allFixtures = [];
+    const allFixtures: any[] = [];
     
     teamCampaigns.forEach(teamCampaign => {
       // Add home fixtures
-      teamCampaign.campaign.homeFixtures.forEach(fixture => {
+      (teamCampaign as any).campaign.homeFixtures.forEach(fixture => {
         allFixtures.push({
           ...fixture,
           isHome: true,
@@ -73,7 +73,7 @@ export async function GET(
       });
 
       // Add away fixtures
-      teamCampaign.campaign.awayFixtures.forEach(fixture => {
+      (teamCampaign as any).campaign.awayFixtures.forEach(fixture => {
         allFixtures.push({
           ...fixture,
           isHome: false,
@@ -88,16 +88,16 @@ export async function GET(
         // Handle cases where scheduledDate might be null
         const dateA = a.scheduledDate ? new Date(a.scheduledDate) : new Date(Date.now() + 999999999);
         const dateB = b.scheduledDate ? new Date(b.scheduledDate) : new Date(Date.now() + 999999999);
-        return dateA - dateB;
+        return dateA.valueOf() - dateB.valueOf();
       })
       .slice(0, 10)
       .map(fixture => {
         const now = new Date();
         const scheduledDate = fixture.scheduledDate ? new Date(fixture.scheduledDate) : null;
         
-        let timeUntil = null;
+        let timeUntil: string | null = null;
         if (scheduledDate) {
-          const diff = scheduledDate - now;
+          const diff = scheduledDate.valueOf() - now.valueOf();
           if (diff > 0) {
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -160,7 +160,7 @@ export async function GET(
     await prisma.$disconnect();
     return NextResponse.json({ 
       error: 'Failed to fetch upcoming fixtures',
-      details: error.message 
+      details: error instanceof Error ? error.message : String(error) 
     }, { status: 500 });
   }
 }

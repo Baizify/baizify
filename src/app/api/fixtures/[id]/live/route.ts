@@ -3,13 +3,13 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const { isLive } = await request.json();
 
     const fixture = await prisma.fixture.update({
-      where: { id: params.id },
+      where: { id: (await params).id },
       data: { 
         isLive: Boolean(isLive),
         status: isLive ? "in_progress" : "scheduled"
@@ -52,7 +52,7 @@ export async function POST(
     await prisma.$disconnect();
     return NextResponse.json({ 
       error: 'Failed to update fixture live status',
-      details: error.message 
+      details: error instanceof Error ? error.message : String(error)
     }, { status: 500 });
   }
 }

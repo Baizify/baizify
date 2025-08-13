@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string, playerId: string } }
+  { params }: { params: Promise<{ id: string, playerId: string }> }
 ) {
      try {
           const data: { value: number } = await request.json();
@@ -11,7 +11,7 @@ export async function POST(
           await prisma.handicap.create({
                data: {
                     value: data.value,
-                    campaignPlayerId: params.playerId
+                    campaignPlayerId: (await params).playerId
                }
           });
 

@@ -93,7 +93,7 @@ export async function GET(
         });
 
         // Transform the data to include player-specific information
-        const recentMatches = fixtures.map(fixture => ({
+        const recentMatches = fixtures.map((fixture: any) => ({
             ...fixture,
             playerFrames: fixture.frames.map(frame => ({
                 ...frame,

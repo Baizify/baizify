@@ -4,15 +4,15 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     // Manually trigger fixture completion processing
-    await processFixtureCompletion(params.id);
+    await processFixtureCompletion((await params).id);
 
     // Return updated fixture with completion status
     const fixture = await prisma.fixture.findUnique({
-      where: { id: params.id },
+      where: { id: (await params).id },
       include: {
         homeCampaign: {
           include: {
@@ -52,7 +52,7 @@ export async function POST(
     await prisma.$disconnect();
     return NextResponse.json({ 
       error: 'Failed to process fixture completion',
-      details: error.message 
+      details: error instanceof Error ? error.message : String(error)
     }, { status: 500 });
   }
 }

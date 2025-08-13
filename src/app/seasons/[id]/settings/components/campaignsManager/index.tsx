@@ -38,7 +38,7 @@ interface CampaignWithRelations extends Campaign {
 
 interface CampaignFormValues {
      campaignType: 'team' | 'league';
-     teamId?: string;
+     teamId: string;
 }
 
 const CampaignsManager = ({
@@ -248,7 +248,7 @@ const CampaignsManager = ({
                                                        }}
                                                   >
                                                        {teams.map((team) => (
-                                                            <SelectItem key={team.id} value={team.id}>
+                                                            <SelectItem key={team.id}>
                                                                  {team.name}
                                                             </SelectItem>
                                                        ))}

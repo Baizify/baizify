@@ -160,7 +160,7 @@ const FixturePage = async ({
           );
      }
 
-     return <FixtureContainer fixture={fixture} isUserAdmin={profile ? profile.isAdmin : false} />;
+     return <FixtureContainer fixture={fixture as any} isUserAdmin={profile ? profile.isAdmin : false} />;
 };
 
 export default FixturePage;

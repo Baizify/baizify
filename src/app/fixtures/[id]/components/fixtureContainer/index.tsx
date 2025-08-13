@@ -61,7 +61,7 @@ interface FixtureWithRelations extends Fixture {
      homeCampaign: CampaignWithRelations;
      awayCampaign: CampaignWithRelations;
      frames: FrameWithPlayers[];
-     isLive?: boolean;
+     isLive: boolean;
 }
 
 const FixtureContainer = ({

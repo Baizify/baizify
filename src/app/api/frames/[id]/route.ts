@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const data: {
@@ -32,7 +32,7 @@ export async function PUT(
     if (data.notes !== undefined) updateData.notes = data.notes || null;
 
     const frame = await prisma.frame.update({
-      where: { id: params.id },
+      where: { id: (await params).id },
       data: updateData,
       include: {
         fixture: {
@@ -95,11 +95,11 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await prisma.frame.delete({
-      where: { id: params.id }
+      where: { id: (await params).id }
     });
 
     await prisma.$disconnect();

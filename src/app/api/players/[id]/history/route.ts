@@ -14,7 +14,7 @@ export async function GET(
         const skip = (page - 1) * limit;
 
         // Base where clause for fixtures where player participated
-        let whereClause: any = {
+        const whereClause: any = {
             frames: {
                 some: {
                     OR: [
@@ -118,7 +118,7 @@ export async function GET(
         ]);
 
         // Transform and filter data based on wins/losses if needed
-        let filteredFixtures = fixtures.map(fixture => ({
+        let filteredFixtures = fixtures.map((fixture: any) => ({
             ...fixture,
             playerFrames: fixture.frames.map(frame => ({
                 ...frame,

@@ -186,7 +186,7 @@ export async function GET(
         const fixtureGroups = new Map();
         
         frames.forEach(frame => {
-            const fixtureId = frame.fixture.id;
+            const fixtureId = frame.fixtureId;
             if (!fixtureGroups.has(fixtureId)) {
                 fixtureGroups.set(fixtureId, []);
             }
@@ -194,8 +194,9 @@ export async function GET(
         });
 
         fixtures.forEach(fixture => {
-            const playerFramesWon = fixture.frames.filter(f => f.winnerId === id).length;
-            const totalFrames = fixture.frames.length;
+            const frames = (fixture as any).frames || [];
+            const playerFramesWon = frames.filter((f: any) => f.winnerId === id).length;
+            const totalFrames = frames.length;
             const opponentFramesWon = totalFrames - playerFramesWon;
             matchResults.push(playerFramesWon > opponentFramesWon);
         });
@@ -232,8 +233,9 @@ export async function GET(
 
         // Check for perfect matches
         fixtures.forEach(fixture => {
-            const playerFramesWon = fixture.frames.filter(f => f.winnerId === id).length;
-            const totalFrames = fixture.frames.length;
+            const frames = (fixture as any).frames || [];
+            const playerFramesWon = frames.filter((f: any) => f.winnerId === id).length;
+            const totalFrames = frames.length;
             const opponentFramesWon = totalFrames - playerFramesWon;
             
             if (playerFramesWon > opponentFramesWon && opponentFramesWon === 0) {

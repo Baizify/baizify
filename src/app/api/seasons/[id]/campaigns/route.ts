@@ -1,13 +1,14 @@
+import { Season } from "@/generator/prisma";
 import prisma from "@/providers/prisma";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const campaigns = await prisma.campaign.findMany({
-      where: { seasonId: params.id },
+      where: { seasonId: (await params).id },
       include: {
         teamCampaign: {
           include: {
@@ -30,14 +31,15 @@ export async function GET(
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { campaignType, teamId } = await request.json();
+    const { campaignType, teamId, competitionId } = await request.json();
 
     const campaign = await prisma.campaign.create({
       data: {
-        seasonId: params.id
+        seasonId: (await params).id,
+        competitionId
       }
     });
 
@@ -79,7 +81,7 @@ export async function POST(
     await prisma.$disconnect();
     return NextResponse.json({ 
       error: 'Failed to create campaign',
-      details: error.message 
+      details: error instanceof Error ? error.message : String(error)
     }, { status: 500 });
   }
 }

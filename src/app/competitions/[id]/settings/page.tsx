@@ -6,14 +6,13 @@ import { redirect } from "next/navigation";
 import CompetitionSettingsContainer from "./components/competitionSettingsContainer";
 
 const CompetitionSettingsPage = async ({
-     params: {
-          id
-     }
+     params
 }: {
-     params: {
+     params: Promise<{
           id: string
-     }
+     }>
 }) => {
+     const { id } = await params;
      const session: Session | null = await auth();
      let profile: User | null = null;
 

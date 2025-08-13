@@ -332,7 +332,7 @@ const LeaguePositionChart = ({ teamId }: { teamId: string }) => {
               className="w-64"
             >
               {collections.map((collection) => (
-                <SelectItem key={collection} value={collection}>
+                <SelectItem key={collection}>
                   {collection}
                 </SelectItem>
               ))}
@@ -353,7 +353,7 @@ const LeaguePositionChart = ({ teamId }: { teamId: string }) => {
         </CardHeader>
         <CardBody>
           <div className="space-y-3">
-            {filteredHistory.slice(-5).map((season, index) => {
+            {filteredHistory.slice(-5).map((season) => {
               const lastSnapshot = season.snapshots[season.snapshots.length - 1];
               const firstSnapshot = season.snapshots[0];
               const movement = lastSnapshot && firstSnapshot ? lastSnapshot.position - firstSnapshot.position : 0;

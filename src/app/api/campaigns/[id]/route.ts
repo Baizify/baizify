@@ -3,19 +3,19 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
      try {
           await prisma.teamCampaign.deleteMany({
-               where: { campaignId: params.id }
+               where: { campaignId: (await params).id }
           });
 
           await prisma.leagueCampaign.deleteMany({
-               where: { campaignId: params.id }
+               where: { campaignId: (await params).id }
           });
 
           await prisma.campaign.delete({
-               where: { id: params.id }
+               where: { id: (await params).id }
           });
 
           await prisma.$disconnect();

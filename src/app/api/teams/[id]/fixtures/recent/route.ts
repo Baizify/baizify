@@ -3,10 +3,10 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const teamId = params.id;
+    const teamId = (await params).id;
 
     // Get team campaigns to find all fixtures
     const teamCampaigns = await prisma.teamCampaign.findMany({
@@ -64,19 +64,19 @@ export async function GET(
     });
 
     // Combine and process fixtures
-    const allFixtures = [];
+    const allFixtures: any[] = [];
     
     teamCampaigns.forEach(teamCampaign => {
       // Add home fixtures
-      teamCampaign.campaign.homeFixtures.forEach(fixture => {
+      teamCampaign.campaign.homeFixtures.forEach((fixture: any) => {
         allFixtures.push({
           ...fixture,
           isHome: true,
           teamScore: fixture.homeScore,
           opponentScore: fixture.awayScore,
           opponent: fixture.awayCampaign?.teamCampaign?.team || null,
-          result: fixture.homeScore > fixture.awayScore ? 'W' : 
-                  fixture.homeScore < fixture.awayScore ? 'L' : 'D'
+          result: fixture.homeScore > fixture.awayScore ? 'W' :
+            fixture.homeScore < fixture.awayScore ? 'L' : 'D'
         });
       });
 
@@ -96,7 +96,7 @@ export async function GET(
 
     // Sort by completion date and take last 10
     const recentFixtures = allFixtures
-      .sort((a, b) => new Date(b.completedAt) - new Date(a.completedAt))
+      .sort((a, b) => new Date(b.completedAt).valueOf() - new Date(a.completedAt).valueOf())
       .slice(0, 10)
       .map(fixture => ({
         id: fixture.id,
@@ -128,7 +128,7 @@ export async function GET(
     await prisma.$disconnect();
     return NextResponse.json({ 
       error: 'Failed to fetch recent fixtures',
-      details: error.message 
+      details: error instanceof Error ? error.message : String(error) 
     }, { status: 500 });
   }
 }
