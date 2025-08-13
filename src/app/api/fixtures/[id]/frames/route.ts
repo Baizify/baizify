@@ -47,7 +47,9 @@ export async function GET(
               }
             }
           }
-        }
+        },
+        homePlayerHandicap: true,
+        awayPlayerHandicap: true
       },
       orderBy: {
         frameNumber: 'asc'
@@ -71,7 +73,9 @@ export async function POST(
     const data: {
       frameNumber: number;
       homePlayerId?: string;
+      homePlayerHandicapId?: string;
       awayPlayerId?: string;
+      awayPlayerHandicapId?: string;
       homeScore?: number;
       awayScore?: number;
       winnerId?: string;
@@ -84,7 +88,9 @@ export async function POST(
         fixtureId: params.id,
         frameNumber: data.frameNumber,
         homePlayerId: data.homePlayerId || null,
+        homePlayerHandicapId: data.homePlayerHandicapId || null,
         awayPlayerId: data.awayPlayerId || null,
+        awayPlayerHandicapId: data.awayPlayerHandicapId || null,
         homeScore: data.homeScore || 0,
         awayScore: data.awayScore || 0,
         winnerId: data.winnerId || null,
@@ -127,7 +133,9 @@ export async function POST(
               }
             }
           }
-        }
+        },
+        homePlayerHandicap: true,
+        awayPlayerHandicap: true
       }
     });
 

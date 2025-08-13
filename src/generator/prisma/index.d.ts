@@ -79,6 +79,11 @@ export type TeamCampaignPlayer = $Result.DefaultSelection<Prisma.$TeamCampaignPl
  */
 export type CampaignPlayer = $Result.DefaultSelection<Prisma.$CampaignPlayerPayload>
 /**
+ * Model Handicap
+ * 
+ */
+export type Handicap = $Result.DefaultSelection<Prisma.$HandicapPayload>
+/**
  * Model Fixture
  * 
  */
@@ -343,6 +348,16 @@ export class PrismaClient<
     * ```
     */
   get campaignPlayer(): Prisma.CampaignPlayerDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.handicap`: Exposes CRUD operations for the **Handicap** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Handicaps
+    * const handicaps = await prisma.handicap.findMany()
+    * ```
+    */
+  get handicap(): Prisma.HandicapDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.fixture`: Exposes CRUD operations for the **Fixture** model.
@@ -816,6 +831,7 @@ export namespace Prisma {
     LeagueTableSnapshot: 'LeagueTableSnapshot',
     TeamCampaignPlayer: 'TeamCampaignPlayer',
     CampaignPlayer: 'CampaignPlayer',
+    Handicap: 'Handicap',
     Fixture: 'Fixture',
     Frame: 'Frame'
   };
@@ -836,7 +852,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "account" | "session" | "verificationToken" | "competition" | "season" | "campaign" | "leagueCampaign" | "team" | "teamCampaign" | "leagueTableSnapshot" | "teamCampaignPlayer" | "campaignPlayer" | "fixture" | "frame"
+      modelProps: "user" | "account" | "session" | "verificationToken" | "competition" | "season" | "campaign" | "leagueCampaign" | "team" | "teamCampaign" | "leagueTableSnapshot" | "teamCampaignPlayer" | "campaignPlayer" | "handicap" | "fixture" | "frame"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1802,6 +1818,80 @@ export namespace Prisma {
           }
         }
       }
+      Handicap: {
+        payload: Prisma.$HandicapPayload<ExtArgs>
+        fields: Prisma.HandicapFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.HandicapFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.HandicapFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>
+          }
+          findFirst: {
+            args: Prisma.HandicapFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.HandicapFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>
+          }
+          findMany: {
+            args: Prisma.HandicapFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>[]
+          }
+          create: {
+            args: Prisma.HandicapCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>
+          }
+          createMany: {
+            args: Prisma.HandicapCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.HandicapCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>[]
+          }
+          delete: {
+            args: Prisma.HandicapDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>
+          }
+          update: {
+            args: Prisma.HandicapUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>
+          }
+          deleteMany: {
+            args: Prisma.HandicapDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.HandicapUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.HandicapUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>[]
+          }
+          upsert: {
+            args: Prisma.HandicapUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandicapPayload>
+          }
+          aggregate: {
+            args: Prisma.HandicapAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHandicap>
+          }
+          groupBy: {
+            args: Prisma.HandicapGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HandicapGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.HandicapCountArgs<ExtArgs>
+            result: $Utils.Optional<HandicapCountAggregateOutputType> | number
+          }
+        }
+      }
       Fixture: {
         payload: Prisma.$FixturePayload<ExtArgs>
         fields: Prisma.FixtureFieldRefs
@@ -2047,6 +2137,7 @@ export namespace Prisma {
     leagueTableSnapshot?: LeagueTableSnapshotOmit
     teamCampaignPlayer?: TeamCampaignPlayerOmit
     campaignPlayer?: CampaignPlayerOmit
+    handicap?: HandicapOmit
     fixture?: FixtureOmit
     frame?: FrameOmit
   }
@@ -2382,12 +2473,14 @@ export namespace Prisma {
     homeFrames: number
     awayFrames: number
     wonFrames: number
+    handicaps: number
   }
 
   export type CampaignPlayerCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     homeFrames?: boolean | CampaignPlayerCountOutputTypeCountHomeFramesArgs
     awayFrames?: boolean | CampaignPlayerCountOutputTypeCountAwayFramesArgs
     wonFrames?: boolean | CampaignPlayerCountOutputTypeCountWonFramesArgs
+    handicaps?: boolean | CampaignPlayerCountOutputTypeCountHandicapsArgs
   }
 
   // Custom InputTypes
@@ -2419,6 +2512,53 @@ export namespace Prisma {
    * CampaignPlayerCountOutputType without action
    */
   export type CampaignPlayerCountOutputTypeCountWonFramesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FrameWhereInput
+  }
+
+  /**
+   * CampaignPlayerCountOutputType without action
+   */
+  export type CampaignPlayerCountOutputTypeCountHandicapsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HandicapWhereInput
+  }
+
+
+  /**
+   * Count Type HandicapCountOutputType
+   */
+
+  export type HandicapCountOutputType = {
+    homeFrames: number
+    awayFrames: number
+  }
+
+  export type HandicapCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    homeFrames?: boolean | HandicapCountOutputTypeCountHomeFramesArgs
+    awayFrames?: boolean | HandicapCountOutputTypeCountAwayFramesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * HandicapCountOutputType without action
+   */
+  export type HandicapCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HandicapCountOutputType
+     */
+    select?: HandicapCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * HandicapCountOutputType without action
+   */
+  export type HandicapCountOutputTypeCountHomeFramesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FrameWhereInput
+  }
+
+  /**
+   * HandicapCountOutputType without action
+   */
+  export type HandicapCountOutputTypeCountAwayFramesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: FrameWhereInput
   }
 
@@ -16049,6 +16189,7 @@ export namespace Prisma {
     homeFrames?: boolean | CampaignPlayer$homeFramesArgs<ExtArgs>
     awayFrames?: boolean | CampaignPlayer$awayFramesArgs<ExtArgs>
     wonFrames?: boolean | CampaignPlayer$wonFramesArgs<ExtArgs>
+    handicaps?: boolean | CampaignPlayer$handicapsArgs<ExtArgs>
     _count?: boolean | CampaignPlayerCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["campaignPlayer"]>
 
@@ -16087,6 +16228,7 @@ export namespace Prisma {
     homeFrames?: boolean | CampaignPlayer$homeFramesArgs<ExtArgs>
     awayFrames?: boolean | CampaignPlayer$awayFramesArgs<ExtArgs>
     wonFrames?: boolean | CampaignPlayer$wonFramesArgs<ExtArgs>
+    handicaps?: boolean | CampaignPlayer$handicapsArgs<ExtArgs>
     _count?: boolean | CampaignPlayerCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type CampaignPlayerIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -16106,6 +16248,7 @@ export namespace Prisma {
       homeFrames: Prisma.$FramePayload<ExtArgs>[]
       awayFrames: Prisma.$FramePayload<ExtArgs>[]
       wonFrames: Prisma.$FramePayload<ExtArgs>[]
+      handicaps: Prisma.$HandicapPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -16512,6 +16655,7 @@ export namespace Prisma {
     homeFrames<T extends CampaignPlayer$homeFramesArgs<ExtArgs> = {}>(args?: Subset<T, CampaignPlayer$homeFramesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     awayFrames<T extends CampaignPlayer$awayFramesArgs<ExtArgs> = {}>(args?: Subset<T, CampaignPlayer$awayFramesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     wonFrames<T extends CampaignPlayer$wonFramesArgs<ExtArgs> = {}>(args?: Subset<T, CampaignPlayer$wonFramesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    handicaps<T extends CampaignPlayer$handicapsArgs<ExtArgs> = {}>(args?: Subset<T, CampaignPlayer$handicapsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -17014,6 +17158,30 @@ export namespace Prisma {
   }
 
   /**
+   * CampaignPlayer.handicaps
+   */
+  export type CampaignPlayer$handicapsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    where?: HandicapWhereInput
+    orderBy?: HandicapOrderByWithRelationInput | HandicapOrderByWithRelationInput[]
+    cursor?: HandicapWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: HandicapScalarFieldEnum | HandicapScalarFieldEnum[]
+  }
+
+  /**
    * CampaignPlayer without action
    */
   export type CampaignPlayerDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -17029,6 +17197,1143 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: CampaignPlayerInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Handicap
+   */
+
+  export type AggregateHandicap = {
+    _count: HandicapCountAggregateOutputType | null
+    _avg: HandicapAvgAggregateOutputType | null
+    _sum: HandicapSumAggregateOutputType | null
+    _min: HandicapMinAggregateOutputType | null
+    _max: HandicapMaxAggregateOutputType | null
+  }
+
+  export type HandicapAvgAggregateOutputType = {
+    value: number | null
+  }
+
+  export type HandicapSumAggregateOutputType = {
+    value: number | null
+  }
+
+  export type HandicapMinAggregateOutputType = {
+    id: string | null
+    value: number | null
+    campaignPlayerId: string | null
+    createdAt: Date | null
+  }
+
+  export type HandicapMaxAggregateOutputType = {
+    id: string | null
+    value: number | null
+    campaignPlayerId: string | null
+    createdAt: Date | null
+  }
+
+  export type HandicapCountAggregateOutputType = {
+    id: number
+    value: number
+    campaignPlayerId: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type HandicapAvgAggregateInputType = {
+    value?: true
+  }
+
+  export type HandicapSumAggregateInputType = {
+    value?: true
+  }
+
+  export type HandicapMinAggregateInputType = {
+    id?: true
+    value?: true
+    campaignPlayerId?: true
+    createdAt?: true
+  }
+
+  export type HandicapMaxAggregateInputType = {
+    id?: true
+    value?: true
+    campaignPlayerId?: true
+    createdAt?: true
+  }
+
+  export type HandicapCountAggregateInputType = {
+    id?: true
+    value?: true
+    campaignPlayerId?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type HandicapAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Handicap to aggregate.
+     */
+    where?: HandicapWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Handicaps to fetch.
+     */
+    orderBy?: HandicapOrderByWithRelationInput | HandicapOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: HandicapWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Handicaps from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Handicaps.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Handicaps
+    **/
+    _count?: true | HandicapCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: HandicapAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: HandicapSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: HandicapMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: HandicapMaxAggregateInputType
+  }
+
+  export type GetHandicapAggregateType<T extends HandicapAggregateArgs> = {
+        [P in keyof T & keyof AggregateHandicap]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateHandicap[P]>
+      : GetScalarType<T[P], AggregateHandicap[P]>
+  }
+
+
+
+
+  export type HandicapGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HandicapWhereInput
+    orderBy?: HandicapOrderByWithAggregationInput | HandicapOrderByWithAggregationInput[]
+    by: HandicapScalarFieldEnum[] | HandicapScalarFieldEnum
+    having?: HandicapScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: HandicapCountAggregateInputType | true
+    _avg?: HandicapAvgAggregateInputType
+    _sum?: HandicapSumAggregateInputType
+    _min?: HandicapMinAggregateInputType
+    _max?: HandicapMaxAggregateInputType
+  }
+
+  export type HandicapGroupByOutputType = {
+    id: string
+    value: number
+    campaignPlayerId: string
+    createdAt: Date
+    _count: HandicapCountAggregateOutputType | null
+    _avg: HandicapAvgAggregateOutputType | null
+    _sum: HandicapSumAggregateOutputType | null
+    _min: HandicapMinAggregateOutputType | null
+    _max: HandicapMaxAggregateOutputType | null
+  }
+
+  type GetHandicapGroupByPayload<T extends HandicapGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<HandicapGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof HandicapGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], HandicapGroupByOutputType[P]>
+            : GetScalarType<T[P], HandicapGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type HandicapSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    value?: boolean
+    campaignPlayerId?: boolean
+    createdAt?: boolean
+    homeFrames?: boolean | Handicap$homeFramesArgs<ExtArgs>
+    awayFrames?: boolean | Handicap$awayFramesArgs<ExtArgs>
+    campaignPlayer?: boolean | CampaignPlayerDefaultArgs<ExtArgs>
+    _count?: boolean | HandicapCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["handicap"]>
+
+  export type HandicapSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    value?: boolean
+    campaignPlayerId?: boolean
+    createdAt?: boolean
+    campaignPlayer?: boolean | CampaignPlayerDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["handicap"]>
+
+  export type HandicapSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    value?: boolean
+    campaignPlayerId?: boolean
+    createdAt?: boolean
+    campaignPlayer?: boolean | CampaignPlayerDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["handicap"]>
+
+  export type HandicapSelectScalar = {
+    id?: boolean
+    value?: boolean
+    campaignPlayerId?: boolean
+    createdAt?: boolean
+  }
+
+  export type HandicapOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "value" | "campaignPlayerId" | "createdAt", ExtArgs["result"]["handicap"]>
+  export type HandicapInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    homeFrames?: boolean | Handicap$homeFramesArgs<ExtArgs>
+    awayFrames?: boolean | Handicap$awayFramesArgs<ExtArgs>
+    campaignPlayer?: boolean | CampaignPlayerDefaultArgs<ExtArgs>
+    _count?: boolean | HandicapCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type HandicapIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    campaignPlayer?: boolean | CampaignPlayerDefaultArgs<ExtArgs>
+  }
+  export type HandicapIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    campaignPlayer?: boolean | CampaignPlayerDefaultArgs<ExtArgs>
+  }
+
+  export type $HandicapPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Handicap"
+    objects: {
+      homeFrames: Prisma.$FramePayload<ExtArgs>[]
+      awayFrames: Prisma.$FramePayload<ExtArgs>[]
+      campaignPlayer: Prisma.$CampaignPlayerPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      value: number
+      campaignPlayerId: string
+      createdAt: Date
+    }, ExtArgs["result"]["handicap"]>
+    composites: {}
+  }
+
+  type HandicapGetPayload<S extends boolean | null | undefined | HandicapDefaultArgs> = $Result.GetResult<Prisma.$HandicapPayload, S>
+
+  type HandicapCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HandicapFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HandicapCountAggregateInputType | true
+    }
+
+  export interface HandicapDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Handicap'], meta: { name: 'Handicap' } }
+    /**
+     * Find zero or one Handicap that matches the filter.
+     * @param {HandicapFindUniqueArgs} args - Arguments to find a Handicap
+     * @example
+     * // Get one Handicap
+     * const handicap = await prisma.handicap.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends HandicapFindUniqueArgs>(args: SelectSubset<T, HandicapFindUniqueArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Handicap that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {HandicapFindUniqueOrThrowArgs} args - Arguments to find a Handicap
+     * @example
+     * // Get one Handicap
+     * const handicap = await prisma.handicap.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends HandicapFindUniqueOrThrowArgs>(args: SelectSubset<T, HandicapFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Handicap that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HandicapFindFirstArgs} args - Arguments to find a Handicap
+     * @example
+     * // Get one Handicap
+     * const handicap = await prisma.handicap.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends HandicapFindFirstArgs>(args?: SelectSubset<T, HandicapFindFirstArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Handicap that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HandicapFindFirstOrThrowArgs} args - Arguments to find a Handicap
+     * @example
+     * // Get one Handicap
+     * const handicap = await prisma.handicap.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends HandicapFindFirstOrThrowArgs>(args?: SelectSubset<T, HandicapFindFirstOrThrowArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Handicaps that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HandicapFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Handicaps
+     * const handicaps = await prisma.handicap.findMany()
+     * 
+     * // Get first 10 Handicaps
+     * const handicaps = await prisma.handicap.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const handicapWithIdOnly = await prisma.handicap.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends HandicapFindManyArgs>(args?: SelectSubset<T, HandicapFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Handicap.
+     * @param {HandicapCreateArgs} args - Arguments to create a Handicap.
+     * @example
+     * // Create one Handicap
+     * const Handicap = await prisma.handicap.create({
+     *   data: {
+     *     // ... data to create a Handicap
+     *   }
+     * })
+     * 
+     */
+    create<T extends HandicapCreateArgs>(args: SelectSubset<T, HandicapCreateArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Handicaps.
+     * @param {HandicapCreateManyArgs} args - Arguments to create many Handicaps.
+     * @example
+     * // Create many Handicaps
+     * const handicap = await prisma.handicap.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends HandicapCreateManyArgs>(args?: SelectSubset<T, HandicapCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Handicaps and returns the data saved in the database.
+     * @param {HandicapCreateManyAndReturnArgs} args - Arguments to create many Handicaps.
+     * @example
+     * // Create many Handicaps
+     * const handicap = await prisma.handicap.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Handicaps and only return the `id`
+     * const handicapWithIdOnly = await prisma.handicap.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends HandicapCreateManyAndReturnArgs>(args?: SelectSubset<T, HandicapCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Handicap.
+     * @param {HandicapDeleteArgs} args - Arguments to delete one Handicap.
+     * @example
+     * // Delete one Handicap
+     * const Handicap = await prisma.handicap.delete({
+     *   where: {
+     *     // ... filter to delete one Handicap
+     *   }
+     * })
+     * 
+     */
+    delete<T extends HandicapDeleteArgs>(args: SelectSubset<T, HandicapDeleteArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Handicap.
+     * @param {HandicapUpdateArgs} args - Arguments to update one Handicap.
+     * @example
+     * // Update one Handicap
+     * const handicap = await prisma.handicap.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends HandicapUpdateArgs>(args: SelectSubset<T, HandicapUpdateArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Handicaps.
+     * @param {HandicapDeleteManyArgs} args - Arguments to filter Handicaps to delete.
+     * @example
+     * // Delete a few Handicaps
+     * const { count } = await prisma.handicap.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends HandicapDeleteManyArgs>(args?: SelectSubset<T, HandicapDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Handicaps.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HandicapUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Handicaps
+     * const handicap = await prisma.handicap.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends HandicapUpdateManyArgs>(args: SelectSubset<T, HandicapUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Handicaps and returns the data updated in the database.
+     * @param {HandicapUpdateManyAndReturnArgs} args - Arguments to update many Handicaps.
+     * @example
+     * // Update many Handicaps
+     * const handicap = await prisma.handicap.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Handicaps and only return the `id`
+     * const handicapWithIdOnly = await prisma.handicap.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends HandicapUpdateManyAndReturnArgs>(args: SelectSubset<T, HandicapUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Handicap.
+     * @param {HandicapUpsertArgs} args - Arguments to update or create a Handicap.
+     * @example
+     * // Update or create a Handicap
+     * const handicap = await prisma.handicap.upsert({
+     *   create: {
+     *     // ... data to create a Handicap
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Handicap we want to update
+     *   }
+     * })
+     */
+    upsert<T extends HandicapUpsertArgs>(args: SelectSubset<T, HandicapUpsertArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Handicaps.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HandicapCountArgs} args - Arguments to filter Handicaps to count.
+     * @example
+     * // Count the number of Handicaps
+     * const count = await prisma.handicap.count({
+     *   where: {
+     *     // ... the filter for the Handicaps we want to count
+     *   }
+     * })
+    **/
+    count<T extends HandicapCountArgs>(
+      args?: Subset<T, HandicapCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], HandicapCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Handicap.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HandicapAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends HandicapAggregateArgs>(args: Subset<T, HandicapAggregateArgs>): Prisma.PrismaPromise<GetHandicapAggregateType<T>>
+
+    /**
+     * Group by Handicap.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HandicapGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends HandicapGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: HandicapGroupByArgs['orderBy'] }
+        : { orderBy?: HandicapGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, HandicapGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHandicapGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Handicap model
+   */
+  readonly fields: HandicapFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Handicap.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__HandicapClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    homeFrames<T extends Handicap$homeFramesArgs<ExtArgs> = {}>(args?: Subset<T, Handicap$homeFramesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    awayFrames<T extends Handicap$awayFramesArgs<ExtArgs> = {}>(args?: Subset<T, Handicap$awayFramesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FramePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    campaignPlayer<T extends CampaignPlayerDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CampaignPlayerDefaultArgs<ExtArgs>>): Prisma__CampaignPlayerClient<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Handicap model
+   */
+  interface HandicapFieldRefs {
+    readonly id: FieldRef<"Handicap", 'String'>
+    readonly value: FieldRef<"Handicap", 'Int'>
+    readonly campaignPlayerId: FieldRef<"Handicap", 'String'>
+    readonly createdAt: FieldRef<"Handicap", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Handicap findUnique
+   */
+  export type HandicapFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * Filter, which Handicap to fetch.
+     */
+    where: HandicapWhereUniqueInput
+  }
+
+  /**
+   * Handicap findUniqueOrThrow
+   */
+  export type HandicapFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * Filter, which Handicap to fetch.
+     */
+    where: HandicapWhereUniqueInput
+  }
+
+  /**
+   * Handicap findFirst
+   */
+  export type HandicapFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * Filter, which Handicap to fetch.
+     */
+    where?: HandicapWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Handicaps to fetch.
+     */
+    orderBy?: HandicapOrderByWithRelationInput | HandicapOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Handicaps.
+     */
+    cursor?: HandicapWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Handicaps from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Handicaps.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Handicaps.
+     */
+    distinct?: HandicapScalarFieldEnum | HandicapScalarFieldEnum[]
+  }
+
+  /**
+   * Handicap findFirstOrThrow
+   */
+  export type HandicapFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * Filter, which Handicap to fetch.
+     */
+    where?: HandicapWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Handicaps to fetch.
+     */
+    orderBy?: HandicapOrderByWithRelationInput | HandicapOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Handicaps.
+     */
+    cursor?: HandicapWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Handicaps from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Handicaps.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Handicaps.
+     */
+    distinct?: HandicapScalarFieldEnum | HandicapScalarFieldEnum[]
+  }
+
+  /**
+   * Handicap findMany
+   */
+  export type HandicapFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * Filter, which Handicaps to fetch.
+     */
+    where?: HandicapWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Handicaps to fetch.
+     */
+    orderBy?: HandicapOrderByWithRelationInput | HandicapOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Handicaps.
+     */
+    cursor?: HandicapWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Handicaps from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Handicaps.
+     */
+    skip?: number
+    distinct?: HandicapScalarFieldEnum | HandicapScalarFieldEnum[]
+  }
+
+  /**
+   * Handicap create
+   */
+  export type HandicapCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Handicap.
+     */
+    data: XOR<HandicapCreateInput, HandicapUncheckedCreateInput>
+  }
+
+  /**
+   * Handicap createMany
+   */
+  export type HandicapCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Handicaps.
+     */
+    data: HandicapCreateManyInput | HandicapCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Handicap createManyAndReturn
+   */
+  export type HandicapCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * The data used to create many Handicaps.
+     */
+    data: HandicapCreateManyInput | HandicapCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Handicap update
+   */
+  export type HandicapUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Handicap.
+     */
+    data: XOR<HandicapUpdateInput, HandicapUncheckedUpdateInput>
+    /**
+     * Choose, which Handicap to update.
+     */
+    where: HandicapWhereUniqueInput
+  }
+
+  /**
+   * Handicap updateMany
+   */
+  export type HandicapUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Handicaps.
+     */
+    data: XOR<HandicapUpdateManyMutationInput, HandicapUncheckedUpdateManyInput>
+    /**
+     * Filter which Handicaps to update
+     */
+    where?: HandicapWhereInput
+    /**
+     * Limit how many Handicaps to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Handicap updateManyAndReturn
+   */
+  export type HandicapUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * The data used to update Handicaps.
+     */
+    data: XOR<HandicapUpdateManyMutationInput, HandicapUncheckedUpdateManyInput>
+    /**
+     * Filter which Handicaps to update
+     */
+    where?: HandicapWhereInput
+    /**
+     * Limit how many Handicaps to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Handicap upsert
+   */
+  export type HandicapUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Handicap to update in case it exists.
+     */
+    where: HandicapWhereUniqueInput
+    /**
+     * In case the Handicap found by the `where` argument doesn't exist, create a new Handicap with this data.
+     */
+    create: XOR<HandicapCreateInput, HandicapUncheckedCreateInput>
+    /**
+     * In case the Handicap was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<HandicapUpdateInput, HandicapUncheckedUpdateInput>
+  }
+
+  /**
+   * Handicap delete
+   */
+  export type HandicapDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    /**
+     * Filter which Handicap to delete.
+     */
+    where: HandicapWhereUniqueInput
+  }
+
+  /**
+   * Handicap deleteMany
+   */
+  export type HandicapDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Handicaps to delete
+     */
+    where?: HandicapWhereInput
+    /**
+     * Limit how many Handicaps to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Handicap.homeFrames
+   */
+  export type Handicap$homeFramesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    where?: FrameWhereInput
+    orderBy?: FrameOrderByWithRelationInput | FrameOrderByWithRelationInput[]
+    cursor?: FrameWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FrameScalarFieldEnum | FrameScalarFieldEnum[]
+  }
+
+  /**
+   * Handicap.awayFrames
+   */
+  export type Handicap$awayFramesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Frame
+     */
+    select?: FrameSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Frame
+     */
+    omit?: FrameOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FrameInclude<ExtArgs> | null
+    where?: FrameWhereInput
+    orderBy?: FrameOrderByWithRelationInput | FrameOrderByWithRelationInput[]
+    cursor?: FrameWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FrameScalarFieldEnum | FrameScalarFieldEnum[]
+  }
+
+  /**
+   * Handicap without action
+   */
+  export type HandicapDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
   }
 
 
@@ -18384,7 +19689,9 @@ export namespace Prisma {
     fixtureId: string | null
     frameNumber: number | null
     homePlayerId: string | null
+    homePlayerHandicapId: string | null
     awayPlayerId: string | null
+    awayPlayerHandicapId: string | null
     homeScore: number | null
     awayScore: number | null
     winnerId: string | null
@@ -18399,7 +19706,9 @@ export namespace Prisma {
     fixtureId: string | null
     frameNumber: number | null
     homePlayerId: string | null
+    homePlayerHandicapId: string | null
     awayPlayerId: string | null
+    awayPlayerHandicapId: string | null
     homeScore: number | null
     awayScore: number | null
     winnerId: string | null
@@ -18414,7 +19723,9 @@ export namespace Prisma {
     fixtureId: number
     frameNumber: number
     homePlayerId: number
+    homePlayerHandicapId: number
     awayPlayerId: number
+    awayPlayerHandicapId: number
     homeScore: number
     awayScore: number
     winnerId: number
@@ -18443,7 +19754,9 @@ export namespace Prisma {
     fixtureId?: true
     frameNumber?: true
     homePlayerId?: true
+    homePlayerHandicapId?: true
     awayPlayerId?: true
+    awayPlayerHandicapId?: true
     homeScore?: true
     awayScore?: true
     winnerId?: true
@@ -18458,7 +19771,9 @@ export namespace Prisma {
     fixtureId?: true
     frameNumber?: true
     homePlayerId?: true
+    homePlayerHandicapId?: true
     awayPlayerId?: true
+    awayPlayerHandicapId?: true
     homeScore?: true
     awayScore?: true
     winnerId?: true
@@ -18473,7 +19788,9 @@ export namespace Prisma {
     fixtureId?: true
     frameNumber?: true
     homePlayerId?: true
+    homePlayerHandicapId?: true
     awayPlayerId?: true
+    awayPlayerHandicapId?: true
     homeScore?: true
     awayScore?: true
     winnerId?: true
@@ -18575,7 +19892,9 @@ export namespace Prisma {
     fixtureId: string
     frameNumber: number
     homePlayerId: string | null
+    homePlayerHandicapId: string | null
     awayPlayerId: string | null
+    awayPlayerHandicapId: string | null
     homeScore: number
     awayScore: number
     winnerId: string | null
@@ -18609,7 +19928,9 @@ export namespace Prisma {
     fixtureId?: boolean
     frameNumber?: boolean
     homePlayerId?: boolean
+    homePlayerHandicapId?: boolean
     awayPlayerId?: boolean
+    awayPlayerHandicapId?: boolean
     homeScore?: boolean
     awayScore?: boolean
     winnerId?: boolean
@@ -18620,6 +19941,8 @@ export namespace Prisma {
     fixture?: boolean | FixtureDefaultArgs<ExtArgs>
     homePlayer?: boolean | Frame$homePlayerArgs<ExtArgs>
     awayPlayer?: boolean | Frame$awayPlayerArgs<ExtArgs>
+    homePlayerHandicap?: boolean | Frame$homePlayerHandicapArgs<ExtArgs>
+    awayPlayerHandicap?: boolean | Frame$awayPlayerHandicapArgs<ExtArgs>
     winner?: boolean | Frame$winnerArgs<ExtArgs>
   }, ExtArgs["result"]["frame"]>
 
@@ -18628,7 +19951,9 @@ export namespace Prisma {
     fixtureId?: boolean
     frameNumber?: boolean
     homePlayerId?: boolean
+    homePlayerHandicapId?: boolean
     awayPlayerId?: boolean
+    awayPlayerHandicapId?: boolean
     homeScore?: boolean
     awayScore?: boolean
     winnerId?: boolean
@@ -18639,6 +19964,8 @@ export namespace Prisma {
     fixture?: boolean | FixtureDefaultArgs<ExtArgs>
     homePlayer?: boolean | Frame$homePlayerArgs<ExtArgs>
     awayPlayer?: boolean | Frame$awayPlayerArgs<ExtArgs>
+    homePlayerHandicap?: boolean | Frame$homePlayerHandicapArgs<ExtArgs>
+    awayPlayerHandicap?: boolean | Frame$awayPlayerHandicapArgs<ExtArgs>
     winner?: boolean | Frame$winnerArgs<ExtArgs>
   }, ExtArgs["result"]["frame"]>
 
@@ -18647,7 +19974,9 @@ export namespace Prisma {
     fixtureId?: boolean
     frameNumber?: boolean
     homePlayerId?: boolean
+    homePlayerHandicapId?: boolean
     awayPlayerId?: boolean
+    awayPlayerHandicapId?: boolean
     homeScore?: boolean
     awayScore?: boolean
     winnerId?: boolean
@@ -18658,6 +19987,8 @@ export namespace Prisma {
     fixture?: boolean | FixtureDefaultArgs<ExtArgs>
     homePlayer?: boolean | Frame$homePlayerArgs<ExtArgs>
     awayPlayer?: boolean | Frame$awayPlayerArgs<ExtArgs>
+    homePlayerHandicap?: boolean | Frame$homePlayerHandicapArgs<ExtArgs>
+    awayPlayerHandicap?: boolean | Frame$awayPlayerHandicapArgs<ExtArgs>
     winner?: boolean | Frame$winnerArgs<ExtArgs>
   }, ExtArgs["result"]["frame"]>
 
@@ -18666,7 +19997,9 @@ export namespace Prisma {
     fixtureId?: boolean
     frameNumber?: boolean
     homePlayerId?: boolean
+    homePlayerHandicapId?: boolean
     awayPlayerId?: boolean
+    awayPlayerHandicapId?: boolean
     homeScore?: boolean
     awayScore?: boolean
     winnerId?: boolean
@@ -18676,23 +20009,29 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type FrameOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fixtureId" | "frameNumber" | "homePlayerId" | "awayPlayerId" | "homeScore" | "awayScore" | "winnerId" | "status" | "notes" | "createdAt" | "updatedAt", ExtArgs["result"]["frame"]>
+  export type FrameOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fixtureId" | "frameNumber" | "homePlayerId" | "homePlayerHandicapId" | "awayPlayerId" | "awayPlayerHandicapId" | "homeScore" | "awayScore" | "winnerId" | "status" | "notes" | "createdAt" | "updatedAt", ExtArgs["result"]["frame"]>
   export type FrameInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     fixture?: boolean | FixtureDefaultArgs<ExtArgs>
     homePlayer?: boolean | Frame$homePlayerArgs<ExtArgs>
     awayPlayer?: boolean | Frame$awayPlayerArgs<ExtArgs>
+    homePlayerHandicap?: boolean | Frame$homePlayerHandicapArgs<ExtArgs>
+    awayPlayerHandicap?: boolean | Frame$awayPlayerHandicapArgs<ExtArgs>
     winner?: boolean | Frame$winnerArgs<ExtArgs>
   }
   export type FrameIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     fixture?: boolean | FixtureDefaultArgs<ExtArgs>
     homePlayer?: boolean | Frame$homePlayerArgs<ExtArgs>
     awayPlayer?: boolean | Frame$awayPlayerArgs<ExtArgs>
+    homePlayerHandicap?: boolean | Frame$homePlayerHandicapArgs<ExtArgs>
+    awayPlayerHandicap?: boolean | Frame$awayPlayerHandicapArgs<ExtArgs>
     winner?: boolean | Frame$winnerArgs<ExtArgs>
   }
   export type FrameIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     fixture?: boolean | FixtureDefaultArgs<ExtArgs>
     homePlayer?: boolean | Frame$homePlayerArgs<ExtArgs>
     awayPlayer?: boolean | Frame$awayPlayerArgs<ExtArgs>
+    homePlayerHandicap?: boolean | Frame$homePlayerHandicapArgs<ExtArgs>
+    awayPlayerHandicap?: boolean | Frame$awayPlayerHandicapArgs<ExtArgs>
     winner?: boolean | Frame$winnerArgs<ExtArgs>
   }
 
@@ -18702,6 +20041,8 @@ export namespace Prisma {
       fixture: Prisma.$FixturePayload<ExtArgs>
       homePlayer: Prisma.$CampaignPlayerPayload<ExtArgs> | null
       awayPlayer: Prisma.$CampaignPlayerPayload<ExtArgs> | null
+      homePlayerHandicap: Prisma.$HandicapPayload<ExtArgs> | null
+      awayPlayerHandicap: Prisma.$HandicapPayload<ExtArgs> | null
       winner: Prisma.$CampaignPlayerPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -18709,7 +20050,9 @@ export namespace Prisma {
       fixtureId: string
       frameNumber: number
       homePlayerId: string | null
+      homePlayerHandicapId: string | null
       awayPlayerId: string | null
+      awayPlayerHandicapId: string | null
       homeScore: number
       awayScore: number
       winnerId: string | null
@@ -19114,6 +20457,8 @@ export namespace Prisma {
     fixture<T extends FixtureDefaultArgs<ExtArgs> = {}>(args?: Subset<T, FixtureDefaultArgs<ExtArgs>>): Prisma__FixtureClient<$Result.GetResult<Prisma.$FixturePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     homePlayer<T extends Frame$homePlayerArgs<ExtArgs> = {}>(args?: Subset<T, Frame$homePlayerArgs<ExtArgs>>): Prisma__CampaignPlayerClient<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     awayPlayer<T extends Frame$awayPlayerArgs<ExtArgs> = {}>(args?: Subset<T, Frame$awayPlayerArgs<ExtArgs>>): Prisma__CampaignPlayerClient<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    homePlayerHandicap<T extends Frame$homePlayerHandicapArgs<ExtArgs> = {}>(args?: Subset<T, Frame$homePlayerHandicapArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    awayPlayerHandicap<T extends Frame$awayPlayerHandicapArgs<ExtArgs> = {}>(args?: Subset<T, Frame$awayPlayerHandicapArgs<ExtArgs>>): Prisma__HandicapClient<$Result.GetResult<Prisma.$HandicapPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     winner<T extends Frame$winnerArgs<ExtArgs> = {}>(args?: Subset<T, Frame$winnerArgs<ExtArgs>>): Prisma__CampaignPlayerClient<$Result.GetResult<Prisma.$CampaignPlayerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -19148,7 +20493,9 @@ export namespace Prisma {
     readonly fixtureId: FieldRef<"Frame", 'String'>
     readonly frameNumber: FieldRef<"Frame", 'Int'>
     readonly homePlayerId: FieldRef<"Frame", 'String'>
+    readonly homePlayerHandicapId: FieldRef<"Frame", 'String'>
     readonly awayPlayerId: FieldRef<"Frame", 'String'>
+    readonly awayPlayerHandicapId: FieldRef<"Frame", 'String'>
     readonly homeScore: FieldRef<"Frame", 'Int'>
     readonly awayScore: FieldRef<"Frame", 'Int'>
     readonly winnerId: FieldRef<"Frame", 'String'>
@@ -19590,6 +20937,44 @@ export namespace Prisma {
   }
 
   /**
+   * Frame.homePlayerHandicap
+   */
+  export type Frame$homePlayerHandicapArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    where?: HandicapWhereInput
+  }
+
+  /**
+   * Frame.awayPlayerHandicap
+   */
+  export type Frame$awayPlayerHandicapArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Handicap
+     */
+    select?: HandicapSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Handicap
+     */
+    omit?: HandicapOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HandicapInclude<ExtArgs> | null
+    where?: HandicapWhereInput
+  }
+
+  /**
    * Frame.winner
    */
   export type Frame$winnerArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -19804,6 +21189,16 @@ export namespace Prisma {
   export type CampaignPlayerScalarFieldEnum = (typeof CampaignPlayerScalarFieldEnum)[keyof typeof CampaignPlayerScalarFieldEnum]
 
 
+  export const HandicapScalarFieldEnum: {
+    id: 'id',
+    value: 'value',
+    campaignPlayerId: 'campaignPlayerId',
+    createdAt: 'createdAt'
+  };
+
+  export type HandicapScalarFieldEnum = (typeof HandicapScalarFieldEnum)[keyof typeof HandicapScalarFieldEnum]
+
+
   export const FixtureScalarFieldEnum: {
     id: 'id',
     competitionId: 'competitionId',
@@ -19833,7 +21228,9 @@ export namespace Prisma {
     fixtureId: 'fixtureId',
     frameNumber: 'frameNumber',
     homePlayerId: 'homePlayerId',
+    homePlayerHandicapId: 'homePlayerHandicapId',
     awayPlayerId: 'awayPlayerId',
+    awayPlayerHandicapId: 'awayPlayerHandicapId',
     homeScore: 'homeScore',
     awayScore: 'awayScore',
     winnerId: 'winnerId',
@@ -20768,6 +22165,7 @@ export namespace Prisma {
     homeFrames?: FrameListRelationFilter
     awayFrames?: FrameListRelationFilter
     wonFrames?: FrameListRelationFilter
+    handicaps?: HandicapListRelationFilter
   }
 
   export type CampaignPlayerOrderByWithRelationInput = {
@@ -20781,6 +22179,7 @@ export namespace Prisma {
     homeFrames?: FrameOrderByRelationAggregateInput
     awayFrames?: FrameOrderByRelationAggregateInput
     wonFrames?: FrameOrderByRelationAggregateInput
+    handicaps?: HandicapOrderByRelationAggregateInput
   }
 
   export type CampaignPlayerWhereUniqueInput = Prisma.AtLeast<{
@@ -20797,6 +22196,7 @@ export namespace Prisma {
     homeFrames?: FrameListRelationFilter
     awayFrames?: FrameListRelationFilter
     wonFrames?: FrameListRelationFilter
+    handicaps?: HandicapListRelationFilter
   }, "id">
 
   export type CampaignPlayerOrderByWithAggregationInput = {
@@ -20819,6 +22219,64 @@ export namespace Prisma {
     userId?: StringWithAggregatesFilter<"CampaignPlayer"> | string
     createdAt?: DateTimeWithAggregatesFilter<"CampaignPlayer"> | Date | string
     updatedAt?: DateTimeNullableWithAggregatesFilter<"CampaignPlayer"> | Date | string | null
+  }
+
+  export type HandicapWhereInput = {
+    AND?: HandicapWhereInput | HandicapWhereInput[]
+    OR?: HandicapWhereInput[]
+    NOT?: HandicapWhereInput | HandicapWhereInput[]
+    id?: StringFilter<"Handicap"> | string
+    value?: IntFilter<"Handicap"> | number
+    campaignPlayerId?: StringFilter<"Handicap"> | string
+    createdAt?: DateTimeFilter<"Handicap"> | Date | string
+    homeFrames?: FrameListRelationFilter
+    awayFrames?: FrameListRelationFilter
+    campaignPlayer?: XOR<CampaignPlayerScalarRelationFilter, CampaignPlayerWhereInput>
+  }
+
+  export type HandicapOrderByWithRelationInput = {
+    id?: SortOrder
+    value?: SortOrder
+    campaignPlayerId?: SortOrder
+    createdAt?: SortOrder
+    homeFrames?: FrameOrderByRelationAggregateInput
+    awayFrames?: FrameOrderByRelationAggregateInput
+    campaignPlayer?: CampaignPlayerOrderByWithRelationInput
+  }
+
+  export type HandicapWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: HandicapWhereInput | HandicapWhereInput[]
+    OR?: HandicapWhereInput[]
+    NOT?: HandicapWhereInput | HandicapWhereInput[]
+    value?: IntFilter<"Handicap"> | number
+    campaignPlayerId?: StringFilter<"Handicap"> | string
+    createdAt?: DateTimeFilter<"Handicap"> | Date | string
+    homeFrames?: FrameListRelationFilter
+    awayFrames?: FrameListRelationFilter
+    campaignPlayer?: XOR<CampaignPlayerScalarRelationFilter, CampaignPlayerWhereInput>
+  }, "id">
+
+  export type HandicapOrderByWithAggregationInput = {
+    id?: SortOrder
+    value?: SortOrder
+    campaignPlayerId?: SortOrder
+    createdAt?: SortOrder
+    _count?: HandicapCountOrderByAggregateInput
+    _avg?: HandicapAvgOrderByAggregateInput
+    _max?: HandicapMaxOrderByAggregateInput
+    _min?: HandicapMinOrderByAggregateInput
+    _sum?: HandicapSumOrderByAggregateInput
+  }
+
+  export type HandicapScalarWhereWithAggregatesInput = {
+    AND?: HandicapScalarWhereWithAggregatesInput | HandicapScalarWhereWithAggregatesInput[]
+    OR?: HandicapScalarWhereWithAggregatesInput[]
+    NOT?: HandicapScalarWhereWithAggregatesInput | HandicapScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Handicap"> | string
+    value?: IntWithAggregatesFilter<"Handicap"> | number
+    campaignPlayerId?: StringWithAggregatesFilter<"Handicap"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Handicap"> | Date | string
   }
 
   export type FixtureWhereInput = {
@@ -20963,7 +22421,9 @@ export namespace Prisma {
     fixtureId?: StringFilter<"Frame"> | string
     frameNumber?: IntFilter<"Frame"> | number
     homePlayerId?: StringNullableFilter<"Frame"> | string | null
+    homePlayerHandicapId?: StringNullableFilter<"Frame"> | string | null
     awayPlayerId?: StringNullableFilter<"Frame"> | string | null
+    awayPlayerHandicapId?: StringNullableFilter<"Frame"> | string | null
     homeScore?: IntFilter<"Frame"> | number
     awayScore?: IntFilter<"Frame"> | number
     winnerId?: StringNullableFilter<"Frame"> | string | null
@@ -20974,6 +22434,8 @@ export namespace Prisma {
     fixture?: XOR<FixtureScalarRelationFilter, FixtureWhereInput>
     homePlayer?: XOR<CampaignPlayerNullableScalarRelationFilter, CampaignPlayerWhereInput> | null
     awayPlayer?: XOR<CampaignPlayerNullableScalarRelationFilter, CampaignPlayerWhereInput> | null
+    homePlayerHandicap?: XOR<HandicapNullableScalarRelationFilter, HandicapWhereInput> | null
+    awayPlayerHandicap?: XOR<HandicapNullableScalarRelationFilter, HandicapWhereInput> | null
     winner?: XOR<CampaignPlayerNullableScalarRelationFilter, CampaignPlayerWhereInput> | null
   }
 
@@ -20982,7 +22444,9 @@ export namespace Prisma {
     fixtureId?: SortOrder
     frameNumber?: SortOrder
     homePlayerId?: SortOrderInput | SortOrder
+    homePlayerHandicapId?: SortOrderInput | SortOrder
     awayPlayerId?: SortOrderInput | SortOrder
+    awayPlayerHandicapId?: SortOrderInput | SortOrder
     homeScore?: SortOrder
     awayScore?: SortOrder
     winnerId?: SortOrderInput | SortOrder
@@ -20993,6 +22457,8 @@ export namespace Prisma {
     fixture?: FixtureOrderByWithRelationInput
     homePlayer?: CampaignPlayerOrderByWithRelationInput
     awayPlayer?: CampaignPlayerOrderByWithRelationInput
+    homePlayerHandicap?: HandicapOrderByWithRelationInput
+    awayPlayerHandicap?: HandicapOrderByWithRelationInput
     winner?: CampaignPlayerOrderByWithRelationInput
   }
 
@@ -21005,7 +22471,9 @@ export namespace Prisma {
     fixtureId?: StringFilter<"Frame"> | string
     frameNumber?: IntFilter<"Frame"> | number
     homePlayerId?: StringNullableFilter<"Frame"> | string | null
+    homePlayerHandicapId?: StringNullableFilter<"Frame"> | string | null
     awayPlayerId?: StringNullableFilter<"Frame"> | string | null
+    awayPlayerHandicapId?: StringNullableFilter<"Frame"> | string | null
     homeScore?: IntFilter<"Frame"> | number
     awayScore?: IntFilter<"Frame"> | number
     winnerId?: StringNullableFilter<"Frame"> | string | null
@@ -21016,6 +22484,8 @@ export namespace Prisma {
     fixture?: XOR<FixtureScalarRelationFilter, FixtureWhereInput>
     homePlayer?: XOR<CampaignPlayerNullableScalarRelationFilter, CampaignPlayerWhereInput> | null
     awayPlayer?: XOR<CampaignPlayerNullableScalarRelationFilter, CampaignPlayerWhereInput> | null
+    homePlayerHandicap?: XOR<HandicapNullableScalarRelationFilter, HandicapWhereInput> | null
+    awayPlayerHandicap?: XOR<HandicapNullableScalarRelationFilter, HandicapWhereInput> | null
     winner?: XOR<CampaignPlayerNullableScalarRelationFilter, CampaignPlayerWhereInput> | null
   }, "id" | "fixtureId_frameNumber">
 
@@ -21024,7 +22494,9 @@ export namespace Prisma {
     fixtureId?: SortOrder
     frameNumber?: SortOrder
     homePlayerId?: SortOrderInput | SortOrder
+    homePlayerHandicapId?: SortOrderInput | SortOrder
     awayPlayerId?: SortOrderInput | SortOrder
+    awayPlayerHandicapId?: SortOrderInput | SortOrder
     homeScore?: SortOrder
     awayScore?: SortOrder
     winnerId?: SortOrderInput | SortOrder
@@ -21047,7 +22519,9 @@ export namespace Prisma {
     fixtureId?: StringWithAggregatesFilter<"Frame"> | string
     frameNumber?: IntWithAggregatesFilter<"Frame"> | number
     homePlayerId?: StringNullableWithAggregatesFilter<"Frame"> | string | null
+    homePlayerHandicapId?: StringNullableWithAggregatesFilter<"Frame"> | string | null
     awayPlayerId?: StringNullableWithAggregatesFilter<"Frame"> | string | null
+    awayPlayerHandicapId?: StringNullableWithAggregatesFilter<"Frame"> | string | null
     homeScore?: IntWithAggregatesFilter<"Frame"> | number
     awayScore?: IntWithAggregatesFilter<"Frame"> | number
     winnerId?: StringNullableWithAggregatesFilter<"Frame"> | string | null
@@ -21932,6 +23406,7 @@ export namespace Prisma {
     homeFrames?: FrameCreateNestedManyWithoutHomePlayerInput
     awayFrames?: FrameCreateNestedManyWithoutAwayPlayerInput
     wonFrames?: FrameCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapCreateNestedManyWithoutCampaignPlayerInput
   }
 
   export type CampaignPlayerUncheckedCreateInput = {
@@ -21943,6 +23418,7 @@ export namespace Prisma {
     homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerInput
     awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerInput
     wonFrames?: FrameUncheckedCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapUncheckedCreateNestedManyWithoutCampaignPlayerInput
   }
 
   export type CampaignPlayerUpdateInput = {
@@ -21954,6 +23430,7 @@ export namespace Prisma {
     homeFrames?: FrameUpdateManyWithoutHomePlayerNestedInput
     awayFrames?: FrameUpdateManyWithoutAwayPlayerNestedInput
     wonFrames?: FrameUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUpdateManyWithoutCampaignPlayerNestedInput
   }
 
   export type CampaignPlayerUncheckedUpdateInput = {
@@ -21965,6 +23442,7 @@ export namespace Prisma {
     homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerNestedInput
     awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerNestedInput
     wonFrames?: FrameUncheckedUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUncheckedUpdateManyWithoutCampaignPlayerNestedInput
   }
 
   export type CampaignPlayerCreateManyInput = {
@@ -21987,6 +23465,62 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type HandicapCreateInput = {
+    id?: string
+    value?: number
+    createdAt?: Date | string
+    homeFrames?: FrameCreateNestedManyWithoutHomePlayerHandicapInput
+    awayFrames?: FrameCreateNestedManyWithoutAwayPlayerHandicapInput
+    campaignPlayer: CampaignPlayerCreateNestedOneWithoutHandicapsInput
+  }
+
+  export type HandicapUncheckedCreateInput = {
+    id?: string
+    value?: number
+    campaignPlayerId: string
+    createdAt?: Date | string
+    homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerHandicapInput
+    awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerHandicapInput
+  }
+
+  export type HandicapUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    homeFrames?: FrameUpdateManyWithoutHomePlayerHandicapNestedInput
+    awayFrames?: FrameUpdateManyWithoutAwayPlayerHandicapNestedInput
+    campaignPlayer?: CampaignPlayerUpdateOneRequiredWithoutHandicapsNestedInput
+  }
+
+  export type HandicapUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    campaignPlayerId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerHandicapNestedInput
+    awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerHandicapNestedInput
+  }
+
+  export type HandicapCreateManyInput = {
+    id?: string
+    value?: number
+    campaignPlayerId: string
+    createdAt?: Date | string
+  }
+
+  export type HandicapUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HandicapUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    campaignPlayerId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FixtureCreateInput = {
@@ -22148,6 +23682,8 @@ export namespace Prisma {
     fixture: FixtureCreateNestedOneWithoutFramesInput
     homePlayer?: CampaignPlayerCreateNestedOneWithoutHomeFramesInput
     awayPlayer?: CampaignPlayerCreateNestedOneWithoutAwayFramesInput
+    homePlayerHandicap?: HandicapCreateNestedOneWithoutHomeFramesInput
+    awayPlayerHandicap?: HandicapCreateNestedOneWithoutAwayFramesInput
     winner?: CampaignPlayerCreateNestedOneWithoutWonFramesInput
   }
 
@@ -22156,7 +23692,9 @@ export namespace Prisma {
     fixtureId: string
     frameNumber: number
     homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
     awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
     homeScore?: number
     awayScore?: number
     winnerId?: string | null
@@ -22178,6 +23716,8 @@ export namespace Prisma {
     fixture?: FixtureUpdateOneRequiredWithoutFramesNestedInput
     homePlayer?: CampaignPlayerUpdateOneWithoutHomeFramesNestedInput
     awayPlayer?: CampaignPlayerUpdateOneWithoutAwayFramesNestedInput
+    homePlayerHandicap?: HandicapUpdateOneWithoutHomeFramesNestedInput
+    awayPlayerHandicap?: HandicapUpdateOneWithoutAwayFramesNestedInput
     winner?: CampaignPlayerUpdateOneWithoutWonFramesNestedInput
   }
 
@@ -22186,7 +23726,9 @@ export namespace Prisma {
     fixtureId?: StringFieldUpdateOperationsInput | string
     frameNumber?: IntFieldUpdateOperationsInput | number
     homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     homeScore?: IntFieldUpdateOperationsInput | number
     awayScore?: IntFieldUpdateOperationsInput | number
     winnerId?: NullableStringFieldUpdateOperationsInput | string | null
@@ -22201,7 +23743,9 @@ export namespace Prisma {
     fixtureId: string
     frameNumber: number
     homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
     awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
     homeScore?: number
     awayScore?: number
     winnerId?: string | null
@@ -22227,7 +23771,9 @@ export namespace Prisma {
     fixtureId?: StringFieldUpdateOperationsInput | string
     frameNumber?: IntFieldUpdateOperationsInput | number
     homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     homeScore?: IntFieldUpdateOperationsInput | number
     awayScore?: IntFieldUpdateOperationsInput | number
     winnerId?: NullableStringFieldUpdateOperationsInput | string | null
@@ -22984,7 +24530,17 @@ export namespace Prisma {
     none?: FrameWhereInput
   }
 
+  export type HandicapListRelationFilter = {
+    every?: HandicapWhereInput
+    some?: HandicapWhereInput
+    none?: HandicapWhereInput
+  }
+
   export type FrameOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type HandicapOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -23010,6 +24566,40 @@ export namespace Prisma {
     userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+  }
+
+  export type CampaignPlayerScalarRelationFilter = {
+    is?: CampaignPlayerWhereInput
+    isNot?: CampaignPlayerWhereInput
+  }
+
+  export type HandicapCountOrderByAggregateInput = {
+    id?: SortOrder
+    value?: SortOrder
+    campaignPlayerId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type HandicapAvgOrderByAggregateInput = {
+    value?: SortOrder
+  }
+
+  export type HandicapMaxOrderByAggregateInput = {
+    id?: SortOrder
+    value?: SortOrder
+    campaignPlayerId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type HandicapMinOrderByAggregateInput = {
+    id?: SortOrder
+    value?: SortOrder
+    campaignPlayerId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type HandicapSumOrderByAggregateInput = {
+    value?: SortOrder
   }
 
   export type FixtureCountOrderByAggregateInput = {
@@ -23097,6 +24687,11 @@ export namespace Prisma {
     isNot?: CampaignPlayerWhereInput | null
   }
 
+  export type HandicapNullableScalarRelationFilter = {
+    is?: HandicapWhereInput | null
+    isNot?: HandicapWhereInput | null
+  }
+
   export type FrameFixtureIdFrameNumberCompoundUniqueInput = {
     fixtureId: string
     frameNumber: number
@@ -23107,7 +24702,9 @@ export namespace Prisma {
     fixtureId?: SortOrder
     frameNumber?: SortOrder
     homePlayerId?: SortOrder
+    homePlayerHandicapId?: SortOrder
     awayPlayerId?: SortOrder
+    awayPlayerHandicapId?: SortOrder
     homeScore?: SortOrder
     awayScore?: SortOrder
     winnerId?: SortOrder
@@ -23128,7 +24725,9 @@ export namespace Prisma {
     fixtureId?: SortOrder
     frameNumber?: SortOrder
     homePlayerId?: SortOrder
+    homePlayerHandicapId?: SortOrder
     awayPlayerId?: SortOrder
+    awayPlayerHandicapId?: SortOrder
     homeScore?: SortOrder
     awayScore?: SortOrder
     winnerId?: SortOrder
@@ -23143,7 +24742,9 @@ export namespace Prisma {
     fixtureId?: SortOrder
     frameNumber?: SortOrder
     homePlayerId?: SortOrder
+    homePlayerHandicapId?: SortOrder
     awayPlayerId?: SortOrder
+    awayPlayerHandicapId?: SortOrder
     homeScore?: SortOrder
     awayScore?: SortOrder
     winnerId?: SortOrder
@@ -24028,6 +25629,13 @@ export namespace Prisma {
     connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
   }
 
+  export type HandicapCreateNestedManyWithoutCampaignPlayerInput = {
+    create?: XOR<HandicapCreateWithoutCampaignPlayerInput, HandicapUncheckedCreateWithoutCampaignPlayerInput> | HandicapCreateWithoutCampaignPlayerInput[] | HandicapUncheckedCreateWithoutCampaignPlayerInput[]
+    connectOrCreate?: HandicapCreateOrConnectWithoutCampaignPlayerInput | HandicapCreateOrConnectWithoutCampaignPlayerInput[]
+    createMany?: HandicapCreateManyCampaignPlayerInputEnvelope
+    connect?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+  }
+
   export type FrameUncheckedCreateNestedManyWithoutHomePlayerInput = {
     create?: XOR<FrameCreateWithoutHomePlayerInput, FrameUncheckedCreateWithoutHomePlayerInput> | FrameCreateWithoutHomePlayerInput[] | FrameUncheckedCreateWithoutHomePlayerInput[]
     connectOrCreate?: FrameCreateOrConnectWithoutHomePlayerInput | FrameCreateOrConnectWithoutHomePlayerInput[]
@@ -24047,6 +25655,13 @@ export namespace Prisma {
     connectOrCreate?: FrameCreateOrConnectWithoutWinnerInput | FrameCreateOrConnectWithoutWinnerInput[]
     createMany?: FrameCreateManyWinnerInputEnvelope
     connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type HandicapUncheckedCreateNestedManyWithoutCampaignPlayerInput = {
+    create?: XOR<HandicapCreateWithoutCampaignPlayerInput, HandicapUncheckedCreateWithoutCampaignPlayerInput> | HandicapCreateWithoutCampaignPlayerInput[] | HandicapUncheckedCreateWithoutCampaignPlayerInput[]
+    connectOrCreate?: HandicapCreateOrConnectWithoutCampaignPlayerInput | HandicapCreateOrConnectWithoutCampaignPlayerInput[]
+    createMany?: HandicapCreateManyCampaignPlayerInputEnvelope
+    connect?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
   }
 
   export type UserUpdateOneRequiredWithoutCampaignsNestedInput = {
@@ -24107,6 +25722,20 @@ export namespace Prisma {
     deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
   }
 
+  export type HandicapUpdateManyWithoutCampaignPlayerNestedInput = {
+    create?: XOR<HandicapCreateWithoutCampaignPlayerInput, HandicapUncheckedCreateWithoutCampaignPlayerInput> | HandicapCreateWithoutCampaignPlayerInput[] | HandicapUncheckedCreateWithoutCampaignPlayerInput[]
+    connectOrCreate?: HandicapCreateOrConnectWithoutCampaignPlayerInput | HandicapCreateOrConnectWithoutCampaignPlayerInput[]
+    upsert?: HandicapUpsertWithWhereUniqueWithoutCampaignPlayerInput | HandicapUpsertWithWhereUniqueWithoutCampaignPlayerInput[]
+    createMany?: HandicapCreateManyCampaignPlayerInputEnvelope
+    set?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+    disconnect?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+    delete?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+    connect?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+    update?: HandicapUpdateWithWhereUniqueWithoutCampaignPlayerInput | HandicapUpdateWithWhereUniqueWithoutCampaignPlayerInput[]
+    updateMany?: HandicapUpdateManyWithWhereWithoutCampaignPlayerInput | HandicapUpdateManyWithWhereWithoutCampaignPlayerInput[]
+    deleteMany?: HandicapScalarWhereInput | HandicapScalarWhereInput[]
+  }
+
   export type FrameUncheckedUpdateManyWithoutHomePlayerNestedInput = {
     create?: XOR<FrameCreateWithoutHomePlayerInput, FrameUncheckedCreateWithoutHomePlayerInput> | FrameCreateWithoutHomePlayerInput[] | FrameUncheckedCreateWithoutHomePlayerInput[]
     connectOrCreate?: FrameCreateOrConnectWithoutHomePlayerInput | FrameCreateOrConnectWithoutHomePlayerInput[]
@@ -24146,6 +25775,118 @@ export namespace Prisma {
     connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
     update?: FrameUpdateWithWhereUniqueWithoutWinnerInput | FrameUpdateWithWhereUniqueWithoutWinnerInput[]
     updateMany?: FrameUpdateManyWithWhereWithoutWinnerInput | FrameUpdateManyWithWhereWithoutWinnerInput[]
+    deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
+  }
+
+  export type HandicapUncheckedUpdateManyWithoutCampaignPlayerNestedInput = {
+    create?: XOR<HandicapCreateWithoutCampaignPlayerInput, HandicapUncheckedCreateWithoutCampaignPlayerInput> | HandicapCreateWithoutCampaignPlayerInput[] | HandicapUncheckedCreateWithoutCampaignPlayerInput[]
+    connectOrCreate?: HandicapCreateOrConnectWithoutCampaignPlayerInput | HandicapCreateOrConnectWithoutCampaignPlayerInput[]
+    upsert?: HandicapUpsertWithWhereUniqueWithoutCampaignPlayerInput | HandicapUpsertWithWhereUniqueWithoutCampaignPlayerInput[]
+    createMany?: HandicapCreateManyCampaignPlayerInputEnvelope
+    set?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+    disconnect?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+    delete?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+    connect?: HandicapWhereUniqueInput | HandicapWhereUniqueInput[]
+    update?: HandicapUpdateWithWhereUniqueWithoutCampaignPlayerInput | HandicapUpdateWithWhereUniqueWithoutCampaignPlayerInput[]
+    updateMany?: HandicapUpdateManyWithWhereWithoutCampaignPlayerInput | HandicapUpdateManyWithWhereWithoutCampaignPlayerInput[]
+    deleteMany?: HandicapScalarWhereInput | HandicapScalarWhereInput[]
+  }
+
+  export type FrameCreateNestedManyWithoutHomePlayerHandicapInput = {
+    create?: XOR<FrameCreateWithoutHomePlayerHandicapInput, FrameUncheckedCreateWithoutHomePlayerHandicapInput> | FrameCreateWithoutHomePlayerHandicapInput[] | FrameUncheckedCreateWithoutHomePlayerHandicapInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutHomePlayerHandicapInput | FrameCreateOrConnectWithoutHomePlayerHandicapInput[]
+    createMany?: FrameCreateManyHomePlayerHandicapInputEnvelope
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type FrameCreateNestedManyWithoutAwayPlayerHandicapInput = {
+    create?: XOR<FrameCreateWithoutAwayPlayerHandicapInput, FrameUncheckedCreateWithoutAwayPlayerHandicapInput> | FrameCreateWithoutAwayPlayerHandicapInput[] | FrameUncheckedCreateWithoutAwayPlayerHandicapInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutAwayPlayerHandicapInput | FrameCreateOrConnectWithoutAwayPlayerHandicapInput[]
+    createMany?: FrameCreateManyAwayPlayerHandicapInputEnvelope
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type CampaignPlayerCreateNestedOneWithoutHandicapsInput = {
+    create?: XOR<CampaignPlayerCreateWithoutHandicapsInput, CampaignPlayerUncheckedCreateWithoutHandicapsInput>
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutHandicapsInput
+    connect?: CampaignPlayerWhereUniqueInput
+  }
+
+  export type FrameUncheckedCreateNestedManyWithoutHomePlayerHandicapInput = {
+    create?: XOR<FrameCreateWithoutHomePlayerHandicapInput, FrameUncheckedCreateWithoutHomePlayerHandicapInput> | FrameCreateWithoutHomePlayerHandicapInput[] | FrameUncheckedCreateWithoutHomePlayerHandicapInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutHomePlayerHandicapInput | FrameCreateOrConnectWithoutHomePlayerHandicapInput[]
+    createMany?: FrameCreateManyHomePlayerHandicapInputEnvelope
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type FrameUncheckedCreateNestedManyWithoutAwayPlayerHandicapInput = {
+    create?: XOR<FrameCreateWithoutAwayPlayerHandicapInput, FrameUncheckedCreateWithoutAwayPlayerHandicapInput> | FrameCreateWithoutAwayPlayerHandicapInput[] | FrameUncheckedCreateWithoutAwayPlayerHandicapInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutAwayPlayerHandicapInput | FrameCreateOrConnectWithoutAwayPlayerHandicapInput[]
+    createMany?: FrameCreateManyAwayPlayerHandicapInputEnvelope
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+  }
+
+  export type FrameUpdateManyWithoutHomePlayerHandicapNestedInput = {
+    create?: XOR<FrameCreateWithoutHomePlayerHandicapInput, FrameUncheckedCreateWithoutHomePlayerHandicapInput> | FrameCreateWithoutHomePlayerHandicapInput[] | FrameUncheckedCreateWithoutHomePlayerHandicapInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutHomePlayerHandicapInput | FrameCreateOrConnectWithoutHomePlayerHandicapInput[]
+    upsert?: FrameUpsertWithWhereUniqueWithoutHomePlayerHandicapInput | FrameUpsertWithWhereUniqueWithoutHomePlayerHandicapInput[]
+    createMany?: FrameCreateManyHomePlayerHandicapInputEnvelope
+    set?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    disconnect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    delete?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    update?: FrameUpdateWithWhereUniqueWithoutHomePlayerHandicapInput | FrameUpdateWithWhereUniqueWithoutHomePlayerHandicapInput[]
+    updateMany?: FrameUpdateManyWithWhereWithoutHomePlayerHandicapInput | FrameUpdateManyWithWhereWithoutHomePlayerHandicapInput[]
+    deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
+  }
+
+  export type FrameUpdateManyWithoutAwayPlayerHandicapNestedInput = {
+    create?: XOR<FrameCreateWithoutAwayPlayerHandicapInput, FrameUncheckedCreateWithoutAwayPlayerHandicapInput> | FrameCreateWithoutAwayPlayerHandicapInput[] | FrameUncheckedCreateWithoutAwayPlayerHandicapInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutAwayPlayerHandicapInput | FrameCreateOrConnectWithoutAwayPlayerHandicapInput[]
+    upsert?: FrameUpsertWithWhereUniqueWithoutAwayPlayerHandicapInput | FrameUpsertWithWhereUniqueWithoutAwayPlayerHandicapInput[]
+    createMany?: FrameCreateManyAwayPlayerHandicapInputEnvelope
+    set?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    disconnect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    delete?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    update?: FrameUpdateWithWhereUniqueWithoutAwayPlayerHandicapInput | FrameUpdateWithWhereUniqueWithoutAwayPlayerHandicapInput[]
+    updateMany?: FrameUpdateManyWithWhereWithoutAwayPlayerHandicapInput | FrameUpdateManyWithWhereWithoutAwayPlayerHandicapInput[]
+    deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
+  }
+
+  export type CampaignPlayerUpdateOneRequiredWithoutHandicapsNestedInput = {
+    create?: XOR<CampaignPlayerCreateWithoutHandicapsInput, CampaignPlayerUncheckedCreateWithoutHandicapsInput>
+    connectOrCreate?: CampaignPlayerCreateOrConnectWithoutHandicapsInput
+    upsert?: CampaignPlayerUpsertWithoutHandicapsInput
+    connect?: CampaignPlayerWhereUniqueInput
+    update?: XOR<XOR<CampaignPlayerUpdateToOneWithWhereWithoutHandicapsInput, CampaignPlayerUpdateWithoutHandicapsInput>, CampaignPlayerUncheckedUpdateWithoutHandicapsInput>
+  }
+
+  export type FrameUncheckedUpdateManyWithoutHomePlayerHandicapNestedInput = {
+    create?: XOR<FrameCreateWithoutHomePlayerHandicapInput, FrameUncheckedCreateWithoutHomePlayerHandicapInput> | FrameCreateWithoutHomePlayerHandicapInput[] | FrameUncheckedCreateWithoutHomePlayerHandicapInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutHomePlayerHandicapInput | FrameCreateOrConnectWithoutHomePlayerHandicapInput[]
+    upsert?: FrameUpsertWithWhereUniqueWithoutHomePlayerHandicapInput | FrameUpsertWithWhereUniqueWithoutHomePlayerHandicapInput[]
+    createMany?: FrameCreateManyHomePlayerHandicapInputEnvelope
+    set?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    disconnect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    delete?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    update?: FrameUpdateWithWhereUniqueWithoutHomePlayerHandicapInput | FrameUpdateWithWhereUniqueWithoutHomePlayerHandicapInput[]
+    updateMany?: FrameUpdateManyWithWhereWithoutHomePlayerHandicapInput | FrameUpdateManyWithWhereWithoutHomePlayerHandicapInput[]
+    deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
+  }
+
+  export type FrameUncheckedUpdateManyWithoutAwayPlayerHandicapNestedInput = {
+    create?: XOR<FrameCreateWithoutAwayPlayerHandicapInput, FrameUncheckedCreateWithoutAwayPlayerHandicapInput> | FrameCreateWithoutAwayPlayerHandicapInput[] | FrameUncheckedCreateWithoutAwayPlayerHandicapInput[]
+    connectOrCreate?: FrameCreateOrConnectWithoutAwayPlayerHandicapInput | FrameCreateOrConnectWithoutAwayPlayerHandicapInput[]
+    upsert?: FrameUpsertWithWhereUniqueWithoutAwayPlayerHandicapInput | FrameUpsertWithWhereUniqueWithoutAwayPlayerHandicapInput[]
+    createMany?: FrameCreateManyAwayPlayerHandicapInputEnvelope
+    set?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    disconnect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    delete?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    connect?: FrameWhereUniqueInput | FrameWhereUniqueInput[]
+    update?: FrameUpdateWithWhereUniqueWithoutAwayPlayerHandicapInput | FrameUpdateWithWhereUniqueWithoutAwayPlayerHandicapInput[]
+    updateMany?: FrameUpdateManyWithWhereWithoutAwayPlayerHandicapInput | FrameUpdateManyWithWhereWithoutAwayPlayerHandicapInput[]
     deleteMany?: FrameScalarWhereInput | FrameScalarWhereInput[]
   }
 
@@ -24265,6 +26006,18 @@ export namespace Prisma {
     connect?: CampaignPlayerWhereUniqueInput
   }
 
+  export type HandicapCreateNestedOneWithoutHomeFramesInput = {
+    create?: XOR<HandicapCreateWithoutHomeFramesInput, HandicapUncheckedCreateWithoutHomeFramesInput>
+    connectOrCreate?: HandicapCreateOrConnectWithoutHomeFramesInput
+    connect?: HandicapWhereUniqueInput
+  }
+
+  export type HandicapCreateNestedOneWithoutAwayFramesInput = {
+    create?: XOR<HandicapCreateWithoutAwayFramesInput, HandicapUncheckedCreateWithoutAwayFramesInput>
+    connectOrCreate?: HandicapCreateOrConnectWithoutAwayFramesInput
+    connect?: HandicapWhereUniqueInput
+  }
+
   export type CampaignPlayerCreateNestedOneWithoutWonFramesInput = {
     create?: XOR<CampaignPlayerCreateWithoutWonFramesInput, CampaignPlayerUncheckedCreateWithoutWonFramesInput>
     connectOrCreate?: CampaignPlayerCreateOrConnectWithoutWonFramesInput
@@ -24297,6 +26050,26 @@ export namespace Prisma {
     delete?: CampaignPlayerWhereInput | boolean
     connect?: CampaignPlayerWhereUniqueInput
     update?: XOR<XOR<CampaignPlayerUpdateToOneWithWhereWithoutAwayFramesInput, CampaignPlayerUpdateWithoutAwayFramesInput>, CampaignPlayerUncheckedUpdateWithoutAwayFramesInput>
+  }
+
+  export type HandicapUpdateOneWithoutHomeFramesNestedInput = {
+    create?: XOR<HandicapCreateWithoutHomeFramesInput, HandicapUncheckedCreateWithoutHomeFramesInput>
+    connectOrCreate?: HandicapCreateOrConnectWithoutHomeFramesInput
+    upsert?: HandicapUpsertWithoutHomeFramesInput
+    disconnect?: HandicapWhereInput | boolean
+    delete?: HandicapWhereInput | boolean
+    connect?: HandicapWhereUniqueInput
+    update?: XOR<XOR<HandicapUpdateToOneWithWhereWithoutHomeFramesInput, HandicapUpdateWithoutHomeFramesInput>, HandicapUncheckedUpdateWithoutHomeFramesInput>
+  }
+
+  export type HandicapUpdateOneWithoutAwayFramesNestedInput = {
+    create?: XOR<HandicapCreateWithoutAwayFramesInput, HandicapUncheckedCreateWithoutAwayFramesInput>
+    connectOrCreate?: HandicapCreateOrConnectWithoutAwayFramesInput
+    upsert?: HandicapUpsertWithoutAwayFramesInput
+    disconnect?: HandicapWhereInput | boolean
+    delete?: HandicapWhereInput | boolean
+    connect?: HandicapWhereUniqueInput
+    update?: XOR<XOR<HandicapUpdateToOneWithWhereWithoutAwayFramesInput, HandicapUpdateWithoutAwayFramesInput>, HandicapUncheckedUpdateWithoutAwayFramesInput>
   }
 
   export type CampaignPlayerUpdateOneWithoutWonFramesNestedInput = {
@@ -24598,6 +26371,7 @@ export namespace Prisma {
     homeFrames?: FrameCreateNestedManyWithoutHomePlayerInput
     awayFrames?: FrameCreateNestedManyWithoutAwayPlayerInput
     wonFrames?: FrameCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapCreateNestedManyWithoutCampaignPlayerInput
   }
 
   export type CampaignPlayerUncheckedCreateWithoutUserInput = {
@@ -24608,6 +26382,7 @@ export namespace Prisma {
     homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerInput
     awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerInput
     wonFrames?: FrameUncheckedCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapUncheckedCreateNestedManyWithoutCampaignPlayerInput
   }
 
   export type CampaignPlayerCreateOrConnectWithoutUserInput = {
@@ -25308,6 +27083,7 @@ export namespace Prisma {
     homeFrames?: FrameCreateNestedManyWithoutHomePlayerInput
     awayFrames?: FrameCreateNestedManyWithoutAwayPlayerInput
     wonFrames?: FrameCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapCreateNestedManyWithoutCampaignPlayerInput
   }
 
   export type CampaignPlayerUncheckedCreateWithoutCampaignInput = {
@@ -25318,6 +27094,7 @@ export namespace Prisma {
     homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerInput
     awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerInput
     wonFrames?: FrameUncheckedCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapUncheckedCreateNestedManyWithoutCampaignPlayerInput
   }
 
   export type CampaignPlayerCreateOrConnectWithoutCampaignInput = {
@@ -26177,6 +27954,8 @@ export namespace Prisma {
     updatedAt?: Date | string | null
     fixture: FixtureCreateNestedOneWithoutFramesInput
     awayPlayer?: CampaignPlayerCreateNestedOneWithoutAwayFramesInput
+    homePlayerHandicap?: HandicapCreateNestedOneWithoutHomeFramesInput
+    awayPlayerHandicap?: HandicapCreateNestedOneWithoutAwayFramesInput
     winner?: CampaignPlayerCreateNestedOneWithoutWonFramesInput
   }
 
@@ -26184,7 +27963,9 @@ export namespace Prisma {
     id?: string
     fixtureId: string
     frameNumber: number
+    homePlayerHandicapId?: string | null
     awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
     homeScore?: number
     awayScore?: number
     winnerId?: string | null
@@ -26215,6 +27996,8 @@ export namespace Prisma {
     updatedAt?: Date | string | null
     fixture: FixtureCreateNestedOneWithoutFramesInput
     homePlayer?: CampaignPlayerCreateNestedOneWithoutHomeFramesInput
+    homePlayerHandicap?: HandicapCreateNestedOneWithoutHomeFramesInput
+    awayPlayerHandicap?: HandicapCreateNestedOneWithoutAwayFramesInput
     winner?: CampaignPlayerCreateNestedOneWithoutWonFramesInput
   }
 
@@ -26223,6 +28006,8 @@ export namespace Prisma {
     fixtureId: string
     frameNumber: number
     homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
+    awayPlayerHandicapId?: string | null
     homeScore?: number
     awayScore?: number
     winnerId?: string | null
@@ -26254,6 +28039,8 @@ export namespace Prisma {
     fixture: FixtureCreateNestedOneWithoutFramesInput
     homePlayer?: CampaignPlayerCreateNestedOneWithoutHomeFramesInput
     awayPlayer?: CampaignPlayerCreateNestedOneWithoutAwayFramesInput
+    homePlayerHandicap?: HandicapCreateNestedOneWithoutHomeFramesInput
+    awayPlayerHandicap?: HandicapCreateNestedOneWithoutAwayFramesInput
   }
 
   export type FrameUncheckedCreateWithoutWinnerInput = {
@@ -26261,7 +28048,9 @@ export namespace Prisma {
     fixtureId: string
     frameNumber: number
     homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
     awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
     homeScore?: number
     awayScore?: number
     status?: string
@@ -26277,6 +28066,32 @@ export namespace Prisma {
 
   export type FrameCreateManyWinnerInputEnvelope = {
     data: FrameCreateManyWinnerInput | FrameCreateManyWinnerInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type HandicapCreateWithoutCampaignPlayerInput = {
+    id?: string
+    value?: number
+    createdAt?: Date | string
+    homeFrames?: FrameCreateNestedManyWithoutHomePlayerHandicapInput
+    awayFrames?: FrameCreateNestedManyWithoutAwayPlayerHandicapInput
+  }
+
+  export type HandicapUncheckedCreateWithoutCampaignPlayerInput = {
+    id?: string
+    value?: number
+    createdAt?: Date | string
+    homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerHandicapInput
+    awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerHandicapInput
+  }
+
+  export type HandicapCreateOrConnectWithoutCampaignPlayerInput = {
+    where: HandicapWhereUniqueInput
+    create: XOR<HandicapCreateWithoutCampaignPlayerInput, HandicapUncheckedCreateWithoutCampaignPlayerInput>
+  }
+
+  export type HandicapCreateManyCampaignPlayerInputEnvelope = {
+    data: HandicapCreateManyCampaignPlayerInput | HandicapCreateManyCampaignPlayerInput[]
     skipDuplicates?: boolean
   }
 
@@ -26376,7 +28191,9 @@ export namespace Prisma {
     fixtureId?: StringFilter<"Frame"> | string
     frameNumber?: IntFilter<"Frame"> | number
     homePlayerId?: StringNullableFilter<"Frame"> | string | null
+    homePlayerHandicapId?: StringNullableFilter<"Frame"> | string | null
     awayPlayerId?: StringNullableFilter<"Frame"> | string | null
+    awayPlayerHandicapId?: StringNullableFilter<"Frame"> | string | null
     homeScore?: IntFilter<"Frame"> | number
     awayScore?: IntFilter<"Frame"> | number
     winnerId?: StringNullableFilter<"Frame"> | string | null
@@ -26416,6 +28233,208 @@ export namespace Prisma {
   export type FrameUpdateManyWithWhereWithoutWinnerInput = {
     where: FrameScalarWhereInput
     data: XOR<FrameUpdateManyMutationInput, FrameUncheckedUpdateManyWithoutWinnerInput>
+  }
+
+  export type HandicapUpsertWithWhereUniqueWithoutCampaignPlayerInput = {
+    where: HandicapWhereUniqueInput
+    update: XOR<HandicapUpdateWithoutCampaignPlayerInput, HandicapUncheckedUpdateWithoutCampaignPlayerInput>
+    create: XOR<HandicapCreateWithoutCampaignPlayerInput, HandicapUncheckedCreateWithoutCampaignPlayerInput>
+  }
+
+  export type HandicapUpdateWithWhereUniqueWithoutCampaignPlayerInput = {
+    where: HandicapWhereUniqueInput
+    data: XOR<HandicapUpdateWithoutCampaignPlayerInput, HandicapUncheckedUpdateWithoutCampaignPlayerInput>
+  }
+
+  export type HandicapUpdateManyWithWhereWithoutCampaignPlayerInput = {
+    where: HandicapScalarWhereInput
+    data: XOR<HandicapUpdateManyMutationInput, HandicapUncheckedUpdateManyWithoutCampaignPlayerInput>
+  }
+
+  export type HandicapScalarWhereInput = {
+    AND?: HandicapScalarWhereInput | HandicapScalarWhereInput[]
+    OR?: HandicapScalarWhereInput[]
+    NOT?: HandicapScalarWhereInput | HandicapScalarWhereInput[]
+    id?: StringFilter<"Handicap"> | string
+    value?: IntFilter<"Handicap"> | number
+    campaignPlayerId?: StringFilter<"Handicap"> | string
+    createdAt?: DateTimeFilter<"Handicap"> | Date | string
+  }
+
+  export type FrameCreateWithoutHomePlayerHandicapInput = {
+    id?: string
+    frameNumber: number
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    fixture: FixtureCreateNestedOneWithoutFramesInput
+    homePlayer?: CampaignPlayerCreateNestedOneWithoutHomeFramesInput
+    awayPlayer?: CampaignPlayerCreateNestedOneWithoutAwayFramesInput
+    awayPlayerHandicap?: HandicapCreateNestedOneWithoutAwayFramesInput
+    winner?: CampaignPlayerCreateNestedOneWithoutWonFramesInput
+  }
+
+  export type FrameUncheckedCreateWithoutHomePlayerHandicapInput = {
+    id?: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerId?: string | null
+    awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
+    homeScore?: number
+    awayScore?: number
+    winnerId?: string | null
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameCreateOrConnectWithoutHomePlayerHandicapInput = {
+    where: FrameWhereUniqueInput
+    create: XOR<FrameCreateWithoutHomePlayerHandicapInput, FrameUncheckedCreateWithoutHomePlayerHandicapInput>
+  }
+
+  export type FrameCreateManyHomePlayerHandicapInputEnvelope = {
+    data: FrameCreateManyHomePlayerHandicapInput | FrameCreateManyHomePlayerHandicapInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type FrameCreateWithoutAwayPlayerHandicapInput = {
+    id?: string
+    frameNumber: number
+    homeScore?: number
+    awayScore?: number
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    fixture: FixtureCreateNestedOneWithoutFramesInput
+    homePlayer?: CampaignPlayerCreateNestedOneWithoutHomeFramesInput
+    awayPlayer?: CampaignPlayerCreateNestedOneWithoutAwayFramesInput
+    homePlayerHandicap?: HandicapCreateNestedOneWithoutHomeFramesInput
+    winner?: CampaignPlayerCreateNestedOneWithoutWonFramesInput
+  }
+
+  export type FrameUncheckedCreateWithoutAwayPlayerHandicapInput = {
+    id?: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
+    awayPlayerId?: string | null
+    homeScore?: number
+    awayScore?: number
+    winnerId?: string | null
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameCreateOrConnectWithoutAwayPlayerHandicapInput = {
+    where: FrameWhereUniqueInput
+    create: XOR<FrameCreateWithoutAwayPlayerHandicapInput, FrameUncheckedCreateWithoutAwayPlayerHandicapInput>
+  }
+
+  export type FrameCreateManyAwayPlayerHandicapInputEnvelope = {
+    data: FrameCreateManyAwayPlayerHandicapInput | FrameCreateManyAwayPlayerHandicapInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type CampaignPlayerCreateWithoutHandicapsInput = {
+    id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    user: UserCreateNestedOneWithoutCampaignsInput
+    campaign: CampaignCreateNestedOneWithoutPlayersInput
+    homeFrames?: FrameCreateNestedManyWithoutHomePlayerInput
+    awayFrames?: FrameCreateNestedManyWithoutAwayPlayerInput
+    wonFrames?: FrameCreateNestedManyWithoutWinnerInput
+  }
+
+  export type CampaignPlayerUncheckedCreateWithoutHandicapsInput = {
+    id?: string
+    campaignId: string
+    userId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+    homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerInput
+    awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerInput
+    wonFrames?: FrameUncheckedCreateNestedManyWithoutWinnerInput
+  }
+
+  export type CampaignPlayerCreateOrConnectWithoutHandicapsInput = {
+    where: CampaignPlayerWhereUniqueInput
+    create: XOR<CampaignPlayerCreateWithoutHandicapsInput, CampaignPlayerUncheckedCreateWithoutHandicapsInput>
+  }
+
+  export type FrameUpsertWithWhereUniqueWithoutHomePlayerHandicapInput = {
+    where: FrameWhereUniqueInput
+    update: XOR<FrameUpdateWithoutHomePlayerHandicapInput, FrameUncheckedUpdateWithoutHomePlayerHandicapInput>
+    create: XOR<FrameCreateWithoutHomePlayerHandicapInput, FrameUncheckedCreateWithoutHomePlayerHandicapInput>
+  }
+
+  export type FrameUpdateWithWhereUniqueWithoutHomePlayerHandicapInput = {
+    where: FrameWhereUniqueInput
+    data: XOR<FrameUpdateWithoutHomePlayerHandicapInput, FrameUncheckedUpdateWithoutHomePlayerHandicapInput>
+  }
+
+  export type FrameUpdateManyWithWhereWithoutHomePlayerHandicapInput = {
+    where: FrameScalarWhereInput
+    data: XOR<FrameUpdateManyMutationInput, FrameUncheckedUpdateManyWithoutHomePlayerHandicapInput>
+  }
+
+  export type FrameUpsertWithWhereUniqueWithoutAwayPlayerHandicapInput = {
+    where: FrameWhereUniqueInput
+    update: XOR<FrameUpdateWithoutAwayPlayerHandicapInput, FrameUncheckedUpdateWithoutAwayPlayerHandicapInput>
+    create: XOR<FrameCreateWithoutAwayPlayerHandicapInput, FrameUncheckedCreateWithoutAwayPlayerHandicapInput>
+  }
+
+  export type FrameUpdateWithWhereUniqueWithoutAwayPlayerHandicapInput = {
+    where: FrameWhereUniqueInput
+    data: XOR<FrameUpdateWithoutAwayPlayerHandicapInput, FrameUncheckedUpdateWithoutAwayPlayerHandicapInput>
+  }
+
+  export type FrameUpdateManyWithWhereWithoutAwayPlayerHandicapInput = {
+    where: FrameScalarWhereInput
+    data: XOR<FrameUpdateManyMutationInput, FrameUncheckedUpdateManyWithoutAwayPlayerHandicapInput>
+  }
+
+  export type CampaignPlayerUpsertWithoutHandicapsInput = {
+    update: XOR<CampaignPlayerUpdateWithoutHandicapsInput, CampaignPlayerUncheckedUpdateWithoutHandicapsInput>
+    create: XOR<CampaignPlayerCreateWithoutHandicapsInput, CampaignPlayerUncheckedCreateWithoutHandicapsInput>
+    where?: CampaignPlayerWhereInput
+  }
+
+  export type CampaignPlayerUpdateToOneWithWhereWithoutHandicapsInput = {
+    where?: CampaignPlayerWhereInput
+    data: XOR<CampaignPlayerUpdateWithoutHandicapsInput, CampaignPlayerUncheckedUpdateWithoutHandicapsInput>
+  }
+
+  export type CampaignPlayerUpdateWithoutHandicapsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    user?: UserUpdateOneRequiredWithoutCampaignsNestedInput
+    campaign?: CampaignUpdateOneRequiredWithoutPlayersNestedInput
+    homeFrames?: FrameUpdateManyWithoutHomePlayerNestedInput
+    awayFrames?: FrameUpdateManyWithoutAwayPlayerNestedInput
+    wonFrames?: FrameUpdateManyWithoutWinnerNestedInput
+  }
+
+  export type CampaignPlayerUncheckedUpdateWithoutHandicapsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    campaignId?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerNestedInput
+    awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerNestedInput
+    wonFrames?: FrameUncheckedUpdateManyWithoutWinnerNestedInput
   }
 
   export type CompetitionCreateWithoutFixturesInput = {
@@ -26541,6 +28560,8 @@ export namespace Prisma {
     updatedAt?: Date | string | null
     homePlayer?: CampaignPlayerCreateNestedOneWithoutHomeFramesInput
     awayPlayer?: CampaignPlayerCreateNestedOneWithoutAwayFramesInput
+    homePlayerHandicap?: HandicapCreateNestedOneWithoutHomeFramesInput
+    awayPlayerHandicap?: HandicapCreateNestedOneWithoutAwayFramesInput
     winner?: CampaignPlayerCreateNestedOneWithoutWonFramesInput
   }
 
@@ -26548,7 +28569,9 @@ export namespace Prisma {
     id?: string
     frameNumber: number
     homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
     awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
     homeScore?: number
     awayScore?: number
     winnerId?: string | null
@@ -26775,6 +28798,7 @@ export namespace Prisma {
     campaign: CampaignCreateNestedOneWithoutPlayersInput
     awayFrames?: FrameCreateNestedManyWithoutAwayPlayerInput
     wonFrames?: FrameCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapCreateNestedManyWithoutCampaignPlayerInput
   }
 
   export type CampaignPlayerUncheckedCreateWithoutHomeFramesInput = {
@@ -26785,6 +28809,7 @@ export namespace Prisma {
     updatedAt?: Date | string | null
     awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerInput
     wonFrames?: FrameUncheckedCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapUncheckedCreateNestedManyWithoutCampaignPlayerInput
   }
 
   export type CampaignPlayerCreateOrConnectWithoutHomeFramesInput = {
@@ -26800,6 +28825,7 @@ export namespace Prisma {
     campaign: CampaignCreateNestedOneWithoutPlayersInput
     homeFrames?: FrameCreateNestedManyWithoutHomePlayerInput
     wonFrames?: FrameCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapCreateNestedManyWithoutCampaignPlayerInput
   }
 
   export type CampaignPlayerUncheckedCreateWithoutAwayFramesInput = {
@@ -26810,11 +28836,54 @@ export namespace Prisma {
     updatedAt?: Date | string | null
     homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerInput
     wonFrames?: FrameUncheckedCreateNestedManyWithoutWinnerInput
+    handicaps?: HandicapUncheckedCreateNestedManyWithoutCampaignPlayerInput
   }
 
   export type CampaignPlayerCreateOrConnectWithoutAwayFramesInput = {
     where: CampaignPlayerWhereUniqueInput
     create: XOR<CampaignPlayerCreateWithoutAwayFramesInput, CampaignPlayerUncheckedCreateWithoutAwayFramesInput>
+  }
+
+  export type HandicapCreateWithoutHomeFramesInput = {
+    id?: string
+    value?: number
+    createdAt?: Date | string
+    awayFrames?: FrameCreateNestedManyWithoutAwayPlayerHandicapInput
+    campaignPlayer: CampaignPlayerCreateNestedOneWithoutHandicapsInput
+  }
+
+  export type HandicapUncheckedCreateWithoutHomeFramesInput = {
+    id?: string
+    value?: number
+    campaignPlayerId: string
+    createdAt?: Date | string
+    awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerHandicapInput
+  }
+
+  export type HandicapCreateOrConnectWithoutHomeFramesInput = {
+    where: HandicapWhereUniqueInput
+    create: XOR<HandicapCreateWithoutHomeFramesInput, HandicapUncheckedCreateWithoutHomeFramesInput>
+  }
+
+  export type HandicapCreateWithoutAwayFramesInput = {
+    id?: string
+    value?: number
+    createdAt?: Date | string
+    homeFrames?: FrameCreateNestedManyWithoutHomePlayerHandicapInput
+    campaignPlayer: CampaignPlayerCreateNestedOneWithoutHandicapsInput
+  }
+
+  export type HandicapUncheckedCreateWithoutAwayFramesInput = {
+    id?: string
+    value?: number
+    campaignPlayerId: string
+    createdAt?: Date | string
+    homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerHandicapInput
+  }
+
+  export type HandicapCreateOrConnectWithoutAwayFramesInput = {
+    where: HandicapWhereUniqueInput
+    create: XOR<HandicapCreateWithoutAwayFramesInput, HandicapUncheckedCreateWithoutAwayFramesInput>
   }
 
   export type CampaignPlayerCreateWithoutWonFramesInput = {
@@ -26825,6 +28894,7 @@ export namespace Prisma {
     campaign: CampaignCreateNestedOneWithoutPlayersInput
     homeFrames?: FrameCreateNestedManyWithoutHomePlayerInput
     awayFrames?: FrameCreateNestedManyWithoutAwayPlayerInput
+    handicaps?: HandicapCreateNestedManyWithoutCampaignPlayerInput
   }
 
   export type CampaignPlayerUncheckedCreateWithoutWonFramesInput = {
@@ -26835,6 +28905,7 @@ export namespace Prisma {
     updatedAt?: Date | string | null
     homeFrames?: FrameUncheckedCreateNestedManyWithoutHomePlayerInput
     awayFrames?: FrameUncheckedCreateNestedManyWithoutAwayPlayerInput
+    handicaps?: HandicapUncheckedCreateNestedManyWithoutCampaignPlayerInput
   }
 
   export type CampaignPlayerCreateOrConnectWithoutWonFramesInput = {
@@ -26914,6 +28985,7 @@ export namespace Prisma {
     campaign?: CampaignUpdateOneRequiredWithoutPlayersNestedInput
     awayFrames?: FrameUpdateManyWithoutAwayPlayerNestedInput
     wonFrames?: FrameUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUpdateManyWithoutCampaignPlayerNestedInput
   }
 
   export type CampaignPlayerUncheckedUpdateWithoutHomeFramesInput = {
@@ -26924,6 +28996,7 @@ export namespace Prisma {
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerNestedInput
     wonFrames?: FrameUncheckedUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUncheckedUpdateManyWithoutCampaignPlayerNestedInput
   }
 
   export type CampaignPlayerUpsertWithoutAwayFramesInput = {
@@ -26945,6 +29018,7 @@ export namespace Prisma {
     campaign?: CampaignUpdateOneRequiredWithoutPlayersNestedInput
     homeFrames?: FrameUpdateManyWithoutHomePlayerNestedInput
     wonFrames?: FrameUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUpdateManyWithoutCampaignPlayerNestedInput
   }
 
   export type CampaignPlayerUncheckedUpdateWithoutAwayFramesInput = {
@@ -26955,6 +29029,61 @@ export namespace Prisma {
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerNestedInput
     wonFrames?: FrameUncheckedUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUncheckedUpdateManyWithoutCampaignPlayerNestedInput
+  }
+
+  export type HandicapUpsertWithoutHomeFramesInput = {
+    update: XOR<HandicapUpdateWithoutHomeFramesInput, HandicapUncheckedUpdateWithoutHomeFramesInput>
+    create: XOR<HandicapCreateWithoutHomeFramesInput, HandicapUncheckedCreateWithoutHomeFramesInput>
+    where?: HandicapWhereInput
+  }
+
+  export type HandicapUpdateToOneWithWhereWithoutHomeFramesInput = {
+    where?: HandicapWhereInput
+    data: XOR<HandicapUpdateWithoutHomeFramesInput, HandicapUncheckedUpdateWithoutHomeFramesInput>
+  }
+
+  export type HandicapUpdateWithoutHomeFramesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    awayFrames?: FrameUpdateManyWithoutAwayPlayerHandicapNestedInput
+    campaignPlayer?: CampaignPlayerUpdateOneRequiredWithoutHandicapsNestedInput
+  }
+
+  export type HandicapUncheckedUpdateWithoutHomeFramesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    campaignPlayerId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerHandicapNestedInput
+  }
+
+  export type HandicapUpsertWithoutAwayFramesInput = {
+    update: XOR<HandicapUpdateWithoutAwayFramesInput, HandicapUncheckedUpdateWithoutAwayFramesInput>
+    create: XOR<HandicapCreateWithoutAwayFramesInput, HandicapUncheckedCreateWithoutAwayFramesInput>
+    where?: HandicapWhereInput
+  }
+
+  export type HandicapUpdateToOneWithWhereWithoutAwayFramesInput = {
+    where?: HandicapWhereInput
+    data: XOR<HandicapUpdateWithoutAwayFramesInput, HandicapUncheckedUpdateWithoutAwayFramesInput>
+  }
+
+  export type HandicapUpdateWithoutAwayFramesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    homeFrames?: FrameUpdateManyWithoutHomePlayerHandicapNestedInput
+    campaignPlayer?: CampaignPlayerUpdateOneRequiredWithoutHandicapsNestedInput
+  }
+
+  export type HandicapUncheckedUpdateWithoutAwayFramesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    campaignPlayerId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerHandicapNestedInput
   }
 
   export type CampaignPlayerUpsertWithoutWonFramesInput = {
@@ -26976,6 +29105,7 @@ export namespace Prisma {
     campaign?: CampaignUpdateOneRequiredWithoutPlayersNestedInput
     homeFrames?: FrameUpdateManyWithoutHomePlayerNestedInput
     awayFrames?: FrameUpdateManyWithoutAwayPlayerNestedInput
+    handicaps?: HandicapUpdateManyWithoutCampaignPlayerNestedInput
   }
 
   export type CampaignPlayerUncheckedUpdateWithoutWonFramesInput = {
@@ -26986,6 +29116,7 @@ export namespace Prisma {
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerNestedInput
     awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerNestedInput
+    handicaps?: HandicapUncheckedUpdateManyWithoutCampaignPlayerNestedInput
   }
 
   export type AccountCreateManyUserInput = {
@@ -27091,6 +29222,7 @@ export namespace Prisma {
     homeFrames?: FrameUpdateManyWithoutHomePlayerNestedInput
     awayFrames?: FrameUpdateManyWithoutAwayPlayerNestedInput
     wonFrames?: FrameUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUpdateManyWithoutCampaignPlayerNestedInput
   }
 
   export type CampaignPlayerUncheckedUpdateWithoutUserInput = {
@@ -27101,6 +29233,7 @@ export namespace Prisma {
     homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerNestedInput
     awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerNestedInput
     wonFrames?: FrameUncheckedUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUncheckedUpdateManyWithoutCampaignPlayerNestedInput
   }
 
   export type CampaignPlayerUncheckedUpdateManyWithoutUserInput = {
@@ -27549,6 +29682,7 @@ export namespace Prisma {
     homeFrames?: FrameUpdateManyWithoutHomePlayerNestedInput
     awayFrames?: FrameUpdateManyWithoutAwayPlayerNestedInput
     wonFrames?: FrameUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUpdateManyWithoutCampaignPlayerNestedInput
   }
 
   export type CampaignPlayerUncheckedUpdateWithoutCampaignInput = {
@@ -27559,6 +29693,7 @@ export namespace Prisma {
     homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerNestedInput
     awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerNestedInput
     wonFrames?: FrameUncheckedUpdateManyWithoutWinnerNestedInput
+    handicaps?: HandicapUncheckedUpdateManyWithoutCampaignPlayerNestedInput
   }
 
   export type CampaignPlayerUncheckedUpdateManyWithoutCampaignInput = {
@@ -27792,7 +29927,9 @@ export namespace Prisma {
     id?: string
     fixtureId: string
     frameNumber: number
+    homePlayerHandicapId?: string | null
     awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
     homeScore?: number
     awayScore?: number
     winnerId?: string | null
@@ -27807,6 +29944,8 @@ export namespace Prisma {
     fixtureId: string
     frameNumber: number
     homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
+    awayPlayerHandicapId?: string | null
     homeScore?: number
     awayScore?: number
     winnerId?: string | null
@@ -27821,13 +29960,21 @@ export namespace Prisma {
     fixtureId: string
     frameNumber: number
     homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
     awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
     homeScore?: number
     awayScore?: number
     status?: string
     notes?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string | null
+  }
+
+  export type HandicapCreateManyCampaignPlayerInput = {
+    id?: string
+    value?: number
+    createdAt?: Date | string
   }
 
   export type FrameUpdateWithoutHomePlayerInput = {
@@ -27841,6 +29988,8 @@ export namespace Prisma {
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     fixture?: FixtureUpdateOneRequiredWithoutFramesNestedInput
     awayPlayer?: CampaignPlayerUpdateOneWithoutAwayFramesNestedInput
+    homePlayerHandicap?: HandicapUpdateOneWithoutHomeFramesNestedInput
+    awayPlayerHandicap?: HandicapUpdateOneWithoutAwayFramesNestedInput
     winner?: CampaignPlayerUpdateOneWithoutWonFramesNestedInput
   }
 
@@ -27848,7 +29997,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     fixtureId?: StringFieldUpdateOperationsInput | string
     frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     homeScore?: IntFieldUpdateOperationsInput | number
     awayScore?: IntFieldUpdateOperationsInput | number
     winnerId?: NullableStringFieldUpdateOperationsInput | string | null
@@ -27862,7 +30013,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     fixtureId?: StringFieldUpdateOperationsInput | string
     frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     homeScore?: IntFieldUpdateOperationsInput | number
     awayScore?: IntFieldUpdateOperationsInput | number
     winnerId?: NullableStringFieldUpdateOperationsInput | string | null
@@ -27883,6 +30036,8 @@ export namespace Prisma {
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     fixture?: FixtureUpdateOneRequiredWithoutFramesNestedInput
     homePlayer?: CampaignPlayerUpdateOneWithoutHomeFramesNestedInput
+    homePlayerHandicap?: HandicapUpdateOneWithoutHomeFramesNestedInput
+    awayPlayerHandicap?: HandicapUpdateOneWithoutAwayFramesNestedInput
     winner?: CampaignPlayerUpdateOneWithoutWonFramesNestedInput
   }
 
@@ -27891,6 +30046,8 @@ export namespace Prisma {
     fixtureId?: StringFieldUpdateOperationsInput | string
     frameNumber?: IntFieldUpdateOperationsInput | number
     homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     homeScore?: IntFieldUpdateOperationsInput | number
     awayScore?: IntFieldUpdateOperationsInput | number
     winnerId?: NullableStringFieldUpdateOperationsInput | string | null
@@ -27905,6 +30062,8 @@ export namespace Prisma {
     fixtureId?: StringFieldUpdateOperationsInput | string
     frameNumber?: IntFieldUpdateOperationsInput | number
     homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     homeScore?: IntFieldUpdateOperationsInput | number
     awayScore?: IntFieldUpdateOperationsInput | number
     winnerId?: NullableStringFieldUpdateOperationsInput | string | null
@@ -27926,6 +30085,8 @@ export namespace Prisma {
     fixture?: FixtureUpdateOneRequiredWithoutFramesNestedInput
     homePlayer?: CampaignPlayerUpdateOneWithoutHomeFramesNestedInput
     awayPlayer?: CampaignPlayerUpdateOneWithoutAwayFramesNestedInput
+    homePlayerHandicap?: HandicapUpdateOneWithoutHomeFramesNestedInput
+    awayPlayerHandicap?: HandicapUpdateOneWithoutAwayFramesNestedInput
   }
 
   export type FrameUncheckedUpdateWithoutWinnerInput = {
@@ -27933,7 +30094,9 @@ export namespace Prisma {
     fixtureId?: StringFieldUpdateOperationsInput | string
     frameNumber?: IntFieldUpdateOperationsInput | number
     homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     homeScore?: IntFieldUpdateOperationsInput | number
     awayScore?: IntFieldUpdateOperationsInput | number
     status?: StringFieldUpdateOperationsInput | string
@@ -27947,9 +30110,161 @@ export namespace Prisma {
     fixtureId?: StringFieldUpdateOperationsInput | string
     frameNumber?: IntFieldUpdateOperationsInput | number
     homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type HandicapUpdateWithoutCampaignPlayerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    homeFrames?: FrameUpdateManyWithoutHomePlayerHandicapNestedInput
+    awayFrames?: FrameUpdateManyWithoutAwayPlayerHandicapNestedInput
+  }
+
+  export type HandicapUncheckedUpdateWithoutCampaignPlayerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    homeFrames?: FrameUncheckedUpdateManyWithoutHomePlayerHandicapNestedInput
+    awayFrames?: FrameUncheckedUpdateManyWithoutAwayPlayerHandicapNestedInput
+  }
+
+  export type HandicapUncheckedUpdateManyWithoutCampaignPlayerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FrameCreateManyHomePlayerHandicapInput = {
+    id?: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerId?: string | null
+    awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
+    homeScore?: number
+    awayScore?: number
+    winnerId?: string | null
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameCreateManyAwayPlayerHandicapInput = {
+    id?: string
+    fixtureId: string
+    frameNumber: number
+    homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
+    awayPlayerId?: string | null
+    homeScore?: number
+    awayScore?: number
+    winnerId?: string | null
+    status?: string
+    notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
+  }
+
+  export type FrameUpdateWithoutHomePlayerHandicapInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    fixture?: FixtureUpdateOneRequiredWithoutFramesNestedInput
+    homePlayer?: CampaignPlayerUpdateOneWithoutHomeFramesNestedInput
+    awayPlayer?: CampaignPlayerUpdateOneWithoutAwayFramesNestedInput
+    awayPlayerHandicap?: HandicapUpdateOneWithoutAwayFramesNestedInput
+    winner?: CampaignPlayerUpdateOneWithoutWonFramesNestedInput
+  }
+
+  export type FrameUncheckedUpdateWithoutHomePlayerHandicapInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fixtureId?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    winnerId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameUncheckedUpdateManyWithoutHomePlayerHandicapInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fixtureId?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    winnerId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameUpdateWithoutAwayPlayerHandicapInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    fixture?: FixtureUpdateOneRequiredWithoutFramesNestedInput
+    homePlayer?: CampaignPlayerUpdateOneWithoutHomeFramesNestedInput
+    awayPlayer?: CampaignPlayerUpdateOneWithoutAwayFramesNestedInput
+    homePlayerHandicap?: HandicapUpdateOneWithoutHomeFramesNestedInput
+    winner?: CampaignPlayerUpdateOneWithoutWonFramesNestedInput
+  }
+
+  export type FrameUncheckedUpdateWithoutAwayPlayerHandicapInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fixtureId?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
     homeScore?: IntFieldUpdateOperationsInput | number
     awayScore?: IntFieldUpdateOperationsInput | number
+    winnerId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FrameUncheckedUpdateManyWithoutAwayPlayerHandicapInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fixtureId?: StringFieldUpdateOperationsInput | string
+    frameNumber?: IntFieldUpdateOperationsInput | number
+    homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homeScore?: IntFieldUpdateOperationsInput | number
+    awayScore?: IntFieldUpdateOperationsInput | number
+    winnerId?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
     notes?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -27960,7 +30275,9 @@ export namespace Prisma {
     id?: string
     frameNumber: number
     homePlayerId?: string | null
+    homePlayerHandicapId?: string | null
     awayPlayerId?: string | null
+    awayPlayerHandicapId?: string | null
     homeScore?: number
     awayScore?: number
     winnerId?: string | null
@@ -27981,6 +30298,8 @@ export namespace Prisma {
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     homePlayer?: CampaignPlayerUpdateOneWithoutHomeFramesNestedInput
     awayPlayer?: CampaignPlayerUpdateOneWithoutAwayFramesNestedInput
+    homePlayerHandicap?: HandicapUpdateOneWithoutHomeFramesNestedInput
+    awayPlayerHandicap?: HandicapUpdateOneWithoutAwayFramesNestedInput
     winner?: CampaignPlayerUpdateOneWithoutWonFramesNestedInput
   }
 
@@ -27988,7 +30307,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     frameNumber?: IntFieldUpdateOperationsInput | number
     homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     homeScore?: IntFieldUpdateOperationsInput | number
     awayScore?: IntFieldUpdateOperationsInput | number
     winnerId?: NullableStringFieldUpdateOperationsInput | string | null
@@ -28002,7 +30323,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     frameNumber?: IntFieldUpdateOperationsInput | number
     homePlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    homePlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     awayPlayerId?: NullableStringFieldUpdateOperationsInput | string | null
+    awayPlayerHandicapId?: NullableStringFieldUpdateOperationsInput | string | null
     homeScore?: IntFieldUpdateOperationsInput | number
     awayScore?: IntFieldUpdateOperationsInput | number
     winnerId?: NullableStringFieldUpdateOperationsInput | string | null

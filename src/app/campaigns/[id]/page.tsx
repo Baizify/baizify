@@ -36,6 +36,12 @@ const CampaignPage = async ({
                                    email: true,
                                    image: true
                               }
+                         },
+                         handicaps: {
+                              orderBy: {
+                                   createdAt: 'desc'
+                              },
+                              take: 1
                          }
                     }
                }

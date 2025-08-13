@@ -32,6 +32,11 @@ interface CampaignPlayerWithUser {
      userId: string;
      user: User;
      createdAt: string;
+     handicaps: Array<{
+          id: string;
+          value: number;
+          createdAt: string;
+     }>;
 }
 
 interface FrameWithPlayers {
@@ -39,7 +44,9 @@ interface FrameWithPlayers {
      fixtureId: string;
      frameNumber: number;
      homePlayerId?: string;
+     homePlayerHandicapId?: string;
      awayPlayerId?: string;
+     awayPlayerHandicapId?: string;
      homeScore: number;
      awayScore: number;
      winnerId?: string;
@@ -48,6 +55,16 @@ interface FrameWithPlayers {
      homePlayer?: CampaignPlayerWithUser;
      awayPlayer?: CampaignPlayerWithUser;
      winner?: CampaignPlayerWithUser;
+     homePlayerHandicap?: {
+          id: string;
+          value: number;
+          createdAt: string;
+     };
+     awayPlayerHandicap?: {
+          id: string;
+          value: number;
+          createdAt: string;
+     };
      createdAt: string;
      updatedAt?: string;
 }
@@ -55,10 +72,11 @@ interface FrameWithPlayers {
 interface FrameFormValues {
      frameNumber: number;
      homePlayerId: string;
+     homePlayerHandicapId: string;
      awayPlayerId: string;
+     awayPlayerHandicapId: string;
      homeScore: number;
      awayScore: number;
-     winnerId: string;
      status: string;
      notes: string;
 }
@@ -120,8 +138,16 @@ const FramesManager = ({
                     body: JSON.stringify({
                          ...values,
                          homePlayerId: values.homePlayerId || null,
+                         homePlayerHandicapId: values.homePlayerHandicapId || null,
                          awayPlayerId: values.awayPlayerId || null,
-                         winnerId: values.winnerId || null,
+                         awayPlayerHandicapId: values.awayPlayerHandicapId || null,
+                         winnerId: values.status === 'completed' ? 
+                              determineWinner(
+                                   values.homeScore, 
+                                   values.awayScore, 
+                                   values.homePlayerId, 
+                                   values.awayPlayerId
+                              ) : null,
                          notes: values.notes || null
                     })
                });
@@ -169,10 +195,11 @@ const FramesManager = ({
                .min(1, 'Frame number must be at least 1')
                .required('Frame number is required'),
           homePlayerId: Yup.string(),
+          homePlayerHandicapId: Yup.string(),
           awayPlayerId: Yup.string(),
+          awayPlayerHandicapId: Yup.string(),
           homeScore: Yup.number().min(0, 'Score must be 0 or greater').required('Home score is required'),
           awayScore: Yup.number().min(0, 'Score must be 0 or greater').required('Away score is required'),
-          winnerId: Yup.string(),
           status: Yup.string().required('Status is required'),
           notes: Yup.string()
      });
@@ -187,6 +214,20 @@ const FramesManager = ({
 
      const getNextFrameNumber = () => {
           return frames.length > 0 ? Math.max(...frames.map(f => f.frameNumber)) + 1 : 1;
+     };
+
+     const getLatestHandicapId = (playerId: string, players: CampaignPlayerWithUser[]) => {
+          const player = players.find(p => p.id === playerId);
+          return player?.handicaps?.[0]?.id || '';
+     };
+
+     const determineWinner = (homeScore: number, awayScore: number, homePlayerId: string, awayPlayerId: string) => {
+          if (homeScore > awayScore) {
+               return homePlayerId;
+          } else if (awayScore > homeScore) {
+               return awayPlayerId;
+          }
+          return null; // Tie or no clear winner
      };
 
      return (
@@ -225,6 +266,7 @@ const FramesManager = ({
                                    <TableColumn>FRAME</TableColumn>
                                    <TableColumn>HOME PLAYER</TableColumn>
                                    <TableColumn>AWAY PLAYER</TableColumn>
+                                   <TableColumn>HANDICAPS</TableColumn>
                                    <TableColumn>SCORE</TableColumn>
                                    <TableColumn>WINNER</TableColumn>
                                    <TableColumn>STATUS</TableColumn>
@@ -270,6 +312,16 @@ const FramesManager = ({
                                                   ) : (
                                                        <span className="text-gray-500 text-sm">TBD</span>
                                                   )}
+                                             </TableCell>
+                                             <TableCell>
+                                                  <div className="flex gap-1 text-xs font-mono">
+                                                       <Chip size="sm" variant="flat" color="primary">
+                                                            H: {frame.homePlayerHandicap?.value || '-'}
+                                                       </Chip>
+                                                       <Chip size="sm" variant="flat" color="secondary">
+                                                            A: {frame.awayPlayerHandicap?.value || '-'}
+                                                       </Chip>
+                                                  </div>
                                              </TableCell>
                                              <TableCell>
                                                   <span className="font-mono text-sm">
@@ -333,10 +385,13 @@ const FramesManager = ({
                               initialValues={{
                                    frameNumber: editingFrame?.frameNumber || getNextFrameNumber(),
                                    homePlayerId: editingFrame?.homePlayerId || '',
+                                   homePlayerHandicapId: editingFrame?.homePlayerHandicapId || 
+                                        (editingFrame?.homePlayerId ? getLatestHandicapId(editingFrame.homePlayerId, [...homePlayers, ...awayPlayers]) : ''),
                                    awayPlayerId: editingFrame?.awayPlayerId || '',
+                                   awayPlayerHandicapId: editingFrame?.awayPlayerHandicapId || 
+                                        (editingFrame?.awayPlayerId ? getLatestHandicapId(editingFrame.awayPlayerId, [...homePlayers, ...awayPlayers]) : ''),
                                    homeScore: editingFrame?.homeScore || 0,
                                    awayScore: editingFrame?.awayScore || 0,
-                                   winnerId: editingFrame?.winnerId || '',
                                    status: editingFrame?.status || 'not_started',
                                    notes: editingFrame?.notes || ''
                               }}
@@ -374,11 +429,23 @@ const FramesManager = ({
                                                        onSelectionChange={(keys) => {
                                                             const selectedKey = Array.from(keys)[0] as string;
                                                             props.setFieldValue('homePlayerId', selectedKey || '');
+                                                            
+                                                            // Auto-select the most recent handicap for the selected player
+                                                            if (selectedKey) {
+                                                                 props.setFieldValue('homePlayerHandicapId', getLatestHandicapId(selectedKey, homePlayers));
+                                                            } else {
+                                                                 props.setFieldValue('homePlayerHandicapId', '');
+                                                            }
                                                        }}
                                                   >
                                                        {homePlayers.map((player: CampaignPlayerWithUser) => (
                                                             <SelectItem key={player.id} textValue={player.id}>
-                                                                 {player.user.name || player.user.email}
+                                                                 <div className="flex items-center justify-between">
+                                                                      <span>{player.user.name || player.user.email}</span>
+                                                                      <Chip size="sm" variant="flat" color="primary" className="ml-2">
+                                                                           HC: {player.handicaps?.[0]?.value || 10}
+                                                                      </Chip>
+                                                                 </div>
                                                             </SelectItem>
                                                        ))}
                                                   </Select>
@@ -392,11 +459,23 @@ const FramesManager = ({
                                                        onSelectionChange={(keys) => {
                                                             const selectedKey = Array.from(keys)[0] as string;
                                                             props.setFieldValue('awayPlayerId', selectedKey || '');
+                                                            
+                                                            // Auto-select the most recent handicap for the selected player
+                                                            if (selectedKey) {
+                                                                 props.setFieldValue('awayPlayerHandicapId', getLatestHandicapId(selectedKey, awayPlayers));
+                                                            } else {
+                                                                 props.setFieldValue('awayPlayerHandicapId', '');
+                                                            }
                                                        }}
                                                   >
                                                        {awayPlayers.map((player: CampaignPlayerWithUser) => (
                                                             <SelectItem key={player.id} textValue={player.id}>
-                                                                 {player.user.name || player.user.email}
+                                                                 <div className="flex items-center justify-between">
+                                                                      <span>{player.user.name || player.user.email}</span>
+                                                                      <Chip size="sm" variant="flat" color="secondary" className="ml-2">
+                                                                           HC: {player.handicaps?.[0]?.value || 10}
+                                                                      </Chip>
+                                                                 </div>
                                                             </SelectItem>
                                                        ))}
                                                   </Select>
@@ -430,23 +509,14 @@ const FramesManager = ({
                                                   />
                                              </div>
 
-                                             <Select 
-                                                  name="winnerId"
-                                                  label="Winner"
-                                                  placeholder="Select winner (optional)"
-                                                  variant="bordered"
-                                                  selectedKeys={props.values.winnerId ? [props.values.winnerId] : []}
-                                                  onSelectionChange={(keys) => {
-                                                       const selectedKey = Array.from(keys)[0] as string;
-                                                       props.setFieldValue('winnerId', selectedKey || '');
-                                                  }}
-                                             >
-                                                  {allPlayers.map((player: CampaignPlayerWithUser) => (
-                                                       <SelectItem key={player.id} textValue={player.id}>
-                                                            {player.user.name || player.user.email}
-                                                       </SelectItem>
-                                                  ))}
-                                             </Select>
+                                             {props.values.status === 'completed' && (
+                                                  <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                                                       <p className="text-sm text-blue-700">
+                                                            <strong>Info:</strong> Winner will be automatically determined based on the scores when status is set to completed.
+                                                       </p>
+                                                  </div>
+                                             )}
+
 
                                              <Select 
                                                   name="status"

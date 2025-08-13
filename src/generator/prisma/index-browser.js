@@ -244,6 +244,13 @@ exports.Prisma.CampaignPlayerScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.HandicapScalarFieldEnum = {
+  id: 'id',
+  value: 'value',
+  campaignPlayerId: 'campaignPlayerId',
+  createdAt: 'createdAt'
+};
+
 exports.Prisma.FixtureScalarFieldEnum = {
   id: 'id',
   competitionId: 'competitionId',
@@ -270,7 +277,9 @@ exports.Prisma.FrameScalarFieldEnum = {
   fixtureId: 'fixtureId',
   frameNumber: 'frameNumber',
   homePlayerId: 'homePlayerId',
+  homePlayerHandicapId: 'homePlayerHandicapId',
   awayPlayerId: 'awayPlayerId',
+  awayPlayerHandicapId: 'awayPlayerHandicapId',
   homeScore: 'homeScore',
   awayScore: 'awayScore',
   winnerId: 'winnerId',
@@ -310,6 +319,7 @@ exports.Prisma.ModelName = {
   LeagueTableSnapshot: 'LeagueTableSnapshot',
   TeamCampaignPlayer: 'TeamCampaignPlayer',
   CampaignPlayer: 'CampaignPlayer',
+  Handicap: 'Handicap',
   Fixture: 'Fixture',
   Frame: 'Frame'
 };

@@ -60,6 +60,13 @@ export async function POST(
                }
           });
 
+          await prisma.handicap.create({
+               data: {
+                    campaignPlayerId: campaignPlayer.id,
+                    value: 10
+               }
+          });
+
           // If isTeamCaptain is true, create TeamCampaignPlayer record
           if (data.isTeamCaptain) {
                await prisma.teamCampaignPlayer.create({

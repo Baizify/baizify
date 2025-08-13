@@ -37,6 +37,12 @@ const FixturePage = async ({
                                              email: true,
                                              image: true
                                         }
+                                   },
+                                   handicaps: {
+                                        orderBy: {
+                                             createdAt: 'desc'
+                                        },
+                                        take: 1
                                    }
                               }
                          }
@@ -58,6 +64,12 @@ const FixturePage = async ({
                                              email: true,
                                              image: true
                                         }
+                                   },
+                                   handicaps: {
+                                        orderBy: {
+                                             createdAt: 'desc'
+                                        },
+                                        take: 1
                                    }
                               }
                          }
@@ -74,6 +86,12 @@ const FixturePage = async ({
                                              email: true,
                                              image: true
                                         }
+                                   },
+                                   handicaps: {
+                                        orderBy: {
+                                             createdAt: 'desc'
+                                        },
+                                        take: 1
                                    }
                               }
                          },
@@ -86,6 +104,12 @@ const FixturePage = async ({
                                              email: true,
                                              image: true
                                         }
+                                   },
+                                   handicaps: {
+                                        orderBy: {
+                                             createdAt: 'desc'
+                                        },
+                                        take: 1
                                    }
                               }
                          },
@@ -98,9 +122,17 @@ const FixturePage = async ({
                                              email: true,
                                              image: true
                                         }
+                                   },
+                                   handicaps: {
+                                        orderBy: {
+                                             createdAt: 'desc'
+                                        },
+                                        take: 1
                                    }
                               }
-                         }
+                         },
+                         homePlayerHandicap: true,
+                         awayPlayerHandicap: true
                     },
                     orderBy: {
                          frameNumber: 'asc'

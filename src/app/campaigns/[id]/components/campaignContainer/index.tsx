@@ -12,6 +12,11 @@ interface CampaignPlayerWithUser {
      userId: string;
      user: User;
      createdAt: string;
+     handicaps: Array<{
+          id: string;
+          value: number;
+          createdAt: string;
+     }>;
 }
 
 interface CampaignWithRelations extends Campaign {
@@ -160,19 +165,39 @@ const CampaignContainer = ({
                          <CardBody>
                               {campaign.players.length > 0 ? (
                                    <div className="space-y-3">
-                                        {campaign.players.map((player) => (
-                                             <div key={player.id} className="flex items-center gap-3">
-                                                  <Avatar
-                                                       src={player.user.image || undefined}
-                                                       name={player.user.name || player.user.email}
-                                                       size="sm"
-                                                  />
-                                                  <div>
-                                                       <p className="font-medium">{player.user.name || player.user.email}</p>
-                                                       <p className="text-sm text-gray-500">{player.user.email}</p>
+                                        {campaign.players.map((player) => {
+                                             const currentHandicap = player.handicaps?.[0]?.value || 10;
+                                             return (
+                                                  <div key={player.id} className="flex items-center justify-between">
+                                                       <div className="flex items-center gap-3">
+                                                            <Avatar
+                                                                 src={player.user.image || undefined}
+                                                                 name={player.user.name || player.user.email}
+                                                                 size="sm"
+                                                            />
+                                                            <div>
+                                                                 <Link
+                                                                      href={`/players/${player.user.id}`}
+                                                                      className="font-medium text-blue-600 hover:text-blue-800"
+                                                                 >
+                                                                      {player.user.name || player.user.email}
+                                                                 </Link>
+                                                                 <p className="text-sm text-gray-500">{player.user.email}</p>
+                                                            </div>
+                                                       </div>
+                                                       <div className="text-right">
+                                                            <Chip
+                                                                 variant="flat"
+                                                                 color="secondary"
+                                                                 size="sm"
+                                                                 className="font-mono"
+                                                            >
+                                                                 HC: {currentHandicap}
+                                                            </Chip>
+                                                       </div>
                                                   </div>
-                                             </div>
-                                        ))}
+                                             );
+                                        })}
                                    </div>
                               ) : (
                                    <div className="text-center py-8">

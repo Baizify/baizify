@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: false,
       error: 'Failed to update league tables',
-      details: error.message,
+      details: (error as { message: any }).message,
       timestamp: new Date().toISOString()
     }, { status: 500 });
   }

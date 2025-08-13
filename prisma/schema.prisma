@@ -195,9 +195,22 @@ model CampaignPlayer {
   homeFrames  Frame[]   @relation("HomeFrames")
   awayFrames  Frame[]   @relation("AwayFrames")
   wonFrames   Frame[]   @relation("WonFrames")
+  handicaps   Handicap[]
   
   createdAt     DateTime  @default(now())
   updatedAt     DateTime?  @updatedAt
+}
+
+model Handicap {
+  id      String @id @default(cuid())
+  value   Int   @default(10)
+  campaignPlayerId    String
+  homeFrames Frame[] @relation("HomeHandicap")
+  awayFrames Frame[] @relation("AwayHandicap")
+  
+  createdAt   DateTime  @default(now())
+  
+  campaignPlayer  CampaignPlayer @relation(fields: [campaignPlayerId], references: [id])
 }
 
 model Fixture {
@@ -233,7 +246,9 @@ model Frame {
   fixtureId       String
   frameNumber     Int
   homePlayerId    String?
+  homePlayerHandicapId String?
   awayPlayerId    String?
+  awayPlayerHandicapId String?
   homeScore       Int    @default(0)
   awayScore       Int    @default(0)
   winnerId        String?
@@ -243,6 +258,8 @@ model Frame {
   fixture         Fixture         @relation(fields: [fixtureId], references: [id], onDelete: Cascade)
   homePlayer      CampaignPlayer? @relation("HomeFrames", fields: [homePlayerId], references: [id])
   awayPlayer      CampaignPlayer? @relation("AwayFrames", fields: [awayPlayerId], references: [id])
+  homePlayerHandicap Handicap? @relation("HomeHandicap", fields: [homePlayerHandicapId], references: [id])
+  awayPlayerHandicap Handicap? @relation("AwayHandicap", fields: [awayPlayerHandicapId], references: [id])
   winner          CampaignPlayer? @relation("WonFrames", fields: [winnerId], references: [id])
 
   createdAt       DateTime  @default(now())

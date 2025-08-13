@@ -2,13 +2,14 @@
 
 import { User } from "@/generator/prisma";
 import { Card, CardBody, CardHeader, Tabs, Tab, Avatar, Chip, Button } from "@heroui/react";
-import { FaUser, FaTrophy, FaChartLine, FaHistory, FaCalendarAlt, FaCog, FaMedal } from "react-icons/fa";
+import { FaUser, FaTrophy, FaChartLine, FaHistory, FaCalendarAlt, FaCog, FaMedal, FaChartBar } from "react-icons/fa";
 import { format } from "date-fns";
 import Link from "next/link";
 import PlayerStats from "../playerStats";
 import PlayerHistory from "../playerHistory";
 import RecentMatches from "../recentMatches";
 import PlayerAchievements from "../playerAchievements";
+import HandicapChart from "@/components/handicapChart";
 
 interface CampaignWithDetails {
     id: string;
@@ -141,6 +142,26 @@ const PlayerContainer = ({
             {/* Player Statistics Overview Cards */}
             <div className="mb-8">
                 <PlayerStats playerId={player.id} />
+            </div>
+
+            {/* Handicap Progress Chart - Prominent KPI Display */}
+            <div className="mb-8">
+                <Card>
+                    <CardHeader>
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                                <FaChartBar className="text-white text-lg" />
+                            </div>
+                            <div>
+                                <h3 className="text-xl font-bold text-gray-900">Handicap Progress</h3>
+                                <p className="text-sm text-gray-600">Track your performance improvement over time</p>
+                            </div>
+                        </div>
+                    </CardHeader>
+                    <CardBody className="pt-0">
+                        <HandicapChart playerId={player.id} />
+                    </CardBody>
+                </Card>
             </div>
 
             {/* Main Content Tabs */}

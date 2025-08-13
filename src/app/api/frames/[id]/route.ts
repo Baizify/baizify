@@ -9,7 +9,9 @@ export async function PUT(
   try {
     const data: {
       homePlayerId?: string;
+      homePlayerHandicapId?: string;
       awayPlayerId?: string;
+      awayPlayerHandicapId?: string;
       homeScore?: number;
       awayScore?: number;
       winnerId?: string;
@@ -20,7 +22,9 @@ export async function PUT(
     const updateData: any = {};
     
     if (data.homePlayerId !== undefined) updateData.homePlayerId = data.homePlayerId || null;
+    if (data.homePlayerHandicapId !== undefined) updateData.homePlayerHandicapId = data.homePlayerHandicapId || null;
     if (data.awayPlayerId !== undefined) updateData.awayPlayerId = data.awayPlayerId || null;
+    if (data.awayPlayerHandicapId !== undefined) updateData.awayPlayerHandicapId = data.awayPlayerHandicapId || null;
     if (data.homeScore !== undefined) updateData.homeScore = data.homeScore;
     if (data.awayScore !== undefined) updateData.awayScore = data.awayScore;
     if (data.winnerId !== undefined) updateData.winnerId = data.winnerId || null;
@@ -69,7 +73,9 @@ export async function PUT(
               }
             }
           }
-        }
+        },
+        homePlayerHandicap: true,
+        awayPlayerHandicap: true
       }
     });
 

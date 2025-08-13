@@ -4,7 +4,8 @@
       "Bash(npx prisma generate:*)",
       "Bash(npm i)",
       "Bash(npm i:*)",
-      "Bash(npx prisma migrate dev:*)"
+      "Bash(npx prisma migrate dev:*)",
+      "WebFetch(domain:www.ossettsnooker.uk)"
     ],
     "deny": []
   }

@@ -9,7 +9,7 @@ const AccessDeniedPage = () => {
                     <FaLock size={64} className="text-gray-400 mx-auto mb-6" />
                     <h1 className="text-3xl font-bold text-gray-800 mb-4">Access Denied</h1>
                     <p className="text-gray-600 mb-8">
-                         You don't have permission to access this page. Only administrators can view this content.
+                         You dont have permission to access this page. Only administrators can view this content.
                     </p>
                     <Button 
                          as={Link}
