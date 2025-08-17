@@ -162,9 +162,6 @@ const CompetitionCards = ({
                                 <Card 
                                     key={competition.id} 
                                     className="group hover:shadow-lg transition-all duration-300 cursor-pointer border-0 bg-white/80 backdrop-blur-sm"
-                                    isPressable
-                                    as={Link}
-                                    href={`/competitions/${competition.id}`}
                                 >
                                     <CardHeader className="pb-2">
                                         <div className="flex justify-between items-start w-full">
@@ -299,6 +296,13 @@ const CompetitionCards = ({
                                                 </div>
                                             </div>
                                         )}
+
+                                        <Button
+                                            color="primary"
+                                            as={Link}
+                                            href={`/competitions/${competition.id}`}>
+                                            View
+                                        </Button>
 
                                         {/* Footer */}
                                         <div className="flex items-center justify-between text-xs text-gray-500 pt-3 border-t border-gray-100">
