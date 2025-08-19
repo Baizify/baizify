@@ -51,11 +51,7 @@ const PlayerSettingsPage = async ({
 
      // Get current user's admin status
      const currentUser: User | null = await prisma.user.findUnique({
-          where: { id: session.user.id },
-          select: {
-               id: true,
-               isAdmin: true
-          }
+          where: { id: session.user.id }
      });
 
      // Check authorization: users can only edit their own profile unless they're admin
