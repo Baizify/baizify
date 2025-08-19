@@ -1,6 +1,6 @@
 import { auth } from "@/auth";
 import { Session } from "next-auth";
-import { User } from "@/generator/prisma";
+import { Account, User } from "@/generator/prisma";
 import { redirect } from "next/navigation";
 import prisma from "@/providers/prisma";
 import { Button } from "@heroui/react";
@@ -28,7 +28,11 @@ const PlayerSettingsPage = async ({
      }
 
      // Get the player being viewed
-     const player: User | null = await prisma.user.findUnique({
+     const player: User & {
+               accounts: Pick<Account, 'provider' | 'providerAccountId'>[];
+               _count: {
+                    campaigns: number;
+               }} | null = await prisma.user.findUnique({
           where: { id },
           include: {
                accounts: {
