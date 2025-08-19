@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function PATCH(
      request: NextRequest,
-     { params }: { params: { id: string } }
+     { params }: { params: Promise<{ id: string }> }
 ) {
      try {
           const session = await auth();
@@ -13,22 +13,30 @@ export async function PATCH(
                return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
           }
 
-          const userId = params.id;
+          const userId = (await params).id;
 
           // Users can only update their own profile unless they're admin
           if (session.user.id !== userId && !session.user.isAdmin) {
                return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
           }
 
-          const { name }: { name: string } = await request.json();
+          const { name, isAdmin }: { name: string; isAdmin?: boolean } = await request.json();
 
           if (!name) {
                return NextResponse.json({ error: 'Name is required' }, { status: 400 });
           }
 
+          // Prepare update data
+          const updateData: any = { name };
+
+          // Only admins can change admin status of other users
+          if (isAdmin !== undefined && session.user.isAdmin && session.user.id !== userId) {
+               updateData.isAdmin = isAdmin;
+          }
+
           const updatedUser = await prisma.user.update({
                where: { id: userId },
-               data: { name },
+               data: updateData,
                select: {
                     id: true,
                     name: true,

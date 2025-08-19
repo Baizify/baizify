@@ -2,7 +2,7 @@ import { auth } from "@/auth";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, Avatar, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@heroui/react";
 import { Session } from "next-auth";
 import { FaChevronRight, FaTrophy, FaUsers, FaUser, FaCog, FaSignOutAlt } from "react-icons/fa";
-import { FaBolt } from "react-icons/fa6";
+import { FaBolt, FaUserGroup } from "react-icons/fa6";
 import UserDropdownContainer from "./UserDropdownContainer";
 
 const Logo = () => {
@@ -110,8 +110,20 @@ export default async function Header() {
                               className="flex items-center justify-between w-full py-4 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
                          >
                               <div className="flex items-center gap-3">
-                                   <FaUsers className="text-blue-500" />
+                                   <FaUserGroup className="text-blue-500" />
                                    <span className="font-medium">Teams</span>
+                              </div>
+                              <FaChevronRight className="text-gray-400" />
+                         </Link>
+                    </NavbarMenuItem>
+                    <NavbarMenuItem>
+                         <Link 
+                              href="/admin/users"
+                              className="flex items-center justify-between w-full py-4 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
+                         >
+                              <div className="flex items-center gap-3">
+                                   <FaUsers className="text-blue-500" />
+                                   <span className="font-medium">Users</span>
                               </div>
                               <FaChevronRight className="text-gray-400" />
                          </Link>
