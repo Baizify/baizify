@@ -56,7 +56,7 @@ export async function PATCH(
 
 export async function GET(
      request: NextRequest,
-     { params }: { params: { id: string } }
+     { params }: { params: Promise<{ id: string }> }
 ) {
      try {
           const session = await auth();
@@ -65,7 +65,7 @@ export async function GET(
                return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
           }
 
-          const userId = params.id;
+          const userId = (await params).id;
 
           // Users can only view their own profile unless they're admin
           if (session.user.id !== userId && !session.user.isAdmin) {
