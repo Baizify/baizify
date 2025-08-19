@@ -1,6 +1,6 @@
 'use client'
 
-import { Campaign, Team } from "@/generator/prisma";
+import { Campaign, Competition, Team } from "@/generator/prisma";
 import { 
      Button, 
      Card, 
@@ -39,6 +39,7 @@ interface CampaignWithRelations extends Campaign {
 interface CampaignFormValues {
      campaignType: 'team' | 'league';
      teamId: string;
+     competitionId?: string;
 }
 
 const CampaignsManager = ({
@@ -48,6 +49,7 @@ const CampaignsManager = ({
 }) => {
      const [campaigns, setCampaigns] = useState<CampaignWithRelations[]>([]);
      const [teams, setTeams] = useState<Team[]>([]);
+     const [competitions, setCompetitions] = useState<Competition[]>([]);
      const [loading, setLoading] = useState(true);
      const { isOpen, onOpen, onClose } = useDisclosure();
      const [isSubmitting, setIsSubmitting] = useState(false);
@@ -76,11 +78,27 @@ const CampaignsManager = ({
           }
      };
 
+     const fetchCompetitions = async () => {
+          try {
+               const response = await fetch('/api/competitions', {
+                    method: 'GET'
+               });
+
+               if (response.ok) {
+                    const data = await response.json();
+                    setCompetitions(data);
+               }
+          } catch (err) {
+               console.error(err);
+          }
+     }
+
      const fetchData = async () => {
           setLoading(true);
           await Promise.all([
                fetchCampaigns(),
-               fetchTeams()
+               fetchTeams(),
+               fetchCompetitions()
           ]);
           setLoading(false);
      };
@@ -208,8 +226,9 @@ const CampaignsManager = ({
                     <ModalContent>
                          <Formik
                               initialValues={{
-                                   campaignType: 'league' as 'team' | 'league',
+                                   campaignType: 'team',
                                    teamId: '',
+                                   competitionId: ''
                               }}
                               validationSchema={validationSchema}
                               validateOnBlur
@@ -219,19 +238,24 @@ const CampaignsManager = ({
                                    <Form>
                                         <ModalHeader>Create Campaign</ModalHeader>
                                         <ModalBody className="space-y-4">
-                                             <RadioGroup 
-                                                  label="Campaign Type"
-                                                  value={props.values.campaignType}
-                                                  onValueChange={(value) => {
-                                                       props.setFieldValue('campaignType', value);
-                                                       if (value === 'league') {
-                                                            props.setFieldValue('teamId', '');
-                                                       }
-                                                  }}
-                                             >
-                                                  <Radio value="league">League Campaign</Radio>
-                                                  <Radio value="team">Team Campaign</Radio>
-                                             </RadioGroup>
+                                             <Select 
+                                                       name="competitionId"
+                                                       label="Competition"
+                                                       placeholder="Select a competition"
+                                                       variant="bordered"
+                                                       errorMessage={props.errors.competitionId}
+                                                       isInvalid={Boolean(props.errors.competitionId)}
+                                                       selectedKeys={props.values.competitionId ? [props.values.competitionId] : []}
+                                                       onSelectionChange={(keys) => {
+                                                            const selectedKey = Array.from(keys)[0] as string;
+                                                            props.setFieldValue('competitionId', selectedKey);
+                                                       }}>
+                                                  {competitions.map((competition) => (
+                                                       <SelectItem key={competition.id}>
+                                                            {competition.name}
+                                                       </SelectItem>
+                                                  ))}
+                                             </Select>
 
                                              {props.values.campaignType === 'team' && (
                                                   <Select 

@@ -12,6 +12,7 @@ export const authOptions: NextAuthConfig = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      allowDangerousEmailAccountLinking: true,
     }),
   ],
   pages: {
@@ -22,10 +23,22 @@ export const authOptions: NextAuthConfig = {
     newUser: "/auth/new-user", // New users will be directed here on first sign in (leave the property out if not of interest)
   },
   callbacks: {
+    jwt: async function({ token, user }) {
+      if (user?.id) {
+        // Fetch user data including isAdmin
+        const userData = await db.user.findUnique({
+          where: { id: user.id },
+          select: { isAdmin: true }
+        });
+        token.isAdmin = userData?.isAdmin || false;
+      }
+      return token;
+    },
     session: async function({ session, token }) {
       try {
         if (session.user) {
           session.user.id = token.sub as string;
+          session.user.isAdmin = token.isAdmin as boolean;
         }
       } catch (err) {
         console.error(err);
