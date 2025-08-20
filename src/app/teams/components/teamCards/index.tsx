@@ -7,7 +7,7 @@ import Link from "next/link";
 interface Team {
     id: string;
     name: string;
-    createdAt: string;
+    createdAt: string | Date;
 }
 
 const TeamCards = ({ 

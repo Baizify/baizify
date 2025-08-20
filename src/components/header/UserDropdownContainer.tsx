@@ -61,5 +61,5 @@ export default function UserDropdownContainer({ session }: UserDropdownContainer
     }
   };
 
-  return <UserDropdown session={enhancedSession} isAdmin={user?.isAdmin || false} />;
+  return <UserDropdown session={enhancedSession} />;
 }

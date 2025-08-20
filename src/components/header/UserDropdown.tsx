@@ -5,11 +5,10 @@ import { Session } from "next-auth";
 import { FaUser, FaCog, FaSignOutAlt, FaChevronDown, FaUserShield } from "react-icons/fa";
 
 interface UserDropdownProps {
-  session: Session;
-  isAdmin?: boolean;
+  session: Session & { user: { isAdmin: boolean } };
 }
 
-export default function UserDropdown({ session, isAdmin }: UserDropdownProps) {
+const UserDropdown = ({ session }: UserDropdownProps) => {
   return (
     <Dropdown placement="bottom-end">
       <DropdownTrigger>
@@ -57,7 +56,7 @@ export default function UserDropdown({ session, isAdmin }: UserDropdownProps) {
             <span className="text-xs text-gray-500">Manage your account</span>
           </div>
         </DropdownItem>
-        {isAdmin && (
+        {session.user.isAdmin ? (
           <DropdownItem 
             key="admin"
             startContent={<FaUserShield className="text-blue-500" />}
@@ -69,7 +68,7 @@ export default function UserDropdown({ session, isAdmin }: UserDropdownProps) {
               <span className="text-xs text-gray-500">Manage users and system settings</span>
             </div>
           </DropdownItem>
-        )}
+        ) : null}
         <DropdownItem 
           key="logout"
           className="text-danger"
@@ -84,3 +83,5 @@ export default function UserDropdown({ session, isAdmin }: UserDropdownProps) {
     </Dropdown>
   );
 }
+
+export default UserDropdown;
