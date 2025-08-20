@@ -17,7 +17,10 @@ const SettingsPage = async (): Promise<React.ReactElement> => {
           redirect('/auth/signin');
      }
 
-     const profile: User | null = await prisma.user.findUnique({
+     const profile: User & {
+          accounts: any;
+          _count: any
+     } | null = await prisma.user.findUnique({
           where: {
                id: session?.user?.id
           },
