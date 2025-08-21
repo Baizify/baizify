@@ -116,7 +116,9 @@ const HandicapChart: React.FC<HandicapChartProps> = ({ playerId }) => {
 
   // Create datasets for each campaign
   const datasets = campaignNames.map((campaignName, index) => {
-    const campaignHandicaps = handicapData[campaignName];
+    const campaignHandicaps = handicapData[campaignName].sort((a, b) => 
+      new Date(a.date).getTime() - new Date(b.date).getTime()
+    );
     const color = colors[index % colors.length];
     
     return {

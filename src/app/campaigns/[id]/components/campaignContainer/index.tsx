@@ -4,7 +4,10 @@ import { Campaign, Competition, Season, Team, User } from "@/generator/prisma";
 import { Button, Card, CardBody, CardHeader, Avatar, Chip } from "@heroui/react";
 import { FaCog, FaTrophy, FaUsers, FaCalendarAlt } from "react-icons/fa";
 import { format } from "date-fns";
+import { useState } from "react";
 import Link from "next/link";
+import AddPlayerModal from "../AddPlayerModal";
+import UpdateHandicapModal from "../UpdateHandicapModal";
 
 interface CampaignPlayerWithUser {
      id: string;
@@ -30,13 +33,26 @@ interface CampaignWithRelations extends Campaign {
 }
 
 const CampaignContainer = ({
-     campaign,
+     campaign: initialCampaign,
      isUserAdmin
 }: {
      campaign: CampaignWithRelations;
      isUserAdmin: boolean;
 }) => {
+     const [campaign, setCampaign] = useState(initialCampaign);
      const campaignType = campaign.teamCampaign ? 'Team Campaign' : campaign.leagueCampaign ? 'League Campaign' : 'Unknown';
+
+     const refreshCampaignData = async () => {
+          try {
+               const response = await fetch(`/api/campaigns/${campaign.id}`);
+               if (response.ok) {
+                    const updatedCampaign = await response.json();
+                    setCampaign(updatedCampaign);
+               }
+          } catch (error) {
+               console.error('Error refreshing campaign data:', error);
+          }
+     };
 
      return (
           <>
@@ -83,31 +99,7 @@ const CampaignContainer = ({
                     )}
                </div>
 
-               {campaign.leagueCampaign && (
-                    <div className="grid grid-cols-4 gap-4 mt-4 p-3 bg-gray-50 rounded-lg">
-                         <Card>
-                              <span className="text-sm font-medium text-gray-600">Games Played:</span>
-                              <p className="text-lg font-semibold">{(campaign.leagueCampaign as any)?.played || 0}</p>
-                         </Card>
-                         <Card>
-                              <span className="text-sm font-medium text-gray-600">Points:</span>
-                              <p className="text-lg font-semibold">{(campaign.leagueCampaign as any)?.points || 0}</p>
-                         </Card>
-                         <Card>
-                              <span className="text-sm font-medium text-gray-600">Frames Played:</span>
-                              <p className="text-lg font-semibold">{(campaign.leagueCampaign as any)?.framesPlayed || 0}</p>
-                         </Card>
-                         <Card>
-                              <span className="text-sm font-medium text-gray-600">Points Difference:</span>
-                              <p className="text-lg font-semibold">
-                                   {((campaign.leagueCampaign as any)?.pointsScoredFor || 0) - ((campaign.leagueCampaign as any)?.pointsScoredAgainst || 0)}
-                              </p>
-                         </Card>
-                    </div>
-               )}
-
                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Campaign Details */}
                     <Card>
                          <CardHeader>
                               <h3 className="text-lg font-semibold">Campaign Details</h3>
@@ -152,14 +144,14 @@ const CampaignContainer = ({
                          <CardHeader className="flex justify-between items-center">
                               <h3 className="text-lg font-semibold">Players</h3>
                               {isUserAdmin && (
-                                   <Button
-                                        as={Link}
-                                        href={`/campaign/${campaign.id}/settings`}
-                                        size="sm"
-                                        variant="light"
-                                   >
-                                        Manage Players
-                                   </Button>
+                                   <AddPlayerModal
+                                        campaignId={campaign.id}
+                                        onPlayerAdded={refreshCampaignData}
+                                        buttonProps={{
+                                             size: "sm",
+                                             variant: "light"
+                                        }}
+                                   />
                               )}
                          </CardHeader>
                          <CardBody>
@@ -185,7 +177,7 @@ const CampaignContainer = ({
                                                                  <p className="text-sm text-gray-500">{player.user.email}</p>
                                                             </div>
                                                        </div>
-                                                       <div className="text-right">
+                                                       <div className="flex items-center gap-2 text-right">
                                                             <Chip
                                                                  variant="flat"
                                                                  color="secondary"
@@ -194,6 +186,20 @@ const CampaignContainer = ({
                                                             >
                                                                  HC: {currentHandicap}
                                                             </Chip>
+                                                            {isUserAdmin && (
+                                                                 <UpdateHandicapModal
+                                                                      campaignId={campaign.id}
+                                                                      playerId={player.id}
+                                                                      playerName={player.user.name || player.user.email}
+                                                                      currentHandicap={currentHandicap}
+                                                                      onHandicapUpdated={refreshCampaignData}
+                                                                      buttonProps={{
+                                                                           size: "sm",
+                                                                           variant: "light",
+                                                                           color: "primary"
+                                                                      }}
+                                                                 />
+                                                            )}
                                                        </div>
                                                   </div>
                                              );
@@ -204,15 +210,16 @@ const CampaignContainer = ({
                                         <FaUsers className="mx-auto mb-3 text-gray-400" size={48} />
                                         <p className="text-gray-500">No players assigned to this campaign yet.</p>
                                         {isUserAdmin && (
-                                             <Button
-                                                  as={Link}
-                                                  href={`/campaign/${campaign.id}/settings`}
-                                                  className="mt-3"
-                                                  color="primary"
-                                                  variant="flat"
-                                             >
-                                                  Add Players
-                                             </Button>
+                                             <div className="mt-3">
+                                                  <AddPlayerModal
+                                                       campaignId={campaign.id}
+                                                       onPlayerAdded={refreshCampaignData}
+                                                       buttonProps={{
+                                                            color: "primary",
+                                                            variant: "flat"
+                                                       }}
+                                                  />
+                                             </div>
                                         )}
                                    </div>
                               )}

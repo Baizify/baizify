@@ -439,7 +439,7 @@ const FramesManager = ({
                                                        }}
                                                   >
                                                        {homePlayers.map((player: CampaignPlayerWithUser) => (
-                                                            <SelectItem key={player.id} textValue={player.id}>
+                                                            <SelectItem key={player.id} textValue={player.user.name!}>
                                                                  <div className="flex items-center justify-between">
                                                                       <span>{player.user.name || player.user.email}</span>
                                                                       <Chip size="sm" variant="flat" color="primary" className="ml-2">
@@ -469,7 +469,7 @@ const FramesManager = ({
                                                        }}
                                                   >
                                                        {awayPlayers.map((player: CampaignPlayerWithUser) => (
-                                                            <SelectItem key={player.id} textValue={player.id}>
+                                                            <SelectItem key={player.id} textValue={player.user.name!}>
                                                                  <div className="flex items-center justify-between">
                                                                       <span>{player.user.name || player.user.email}</span>
                                                                       <Chip size="sm" variant="flat" color="secondary" className="ml-2">
