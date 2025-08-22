@@ -112,17 +112,12 @@ const CompetitionCards = ({
             <div className="text-center py-12">
                 <FaTrophy size={64} className="mx-auto mb-4 text-gray-400" />
                 <h3 className="text-xl font-semibold text-gray-600 mb-2">No competitions yet</h3>
-                <p className="text-gray-500">Create your first competition to get started</p>
-                {isAdmin && (
-                    <Button 
-                        as={Link}
-                        href="/competitions/create"
-                        color="primary"
-                        className="mt-4"
-                    >
-                        Create Competition
-                    </Button>
-                )}
+                <p className="text-gray-500">
+                    {isAdmin 
+                        ? 'Click the "Create Competition" button above to get started'
+                        : 'Competitions will appear here when they are created'
+                    }
+                </p>
             </div>
         );
     }

@@ -22,17 +22,12 @@ const TeamCards = ({
             <div className="text-center py-12">
                 <FaUsers size={64} className="mx-auto mb-4 text-gray-400" />
                 <h3 className="text-xl font-semibold text-gray-600 mb-2">No teams yet</h3>
-                <p className="text-gray-500">Create your first team to get started</p>
-                {isAdmin && (
-                    <Button 
-                        as={Link}
-                        href="/teams/create"
-                        color="primary"
-                        className="mt-4"
-                    >
-                        Create Team
-                    </Button>
-                )}
+                <p className="text-gray-500">
+                    {isAdmin 
+                        ? 'Click the "Create Team" button above to get started'
+                        : 'Teams will appear here when they are created'
+                    }
+                </p>
             </div>
         );
     }

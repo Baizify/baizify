@@ -18,6 +18,7 @@ model User {
   sessions      Session[]
   isAdmin       Boolean         @default(false)
   campaigns     CampaignPlayer[]
+  bulletins     Bulletin[]
  
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -266,4 +267,16 @@ model Frame {
   updatedAt       DateTime? @updatedAt
 
   @@unique([fixtureId, frameNumber])
+}
+
+model Bulletin {
+  id          String @id @default(cuid())
+  title       String
+  description String
+  userId      String
+  
+  user        User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }

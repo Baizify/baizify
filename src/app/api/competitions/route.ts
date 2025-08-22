@@ -20,10 +20,18 @@ export async function POST(
   request: NextRequest,
 ) {
      try {
-          const competition: { name: string } = await request.json();
+          const competition: { 
+               name: string; 
+               sortOrder?: number; 
+               collection?: string; 
+          } = await request.json();
 
           const result = await prisma.competition.create({
-               data: competition
+               data: {
+                    name: competition.name,
+                    sortOrder: competition.sortOrder || 1,
+                    collection: competition.collection || 'Default League'
+               }
           });
 
           await prisma.$disconnect();

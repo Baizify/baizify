@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaTrophy, FaUsers, FaClock, FaArrowRight, FaCalendarAlt, FaStar, FaChartLine, FaBolt } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa6";
 import { format } from "date-fns";
+import BulletinsList from "@/components/BulletinsList";
 
 const HomePage = async () => {
   const session = await auth();
@@ -97,6 +98,12 @@ const HomePage = async () => {
     }
   });
 
+  // Fetch admin status for bulletins
+  const currentUser = session?.user?.id ? await prisma.user.findUnique({
+    where: { id: session.user.id },
+    select: { isAdmin: true }
+  }) : null;
+
   await prisma.$disconnect();
 
   return (
@@ -106,16 +113,6 @@ const HomePage = async () => {
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-7xl mx-auto px-4 py-20 sm:py-32">
           <div className="text-center">
-            <div className="flex justify-center mb-6">
-              <div className="relative">
-                <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-2xl">
-                  <FaBolt className="text-white text-3xl" />
-                </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
-                  <FaTrophy className="text-white text-sm" />
-                </div>
-              </div>
-            </div>
             <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6">
               Ossett & District
               <span className="block text-yellow-400">Snooker League</span>
@@ -207,6 +204,11 @@ const HomePage = async () => {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 py-16 space-y-16">
+        {/* Bulletins Section */}
+        <section>
+          <BulletinsList isAdmin={currentUser?.isAdmin || false} />
+        </section>
+
         {/* Recent Results */}
         {recentFixtures.length > 0 && (
           <section>
@@ -225,109 +227,8 @@ const HomePage = async () => {
                 View All
               </Button>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* {recentFixtures.map((fixture) => (
-                <Card key={fixture.id} className="hover:shadow-lg transition-shadow duration-200">
-                  <CardBody className="p-6">
-                    <div className="flex justify-between items-center mb-4">
-                      <Chip size="sm" variant="flat" color="primary">
-                        {fixture.competition.name}
-                      </Chip>
-                      <span className="text-sm text-gray-500">
-                        {fixture?.scheduledDate && format(new Date(fixture?.scheduledDate), 'MMM d')}
-                      </span>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                            <FaUsers className="text-blue-600 text-sm" />
-                          </div>
-                          <span className="font-medium">{fixture.homeCampaign?.name || 'TBD'}</span>
-                        </div>
-                        <span className="text-2xl font-bold text-gray-900">{fixture.homeScore}</span>
-                      </div>
-                      
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center">
-                            <FaUsers className="text-gray-600 text-sm" />
-                          </div>
-                          <span className="font-medium">{fixture.awayCampaign?.name || 'TBD'}</span>
-                        </div>
-                        <span className="text-2xl font-bold text-gray-900">{fixture.awayScore}</span>
-                      </div>
-                    </div>
-                  </CardBody>
-                </Card>
-              ))} */}
-            </div>
           </section>
         )}
-
-        {/* Upcoming Fixtures */}
-        {/* {upcomingFixtures.length > 0 && (
-          <section>
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Upcoming Fixtures</h2>
-                <p className="text-gray-600">Don't miss these exciting upcoming matches</p>
-              </div>
-              <Button 
-                as={Link} 
-                href="/fixtures" 
-                variant="light" 
-                endContent={<FaChevronRight />}
-                className="text-blue-600 font-medium"
-              >
-                View Schedule
-              </Button>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {upcomingFixtures.map((fixture) => (
-                <Card key={fixture.id} className="hover:shadow-lg transition-shadow duration-200">
-                  <CardBody className="p-6">
-                    <div className="flex justify-between items-center mb-4">
-                      <Chip size="sm" variant="flat" color="warning">
-                        {fixture.competition.name}
-                      </Chip>
-                      <div className="flex items-center gap-1 text-orange-600">
-                        <FaClock className="text-sm" />
-                        <span className="text-sm font-medium">
-                          {fixture.scheduledDate && format(new Date(fixture.scheduledDate), 'MMM d, HH:mm')}
-                        </span>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                            <FaUsers className="text-blue-600 text-sm" />
-                          </div>
-                          <span className="font-medium">{fixture.homeTeam?.name || 'TBD'}</span>
-                        </div>
-                        <span className="text-sm text-gray-500">vs</span>
-                      </div>
-                      
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center">
-                            <FaUsers className="text-gray-600 text-sm" />
-                          </div>
-                          <span className="font-medium">{fixture.awayTeam?.name || 'TBD'}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </CardBody>
-                </Card>
-              ))}
-            </div>
-          </section>
-        )} */}
 
         {/* Active Competitions */}
         {activeCompetitions.length > 0 && (
@@ -388,47 +289,6 @@ const HomePage = async () => {
             </div>
           </section>
         )}
-
-        {/* Call to Action */}
-        <section className="bg-gradient-to-r from-blue-600 to-purple-700 rounded-2xl p-8 md:p-12 text-center text-white">
-          <FaStar className="text-4xl text-yellow-400 mx-auto mb-6" />
-          <h2 className="text-3xl font-bold mb-4">Ready to Join the Action?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Whether youre a seasoned player or just starting out, theres a place for you in the Ossett & District Snooker League.
-          </p>
-          
-          {!session?.user ? (
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                as={Link} 
-                href="/auth/signup"
-                size="lg"
-                className="bg-white text-blue-600 font-semibold px-8 hover:shadow-xl transition-all duration-200"
-              >
-                Sign Up Today
-              </Button>
-              <Button 
-                as={Link} 
-                href="/competitions"
-                variant="bordered"
-                size="lg"
-                className="border-white text-white hover:bg-white hover:text-blue-600 font-semibold px-8"
-              >
-                Browse Competitions
-              </Button>
-            </div>
-          ) : (
-            <Button 
-              as={Link} 
-              href="/competitions"
-              size="lg"
-              className="bg-white text-blue-600 font-semibold px-8 hover:shadow-xl transition-all duration-200"
-            >
-              Explore Competitions
-              <FaTrophy className="ml-2" />
-            </Button>
-          )}
-        </section>
       </div>
     </div>
   );

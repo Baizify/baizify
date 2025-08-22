@@ -289,6 +289,15 @@ exports.Prisma.FrameScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.BulletinScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  userId: 'userId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -321,7 +330,8 @@ exports.Prisma.ModelName = {
   CampaignPlayer: 'CampaignPlayer',
   Handicap: 'Handicap',
   Fixture: 'Fixture',
-  Frame: 'Frame'
+  Frame: 'Frame',
+  Bulletin: 'Bulletin'
 };
 
 /**
