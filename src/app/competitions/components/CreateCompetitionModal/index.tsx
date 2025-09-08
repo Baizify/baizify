@@ -9,7 +9,8 @@ import {
      ModalFooter,
      Button,
      Input,
-     Divider
+     Divider,
+     PressEvent
 } from "@heroui/react";
 import { FaTrophy, FaPlus, FaSort, FaLayerGroup } from "react-icons/fa";
 import { useRouter } from "next/navigation";
@@ -30,9 +31,9 @@ const CreateCompetitionModal = ({ isOpen, onClose, onCompetitionCreated }: Creat
      const [error, setError] = useState('');
      const router = useRouter();
 
-     const handleSubmit = async (e: React.FormEvent) => {
-          e.preventDefault();
-          
+     const handleSubmit = async (e: (React.FormEvent | PressEvent)) => {
+          (e as any).preventDefault?.();
+
           if (!formData.name.trim()) {
                setError('Competition name is required');
                return;
@@ -167,7 +168,7 @@ const CreateCompetitionModal = ({ isOpen, onClose, onCompetitionCreated }: Creat
                                         <li>• The competition will be created and added to your league system</li>
                                         <li>• You can then add seasons to organize matches by time period</li>
                                         <li>• Teams and players can be assigned to campaigns within seasons</li>
-                                        <li>• The competition will be grouped under "{formData.collection}"</li>
+                                        <li>• The competition will be grouped under {formData.collection}</li>
                                    </ul>
                               </div>
                          </form>

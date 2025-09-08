@@ -156,7 +156,6 @@ const AddPlayersModal = ({ isOpen, onClose, campaignId, onPlayerAdded }: AddPlay
                                              {users.map((user) => (
                                                   <SelectItem
                                                        key={user.id}
-                                                       value={user.id}
                                                        startContent={
                                                             <Avatar
                                                                  src={user.image || undefined}
