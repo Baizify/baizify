@@ -451,8 +451,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 6.12.0
-   * Query Engine version: 8047c96bbd92db98a2abc7c9323ce77c02c89dbc
+   * Prisma Client JS version: 6.5.0
+   * Query Engine version: 173f8d54f8d52e692c7e27e72a88314ec7aeff60
    */
   export type PrismaVersion = {
     client: string
@@ -3379,7 +3379,7 @@ export namespace Prisma {
 
   /**
    * Fields of the User model
-   */
+   */ 
   interface UserFieldRefs {
     readonly id: FieldRef<"User", 'String'>
     readonly name: FieldRef<"User", 'String'>
@@ -4658,7 +4658,7 @@ export namespace Prisma {
 
   /**
    * Fields of the Account model
-   */
+   */ 
   interface AccountFieldRefs {
     readonly userId: FieldRef<"Account", 'String'>
     readonly type: FieldRef<"Account", 'String'>
@@ -5724,7 +5724,7 @@ export namespace Prisma {
 
   /**
    * Fields of the Session model
-   */
+   */ 
   interface SessionFieldRefs {
     readonly sessionToken: FieldRef<"Session", 'String'>
     readonly userId: FieldRef<"Session", 'String'>
@@ -6743,7 +6743,7 @@ export namespace Prisma {
 
   /**
    * Fields of the VerificationToken model
-   */
+   */ 
   interface VerificationTokenFieldRefs {
     readonly identifier: FieldRef<"VerificationToken", 'String'>
     readonly token: FieldRef<"VerificationToken", 'String'>
@@ -7801,7 +7801,7 @@ export namespace Prisma {
 
   /**
    * Fields of the Competition model
-   */
+   */ 
   interface CompetitionFieldRefs {
     readonly id: FieldRef<"Competition", 'String'>
     readonly name: FieldRef<"Competition", 'String'>
@@ -8940,7 +8940,7 @@ export namespace Prisma {
 
   /**
    * Fields of the Season model
-   */
+   */ 
   interface SeasonFieldRefs {
     readonly id: FieldRef<"Season", 'String'>
     readonly name: FieldRef<"Season", 'String'>
@@ -10093,7 +10093,7 @@ export namespace Prisma {
 
   /**
    * Fields of the Campaign model
-   */
+   */ 
   interface CampaignFieldRefs {
     readonly id: FieldRef<"Campaign", 'String'>
     readonly competitionId: FieldRef<"Campaign", 'String'>
@@ -11323,7 +11323,7 @@ export namespace Prisma {
 
   /**
    * Fields of the LeagueCampaign model
-   */
+   */ 
   interface LeagueCampaignFieldRefs {
     readonly campaignId: FieldRef<"LeagueCampaign", 'String'>
     readonly played: FieldRef<"LeagueCampaign", 'Int'>
@@ -12370,7 +12370,7 @@ export namespace Prisma {
 
   /**
    * Fields of the Team model
-   */
+   */ 
   interface TeamFieldRefs {
     readonly id: FieldRef<"Team", 'String'>
     readonly name: FieldRef<"Team", 'String'>
@@ -13463,7 +13463,7 @@ export namespace Prisma {
 
   /**
    * Fields of the TeamCampaign model
-   */
+   */ 
   interface TeamCampaignFieldRefs {
     readonly campaignId: FieldRef<"TeamCampaign", 'String'>
     readonly teamId: FieldRef<"TeamCampaign", 'String'>
@@ -14734,7 +14734,7 @@ export namespace Prisma {
 
   /**
    * Fields of the LeagueTableSnapshot model
-   */
+   */ 
   interface LeagueTableSnapshotFieldRefs {
     readonly id: FieldRef<"LeagueTableSnapshot", 'String'>
     readonly competitionId: FieldRef<"LeagueTableSnapshot", 'String'>
@@ -15776,7 +15776,7 @@ export namespace Prisma {
 
   /**
    * Fields of the TeamCampaignPlayer model
-   */
+   */ 
   interface TeamCampaignPlayerFieldRefs {
     readonly campaignPlayerId: FieldRef<"TeamCampaignPlayer", 'String'>
     readonly isTeamCaptain: FieldRef<"TeamCampaignPlayer", 'Boolean'>
@@ -16811,7 +16811,7 @@ export namespace Prisma {
 
   /**
    * Fields of the CampaignPlayer model
-   */
+   */ 
   interface CampaignPlayerFieldRefs {
     readonly id: FieldRef<"CampaignPlayer", 'String'>
     readonly campaignId: FieldRef<"CampaignPlayer", 'String'>
@@ -17997,7 +17997,7 @@ export namespace Prisma {
 
   /**
    * Fields of the Handicap model
-   */
+   */ 
   interface HandicapFieldRefs {
     readonly id: FieldRef<"Handicap", 'String'>
     readonly value: FieldRef<"Handicap", 'Int'>
@@ -19330,7 +19330,7 @@ export namespace Prisma {
 
   /**
    * Fields of the Fixture model
-   */
+   */ 
   interface FixtureFieldRefs {
     readonly id: FieldRef<"Fixture", 'String'>
     readonly competitionId: FieldRef<"Fixture", 'String'>
@@ -20615,7 +20615,7 @@ export namespace Prisma {
 
   /**
    * Fields of the Frame model
-   */
+   */ 
   interface FrameFieldRefs {
     readonly id: FieldRef<"Frame", 'String'>
     readonly fixtureId: FieldRef<"Frame", 'String'>
@@ -21789,7 +21789,7 @@ export namespace Prisma {
 
   /**
    * Fields of the Bulletin model
-   */
+   */ 
   interface BulletinFieldRefs {
     readonly id: FieldRef<"Bulletin", 'String'>
     readonly title: FieldRef<"Bulletin", 'String'>
@@ -22479,7 +22479,7 @@ export namespace Prisma {
 
 
   /**
-   * Field references
+   * Field references 
    */
 
 
